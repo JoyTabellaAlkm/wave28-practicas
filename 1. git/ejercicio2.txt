@@ -1,0 +1,9 @@
+git init
+git config user.name "lucasbianchi0"
+git config user.email "lucmbianchi2000@gmail.com"
+touch lorem.txt
+nano lorem.txt
+(Agregar texto “random”)
+git add .
+git commit -m “se sube archivo txt con texto random”
+git push -u origin main
