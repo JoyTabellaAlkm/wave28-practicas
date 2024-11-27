@@ -1,7 +1,7 @@
 mkdir test cd test git init
 git config user.name “giann02”
 git config user.email “gianlucapanigatti02@gmail.com"
-git config user-password “”
+git config user-password “xxx”
 nano lorem.txt
 git add
 git commit -m “My first commit”
