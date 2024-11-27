@@ -1,0 +1,24 @@
+ mkdir Ejercicio2
+ cd Ejercicio2
+ git init
+ git config user.name "Luciana"
+ git config user.email "lcerroaragon9@gmail.com"
+ nano lorem.txt
+ "texto random"
+ git remote add origin https://github.com/lcerroaragon/Ejercicio2-git.git
+ git status
+ git add .
+ git commit -m "subir archivo"
+ git push origin main
+ git status
+
+Comandos de guardado en repo bootcamp practica
+ cd ..
+ git clone https://github.com/JoyTabellaAlkm/wave28-practicas.git
+ cd wave28-practicas/
+ git checkout -b cerroaragon_luciana
+ cd 1.\ git/
+ nano lorem.txt
+ history
+ 
+
