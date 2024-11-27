@@ -1,0 +1,13 @@
+AR000LHX96F5WP1:Desktop gkalniker$ mkdir archivos
+AR000LHX96F5WP1:Desktop gkalniker$ cd archivos/
+AR000LHX96F5WP1:archivos gkalniker$ touch "prueba.txt" "hola.txt"
+AR000LHX96F5WP1:archivos gkalniker$ ls
+hola.txt	prueba.txt
+AR000LHX96F5WP1:archivos gkalniker$ mv hola.txt prueba2.txt
+AR000LHX96F5WP1:archivos gkalniker$ mv prueba.txt prueba1.txt
+AR000LHX96F5WP1:archivos gkalniker$ ls
+prueba1.txt	prueba2.txt
+AR000LHX96F5WP1:archivos gkalniker$ rm prueba2.txt 
+AR000LHX96F5WP1:archivos gkalniker$ ls
+prueba1.txt
+AR000LHX96F5WP1:archivos gkalniker$ clear
