@@ -1,0 +1,60 @@
+EJERCICIO 1
+
+AR000JK63JGP6NR:~ pasosa$  mkdir archivos
+AR000JK63JGP6NR:~ pasosa$ cd archivos
+AR000JK63JGP6NR:archivos pasosa$ touch prueba.txt hola.txt
+AR000JK63JGP6NR:archivos pasosa$ ls
+hola.txt	prueba.txt
+AR000JK63JGP6NR:archivos pasosa$ mv prueba.txt prueba1.txt
+AR000JK63JGP6NR:archivos pasosa$ mv hola.txt prueba2.txt
+AR000JK63JGP6NR:archivos pasosa$ ls
+prueba1.txt	prueba2.txt
+AR000JK63JGP6NR:archivos pasosa$ rm prueba2.txt
+AR000JK63JGP6NR:archivos pasosa$ ls
+prueba1.txt
+AR000JK63JGP6NR:archivos pasosa$ clear
+
+
+
+
+
+EJERICIO 2
+
+AR000JK63JGP6NR:~ pasosa$ mkdir ej-git
+AR000JK63JGP6NR:~ pasosa$ cd ej-git
+AR000JK63JGP6NR:ej-git pasosa$ git init
+Initialized empty Git repository in /Users/pasosa/ej-git/.git/
+AR000JK63JGP6NR:ej-git pasosa$ git config user.name "palomasosa"
+AR000JK63JGP6NR:ej-git pasosa$ git config user.email "palososa_19@hotmail.es"
+AR000JK63JGP6NR:ej-git pasosa$ git config user.password ""
+AR000JK63JGP6NR:ej-git pasosa$ touch lorem.txt
+AR000JK63JGP6NR:ej-git pasosa$ nano lorem.txt
+AR000JK63JGP6NR:ej-git pasosa$ git add lorem.txt
+AR000JK63JGP6NR:ej-git pasosa$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+AR000JK63JGP6NR:ej-git pasosa$ git commit -m "first commit"
+[main (root-commit) 8786e59] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lorem.txt
+
+
+AR000JK63JGP6NR:ej-git pasosa$ git remote add origin https://github.com/palomasosa/ej-git.git
+AR000JK63JGP6NR:ej-git pasosa$ git status
+On branch main
+nothing to commit, working tree clean
+AR000JK63JGP6NR:ej-git pasosa$ git push origin main
+Username for 'https://github.com': palomasosa
+Password for 'https://palomasosa@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/palomasosa/ej-git.git
+ * [new branch]      main -> main
