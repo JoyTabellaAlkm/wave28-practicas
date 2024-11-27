@@ -1,0 +1,12 @@
+1 mkdir "archivos"
+2  cd archivos/
+3  touch "prueba.txt"
+4  ls
+5  touch "hola.txt"
+6  ls
+7  mv "hola.txt" "prueba2.txt"
+8  ls
+9  mv "prueba.txt" "prueba1.txt"
+10  ls
+11 cd ..
+
