@@ -1,0 +1,19 @@
+1)
+~ mkdir lorem
+~ cd lorem/
+~ git init
+~ git config user.email "nicolasezdias@gmail.com"
+~ git config user.name "nicoezdias"
+~ nano lorem.txt 
+
+//dentro de nano escribi "random"
+~random
+^+X
+//
+
+~ git add lorem.txt
+~ git commit -m "add lorem.txt"
+
+2)
+~ git status
+~ git push -u origin main
