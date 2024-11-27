@@ -1,0 +1,12 @@
+1. git camilopez$ mkdir archivos
+1. git camilopez$ cd archivos/
+archivos camilopez$ touch prueba.txt hola.txt
+archivos camilopez$ ls
+hola.txt	prueba.txt
+archivos camilopez$ mv hola.txt prueba2.txt
+archivos camilopez$ mv prueba.txt prueba1.txt
+archivos camilopez$ ls
+prueba1.txt	prueba2.txt
+archivos camilopez$ rm prueba2.txt 
+archivos camilopez$ cd ..
+1. git camilopez$ clear
