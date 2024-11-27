@@ -1,0 +1,33 @@
+CO000F6K3JR7C30:Git asuarique$ cd Ejercicio02
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git init
+Initialized empty Git repository in /Users/asuarique/Documents/BootCamp/Ejercicios/Git/Ejercicio02/.git/
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git config user.name "asuariquem"
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git config user.email "andres.suarique@mercadolibre.com.co"
+CO000F6K3JR7C30:Ejercicio02 asuarique$ touch lorem.txt
+CO000F6K3JR7C30:Ejercicio02 asuarique$ nano lorem.txt 
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git add lorem.txt 
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git commit -m "Subiendo lorem.txt"
+[main (root-commit) 4a80c77] Subiendo lorem.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lorem.txt
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git remote add origin https://github.com/asuariquem/git-ejercicio02.git
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git status
+On branch main
+nothing to commit, working tree clean
+CO000F6K3JR7C30:Ejercicio02 asuarique$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/asuariquem/git-ejercicio02.git
+ * [new branch]      main -> main
+CO000F6K3JR7C30:Ejercicio02 asuarique$ 

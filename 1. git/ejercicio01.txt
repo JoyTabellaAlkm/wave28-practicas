@@ -1,0 +1,23 @@
+CO000F6K3JR7C30:Ejercicio01 asuarique$ mkdir archivos
+
+CO000F6K3JR7C30:Ejercicio01 asuarique$ cd archivos/
+
+CO000F6K3JR7C30:archivos asuarique$ touch prueba.txt
+
+CO000F6K3JR7C30:archivos asuarique$ touch hola.txt
+
+CO000F6K3JR7C30:archivos asuarique$ ls
+
+hola.txt prueba.txt
+
+CO000F6K3JR7C30:archivos asuarique$ mv hola.txt prueba2.txt
+
+CO000F6K3JR7C30:archivos asuarique$ mv prueba.txt prueba1.txt
+
+CO000F6K3JR7C30:archivos asuarique$ ls
+
+prueba1.txt prueba2.txt
+
+CO000F6K3JR7C30:archivos asuarique$ rm prueba2.txt 
+
+CO000F6K3JR7C30:archivos asuarique$ cd ..
