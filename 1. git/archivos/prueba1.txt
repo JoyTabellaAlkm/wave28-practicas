@@ -1,0 +1,14 @@
+CO000KL9C9R6T17:1. git dparrado$ mkdir archivos
+CO000KL9C9R6T17:1. git dparrado$ cd archivos
+CO000KL9C9R6T17:archivos dparrado$ touch prueba.txt hola.txt
+CO000KL9C9R6T17:archivos dparrado$ ls
+hola.txt	prueba.txt
+CO000KL9C9R6T17:archivos dparrado$ mv hola.txt prueba2.txt
+CO000KL9C9R6T17:archivos dparrado$ mv prueba.txt prueba1.txt
+CO000KL9C9R6T17:archivos dparrado$ la
+-bash: la: command not found
+CO000KL9C9R6T17:archivos dparrado$ ls
+prueba1.txt	prueba2.txt
+CO000KL9C9R6T17:archivos dparrado$ rm prueba2.txt
+CO000KL9C9R6T17:archivos dparrado$ cd ..
+CO000KL9C9R6T17:1. git dparrado$ clear
