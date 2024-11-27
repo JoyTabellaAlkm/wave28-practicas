@@ -15,5 +15,6 @@
 ~ git commit -m "add lorem.txt"
 
 2)
+~ git remote add origin git@github.com:nicoezdias/lorem.git
 ~ git status
 ~ git push -u origin main
