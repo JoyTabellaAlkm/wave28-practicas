@@ -1,0 +1,12 @@
+mkdir repo
+cd repo
+git init
+git config user.name "Tomas Peiretti"
+git config user.email "tomas.peiretti@mercadolibre.com"
+touch lorem.txt
+vi lorem.txt
+git add .
+git commit -m "create lorem file"
+git remote add origin https://github.com/elPeiretti/repo.git
+git status
+git push -u origin main 
