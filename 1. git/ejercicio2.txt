@@ -13,3 +13,5 @@ Agrego el remote: git remote add origin git@github.com:JorDCalderon/ejercicio2-g
 Reviso el estado de git con git status
 Realizo el push con: git push --set-upstream origin main
 Verifico en GitHub y levantó el txt.
+
+Extra: Agregada cuenta personal para el bootcamp
