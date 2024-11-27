@@ -1,0 +1,12 @@
+mkdir Archivos
+cd Archivos
+touch "prueba.txt"
+touch "hola.txt"
+ls
+mv "hola.txt" "prueba2.txt"
+mv "prueba.txt" "prueba1.txt"
+ls
+rm prueba2.txt
+cd ..
+clear
+

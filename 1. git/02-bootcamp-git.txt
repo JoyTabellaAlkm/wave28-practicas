@@ -1,0 +1,13 @@
+mkdir 02-bootcamp-git
+cd 02-bootcamp-git
+git init
+git config user.name Choolito
+git config user.email juanignacioabarca202@gmail.com
+touch lorem.txt
+nano lorem.txt #Edite el archivo.
+git add .
+git commit -m "prueba commit"
+git remote add origin https://github.com/Choolito/02-bootcamp-git.git
+git branch -M main
+git push -u origin main
+
