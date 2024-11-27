@@ -1,0 +1,18 @@
+consola:
+Git init
+Git config user.name “astrid21”
+Git config user.email “astridmalamud@gmail.com”
+Git config user.password “PAT”
+
+En la carpeta
+Touch lorem.txt
+Le agregue texto adentro
+
+consola:
+Git add .
+Git status
+Git commit -m “agregue el archivo lorem ipsum”
+
+Git remote add origin “url de mi repo”
+Git status
+Git push origin main
