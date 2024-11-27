@@ -1,0 +1,9 @@
+mkdir repo_test
+cd repo_test
+git init
+touch lorem.txt
+vim lorem.txt
+git add lorem.txt
+git commit -m "Add lorem file"
+git remote add origin https://github.com/amanusovich-meli/repo-test.git
+git push --set-upstream origin master
