@@ -1,0 +1,15 @@
+mkdir Meli
+cd Meli
+mkdir git-practicas
+cd git-practicas
+git init
+git config user.name "nicoalbarracin"
+git config user.mail "nicolas.albarracinp@mercadolibre.com.co"
+nano lorem.txt
+git add .
+git commit -m "First commit"
+
+git remote add origin https://github.com/nicoalbarracinp/git-practice.git
+git status
+git push origin main
+
