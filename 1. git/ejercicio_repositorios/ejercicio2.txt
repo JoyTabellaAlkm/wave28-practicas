@@ -1,0 +1,13 @@
+
+mkdir repo
+cd repo
+git init
+git config user.name "melasim"
+git config user.email melania.simes@hotmail.com 
+touch lorem.txt
+open lorem.txt
+git add .
+git commit -m "se incorpora archivo lorem.txt"
+git remote add origin https://github.com/melasim/bootcamp-ejGit.git
+git branch -M main
+git push origin main
