@@ -1,0 +1,15 @@
+mkdir repo-prueba
+cd repo-prueba
+git init
+git config user.name "MarianoChun"
+git config user.email "marianochun01@gmail.com"
+touch lorem.txt
+nano lorem.txt
+(Ingresamos texto random -> Ctrl X --> Y --> Enter)
+git add lorem.txt
+git commit -m "Agrego archivo lorem"
+git remote add origin https://github.com/MarianoChun/repo-prueba.git
+git push -u origin master
+
+link repo remoto creado: https://github.com/MarianoChun/repo-prueba
+
