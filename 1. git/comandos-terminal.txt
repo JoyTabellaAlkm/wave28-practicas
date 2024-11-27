@@ -1,0 +1,11 @@
+CO000CG65M93G2J:01-bootcamp-git anbaquero$ mkdir archivos
+CO000CG65M93G2J:01-bootcamp-git anbaquero$ cd archivos/
+CO000CG65M93G2J:archivos anbaquero$ touch prueba.txt hola.txt
+CO000CG65M93G2J:archivos anbaquero$ ls
+hola.txt        prueba.txt
+CO000CG65M93G2J:archivos anbaquero$ mv hola.txt prueba2.txt
+CO000CG65M93G2J:archivos anbaquero$ mv prueba.txt prueba1.txt
+CO000CG65M93G2J:archivos anbaquero$ rm prueba2.txt 
+CO000CG65M93G2J:archivos anbaquero$ cd ..
+CO000CG65M93G2J:01-bootcamp-git anbaquero$ 
+CO000CG65M93G2J:01-bootcamp-git anbaquero$ clear

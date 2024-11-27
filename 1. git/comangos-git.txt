@@ -1,0 +1,10 @@
+git init
+git config user.name "anbaquero"
+git config user.email "andres.baquero@mercadolibre.com.co"
+nano lorem.txt
+git add .
+git commit -m "first commit"
+git status
+git remote add origin https://github.com/anbaquero/repo-ejercicio-live.git
+git branch -M main
+git push -u origin main
