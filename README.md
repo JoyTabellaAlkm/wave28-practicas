@@ -1,3 +1,9 @@
+```
+William Nicolas Buitrago Camacho
+
+Email MeLi: nicolas.buitrago@mercadolibre.com.com
+Usuario GitHub para MeLi: nicolas-buitrago-meli
+```
 # wave28-practicas 🚀
 by Alkemy 💗
 
