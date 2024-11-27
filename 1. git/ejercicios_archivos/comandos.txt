@@ -1,0 +1,9 @@
+Cd archivos
+Cd Ejercicio2
+Git init
+Git config user.name “azupanez”
+Git config user.email “azucena.panez@mercadolibre.com”
+Touch lorem.txt
+echo "hola” > lorem.txt
+Git add .
+git commit -m "primer commit"

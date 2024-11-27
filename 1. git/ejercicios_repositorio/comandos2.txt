@@ -1,0 +1,9 @@
+Git clone https://github.com/JoyTabellaAlkm/wave28-practicas.git
+cd wave28-practicas
+Git checkout -b panez_azucena
+mkdir ejercicios_archivos ejercicios_repositorio
+cd ejercicios_archivos
+touch comandos.txt
+Git add .
+Git status
+Git push origin panez_campos
