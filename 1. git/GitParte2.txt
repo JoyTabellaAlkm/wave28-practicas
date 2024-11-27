@@ -1,0 +1,15 @@
+### Comandos basicos GIT
+
+cd Bootcamp/
+ls
+cd practicaGit/
+ls
+nano lorem.txt
+ls
+git remote add origin https://github.com/Amoreraz/IntroGitP1.git
+git status
+git add lorem.txt 
+git commit -m "create lorem"
+git push
+git push -u origin master
+
