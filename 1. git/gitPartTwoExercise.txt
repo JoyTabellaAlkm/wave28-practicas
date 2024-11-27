@@ -1,0 +1,16 @@
+a. mkdir gitpart1
+    cd gitpart1/
+b. git init
+c. git config --global user.name "Maria Silva” 
+   git config --global user.email "mariajsilvat@gmail.com" 
+d. touch lorem.txt
+   nano lorem.txt 
+e. git add .
+f. git commit -m "my first commit in meli"
+
+—— 
+  a. git remote add origin https://github.com/mariasilva795/meli.git
+  b. git status
+  c. git branch -M main 
+  d. git push -u origin main
+  d. git push origin master (This branch was already in my remote repository) 
