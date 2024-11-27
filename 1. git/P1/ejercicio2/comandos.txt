@@ -1,0 +1,10 @@
+AR000J77J9JJJ7M:git1 juabianchi$ git init
+AR000J77J9JJJ7M:git1 juabianchi$ git config user.name "juabianchi"
+AR000J77J9JJJ7M:git1 juabianchi$ git config user.email "juanalberto.bianchi@mercadolibre.com"
+AR000J77J9JJJ7M:git1 juabianchi$ touch lorem.txt
+AR000J77J9JJJ7M:git1 juabianchi$ nano lorem.txt
+AR000J77J9JJJ7M:git1 juabianchi$ git add .
+AR000J77J9JJJ7M:git1 juabianchi$ git commit -m "feat:Add random message"
+AR000J77J9JJJ7M:git1 juabianchi$ git branch -M main
+AR000J77J9JJJ7M:git1 juabianchi$ git remote add origin https://github.com/juabianchi/git1.git
+AR000J77J9JJJ7M:git1 juabianchi$ git push -u origin main

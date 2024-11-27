@@ -1,0 +1,18 @@
+AR000J77J9JJJ7M:Desktop juabianchi$ mkdir archivos
+AR000J77J9JJJ7M:Desktop juabianchi$ cd archivos/
+AR000J77J9JJJ7M:archivos juabianchi$ touch prueba.txt
+AR000J77J9JJJ7M:archivos juabianchi$ touch hola.txt
+AR000J77J9JJJ7M:archivos juabianchi$ ls
+hola.txt	prueba.txt
+AR000J77J9JJJ7M:archivos juabianchi$ mv prueba.txt prueba1.txt
+AR000J77J9JJJ7M:archivos juabianchi$ ls
+hola.txt	prueba1.txt
+AR000J77J9JJJ7M:archivos juabianchi$ mv hola.txt prueba2.txt
+AR000J77J9JJJ7M:archivos juabianchi$ ls
+prueba1.txt	prueba2.txt
+AR000J77J9JJJ7M:archivos juabianchi$ rm prueba2.txt
+AR000J77J9JJJ7M:archivos juabianchi$ ls
+prueba1.txt
+AR000J77J9JJJ7M:archivos juabianchi$ cd ..
+AR000J77J9JJJ7M:Desktop juabianchi$ clear
+
