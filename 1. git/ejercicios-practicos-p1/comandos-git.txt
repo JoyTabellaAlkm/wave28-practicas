@@ -1,0 +1,12 @@
+mkdir ejercicio_git_p1
+cd ejercicio_git_p1/
+git init
+git config user.name "Siomermin"
+git config user.email "fermingonzalez011@gmail.com"
+touch lorem.txt
+echo "random" >> lorem.txt
+git add lorem.txt
+git commit -m "Agrego archivo lorem.txt"
+git status
+git remote add origin https://github.com/Siomermin/ejercicio-git-p1.git
+git push origin main
