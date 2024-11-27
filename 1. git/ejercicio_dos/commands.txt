@@ -1,0 +1,4 @@
+touch lorem.txt
+nano lorem.txt
+git status
+git commit -m "Se creo el archivo con el mensaje random"
