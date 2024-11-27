@@ -1,0 +1,34 @@
+3)
+~ mkdir ejercicio_hola
+~ cd ejercicio_hola/
+~ git init
+~ git config user.email "nicolasezdias@gmail.com"
+~ git config user.name "nicoezdias"
+~ nano hola.txt
+~ git add hola.txt
+~ git commit -m "add hola.txt"
+~ git remote add origin git@github.com:nicoezdias/ejercicio_hola.git
+~ git push -u origin main
+
+4)
+~git clone https://github.com/nicoezdias/ejercicio_hola.git
+
+5)
+~ nano a1.txt
+~ nano a2.txt
+~ git add .
+~ git commit -m "add 2 files"
+
+6)
+~ nano a1.txt
+~ nano a2.txt
+~ git add .
+~ git commit -m "update 2 files"
+
+7)
+~ nano hola.txt
+~ git add .
+~ git commit -m "update hola.txt"
+
+8)
+Como eran lineas distintas decidimos que dejariamos ambos cambios.
