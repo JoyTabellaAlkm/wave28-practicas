@@ -1,0 +1,15 @@
+mkdir archivos
+ls
+archivos
+cd archivos/
+touch prueba.txt
+touch hola.txt
+ls
+hola.txt	prueba.txt
+mv hola.txt prueba2.txt
+mv prueba.txt prueba1.txt
+ls
+prueba1.txt	prueba2.txt
+rm prueba2.txt 
+cd ..
+clear

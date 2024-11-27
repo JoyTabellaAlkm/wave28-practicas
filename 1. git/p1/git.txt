@@ -1,0 +1,15 @@
+1.
+cd repo_local
+git init
+git config user.name "rivejjj"
+git config user.email "rivero.joaquinn@gmail.com"
+touch lorem.txt
+echo "buenos dias" | cat > lorem.txt 
+git add -A 
+git status
+
+2.
+git commit -m "new lorem file"
+git remote add origin https://github.com/Rivejjj/repo.git
+git status
+git push --set-upstream origin master
