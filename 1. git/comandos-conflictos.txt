@@ -1,0 +1,60 @@
+384  git clone https://github.com/amanusovich/ejercicio-bootcamp-live.git
+  385  cd ejercicio-bootcamp-live/
+  386  git pull
+  387  git add .
+  388  git commit -m "Added files with content"
+  389  git push
+  390  git config --local --list
+  391  git config user.name "albaqueroh"
+  392  git config user.email "andres.baquero6@mercadolibre.com.co"
+  393  git push
+  394  git config --global --list
+  395  security delete-internet-password -s github.com
+  396  git push
+  397  git config --list
+  398  git config --global credential.helper ""
+  399  git config  credential.helper ""
+  400  git push
+  401  git push
+  402  cd ejercicio-bootcamp-live/
+  403  git push
+  404  git config --global --list
+  405  git config --local --list
+  406  security delete-internet-password -s github.com
+  407  git config --local --list
+  408  git config  --list
+  409  git config  --system
+  410  git config  --system --list
+  411  git push origin main
+  412  git config --global user.name "albaqueroh"
+  413  git config --global user.email "andres.baquero6@gmail.com"
+  414  git config user.email "andres.baquero6@gmail.com"
+  415  git config user.name "albaqueroh"
+  416  git push origin main
+  417  git push 
+  418  cd ejercicio-bootcamp-live/
+  419  git push 
+  420  git push 
+  421  git pull
+  422  git pull --no-rebase
+  423  git push 
+  424  git commit -am "Added content in ariana's file"
+  425  git push
+  426  git pull
+  427  cd ejercicio-bootcamp-live/
+  428  git pull
+  429  git config --local --list
+  430  git pull origin main
+  431  cd ejercicio-bootcamp-live/
+  432  git pull origin main
+  433  git pull origin main
+  434  cd ejercicio-bootcamp-live/
+  435  git commit -am "Added content"
+  436  git push
+  437  git config --list -a
+  438  git config -e
+  439  git config --global -e
+  440  git pull
+  441  git commit -am "Added more content"
+  442  git push
+  443  history
