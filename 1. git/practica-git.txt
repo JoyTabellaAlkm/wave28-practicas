@@ -1,0 +1,12 @@
+Comandos corridos para completar la tarea 2: 
+
+1. mkdir carpeta-nueva
+2. cd carpeta-nueva
+3. git init 
+4. touch lorem.txt
+5. git add .
+6. git status 
+7. git add urlrepo 
+8. git checkout -b castaldo_fernanda
+9. git commit -m "Mensaje de commit"
+10. git push origin castaldo_fernanda
