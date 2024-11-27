@@ -1,0 +1,13 @@
+mkdir "RepoPrueba"
+cd RepoPrueba/
+git init
+git config user.name "username"
+git config user.email "mail"
+nano lorem.txt 
+git add lorem.txt
+git commit -m "subo archivo lorem.txt"
+git remote add origin https://github.com/InakiEtchegoyen/repo-prueba.git
+git status
+git push origin master
+
+
