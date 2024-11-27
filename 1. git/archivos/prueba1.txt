@@ -1,0 +1,9 @@
+cd repos-bootcamp
+cd wave28-practicas
+ls
+cd 1. \git
+ls
+cd archivos
+touch prueba.txt
+mv prueba.txt prueba1.txt
+nano prueba1.txt
