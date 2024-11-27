@@ -1,0 +1,15 @@
+AR000JRM7QKY7MP:Downloads tpeiretti$ mkdir archivos
+AR000JRM7QKY7MP:Downloads tpeiretti$ cd archivos
+AR000JRM7QKY7MP:archivos tpeiretti$ touch prueba.txt && touch hola.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ ls
+hola.txt	prueba.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ mv hola.txt prueba2.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ mv prueba.txt prueba1.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ ls
+prueba1.txt	prueba2.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ rm prueba2.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ ls
+prueba1.txt
+AR000JRM7QKY7MP:archivos tpeiretti$ cd ..
+AR000JRM7QKY7MP:Downloads tpeiretti$ clear
+
