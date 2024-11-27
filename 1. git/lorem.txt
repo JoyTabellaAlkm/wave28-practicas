@@ -1,0 +1,38 @@
+Clase 1 - Git Github
+
+Comandos actividad 1
+
+CO000C9506JF2PK:Clase 1 - git github erestrepo$ mkdir archivos
+cd archivos/
+touch "prueba.txt"
+touch "hola.txt"
+
+ls
+hola.txt	prueba.txt
+
+mv hola.txt prueba2.txt
+mv prueba.txt prueba1.txt
+
+ls
+prueba1.txt	prueba2.txt
+
+rm prueba2.txt
+
+ls
+prueba1.txt
+
+cd ..
+clear
+
+Comandos actividad 2
+
+CO000C9506JF2PK:Clase 1 - git github erestrepo$ git init
+touch lorem.txt
+echo "Clase 1 - Git Github" > lorem.txt
+git add .
+git commit -m "primer commit con la creacion de archivos"
+
+git remote add origin https://github.com/chzdiane/clase1-bootcamp-meli.git
+git branch -M main
+git push -u origin main
+
