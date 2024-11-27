@@ -6,5 +6,5 @@ nano lorem.txt
 git add
 git commit -m “My first commit”
 git remote add origin https: //github.com/vilo0812/Bootcamp1Git.git
-git status git 10g
+git status 
 git push -u origin main
