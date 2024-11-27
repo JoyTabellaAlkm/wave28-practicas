@@ -1,0 +1,17 @@
+COMANDOS:
+Parte 1
+Cd archivos
+Cd Ejercicio2
+Git init
+Git config user.name “CarolinaSchwab”
+Git config user.email “carolina.schwab@mercadolibre.com”
+Touch lorem.txt
+echo "Random” > lorem.txt
+Git add .
+git commit -m "primer commit"
+
+Parte 2
+//Creacion de repo en GitHub//
+git remote add origin https://github.com/CarolinaSchwab/repo-prueba.git
+git branch -M main
+git push -u origin main
