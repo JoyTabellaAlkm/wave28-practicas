@@ -1,0 +1,19 @@
+juabianchi$ git init
+juabianchi$ git checkout -b main
+juabianchi$ nano listaCompras.txt
+juabianchi$ git add .
+juabianchi$ git commit -m "feat: First list"
+juabianchi$ git checkout -b lista1
+juabianchi$ nano listaCompras.txt
+juabianchi$ git add .
+juabianchi$ git commit -m "feat: Add some ingredients to the list"
+juabianchi$ git checkout -b lista2
+juabianchi$ nano listaCompras.txt
+juabianchi$ git add .
+juabianchi$ git commit -m "feat: Add some ingredients"
+juabianchi$ git checkout main
+juabianchi$ git pull origin lista1
+juabianchi$ git add .
+juabianchi$ git commit -m "feat: Add some ingredients"
+juabianchi$ git branch -D lista2
+juabianchi$ git branch -D lista1
