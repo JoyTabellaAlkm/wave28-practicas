@@ -1,0 +1,13 @@
+mkdir "repo-remoto"
+cd repo-remoto
+git init
+git config user.name "nadinajauch"
+git config user.email "nadinajauch@gmail.com"
+touch "lorem.txt"
+git add "lorem.txt"
+git commit -m "agrego archivo de texto lorem"
+
+parte 2:
+git remote add origin https://github.com/NadinaJauch/practicas.git
+git status
+git push -u origin main
