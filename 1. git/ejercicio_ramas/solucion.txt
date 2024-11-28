@@ -1,0 +1,21 @@
+mkdir e_ramas && cd e_ramas
+git init
+git checkout -b main
+vi listaCompras.txt
+git add .
+git commit -m "crea listaCompras"
+
+git checkout -b lista1
+vi listaCompras.txt
+git commit -m "agrega items a listaCompras"
+git checkout -b lista2
+vi listaCompras.txt
+git commit -m "modifica listaCompras"
+
+git checkout main
+git merge lista1
+git branch -d lista2
+git branch -d lista1
+
+git remote add origin https://github.com/elPeiretti/test-branches.git
+git push -u origin main
