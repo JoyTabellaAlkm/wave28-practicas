@@ -1,7 +1,7 @@
 git init
-git config user.name "lgiussanialo"
-git config user.email "lisandro.giussanialo@mercadolibre.com"
-git remote add origin https://github.com/lgiussanialo/first-repo.git
+git config user.name "lisandroaloo"
+git config user.email "alolisandro02@gmail.com"
+git remote add origin https://github.com/lisandroaloo/first-repo.git
 vi lorem.txt
 git add .
 git commit -m "lorem"
