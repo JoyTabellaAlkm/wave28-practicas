@@ -1,0 +1,7 @@
+a. cd Documents/projects/git
+b. git init
+c. git config user.name "jmontoya05"
+   git config user.email santiagomontoya997@gmail.com
+d. nano lorem.txt
+e. git add .
+f. git commit -m "Se agregan los cambios definitivamente"
