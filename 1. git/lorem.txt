@@ -1,0 +1,62 @@
+zsh: command not found: Documents
+pinnocenti@AR000H7XK7K19F0 ~ % cd documents
+pinnocenti@AR000H7XK7K19F0 documents % cd bootcamp
+
+CREE LA CARPETA
+pinnocenti@AR000H7XK7K19F0 bootcamp % mkdir repo1
+pinnocenti@AR000H7XK7K19F0 bootcamp % cd repo1
+
+INICIALICE MI REPO LOCAL
+
+pinnocenti@AR000H7XK7K19F0 repo1 % git init
+hint: Usando 'master' como el nombre de la rama inicial. Este nombre de rama predeterminado
+hint: está sujeto a cambios. Para configurar el nombre de la rama inicial para usar en todos
+hint: de sus nuevos repositorios, reprimiendo esta advertencia, llama a:
+hint:
+hint: 	git config --global init.defaultBranch <nombre>
+hint:
+hint: Los nombres comúnmente elegidos en lugar de 'master' son 'main', 'trunk' y
+hint: 'development'. Se puede cambiar el nombre de la rama recién creada mediante este comando:
+hint:
+hint: 	git branch -m <nombre>
+Inicializado repositorio Git vacío en /Users/pinnocenti/Documents/Bootcamp/repo1/.git/
+
+CONFIGURE MI PASSWORD
+pinnocenti@AR000H7XK7K19F0 repo1 % git config user.password " "
+
+CREE EL ARCHIVO
+
+pinnocenti@AR000H7XK7K19F0 repo1 % touch "lorem.txt"  
+
+CONFIGURÉ EL USUARIO Y MAIL 
+innocenti@AR000H7XK7K19F0 repo1 % git config user.name "PilarInnocenti"
+pinnocenti@AR000H7XK7K19F0 repo1 % git config user.mail "pilar.innocenti@gmial.com"
+
+PASE A STAGE TEMPORARIO MIS ARCHIVOS
+
+pinnocenti@AR000H7XK7K19F0 repo1 % git add .
+pinnocenti@AR000H7XK7K19F0 repo1 % git status
+En la rama master
+
+No hay commits todavía
+
+Cambios a ser confirmados:
+  (usa "git rm --cached <archivo>..." para sacar del área de stage)
+	nuevos archivos: lorem.txt
+
+PASE A STAGE PERMANENTE LOS ARCHIVOS
+
+pinnocenti@AR000H7XK7K19F0 repo1 % git commit -m "nuevo archivo repo"
+[master (commit-raíz) df885d8] nuevo archivo repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lorem.txt
+
+LUEGO CREE EL REPOSITORIO EN GITHUB 
+
+ENLACE MI REPO LOCAL CON EL REMOTO 
+
+pinnocenti@AR000H7XK7K19F0 ~ % git remote add origin https://github.com/Pinnoocenti/clase1ejercicio2.git
+
+PUSHEE (SUBI) MIS ARCHVIVOS AL REPOSITORIO REMOTO
+
+pinnocenti@AR000H7XK7K19F0 ~ % git push -u origin main
