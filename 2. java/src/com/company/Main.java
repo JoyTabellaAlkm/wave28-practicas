@@ -1,9 +1,8 @@
-import java.lang.*;
-import java.lang.reflect.Array;
+package com.company;
 
-public class Ejercicio1 {
-    public static void tempMinAndMax(String[] args){
+public class Main {
 
+    public static void main(String[] args) {
         // Vector de ciudades
         String[] ciudades = {
                 "Londres", "Madrid", "Nueva York", "Buenos Aires",
@@ -44,5 +43,6 @@ public class Ejercicio1 {
 
         System.out.println("La menor temperatura fue de la ciudad: " + ciudades[inxTempMin] + " y fue de: " + tempMin);
         System.out.println("La mayor temperatura fue de la ciudad: " + ciudades[inxTempMax] + " y fue de: " + tempMax);
+
     }
 }
