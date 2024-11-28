@@ -1,6 +1,6 @@
-package p1.ejercicio1;
+package p1.ejercicios_sincronicos;
 
-public class Main {
+public class CiudadMayorMenorTemperatura {
     public static void main(String[] args) {
         String[] ciudades = {
                 "Londres",
@@ -30,12 +30,12 @@ public class Main {
         int menorTemperatura = Integer.MAX_VALUE;
         int indiceCiudadMenorTemperatura = 0;
         int indiceCiudadMayorTemperatura = 0;
-        for(int i = 0; i < temperaturas.length; i++) {
-            if(temperaturas[i][0] < menorTemperatura) {
+        for (int i = 0; i < temperaturas.length; i++) {
+            if (temperaturas[i][0] < menorTemperatura) {
                 menorTemperatura = temperaturas[i][0];
                 indiceCiudadMenorTemperatura = i;
             }
-            if(temperaturas[i][1] > mayorTemperatura) {
+            if (temperaturas[i][1] > mayorTemperatura) {
                 mayorTemperatura = temperaturas[i][1];
                 indiceCiudadMayorTemperatura = i;
             }
