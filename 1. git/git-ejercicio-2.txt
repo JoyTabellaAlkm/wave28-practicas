@@ -1,0 +1,14 @@
+1.
+  a. mkdir git-ejercicio-2
+    cd git-ejercicio-2
+  b. git init
+  c. git config user.name "SantiMarino"
+     git config user.email "santiago.marino@mercadolibre.com"
+  d. touch lorem.txt
+  e. git add lorem.txt
+  f. git commit -m "add lorem.txt"
+
+2.
+  a. git remote add origin https://github.com/SantiMarino/git-ejercicio-2.git
+  b. git status
+  c. git push origin main
