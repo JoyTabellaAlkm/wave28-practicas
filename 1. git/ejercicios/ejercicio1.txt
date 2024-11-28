@@ -1,0 +1,15 @@
+********** EJERCICIO 1*********
+1)Creación carpeta "archivos" : mkdir archivos
+2)Ubicarse en carpeta archivo: cd archivos
+3)Crear archivos prueba.txt y hola.txt : touch prueba.txt hola.txt
+4)Utilizar comando para ver archivos en carpeta: ls
+5)Cambiar nombre de archivo : mv hola.txt prueba2.txt
+6)Cambiar nombre de archivo : mv prueba.txt prueba1.txt
+7)Utilizar comando para ver archivos en carpeta: ls
+8)Eliminar archivo prueba2.txt: rm prueba2.txt
+9) subir un directorio arriba: cd ..
+10)clear
+********************************
+
+
+

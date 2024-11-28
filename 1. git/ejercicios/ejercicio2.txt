@@ -1,0 +1,16 @@
+******Abrir la terminal y realizar los siguientes comandos****
+
+1)
+a) cd carpeta
+b) git init
+c) git config user.name "usuario" // git config user.email "email"
+d) touch lorem.txt // open lore.txt (editar) salvar con comand + s
+f) git add lorem.txt
+g) git commit -m " se agrega archivo lorem.txt"
+
+
+2)
+a)git remote add origin https://github.com/zullytamayom/Melitest.git
+b)git status
+c)git push -u origin main
+
