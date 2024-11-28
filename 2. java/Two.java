@@ -56,7 +56,6 @@ public class Two {
             switch (option){
                 case "1":{
                     HashMap<String, String> participant = new HashMap<>();
-                    System.out.println("--------------------------------------");
                     System.out.println("Ingresa el dni");
                     participant.put("dni", console.nextLine());
                     System.out.println("Ingresa el nombre");
