@@ -1,0 +1,23 @@
+
+
+    public void EjercicioSueldo(){
+        double sueldoBase = 45000;
+        String dni = "12345678";
+        double sueldoConAumento;
+
+        if (sueldoBase <= 20000) {
+            sueldoConAumento = sueldoBase * 0.2 + sueldoBase;
+
+        }
+        else {
+            if (sueldoBase >= 20000 && sueldoBase <= 45000){
+                sueldoConAumento = sueldoBase * 0.1 + sueldoBase;
+            }
+            else {
+                sueldoConAumento = sueldoBase * 0.05 + sueldoBase;
+
+            }
+        }
+
+        System.out.println ("El nuevo sueldo del empleado es de: " + sueldoConAumento);
+    }
