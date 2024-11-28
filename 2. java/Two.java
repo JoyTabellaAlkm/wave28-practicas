@@ -28,18 +28,18 @@ public class Two {
         //se generan aleatoriamente los participantes de las competencias
         HashMap<Integer, Map<String, String>> participants = new HashMap<>();
         for (int i = 0; i < 30; i++) {
-            HashMap<String, String> participant = new HashMap<>();
-            participant.put("dni", "" + (random.nextInt(1000)+1));
-            participant.put("name", generateRandom());
-            participant.put("lastname", generateRandom());
             int category = random.nextInt(3)+1;
-            participant.put("categoryId", "" + category);
             int age = (category == 3) ? 18 : random.nextInt(60)+1;
-            participant.put("age", "" + age);
-            participant.put("phone", "" + (random.nextInt(1000)+1));
-            participant.put("alertNumber", "" + (random.nextInt(1000)+1));
-            participant.put("bloodType", "O+");
-            participants.put(i+1, participant);
+            participants.put(i+1, Map.of(
+                    "dni", "" + (random.nextInt(1000)+1),
+                    "name", generateRandom(),
+                    "lastname", generateRandom(),
+                    "categoryId", "" + category,
+                    "age", "" + age,
+                    "phone", "" + (random.nextInt(1000)+1),
+                    "alertNumber", "" + (random.nextInt(1000)+1),
+                    "bloodType", "O+"
+            ));
         }
         //endregion
 
