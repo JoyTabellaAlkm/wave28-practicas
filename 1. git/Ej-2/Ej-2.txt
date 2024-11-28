@@ -1,0 +1,122 @@
+bash-3.2$ echo ========================
+========================
+bash-3.2$ git init
+Initialized empty Git repository in /Users/martiromero/Github/Ej-2/.git/
+bash-3.2$ git config user.name "lvingman"
+bash-3.2$ git config user.email "r_martin@tutanota.com"
+bash-3.2$ ls
+Ej-2.txt
+bash-3.2$ touch lorem.txt
+bash-3.2$ nano lorem.txt
+bash-3.2$ ls
+Ej-2.txt	lorem.txt
+bash-3.2$ git add lorem.txt
+bash-3.2$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Ej-2.txt
+
+bash-3.2$ git remote add origin https://github.com/lvingman/git-ej2
+bash-3.2$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Ej-2.txt
+
+bash-3.2$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+bash-3.2$ git push --set-upstream origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/lvingman/git-ej2'
+bash-3.2$ git branch
+bash-3.2$ git checkout -b main
+Switched to a new branch 'main'
+bash-3.2$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Ej-2.txt
+
+bash-3.2$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+bash-3.2$ git push --set-upstream origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/lvingman/git-ej2'
+bash-3.2$ git branch
+bash-3.2$ git checkout -b main
+Switched to a new branch 'main'
+bash-3.2$ git branch
+bash-3.2$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   lorem.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Ej-2.txt
+
+bash-3.2$ git commit -m "feat: first commit"
+[main (root-commit) a5d85c6] feat: first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lorem.txt
+bash-3.2$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+bash-3.2$ git push --set-upstream origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lvingman/git-ej2
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+bash-3.2$ echo FACEPALM
+FACEPALM
+bash-3.2$ echo ========================================
+========================================
