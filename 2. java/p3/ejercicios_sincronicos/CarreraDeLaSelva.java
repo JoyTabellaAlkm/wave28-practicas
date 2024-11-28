@@ -20,13 +20,10 @@ public class CarreraDeLaSelva {
         // Setteo categoria circuito medio
         categoriaCircuitoMedio.put("nombre", "Circuito Medio");
         categoriaCircuitoMedio.put("descripcion", "5 km por selva, arroyos y barro.");
-        categoriaCircuitoMedio.put("valorMenoresDeEdad", 2000);
-        categoriaCircuitoMedio.put("valorMayoresDeEdad", 2300);
 
         // Setteo categoria circuito avanzado
         categoriaCircuitoAvanzado.put("nombre", "Circuito Avanzado");
         categoriaCircuitoAvanzado.put("descripcion", "10 km por selva, arroyos, barro y escalada en piedra.");
-        categoriaCircuitoAvanzado.put("valorMayoresDeEdad", 2800);
 
         // Participantes
         Map<String, Object> participante1 = new HashMap<>();
@@ -40,7 +37,31 @@ public class CarreraDeLaSelva {
         participante1.put("grupoSanguineo", "A+");
         participante1.put("categoria", categoriaCircuitoMedio);
 
+        Map<String, Object> participante2 = new HashMap<>();
+        participante2.put("participanteID", 2);
+        participante2.put("dni", "11222334");
+        participante2.put("nombre", "Julio");
+        participante2.put("apellido", "Verne");
+        participante2.put("edad", 14);
+        participante2.put("celular", "1122334456");
+        participante2.put("nroEmergencia", "1199887767");
+        participante2.put("grupoSanguineo", "B-");
+        participante2.put("categoria", categoriaCircuitoChico);
+
+        Map<String, Object> participante3 = new HashMap<>();
+        participante3.put("participanteID", 3);
+        participante3.put("dni", "11222335");
+        participante3.put("nombre", "Juan");
+        participante3.put("apellido", "Perez");
+        participante3.put("edad", 20);
+        participante3.put("celular", "1122334457");
+        participante3.put("nroEmergencia", "1199887768");
+        participante3.put("grupoSanguineo", "B+");
+        participante3.put("categoria", categoriaCircuitoAvanzado);
+
         System.out.println(calcularPrecioInscripcion(participante1));
+        System.out.println(calcularPrecioInscripcion(participante2));
+        System.out.println(calcularPrecioInscripcion(participante3));
 
     }
 
