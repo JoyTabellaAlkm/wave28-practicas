@@ -1,0 +1,299 @@
+AR0FVFH24YLQ05N:Github martiromero$ mkdir ej4
+AR0FVFH24YLQ05N:Github martiromero$ ls
+Ej-2			ej3_bootcamp_git	wave28-practicas
+ej3			ej4
+AR0FVFH24YLQ05N:Github martiromero$ cd ej4
+AR0FVFH24YLQ05N:ej4 martiromero$ git init
+Initialized empty Git repository in /Users/martiromero/Github/ej4/.git/
+AR0FVFH24YLQ05N:ej4 martiromero$ git branch
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+AR0FVFH24YLQ05N:ej4 martiromero$ touch listaCompras.txt
+AR0FVFH24YLQ05N:ej4 martiromero$ nano listaCompras.txt
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *pras.txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout -b lista1 main
+fatal: 'main' is not a commit and a branch 'lista1' cannot be created from it
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	listaCompras.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+AR0FVFH24YLQ05N:ej4 martiromero$ ls
+listaCompras.txt
+AR0FVFH24YLQ05N:ej4 martiromero$ git add *
+AR0FVFH24YLQ05N:ej4 martiromero$ git commit -m "feat: first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'martiromero@AR0FVFH24YLQ05N.(none)')
+AR0FVFH24YLQ05N:ej4 martiromero$ git config user.email "r_martin@tutanota.com"
+AR0FVFH24YLQ05N:ej4 martiromero$ git config user.name "lvingman"
+AR0FVFH24YLQ05N:ej4 martiromero$ git commit -m "feat: first commit"
+[main (root-commit) 1cbf84d] feat: first commit
+ 1 file changed, 6 insertions(+)
+ create mode 100644 listaCompras.txt
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout -b lista1 main
+Switched to a new branch 'lista1'
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch lista1
+nothing to commit, working tree clean
+AR0FVFH24YLQ05N:ej4 martiromero$ git log
+commit 1cbf84d903c59b3de66287e878cba8241fb6ee41 (HEAD -> lista1, main)
+Author: lvingman <r_martin@tutanota.com>
+Date:   Thu Nov 28 09:16:12 2024 -0300
+
+    feat: first commit
+AR0FVFH24YLQ05N:ej4 martiromero$ git branch
+* lista1
+  main
+AR0FVFH24YLQ05N:ej4 martiromero$ nano *pras.txt
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout -b lista2 main
+M	listaCompras.txt
+Switched to a new branch 'lista2'
+AR0FVFH24YLQ05N:ej4 martiromero$ git branch
+  lista1
+* lista2
+  main
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *pras.txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout main
+M	listaCompras.txt
+Switched to branch 'main'
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout lista1
+M	listaCompras.txt
+Switched to branch 'lista1'
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+AR0FVFH24YLQ05N:ej4 martiromero$ git branch
+* lista1
+  lista2
+  main
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch lista1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   listaCompras.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+AR0FVFH24YLQ05N:ej4 martiromero$ git add *
+AR0FVFH24YLQ05N:ej4 martiromero$ git commit -m "feat: changed .txt in lista1"
+[lista1 572efc8] feat: changed .txt in lista1
+ 1 file changed, 4 insertions(+)
+AR0FVFH24YLQ05N:ej4 martiromero$ git log
+commit 572efc8315f1fe487231317acf3576e2037e6fa5 (HEAD -> lista1)
+Author: lvingman <r_martin@tutanota.com>
+Date:   Thu Nov 28 09:21:32 2024 -0300
+
+    feat: changed .txt in lista1
+
+commit 1cbf84d903c59b3de66287e878cba8241fb6ee41 (main, lista2)
+Author: lvingman <r_martin@tutanota.com>
+Date:   Thu Nov 28 09:16:12 2024 -0300
+
+    feat: first commit
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout main
+Switched to branch 'main'
+AR0FVFH24YLQ05N:ej4 martiromero$ git log
+commit 1cbf84d903c59b3de66287e878cba8241fb6ee41 (HEAD -> main, lista2)
+Author: lvingman <r_martin@tutanota.com>
+Date:   Thu Nov 28 09:16:12 2024 -0300
+
+    feat: first commit
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout lista2
+Switched to branch 'lista2'
+AR0FVFH24YLQ05N:ej4 martiromero$ nano *txt
+AR0FVFH24YLQ05N:ej4 martiromero$ git add *
+AR0FVFH24YLQ05N:ej4 martiromero$ git commit -m "feat: changed .txt in lista2"
+[lista2 9ed25a6] feat: changed .txt in lista2
+ 1 file changed, 4 insertions(+)
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Queso Rallado
+>5 Manzanas
+>12 Naranjas
+
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout main
+Switched to branch 'main'
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout lista1
+Switched to branch 'lista1'
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+AR0FVFH24YLQ05N:ej4 martiromero$ git branch
+* lista1
+  lista2
+  main
+AR0FVFH24YLQ05N:ej4 martiromero$ git checkout main
+Switched to branch 'main'
+AR0FVFH24YLQ05N:ej4 martiromero$ git merge lista1
+Updating 1cbf84d..572efc8
+Fast-forward
+ listaCompras.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch main
+nothing to commit, working tree clean
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch main
+nothing to commit, working tree clean
+AR0FVFH24YLQ05N:ej4 martiromero$ git merge lista2
+Auto-merging listaCompras.txt
+CONFLICT (content): Merge conflict in listaCompras.txt
+Automatic merge failed; fix conflicts and then commit the result.
+AR0FVFH24YLQ05N:ej4 martiromero$ nano *txt
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+<<<<<<< HEAD
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+=======
+>Queso Rallado
+>5 Manzanas
+>12 Naranjas
+
+>>>>>>> lista2
+AR0FVFH24YLQ05N:ej4 martiromero$ nano *txt
+AR0FVFH24YLQ05N:ej4 martiromero$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   listaCompras.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+AR0FVFH24YLQ05N:ej4 martiromero$ git add *
+AR0FVFH24YLQ05N:ej4 martiromero$ git commit -m "feat: merges lista2 and solves conflict"
+[main 5ee9020] feat: merges lista2 and solves conflict
+AR0FVFH24YLQ05N:ej4 martiromero$ cat *txt
+>Leche
+>Pan
+>Lechuga
+>Tomate
+>Cebolla
+>Queso Cremoso
+>Huevos
+>Harina
+>Aceite
+>Vinagre
+>Queso Rallado
+>5 Manzanas
+>12 Naranjas
+
+AR0FVFH24YLQ05N:ej4 martiromero$ git remote add origin https://github.com/lvingman/git-ej4
+AR0FVFH24YLQ05N:ej4 martiromero$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+AR0FVFH24YLQ05N:ej4 martiromero$ git push --set-upstream origin main
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.03 KiB | 1.03 MiB/s, done.
+Total 12 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/lvingman/git-ej4
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+AR0FVFH24YLQ05N:ej4 martiromero$ 
+
