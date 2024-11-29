@@ -11,8 +11,10 @@ public class Main {
         int imc = persona3.calcularIMC();
         boolean mayorDeEdad = persona3.esMayorDeEdad();
 
-        System.out.println("La persona " + persona3.nombre + (imc == -1 ? " está por debajo del peso ideal" : imc == 0 ? " está en el peso ideal" : " está por encima del peso ideal"));
-        System.out.println("La persona " + persona3.nombre + (mayorDeEdad ? " es mayor de edad" : " no es mayor de edad"));
-        System.out.println(persona3.toString());
+        System.out.println("La persona " + persona3.nombre + (imc == -1 ? " está por debajo del peso ideal"
+                : imc == 0 ? " está en el peso ideal" : " está por encima del peso ideal"));
+        System.out.println(
+                "La persona " + persona3.nombre + (mayorDeEdad ? " es mayor de edad" : " no es mayor de edad"));
+        System.out.println(persona3);
     }
 }
