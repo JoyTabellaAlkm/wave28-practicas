@@ -21,5 +21,26 @@ public class Main {
 
         //endregion
 
+        //region Ejercicio Practico #2
+        /*Animal perro = new Perro("Perro","Tita");
+        perro.mostrarEspecie();
+        perro.hacerSonido();
+
+        Animal gato = new Gato("Gato","Tita");
+        gato.mostrarEspecie();
+        gato.hacerSonido();
+
+        Animal animal = perro;
+        animal.mostrarEspecie();
+        animal.hacerSonido();*/
+        //endregion
+
+        //region Ejercicio VIVO 1
+
+        PracticaExcepciones pe = new PracticaExcepciones();
+        pe.calcularCociente1();
+        pe.calcularCociente2();
+
+        //endregion
     }
 }
