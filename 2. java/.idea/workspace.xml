@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf61f44-f8f3-44d4-8dcf-4c4128e0067e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ejercicio/pom.xml" afterDir="false" />
+    <list default="true" id="8bf61f44-f8f3-44d4-8dcf-4c4128e0067e" name="Changes" comment="agrego ejercicio de java">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ejerP2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../POO-P1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../POO-P1/src/main/java/org/example/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejercicio/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicio/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,21 +30,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nuriarobledo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nuriarobledo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JoyTabellaAlkm/wave28-practicas.git",
-    "accountId": "0d001c83-7cba-4cec-b687-7b78e4293cf5"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JoyTabellaAlkm/wave28-practicas.git&quot;,
+    &quot;accountId&quot;: &quot;0d001c83-7cba-4cec-b687-7b78e4293cf5&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2pU6aejAWS23orX3bOrIE4wFrHr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,6 +55,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "robledo__nuria",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/nurobledo/Desktop/bootcamp/wave28-practicas/2. java",
@@ -74,11 +83,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732808371726</updated>
-      <workItem from="1732808372774" duration="1043000" />
+      <workItem from="1732808372774" duration="7867000" />
+      <workItem from="1732894081850" duration="75000" />
     </task>
+    <task id="LOCAL-00001" summary="agrego ejercicio de java">
+      <option name="closed" value="true" />
+      <created>1732815273704</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732815273704</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="agrego ejercicio de java" />
+    <option name="LAST_COMMIT_MESSAGE" value="agrego ejercicio de java" />
   </component>
 </project>

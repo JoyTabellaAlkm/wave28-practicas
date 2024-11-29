@@ -33,5 +33,9 @@ public class Main {
         }
         System.out.println("La ciudad con mayor temperatura es " + ciudadMaxTemp + " y fue de " + maxTemp);
         System.out.println("La ciudad con menor temperatura es " + ciudadMinTemp + " y fue de " + minTemp);
+
+
+
+
     }
 }
