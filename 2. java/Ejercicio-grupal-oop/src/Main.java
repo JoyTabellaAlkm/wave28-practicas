@@ -29,5 +29,7 @@ public class Main {
         } else {
             System.out.println("Es menor de edad!");
         }
+
+        System.out.println(personaConTodosLosAtributos);
     }
 }
