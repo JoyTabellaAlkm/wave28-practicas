@@ -6,8 +6,7 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Se ha producido un error.");
         } finally {
-            System.out.println("Programa finaliz" +
-                    "ado.");
+            System.out.println("Programa finalizado.");
         }
 
         try{
