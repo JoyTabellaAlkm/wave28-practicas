@@ -16,10 +16,10 @@ public class Distribuidora {
         };
 
         Producto[] noPerecederos = {
-                new NoPerecedero("Desodorante", 2000, "Granos"),
-                new NoPerecedero("Jabón", 3000, "Condimento"),
+                new NoPerecedero("Desodorante", 2000, "Aseo"),
+                new NoPerecedero("Jabón", 3000, "Aseo"),
                 new NoPerecedero("Azucar", 1000, "Dulce"),
-                new NoPerecedero("Papel higiénico", 500, "Grasa"),
+                new NoPerecedero("Papel higiénico", 500, "Aseo"),
                 new NoPerecedero("Vinagre", 700, "Acido")
         };
 
