@@ -1,8 +1,0 @@
-git init
-git config user.name "JoaquinDamianSeita"
-git config user.email "joaquindamianseita@gmail.com"
-touch lorem.txt
-nano lorem.txt
-git add .
-git commit -m "add lorem.txt"
-git push origin seita_joaquin
