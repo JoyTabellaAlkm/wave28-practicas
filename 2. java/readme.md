@@ -172,7 +172,8 @@ A partir de estos datos brindados, los organizadores de la carrera manifestaron 
 
 
 Crear 3 objetos de tipo categoría (uno por cada categoría) con sus respectivos datos.
-Crear un nuevo participante e inscribirlo en una categoría. Calcular el monto de inscripción que deberá abonar (Por ejemplo: si el participante se inscribe a la categoría Circuito chico y tiene 21 años, el monto a abonar es de $1500).
+Crear un nuevo participante e inscribirlo en una categoría. Calcular el monto de inscripción que deberá abon
+ar (Por ejemplo: si el participante se inscribe a la categoría Circuito chico y tiene 21 años, el monto a abonar es de $1500).
 Inscribir al azar algunos participantes en diferentes categorías (al menos uno en cada una).
 Mostrar por pantalla todos los inscriptos a una determinada categoría con sus correspondientes datos y número de inscripción.
 Desinscribir a un participante. Mostrar como queda la lista de inscriptos en la categoría donde se encontraba.
