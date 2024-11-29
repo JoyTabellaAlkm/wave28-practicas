@@ -1,5 +1,6 @@
 package com.mercadolibre;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,10 +27,11 @@ public class Distribuidora {
         productos.addAll(Arrays.asList(perecederos));
         productos.addAll(Arrays.asList(noPerecederos));
 
+        DecimalFormat format = new DecimalFormat("#.##");
         for (Producto producto : productos) {
             double totalCompra = producto.calcular(5);
             System.out.println("El total de la compra para 5 artículos del producto " + producto.getNombre() + " es: "
-                    + totalCompra);
+                    + format.format(totalCompra));
         }
 
     }
