@@ -39,18 +39,10 @@ public class Persona {
 
     public void imprimirResultadoIMC() {
         switch (this.calcularIMC()) {
-            case -1:
-                System.out.println("El nivel de peso es: BAJO");
-                break;
-            case 0:
-                System.out.println("El nivel de peso es: SALUDABLE");
-                break;
-            case 1:
-                System.out.println("El nivel de peso es: SOBREPESO");
-                break;
-            default:
-                System.out.println("No es posible calcular IMC");
-                break;
+            case -1 -> System.out.println("El nivel de peso es: BAJO");
+            case 0 -> System.out.println("El nivel de peso es: SALUDABLE");
+            case 1 -> System.out.println("El nivel de peso es: SOBREPESO");
+            default -> System.out.println("No es posible calcular IMC");
         }
     }
 
