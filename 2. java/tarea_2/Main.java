@@ -19,22 +19,31 @@ public class Main {
   static boolean[] rock = {false , false, true};
 
   //0 beginner, 1 medium, 2 advance
+  @SuppressWarnings("unchecked")
   static Set<Integer>[] code = new HashSet[3];// participants number
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] names = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] dni = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] lst_name = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] cel = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] rh = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, Integer>[] age = new HashMap[3];
+  @SuppressWarnings("unchecked")
   static Map<Integer, String>[] em_cel = new HashMap[3];//emergency
-  static Map<Integer, Integer> category_by_runner = new HashMap<>();
+  @SuppressWarnings("unchecked")
+  static Map<Integer, Integer> category_by_runner = new HashMap<Integer, Integer>();
 
   // methods 
   static void show_categories(){
     System.out.println("CATEGORIES FOR OUR MARATHONE");
       System.out.println("==================================================================");
     for(int i = 0; i < 3; ++i){
-      System.out.println(i + "Name: " + name_category[i]);
+      System.out.println("Id: " + i + " " + "Name: " + name_category[i]);
       System.out.println("Description: ");
       System.out.println("Distance: " + distance[i]);
       System.out.println("Forest: " + forest[i]);
@@ -43,9 +52,38 @@ public class Main {
       System.out.println("Rocks Climbing: " + rock[i]);
       System.out.println("==================================================================");
     }
+
+    for(int i = 0; i < 3; ++i){
+      code[i] = new HashSet<Integer>();
+      names[i] = new HashMap<>();
+      lst_name[i] = new HashMap<>();
+      age[i] = new HashMap<>();
+      dni[i] = new HashMap<>();
+      cel[i] = new HashMap<>();
+      rh[i] = new HashMap<>();
+      em_cel[i] = new HashMap<>();
+    }
   }
 
   static void show_by_category(){
+    System.out.println("RUNNERS BY CATEGORY");
+    System.out.println("==================================================================");
+    for(int i = 0; i < 3; ++i){
+      System.out.println("Category ID: " + i + " ");
+      for(Integer id : code[i]){
+        System.out.print("Code: " + id + ", ");
+        System.out.print("Name: " + names[i].get(id) + ", ");
+        System.out.print("DNI: " + dni[i].get(id) + ", ");
+        System.out.print("Last Name: " + lst_name[i].get(id) + ", ");
+        System.out.print("Cel: " + cel[i].get(id) + ", ");
+        System.out.print("Age: " + age[i].get(id) + ", ");
+        System.out.print("RH: " + rh[i].get(id) + ", ");
+        System.out.print("Emergency Cel: " + em_cel[i].get(id));
+        System.out.println();
+        System.out.println();
+      }
+      System.out.println("==================================================================");
+    }
   }
 
   public static void main(String[] args) {
@@ -58,7 +96,7 @@ public class Main {
     String[] lst_name_add = {"Arias", "Ramirez", "Sierra", "Arias"};
     String[] cel_add = {"42", "42", "42", "42"};
     String[] rh_add = {"A-", "O+", "B+", "AB"};
-    String[] em_cel_add = {"42", "42", "42"};
+    String[] em_cel_add = {"42", "42", "42", "42"};
     int[] age_add = {17, 18, 22, 24};
     //=========================================
 
@@ -67,14 +105,15 @@ public class Main {
     //=========================================
 
     BiConsumer<Integer, Integer> add_runner = (Integer i, Integer cat) -> {// cat for category
-      code[cat].add(codes_add[cat]);
-      names[cat].put(codes_add[cat], names_add[cat]);
-      lst_name[cat].put(codes_add[cat], lst_name_add[cat]);
-      dni[cat].put(codes_add[cat], names_add[cat]);
-      cel[cat].put(codes_add[cat], names_add[cat]);
-      rh[cat].put(codes_add[cat], rh_add[cat]);
-      age[cat].put(codes_add[cat], age_add[cat]);
-      em_cel[cat].put(codes_add[cat], em_cel_add[cat]);
+      code[cat].add(codes_add[i]);
+      names[cat].put(codes_add[i], names_add[i]);
+      lst_name[cat].put(codes_add[i], lst_name_add[i]);
+      dni[cat].put(codes_add[i], dni_add[i]);
+      cel[cat].put(codes_add[i], cel_add[i]);
+      rh[cat].put(codes_add[i], rh_add[i]);
+      age[cat].put(codes_add[i], age_add[i]);
+      em_cel[cat].put(codes_add[i], em_cel_add[i]);
+      System.out.println(i);
     };
 
     BiFunction<Integer, Integer, Integer> value_pay = (Integer cat, Integer age_cur) -> {
@@ -109,6 +148,7 @@ public class Main {
     rh[is_category].remove(id);
     age[is_category].remove(id);
     em_cel[is_category].remove(id);
+    category_by_runner.remove(id);
 
     show_by_category();
 
