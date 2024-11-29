@@ -1,4 +1,4 @@
-package p3.ejercicios_sincronicos;
+package p2.ejercicios_sincronicos;
 
 import java.util.ArrayList;
 import java.util.HashMap;
