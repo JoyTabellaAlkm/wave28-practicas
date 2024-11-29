@@ -1,3 +1,8 @@
+### USER DEFINED EXCEPTIONS ###
+
+# Ignores every .idea folder inside the repo
+**/.idea/
+
 ### Intellij+iml ###
 # User-specific stuff
 .idea/**/workspace.xml
