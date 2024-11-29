@@ -3,7 +3,6 @@ package poo.p2.ejercicios_asincronicos;
 public class ManejoCorrespondienteException {
 
     public static void main(String[] args) {
-
         //Mensaje final
         String mensajeFinal = "Este es el último mensaje";
 

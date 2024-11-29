@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Producto {
+    - nombre: String
+    - precio: double
+    + Producto(nombre: String, precio: double)
+    + toString()
+    + calcular(cantidadDeProductos: int)
+}
+note right of Producto : calcular() tiene que multiplicar\nel precio por la cantidad\nde productos pasados
+
+Producto <|-- Perecedero
+
+class Perecedero {
+    - diasPorCaducar: int
+    + Perecedero(nombre: String, precio: double, diasPorCaducar: int)
+    + toString()
+    + calcular()
+}
+
+note top of Perecedero : sobreescribir el método calcular(),\nel cual tiene que hacer lo mismo que la clase Producto\n(multiplicar el precio por la cantidad de productos)\n y adicionalmente, reducir el precio según los diasPorCaducar:\n- Si le resta un día (1) para caducar, se reducirá 4 veces el precio final.\n- Si le restan dos días (2) para caducar, se reducirá 3 veces el precio final.\n- Si le restan 3 días (3) para caducar, se reducirá la mitad de su precio final.
+
+Producto <|-- NoPerecedero
+
+class NoPerecedero {
+    - tipo: String
+    + NoPerecedero(nombre: String, precio: double, tipo: String)
+    + toString()
+    + calcular() {no override}
+}
+
+Producto <-- Distribuidora
+
+class Distribuidora {
+    - listaProductos: Producto[]
+    {static}+ main(args: String[]): void
+}
+@enduml
