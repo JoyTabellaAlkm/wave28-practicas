@@ -27,9 +27,10 @@ public class Distribuidora {
         double totalCompra = 0;
         for(Producto producto: listaProductos) {
            double total = producto.calcular(5);
-           System.out.println("x5 - \""+producto.getNombre()+"\": AR$"+total);
+           System.out.println("x5 | \""+producto.getNombre()+"\": AR$"+total + " | Precio Uni. AR$" + producto.getPrecio());
            totalCompra += total;
         }
+        System.out.println("==============================================================================");
         System.out.println("CANTIDAD DE PRODUCTOS COMPRADOS: " + listaProductos.size() * 5);
         System.out.println("PRECIO TOTAL: AR$" + totalCompra);
     }
