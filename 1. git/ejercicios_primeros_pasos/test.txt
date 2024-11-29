@@ -5,7 +5,6 @@ vim hola.txt
 mv ./hola.txt ./prueba2.txt
 mv ./prueba.txt ./prueba1.txt
 ls
-prueba2.txt
 rm prueba2.txt
 ls
 cd ..
