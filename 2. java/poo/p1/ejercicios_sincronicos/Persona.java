@@ -25,7 +25,6 @@ public class Persona {
 
     public int calcularIMC() {
         if (peso <= 0 && altura <= 0) {
-            System.out.println("No es posible calcular IMC");
             return -2;
         }
         double imc = this.peso / (Math.pow(this.altura, 2));
