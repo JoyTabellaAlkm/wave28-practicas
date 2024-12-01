@@ -1,0 +1,1 @@
+const isIOS=/iPhone|iPad/i.test(navigator.userAgent);if(isIOS){document.getElementsByTagName("body")[0].classList.add("is-ios")}

@@ -1,0 +1,1 @@
+const isIframe=window.self!==window.top,isVideoOrPreview=document.querySelector("input#isGeniallyVideoOrPrint"),iframeContainer=document.getElementsByClassName("iframe-container")[0],container=document.getElementsByClassName("genially-social")[0];isIframe||isVideoOrPreview?container.remove():iframeContainer.remove();
