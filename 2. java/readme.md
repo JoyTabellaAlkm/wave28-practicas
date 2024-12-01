@@ -437,3 +437,23 @@ public class PracticaExcepciones {
 ```
 
 2. Modificar el programa anterior para que, al producirse el error, en vez de imprimir por consola el mensaje “Se ha producido un error”, lo lance como una excepción de tipo IllegalArgumentException con el mensaje “No se puede dividir por cero”
+
+```java
+public class PracticaExcepciones {
+    private int a = 0;
+    private int b = 300;
+
+    public Double dividir() {
+       double resultado = 0;
+        try{
+            resultado = b/a;
+        } catch (ArithmeticException e){
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        } finally {
+            System.out.println("Programa finalizado.");
+        }
+        return resultado;
+    }
+}
+
+```
