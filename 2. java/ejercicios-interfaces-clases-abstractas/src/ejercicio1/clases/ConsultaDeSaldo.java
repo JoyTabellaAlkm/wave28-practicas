@@ -1,4 +1,6 @@
-package ejercicio1;
+package ejercicio1.clases;
+
+import ejercicio1.interfaces.ITransaccion;
 
 public class ConsultaDeSaldo implements ITransaccion {
 

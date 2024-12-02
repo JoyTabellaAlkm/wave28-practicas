@@ -1,5 +1,9 @@
 package ejercicio1;
 
+import ejercicio1.clases.Basic;
+import ejercicio1.clases.Cobradores;
+import ejercicio1.clases.Ejecutivo;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Banco {

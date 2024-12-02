@@ -1,4 +1,4 @@
-package ejercicio3;
+package ejercicio3.clases;
 
 public abstract class Animal {
     private String especie;

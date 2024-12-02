@@ -1,4 +1,4 @@
-package ejercicio3;
+package ejercicio3.interfaces;
 
 public interface IHerbivoro {
     void comerHierba();

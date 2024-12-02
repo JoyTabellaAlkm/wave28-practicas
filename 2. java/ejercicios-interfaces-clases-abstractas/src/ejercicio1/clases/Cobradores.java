@@ -1,4 +1,4 @@
-package ejercicio1;
+package ejercicio1.clases;
 
 public class Cobradores {
     private RetiroDeEfectivo retiroDeEfectivo;

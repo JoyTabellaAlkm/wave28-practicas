@@ -1,8 +1,13 @@
 package ejercicio2;
 
+import ejercicio2.clases.Curriculum;
+import ejercicio2.clases.Documento;
+import ejercicio2.clases.Informe;
+import ejercicio2.clases.LibroPdf;
+import ejercicio2.interfaces.IImpresorDocumento;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class ImpresorDocumento {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ejercicio2;
+package ejercicio2.clases;
 
 public class LibroPdf extends Documento{
     private int cantidadPaginas;

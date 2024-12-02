@@ -1,6 +1,8 @@
-package ejercicio1;
+package ejercicio1.clases;
 
-public class PagoDeServicios implements ITransaccion{
+import ejercicio1.interfaces.ITransaccion;
+
+public class PagoDeServicios implements ITransaccion {
     @Override
     public void transaccionOk() {
         System.out.println("El pago del servicio fue exitoso");

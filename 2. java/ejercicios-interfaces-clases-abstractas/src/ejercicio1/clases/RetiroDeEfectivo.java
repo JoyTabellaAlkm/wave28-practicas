@@ -1,6 +1,8 @@
-package ejercicio1;
+package ejercicio1.clases;
 
-public class RetiroDeEfectivo implements ITransaccion{
+import ejercicio1.interfaces.ITransaccion;
+
+public class RetiroDeEfectivo implements ITransaccion {
 
     @Override
     public void transaccionOk() {

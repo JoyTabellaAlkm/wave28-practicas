@@ -1,6 +1,8 @@
 package ejercicio3;
 
-import java.util.List;
+import ejercicio3.clases.Gato;
+import ejercicio3.clases.Perro;
+import ejercicio3.clases.Vaca;
 
 public class Main {
     public static void main(String[] args) {

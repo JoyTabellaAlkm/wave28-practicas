@@ -1,4 +1,6 @@
-package ejercicio3;
+package ejercicio3.interfaces;
+
+import ejercicio3.clases.Animal;
 
 public interface ICarnivoro {
     void comerCarne();

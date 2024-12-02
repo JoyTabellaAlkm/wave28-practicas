@@ -1,6 +1,8 @@
-package ejercicio3;
+package ejercicio3.clases;
 
-public class Vaca extends Animal implements IHerbivoro{
+import ejercicio3.interfaces.IHerbivoro;
+
+public class Vaca extends Animal implements IHerbivoro {
     public Vaca() {
         super("Vaca");
     }
