@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Distribuidora {
     public static void main(String[] args) {
         ArrayList<Producto> productos = new ArrayList<>();
-        ArrayList<Producto> productosPerecederos = new ArrayList<>();
-        ArrayList<Producto> productosNoPerecederos = new ArrayList<>();
+        ArrayList<Perecedero> productosPerecederos = new ArrayList<>();
+        ArrayList<NoPerecedero> productosNoPerecederos = new ArrayList<>();
 
         Perecedero carne = new Perecedero("Carne", 100, 5);
         Perecedero yogurt = new Perecedero("Yogurt", 20.5, 2);
@@ -47,7 +47,7 @@ public class Distribuidora {
 
     }
 
-    public static double calcularTotalProductos(ArrayList<Producto> productos) {
+    public static double calcularTotalProductos(ArrayList<? extends Producto> productos) {
         double total = 0;
 
         for(Producto producto: productos) {
