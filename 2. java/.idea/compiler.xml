@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ejerP2" />
         <module name="ejercicio" />
-        <module name="POO-P1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ejerP2" target="21" />
+      <module name="POO-P1" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
