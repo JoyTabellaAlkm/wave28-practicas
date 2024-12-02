@@ -45,10 +45,11 @@ public class Main {
         System.out.println("Costo mayor a 1000: ");
         System.out.println(lstVehiculosOrdenados4);
 
-        OptionalDouble promedio = garaje.getVehiculos().stream()
+        Double promedio = garaje.getVehiculos().stream()
                 .mapToDouble(v -> v.getCosto())
-                .average();
+                .average()
+                .orElse(0.0);
         System.out.println("Promedio costo: ");
-        System.out.println(promedio.getAsDouble());
+        System.out.println(promedio);
     }
 }
