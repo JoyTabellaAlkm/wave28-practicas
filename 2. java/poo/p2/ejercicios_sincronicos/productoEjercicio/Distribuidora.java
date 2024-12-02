@@ -7,6 +7,8 @@ public class Distribuidora {
     public static void main(String[] args) {
         List<Producto> listaProductos = new ArrayList<>();
 
+
+
         // Creamos los productos perecederos y no perecederos
         NoPerecedero noPerecedero1 = new NoPerecedero("Harina 0000", 1000, "Panaderia");
         NoPerecedero noPerecedero2 = new NoPerecedero("Harina 000", 890, "Panaderia");
