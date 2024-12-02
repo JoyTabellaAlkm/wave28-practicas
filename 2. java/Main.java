@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         //cargué manualmente las ciudades en un vector
-	    String ciudades[] = new String[10];
-	    ciudades[0] = "Londres";
-	    ciudades[1] = "Madrid";
+        String ciudades[] = new String[10];
+        ciudades[0] = "Londres";
+        ciudades[1] = "Madrid";
         ciudades[2] = "Nueva York";
         ciudades[3] = "Buenos Aires";
         ciudades[4] = "Asunción";
@@ -47,13 +47,13 @@ public class Main {
         String ciudadMaxima = ciudades[0];
 
         //Recorro la matriz de temperaturas para encontrar la mínima y la máxima
-        for(int f = 0; f < 10; f++){
-            for(int c = 0; c < 2; c++){
-                if(temperaturas[f][c] > max){
+        for (int f = 0; f < 10; f++) {
+            for (int c = 0; c < 2; c++) {
+                if (temperaturas[f][c] > max) {
                     ciudadMaxima = ciudades[f];
                     max = temperaturas[f][c];
                 }
-                if(temperaturas[f][c] < min){
+                if (temperaturas[f][c] < min) {
                     ciudadMinima = ciudades[f];
                     min = temperaturas[f][c];
                 }
