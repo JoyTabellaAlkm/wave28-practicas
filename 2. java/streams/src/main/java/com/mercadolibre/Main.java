@@ -1,5 +1,6 @@
 package com.mercadolibre;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -32,6 +33,7 @@ public class Main {
 
         // Ordenar por costo y marca
         System.out.println("Ordenado por marca y costo");
+        // Comparator.comparing(null).thenComparing(null);
         instancia1.getListaVehiculos()
                 .stream()
                 .sorted((a, b) -> {
