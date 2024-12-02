@@ -39,7 +39,6 @@ public class PerishableProduct extends Product
     }
 
     // TO STRING
-
     @Override
     public String toString() {
         return "[PerishableProduct]" +
