@@ -59,7 +59,7 @@ public class Main {
         Double Promedio = garage.stream()
                 .mapToDouble(Vehiculo::getPrecio)
                 .average()
-                .getAsDouble();
+                .orElse(0.0);
 
         System.out.printf("Promedio:  %,.2f\n" , Promedio);
 
