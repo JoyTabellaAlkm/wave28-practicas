@@ -17,6 +17,7 @@ public class Main {
                 new Vehiculo("Renault", "Logan", 950)
         ));
 
+        // Creamos una lista y le asiganamos la ordenada y despues la printamos, (la lista se imprime bien por el toString)
         // List<Vehiculo> listaOrdenaPrecio = garage.getListaVehiculos().stream().sorted((v1,v2) -> v1.getCosto() - v2.getCosto()).toList();
         // System.out.println(listaOrdenaPrecio);
 
@@ -39,8 +40,6 @@ public class Main {
         System.out.println();
 
         System.out.println("Promedio de costo");
-        System.out.println(garage.getListaVehiculos().stream().mapToInt(Vehiculo::getCosto).average());
-
-
+        System.out.println(garage.getListaVehiculos().stream().mapToInt(Vehiculo::getCosto).average().orElse(0.0));
     }
 }
