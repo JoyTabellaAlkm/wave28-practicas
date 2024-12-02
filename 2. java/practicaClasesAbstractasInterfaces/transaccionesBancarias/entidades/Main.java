@@ -1,8 +1,4 @@
-package practicaClasesAbstractasInterfaces;
-
-import practicaClasesAbstractasInterfaces.entidades.Basico;
-import practicaClasesAbstractasInterfaces.entidades.Cobradores;
-import practicaClasesAbstractasInterfaces.entidades.Ejecutivo;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package practicaClasesAbstractasInterfaces.entidades;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades;
 
 
-import practicaClasesAbstractasInterfaces.servicios.ConsultaSaldos;
-import practicaClasesAbstractasInterfaces.servicios.Retiro;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.ConsultaSaldos;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.Retiro;
 
 public class Cobradores  {
     ConsultaSaldos consultaSaldos;

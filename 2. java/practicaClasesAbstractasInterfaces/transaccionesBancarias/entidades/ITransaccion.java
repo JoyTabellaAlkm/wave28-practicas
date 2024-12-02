@@ -1,4 +1,4 @@
-package practicaClasesAbstractasInterfaces;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades;
 
 public interface ITransaccion {
      void transaccionOK();

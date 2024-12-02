@@ -1,8 +1,8 @@
-package practicaClasesAbstractasInterfaces.entidades;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades;
 
 
-import practicaClasesAbstractasInterfaces.servicios.Depositar;
-import practicaClasesAbstractasInterfaces.servicios.Transferencia;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.Depositar;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.Transferencia;
 
 public class Ejecutivo   {
 

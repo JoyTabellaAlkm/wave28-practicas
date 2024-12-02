@@ -1,6 +1,6 @@
-package practicaClasesAbstractasInterfaces.servicios;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios;
 
-import practicaClasesAbstractasInterfaces.ITransaccion;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.ITransaccion;
 
 public class Retiro implements ITransaccion {
     @Override

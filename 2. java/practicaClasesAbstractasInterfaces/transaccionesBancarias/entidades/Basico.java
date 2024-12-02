@@ -1,8 +1,8 @@
-package practicaClasesAbstractasInterfaces.entidades;
+package practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades;
 
-import practicaClasesAbstractasInterfaces.servicios.ConsultaSaldos;
-import practicaClasesAbstractasInterfaces.servicios.Depositar;
-import practicaClasesAbstractasInterfaces.servicios.PagoServicio;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.ConsultaSaldos;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.Depositar;
+import practicaClasesAbstractasInterfaces.transaccionesBancarias.entidades.servicios.PagoServicio;
 
 public class Basico {
     ConsultaSaldos consultaSaldos;
