@@ -19,14 +19,4 @@ public class Basic implements ConsultaDeSaldo, PagoDeServicios, RetiroDeEfectivo
     public void hacerRetiroDeEfectivo() {
         System.out.println("Se realiza retiro de efectivo");
     }
-
-    @Override
-    public void transaccionOk() {
-        System.out.println("Se realiza la transacción correctamente");
-    }
-
-    @Override
-    public void transaccionNoOk() {
-        System.out.println("No se pudo realizar la transacción");
-    }
 }

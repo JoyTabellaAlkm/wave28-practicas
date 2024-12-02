@@ -13,14 +13,4 @@ public class Ejecutivo implements Deposito, Transferencia {
     public void hacerTransferencia() {
         System.out.println("Se realiza la transferencia");
     }
-
-    @Override
-    public void transaccionOk() {
-        System.out.println("Se realiza la transacción correctamente");
-    }
-
-    @Override
-    public void transaccionNoOk() {
-        System.out.println("No se pudo realizar la transacción");
-    }
 }
