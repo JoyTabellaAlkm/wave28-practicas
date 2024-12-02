@@ -9,6 +9,6 @@ public class Habilidades {
 
     @Override
     public String toString() {
-        return STR."Habilidades: '\{nombre}'}";
+        return STR."Habilidades: '\{nombre}'";
     }
 }
