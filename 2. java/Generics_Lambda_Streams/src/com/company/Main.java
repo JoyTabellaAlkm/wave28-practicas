@@ -3,6 +3,15 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Animal perro = new Perro(true);
+        Animal gato = new Gato(true);
+        Animal vaca = new Vaca(false);
+        perro.emitirSonido();
+        gato.emitirSonido();
+        vaca.emitirSonido();
+        perro.comer();
+        gato.comer();
+        vaca.comer();
     }
 }
