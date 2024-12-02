@@ -1,6 +1,6 @@
 package Documents;
 
-abstract class Documents {
+public class Documents {
     protected String name;
     protected String content;
 
