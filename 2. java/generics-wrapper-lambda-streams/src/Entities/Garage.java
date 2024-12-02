@@ -17,9 +17,13 @@ public class Garage {
 
     public void printSortedByBrandAndCost(){
         vehicleList.stream()
-                .sorted((v1, v2) -> v1.getBrand().compareTo(v2.getBrand()) != 0 // Compares comparison to 0, in case it's equal it shall give that
-                ? v1.getBrand().compareTo(v2.getBrand()) //If comparison is different from 0, sort based on brand name
-                : v1.getCost() - v2.getCost()) // If comparison is equal to 0, sort shall be based on cost
+  //            .sorted((v1, v2) -> v1.getBrand().compareTo(v2.getBrand()) != 0 // Compares comparison to 0, in case it's equal it shall give that
+  //            ? v1.getBrand().compareTo(v2.getBrand()) //If comparison is different from 0, sort based on brand name
+  //            : v1.getCost() - v2.getCost()) // If comparison is equal to 0, sort shall be based on cost
+  //            .forEach(System.out::println);
+
+                .sorted(Comparator.comparing(Vehicle::getBrand)
+                .thenComparing(Vehicle::getCost))
                 .forEach(System.out::println);
     }
 
