@@ -25,12 +25,14 @@ public class Main {
         List<Vehiculo> vehiculos = List.of(vehiculo1,vehiculo2,vehiculo3,vehiculo4,vehiculo5,vehiculo6,vehiculo7,vehiculo8,vehiculo9,vehiculo10,vehiculo11);
         
        List<Vehiculo> vehiculosOrdenados = vehiculos.stream().sorted((v1, v2)-> (int) (v1.getPrecio()-v2.getPrecio())).toList();
-        System.out.println("vehiculosOrdenados = " + vehiculosOrdenados);
+       System.out.println("vehiculosOrdenados = " + vehiculosOrdenados);
 
-        
 
-        List<Vehiculo> ordenadoMarcaPrecio = vehiculos.stream().sorted((v1, v2)-> (int) (v1.getMarca().compareTo(v2.getMarca()))).toList();
-        System.out.println("ordenadoMarcaPrecio = " + vehiculosOrdenados);
+
+        List<Vehiculo> ordenadoMarcaPrecio = vehiculosOrdenados.stream().sorted((v1, v2)-> (int) (v1.getMarca().compareTo(v2.getMarca()))).toList();
+        System.out.println("ordenadoMarcaPrecio = " + ordenadoMarcaPrecio);
+
+
 
 
 
