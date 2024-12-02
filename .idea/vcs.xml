@@ -4,8 +4,5 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/01-Github/PracticaConflictos" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/01-Github/github" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/2. java/02-Java/Ejercicio1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/2. java/02-Java/Ejercicio2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/2. java/03-POO/POO1" vcs="Git" />
   </component>
 </project>
