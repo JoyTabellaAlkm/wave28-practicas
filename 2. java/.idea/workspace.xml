@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf61f44-f8f3-44d4-8dcf-4c4128e0067e" name="Changes" comment="agrego main">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8bf61f44-f8f3-44d4-8dcf-4c4128e0067e" name="Changes" comment="agrego main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +78,7 @@
       <workItem from="1732894562118" duration="34000" />
       <workItem from="1732910902355" duration="35000" />
       <workItem from="1732910952238" duration="61000" />
+      <workItem from="1733152396901" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="agrego ejercicio de java">
       <option name="closed" value="true" />
