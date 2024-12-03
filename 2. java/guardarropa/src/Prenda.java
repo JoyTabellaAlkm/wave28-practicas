@@ -1,4 +1,4 @@
-public class Prenda {
+public abstract class Prenda {
     String marca;
     String modelo;
 
