@@ -1,15 +1,9 @@
 package Dackar;
 
-public class SocorristaAuto implements ISocorrista{
+public class SocorristaAuto{
 
-    @Override
-    public void socorrer(Vehiculo vehiculo) {
-
-        System.out.println("Socorriendo auto " + vehiculo.getPatente() );
-    }
-
-    @Override
     public void socorrer(Auto auto) {
 
+        System.out.println("Socorriendo auto " + auto.getPatente() );
     }
 }

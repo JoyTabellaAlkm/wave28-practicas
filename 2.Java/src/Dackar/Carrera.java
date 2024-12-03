@@ -70,7 +70,7 @@ public class Carrera {
     }
 
     public void darDeAltaVehiculo(Vehiculo vehiculo){
-        if(listaVehiculo.size() < this.cantVehiculosPermitidos ){
+        if(listaVehiculo.size() < cantVehiculosPermitidos ){
             listaVehiculo.add(vehiculo);
         }else{
             System.out.println("No hay cupo para agregar un nuevo vehiculo");

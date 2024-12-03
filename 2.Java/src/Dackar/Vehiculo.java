@@ -79,7 +79,6 @@ public abstract class Vehiculo {
 
     public Double calcularPosicion(){
         return  velocidad * 0.5* aceleracion / (anguloGiro*(peso-cantRuedas * 100));
-
     }
 
 
