@@ -6,7 +6,7 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String dni;
-    private List<Reserva> reservas;
+    private List<Localizador> localizadores;
 
     public String getNombre() {
         return nombre;
@@ -32,18 +32,18 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public List<Reserva> getReservas() {
-        return reservas;
+    public List<Localizador> getLocalizadores() {
+        return localizadores;
     }
 
-    public void setReservas(List<Reserva> reservas) {
-        this.reservas = reservas;
+    public void setLocalizador(List<Localizador> localizadores) {
+        this.localizadores = localizadores;
     }
 
-    public Cliente(String nombre, String apellido, String dni, List<Reserva> reservas) {
+    public Cliente(String nombre, String apellido, String dni, List<Localizador> localizadores) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.reservas = reservas;
+        this.localizadores = localizadores;
     }
 }
