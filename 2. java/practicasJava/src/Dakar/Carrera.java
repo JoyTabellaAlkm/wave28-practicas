@@ -108,7 +108,8 @@ public class Carrera {
     }
 
     public void calcularGanador(){
-        vehiculos.stream().mapToDouble()
+        Vehiculo vehiculoGanador = vehiculos.stream().max((p1,p2)->Double.compare(p1.calcularValor(),p2.calcularValor())).get();
+        System.out.println(vehiculoGanador.toString());
     }
 
 }

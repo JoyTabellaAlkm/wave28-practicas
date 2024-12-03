@@ -65,7 +65,7 @@ public class Localizador {
         }
         else {
 
-            reservas.forEach();
+            System.out.println("dsgdgs");
 
 
 

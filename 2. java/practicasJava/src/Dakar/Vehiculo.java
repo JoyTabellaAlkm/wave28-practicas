@@ -78,7 +78,7 @@ public class Vehiculo {
                 ", ruedas=" + ruedas +
                 '}';
     }
-    public static double calcularValor() {
+    public  double calcularValor() {
         return velocidad * 0.5 * aceleracion / (anguloGiro * (peso - ruedas * 100));
     }
 }
