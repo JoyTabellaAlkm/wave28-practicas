@@ -4,7 +4,7 @@ public interface Imprimible {
 
     public void imprimir();
 
-    public static void imprimirDocumentos(Imprimible imprimible) {
+    public static void imprimirDocumento(Imprimible imprimible) {
         imprimible.imprimir();
     }
 

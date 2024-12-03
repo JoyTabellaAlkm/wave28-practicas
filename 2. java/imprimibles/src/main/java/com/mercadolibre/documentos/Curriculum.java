@@ -2,9 +2,7 @@ package com.mercadolibre.documentos;
 
 import java.util.List;
 
-import com.mercadolibre.imprimible.Imprimible;
-
-public class Curriculum implements Imprimible {
+public class Curriculum extends Documento {
 
     private String nombrePersona;
     private String telefonoPersona;

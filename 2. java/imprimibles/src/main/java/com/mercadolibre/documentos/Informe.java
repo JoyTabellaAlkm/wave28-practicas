@@ -1,8 +1,6 @@
 package com.mercadolibre.documentos;
 
-import com.mercadolibre.imprimible.Imprimible;
-
-public class Informe implements Imprimible {
+public class Informe extends Documento {
 
     private String texto;
     private int cantidadPaginas;

@@ -1,8 +1,6 @@
 package com.mercadolibre.documentos;
 
-import com.mercadolibre.imprimible.Imprimible;
-
-public class LibroPdf implements Imprimible {
+public class LibroPdf extends Documento {
 
     private int cantidadPaginas;
     private String nombreAutor;
