@@ -10,17 +10,6 @@ import java.util.List;
 
 public class RepositorioLocalizador {
     private List<Localizador> localizadores = new ArrayList<>();
-    /*public Localizador findLocalizadorPorDNI(String dni){
-        try{
-            List<Localizador> localizador = localizadores.stream().filter(c -> c.getDni().equals(dni)).toList();
-            if(!localizador.isEmpty()){
-                return localizador.get(0);
-            }
-            return null;
-        }catch (Exception e){
-            return null;
-        }
-    }*/
     public Localizador addLocalizador (List<Reserva> reservas, Cliente cliente, boolean esPaqueteCompleto){
         Localizador localizador = new Localizador();
         localizador.setCliente(cliente);

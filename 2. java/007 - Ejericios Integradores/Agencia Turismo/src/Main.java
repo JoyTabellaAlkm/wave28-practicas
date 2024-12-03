@@ -22,7 +22,6 @@ public class Main {
 
 
         Cliente cliente = new Cliente("12345","Pablo",25);
-        Cliente cliente1 = new Cliente("98765","Cesar",28);
 
         repositorioLocalizador.addLocalizador(List.of(reservaTransporte,reservaViaje,reservaHotel,reservaComida),cliente,true);
         repositorioLocalizador.addLocalizador(List.of(reservaViaje1,reservaViaje,reservaHotel,reservaHotel1),cliente,false);
