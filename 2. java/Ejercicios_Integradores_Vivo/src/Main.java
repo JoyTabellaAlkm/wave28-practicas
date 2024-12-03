@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Cliente cliente = new Cliente(12345, "mirtha");
@@ -36,5 +38,10 @@ public class Main {
         System.out.println(STR."TOTAL SIN DESCUENTO \{localizador3.getMontoTotal()}");
         localizador3.aplicarDescuento();
         System.out.println(STR."TOTAL CON DESCUENTO \{localizador3.getTotalConDescuento()}");
+
+        LocalizadorService localizadorService = new LocalizadorService(List.of(localizador1,localizador2,localizador3));
+        System.out.println(localizadorService.cantidadLocalizadores());
+        System.out.println(localizadorService.obtenerMapaReservasPorTipo());
+        System.out.println(localizadorService.cantidadReservas());
     }
 }
