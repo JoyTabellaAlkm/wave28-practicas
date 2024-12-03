@@ -6,35 +6,45 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Supermercado {
-    public static void main(String[] args) {
-        // Parte 1
-       Cliente cliente1 = new Cliente("111", "Lucas", "Perez");
-       Cliente cliente2 = new Cliente("222", "Juan", "Lopez");
-       Cliente cliente3 = new Cliente("333", "Agustin", "Gomez");
+    List<Factura> facturas;
+    List<Item> items;
+    List<Cliente> clientes;
 
-        List<Cliente> clientes = new ArrayList<>(List.of(cliente1, cliente2, cliente3));
-        System.out.println("Creacion y muestra 3 clientes");
-        clientes.forEach(System.out::println);
-
-        System.out.println("\nEliminación cliente y muestra clientes restantes");
-        clientes.remove(cliente1);
-        clientes.forEach(System.out::println);
-
-        System.out.println("\nIngrese un dni para buscar al cliente deseado: ");
-        Scanner scanner = new Scanner(System.in);
-        String dniIngresado = scanner.nextLine();
-
-        Optional<Cliente> clienteHallado = clientes.
-                stream().
-                filter(c -> c.getDni().equals(dniIngresado)).
-                findFirst();
-
-        if (clienteHallado.isPresent()) {
-            System.out.println(clienteHallado.get());
-        } else {
-            System.out.println("El cliente no existe para el dni ingresado");
-        }
-
-        // Fin parte 1
+    public Supermercado() {
+        this.facturas = new ArrayList<>();
+        this.items = new ArrayList<>();
+        this.clientes = new ArrayList<>();
     }
+
+    public List<Factura> getFacturas() {
+        return facturas;
+    }
+
+    public void crearFactura(Factura factura) {
+        if (!existeCliente(factura.getCliente())) {
+            throw new IllegalArgumentException("El cliente asociado a la factura no esta registrado, asigne uno válido");
+        }
+        facturas.add(factura);
+    }
+
+    public boolean existeCliente(Cliente cliente) {
+        return clientes.contains(cliente);
+    }
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+
 }

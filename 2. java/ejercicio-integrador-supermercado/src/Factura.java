@@ -14,7 +14,7 @@ public class Factura {
     private double calcularCosto() {
         return this.items.
                 stream().
-                mapToDouble(Item::getCostoUnitario).
+                mapToDouble(i -> i.getCostoUnitario() * i.getCantidad()).
                 sum();
     }
 
