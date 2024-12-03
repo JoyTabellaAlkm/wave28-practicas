@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89a4e5cb-7ee2-4393-9eb8-eaecc4500fce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../POO_p1/PracticaExcepciones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POO_p2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POO_p2/NoPerecedero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POO_p2/Perecedero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POO_p2/Producto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../p1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../p3/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../p3/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733158492642</updated>
-      <workItem from="1733158494032" duration="6166000" />
+      <workItem from="1733158494032" duration="7107000" />
     </task>
     <servers />
   </component>
