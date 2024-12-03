@@ -1,0 +1,58 @@
+@startuml
+'https://plantuml.com/class-diagram
+'class Agencia {
+'    - localizadorRepository
+'    - clienteRepository
+'    + adquirirPaqueteCompleto(dni: String)
+'    + adquirirReserva(dni: String)
+'    + adquirirReserva(localizador: Localizador)
+'}
+
+class Localizador {
+    - id: Integer
+    - cliente
+    - total
+    - List<Reservable>
+    + calcularTotal()
+}
+
+class Cliente {
+    - nombre
+    - apellido
+    - dni: String
+    - celular
+}
+
+interface Reservable {
+    + calcularPrecio()
+    + getTipo()
+}
+
+class ReservaGenerica implements Reservable {
+    - tipo: String
+    - precio: Double
+    - cantidad: Integer
+    + calcularPrecio(): Double
+}
+
+abstract class GenericRepository<T, K> {
+   - List<T> listaObjetos: ArrayList<T>
+   + buscarPorID(K id)
+   + crear(T objetoGenerico)
+}
+
+class ClienteRepository extends GenericRepository<Cliente, String> {
+}
+
+Cliente <-- ClienteRepository
+
+class LocalizadorRepository extends GenericRepository<Localizador, Integer> {
+}
+
+Localizador <-- LocalizadorRepository
+
+Cliente <-- Localizador
+
+Reservable <-- Localizador
+
+@enduml
