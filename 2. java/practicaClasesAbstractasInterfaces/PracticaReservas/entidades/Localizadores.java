@@ -31,9 +31,8 @@ public class Localizadores {
         this.total = total;
     }
 
-    public Localizadores(Clientes cliente, Double total, List<String> listaReserva) {
+    public Localizadores(Clientes cliente, List<String> listaReserva) {
         this.cliente = cliente;
-        this.total = total;
         this.listaReserva = listaReserva;
     }
 

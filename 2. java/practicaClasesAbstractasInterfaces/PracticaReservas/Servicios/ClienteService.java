@@ -9,11 +9,9 @@ import java.util.Optional;
 public class ClienteService implements Icliente {
 
     RespositorioClientes respositorioClientes = new RespositorioClientes();
-    RepositorioLocalizadores repositorioLocalizadores = new RepositorioLocalizadores();
 
     public ClienteService(RespositorioClientes respositorioClientes, RepositorioLocalizadores repositorioLocalizadores) {
         this.respositorioClientes = respositorioClientes;
-        this.repositorioLocalizadores = repositorioLocalizadores;
     }
 
     public ClienteService() {
@@ -31,11 +29,7 @@ public class ClienteService implements Icliente {
         System.out.println("Lista de clientes: " + respositorioClientes.getListClientes());
         // Realizar la búsqueda del cliente
         Optional<Clientes> cliente = respositorioClientes.getListClientes().stream()
-                .filter(c -> {
-                    boolean match = c.getDni().trim().equalsIgnoreCase(dni.trim());
-                    System.out.println("Comparando " + c.getDni() + " con " + dni + ": " + match);
-                    return match;
-                })
+                .filter(c -> c.getDni().trim().equalsIgnoreCase(dni.trim()))
                 .findFirst();
         // Retornar el cliente encontrado (opcional)
         return cliente;
