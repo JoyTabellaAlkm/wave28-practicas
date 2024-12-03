@@ -1,24 +1,24 @@
 package classes;
 
 public class Item {
-    private String código;
+    private int codigo;
     private String nombre;
     private int cantidadComprada;
     private double costoUnitario;
 
-    public Item(String código, String nombre, int cantidadComprada, double costoUnitario) {
-        this.código = código;
+    public Item(int código, String nombre, int cantidadComprada, double costoUnitario) {
+        this.codigo = código;
         this.nombre = nombre;
         this.cantidadComprada = cantidadComprada;
         this.costoUnitario = costoUnitario;
     }
 
-    public String getCódigo() {
-        return código;
+    public int getCódigo() {
+        return codigo;
     }
 
-    public void setCódigo(String código) {
-        this.código = código;
+    public void setCódigo(int código) {
+        this.codigo = código;
     }
 
     public String getNombre() {
@@ -43,5 +43,15 @@ public class Item {
 
     public void setCostoUnitario(double costoUnitario) {
         this.costoUnitario = costoUnitario;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                ", cantidadComprada=" + cantidadComprada +
+                ", costoUnitario=" + costoUnitario +
+                '}';
     }
 }
