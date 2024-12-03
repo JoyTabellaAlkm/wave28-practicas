@@ -1,4 +1,4 @@
-package ejercicios.integradores.Supermercado;
+package ejercicios.integradores.Supermercado.modelo;
 
 public class Cliente {
     private int dni;
@@ -19,4 +19,6 @@ public class Cliente {
     public int getDni() {
         return dni;
     }
+
+
 }
