@@ -16,6 +16,18 @@ public class Main {
         clientes.forEach(c -> System.out.println(String.format("%s %s - %s", c.getNombre(), c.getApellido(), c.getDni())));
 
         buscarCliente(clientes);
+
+        // PARTE 2
+        Item i1 = new Item(1l, "Queso", 10, 100);
+        Item i2 = new Item(2l, "Milanesa", 2, 300);
+        Cliente cli = new Cliente("884712", "Pepe", "Francisco");
+        List<Item> listaItems = List.of(i1, i2);
+
+        if (!clientes.contains(cli))
+            clientes.add(cli);
+        Factura factura = new Factura(cli, listaItems,
+                listaItems.stream().map(i -> i.getCantidad()*i.getCostoUnitario()).reduce(Double::sum).orElse(0d));
+
     }
 
     public static void buscarCliente(List<Cliente> clientes) {

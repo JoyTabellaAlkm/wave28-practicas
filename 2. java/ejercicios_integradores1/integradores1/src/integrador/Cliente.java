@@ -34,4 +34,11 @@ public class Cliente {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null || !(obj instanceof Cliente))
+            return false;
+        return ((Cliente) obj).getDni().equals(this.getDni());
+    }
 }
