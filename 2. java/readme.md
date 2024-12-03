@@ -473,3 +473,81 @@ Si le restan 3 días (3) para caducar, se reducirá la mitad de su precio final.
 3. Crear la clase NoPerecedero, la misma va a tener un atributo llamado tipo, el mismo va a ser un String, crear setters, getters, constructor y método toString(); en esta clase el método calcular() va a hacer exactamente lo mismo que en la clase Producto.
 
 4. Crear una clase ejecutable llamada Distribuidora donde van a crear un array de productos, imprimir el precio total al vender 5 productos de cada tipo. Crear los elementos del array con los datos que quieras.
+
+## Clases Abstractas e Interfaces - VIVO - Ejercicio 1
+
+Un banco tiene diferentes tipos de transacciones que puede llevar a cabo, entre ellas se encuentran: Depósito, Transferencia, Retiro de Efectivo, Consulta de Saldo, Pago de Servicios. Todas las transacciones tienen dos métodos en común, que son transaccionOk() y transaccionNoOk().
+
+A partir de esto existen diferentes tipos de clientes que pueden interactuar con el banco:
+
+
+Ejecutivos: Realizan Depósitos y Transferencias.
+Basic: Realizan consultas de saldo, pagos de servicios y retiro de efectivo.
+Cobradores: Realizan retiro de efectivo y consulta de saldos.
+
+Implementar el escenario según corresponda para permitir a los clientes mencionados con anterioridad, el acceso a los diferentes métodos según la operación que deseen realizar.
+
+
+Notas a tener en cuenta:
+
+No es necesario implementar cálculos o funciones matemáticas. Los métodos pueden ser implementaciones de mensajes mediante System.out.println. Por ejemplo, al hacer un depósito, que aparezca el mensaje “Realizándose depósito”.
+Basic, Cobrador y Ejecutivos pueden ser tratados como clases.
+Transacción puede ser tratada como una Interfaz. Tener en cuenta que existen diferentes tipos de transacciones que implementarán esta interfaz principal.
+
+## Clases Abstractas e Interfaces - VIVO - Ejercicio 2
+
+Se plantea desarrollar un programa que permita mediante una interfaz imprimir diferentes tipos de documentos.
+
+Entre los tipos de documentos se encuentran:
+
+
+Curriculums: incluye a una persona con todos sus atributos más una lista de sus habilidades.
+Libros en PDF: Incluyen atributos como cantidad de páginas, nombre del autor, título y género.
+Informes: Incluyen un texto de n longitud, cantidad de páginas, autor, y revisor.
+Representar un escenario donde se creen cada uno de estos objetos y que, por medio de un método estático de una interfaz imprimible, se pueda pasar cualquier tipo de documento y sea impreso el contenido. 
+
+## Clases Abstractas e Interfaces - VIVO - Ejercicio 3
+
+Se solicita la creación de una clase abstracta denominada Animal, de la cual deriven 3 animales: Perro, Gato y Vaca. Los 3 animales son capaces de “emitir sonidos”, para ello será necesario implementar un método que permita mostrar por pantalla el sonido que emite cada animal. Por ejemplo, en el caso del perro “guau”, el gato “miau” y la vaca “muuu”.
+
+A partir de esto, teniendo en cuenta los gustos alimenticios de cada animal (gato y perro son considerados carnívoros y la vaca un hervíboro), incluir las interfaces necesarias para contemplar los métodos comerCarne o comerHierba.
+
+Una vez realizado lo mencionado, llevar a cabo en el Main la creación de diferentes animales y la invocación de sus respectivas implementaciones de métodos.
+
+
+Como propuesta extra se sugiere llamar a un método comerAnimal donde a partir del pasaje de un objeto de cualquier tipo de animal como parámetro, invoque al método para comer según corresponda a dicho animal.
+
+## Ejercicios Integradores - P1 - VIVO
+
+### Agencia de turismo
+
+Una agencia de viajes premia a sus viajeros con descuentos cuando desean adquirir algún paquete turístico, el cual consiste en reservas de hotel, comida, boletos de viajes y transporte. Las reservas son almacenadas en localizadores, los cuales contienen los datos del cliente, el total y la reserva o varias reservas dependiendo del producto adquirido. Por tanto los descuentos se aplicarán cuando:
+
+Si un cliente anteriormente adquirió al menos 2 localizadores, se le descontará un 5% del total para futuras compras.
+Si un cliente adquiere un paquete completo que consiste en reserva de hotel, comida, boletos de viajes, transporte, recibirá un descuento del 10% del total de la factura.
+Si un cliente adquiere 2 reservas de hotel o 2 boletos de viaje, se aplicará un descuento de 5% en esas reservas.
+Al momento de generar el localizador se debe almacenar en una clase repositorio y se imprimirá el mismo con los detalles de la compra.
+
+Se requiere crear un repositorio cliente, para así poder buscar las reservas anteriores del cliente y aplicar descuentos; en caso de no existir el cliente poder agregarlo al repositorio cliente.
+
+
+1. Parte I 
+
+    Presentar un escenario donde:
+
+    - Crear un localizador con un paquete completo para un cliente, almacenar e imprimir el resultado.
+    - Crear un localizador con 2 reservas de hotel y 2 de boletos para el mismo cliente anterior, almacenar e imprimir el resultado.
+    - Crear un localizador con una sola reserva para el mismo cliente.
+    - Verificar que los descuentos fueron aplicados.
+
+
+2. Parte II (Opcional)
+
+    Agregar una clase que permita realizar las siguientes consultas sobre los localizadores vendidos, empleando diferentes métodos que muestren:
+
+
+    - Cantidad de localizadores vendidos.
+    - Cantidad total de reservas.
+    - Obtener un diccionario de todas las reservas clasificados por tipo (hotel, boleto,comida,transporte).
+    - Total de ventas.
+    - Promedio de todas las ventas.
