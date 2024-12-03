@@ -1,6 +1,5 @@
 package ejercicios_integradores.save_the_ropa;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,14 +17,14 @@ public class GuardaRopa {
     }
 
     public Integer guardarPrendas(List<Prenda> listaDePrenda) {
-        int nroIdentificador = this.contadorListasPrenda;
-        this.mapaListaPrendas.put(this.contadorListasPrenda, listaDePrenda);
-        this.contadorListasPrenda++;
+        int nroIdentificador = contadorListasPrenda;
+        mapaListaPrendas.put(contadorListasPrenda, listaDePrenda);
+        contadorListasPrenda++;
         return nroIdentificador;
     }
 
     public void mostrarPrendas() {
-        if (this.mapaListaPrendas.isEmpty()) {
+        if (mapaListaPrendas.isEmpty()) {
             System.out.println("El guardaropas se encuentra vacío...");
         } else {
             this.mapaListaPrendas.forEach((key, listaItem) -> {
