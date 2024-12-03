@@ -1,8 +1,8 @@
-import Clientes.Basic;
-import Clientes.Ejecutivo;
+package Banco;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Banco.Cliente.Basic;
+import Banco.Cliente.Ejecutivo;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -19,4 +19,6 @@ public class Main {
 
 
     }
+
+
 }

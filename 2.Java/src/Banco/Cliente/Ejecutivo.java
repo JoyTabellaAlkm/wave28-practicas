@@ -1,6 +1,6 @@
-package Clientes;
+package Banco.Cliente;
 
-import Transacciones.*;
+import Banco.Transacciones.*;
 
 public class Ejecutivo extends Cliente{
     // inicializo la operacion

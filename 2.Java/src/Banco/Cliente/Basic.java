@@ -1,8 +1,9 @@
-package Clientes;
+package Banco.Cliente;
 
-import Transacciones.*;
 
-public class Basic extends Clientes.Cliente {
+import Banco.Transacciones.*;
+
+public class Basic extends Cliente {
     // inicializo la operacion
     Operacion deposito= new Desposito();
     Operacion transferencia= new Transferencia();

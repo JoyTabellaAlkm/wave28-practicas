@@ -1,6 +1,6 @@
-package Clientes;
+package Banco.Cliente;
 
-import Transacciones.*;
+import Banco.Transacciones.*;
 
 public class Cobrador extends Cliente{
     // inicializo la operacion

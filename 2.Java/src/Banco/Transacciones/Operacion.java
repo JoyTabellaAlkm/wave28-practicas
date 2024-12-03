@@ -1,4 +1,4 @@
-package Transacciones;
+package Banco.Transacciones;
 
 public class Operacion implements iTransaccion{
 

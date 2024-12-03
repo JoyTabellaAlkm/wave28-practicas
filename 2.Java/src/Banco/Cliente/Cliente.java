@@ -1,4 +1,5 @@
-package Clientes;
+package Banco.Cliente;
+import Banco.Transacciones.*;
 
 public abstract class Cliente {
     private Double saldoActual=1000.0;
