@@ -1,4 +1,14 @@
-package PACKAGE_NAME;
+public class SerieDeDos extends Prototipo {
+    public SerieDeDos(Integer valorInicial) {
+        super(valorInicial);
+    }
 
-public class SerieDeDos {
+    @Override
+    public Integer devolverSiguienteValor() {
+        if(this.valorActual.equals(2)) {
+            return this.valorActual;
+        }
+        this.valorActual += 2;
+        return this.valorActual;
+    }
 }
