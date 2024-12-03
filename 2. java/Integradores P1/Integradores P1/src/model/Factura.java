@@ -39,4 +39,13 @@ public class Factura {
     public void setListaItems(List<Item> listaItems) {
         this.listaItems = listaItems;
     }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "codigo=" + codigo +
+                ", cli=" + cli +
+                ", listaItems=" + listaItems +
+                '}';
+    }
 }

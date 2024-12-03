@@ -1,4 +1,5 @@
 import model.Cliente;
+import repository.ClienteImp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,67 +44,25 @@ public class Main {
         }
     }*/
     //endregion
-    public static void main(String[] args) {
-        //region Ejercicio 2
-
-
-        //endregion
+    public static <clienteImp> void main(String[] args) {
 
 
         //region Ejercicio 3
-
-        /*//creamos 3 clientes
+        ClienteImp cliImp = new ClienteImp();
+        Scanner teclado = new Scanner(System.in);
+        //creamos 3 clientes
         Cliente cli1 = new Cliente(12345678L, "Luisina", "De Paula");
         Cliente cli2 = new Cliente(762836745L, "Zlatan", "Ibrahimovic");
         Cliente cli3 = new Cliente(90987653L, "Avril", "Lavigne");
-        //agregamos una collection
-        List<Cliente> listaClientes = new ArrayList<Cliente>();
-        listaClientes.add(cli1);
-        listaClientes.add(cli2);
-        listaClientes.add(cli3);
 
-        for (Cliente c : listaClientes){
-            System.out.printf("Dni: " + c.getDni());
-            System.out.printf("Nombre: " + c.getNombre());
-            System.out.printf("Apellido: " + c.getApellido());
-        }
-
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese el dni de la persona a borrar");
-        Long dniBorrado = teclado.nextLong();
-        boolean bandera = false;
-
-        for (Cliente c : listaClientes){
-            if(c.getDni().equals(dniBorrado)){
-                listaClientes.remove(c);
-                bandera = true;
-                break;
-            }
-        }
-        if(bandera == false){
-            System.out.println("No se encontro el cliente a borrar");
-        }else{
-            System.out.println("Cliente borrado correctamente");
-        }
-
-        System.out.println("Ingrese el dni buscar");
+        cliImp.save(cli1);
+        cliImp.mostrarPantalla();
         Long dniBuscado = teclado.nextLong();
+        cliImp.buscar(dniBuscado);
 
-        bandera = false;
-        for(Cliente c : listaClientes){
-            if(c.getDni().equals(dniBuscado)){
-                System.out.println("----Cliente encontrado, sus datos son: ");
-                System.out.printf("Dni: " + c.getDni());
-                System.out.printf("Nombre: " + c.getNombre());
-                System.out.printf("Apellido: " + c.getApellido());
-                break;
-            }
-        }
-        if(bandera == false){
-            System.out.println("Cliente no encontrado");
-        }
-*/
-        //endregion Ejercicio 3
+        System.out.println("Ingrese el dni para eliminar");
+        Long dniBorrado = teclado.nextLong();
+        cliImp.eliminar(dniBorrado);
 
     }
 
