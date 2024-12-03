@@ -1,6 +1,6 @@
 package com.mercadolibre.transacciones;
 
-public class PagoServicios implements Transaccion {
+public class PagoServicio implements Transaccion {
 
     @Override
     public void transaccionOk() {
