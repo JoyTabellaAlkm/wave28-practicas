@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Reserva;
 
 public class ReservaComida extends Reserva{
     private Integer noPlatos;

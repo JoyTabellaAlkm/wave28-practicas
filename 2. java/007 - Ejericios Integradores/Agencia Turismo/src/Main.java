@@ -1,6 +1,10 @@
 import Modelo.*;
+import Modelo.Reserva.ReservaComida;
+import Modelo.Reserva.ReservaHotel;
+import Modelo.Reserva.ReservaTransporte;
+import Modelo.Reserva.ReservaViaje;
+import Repositorio.RepositorioLocalizador;
 
-import java.awt.*;
 import java.util.List;
 
 public class Main {

@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Reserva;
 
 public class ReservaTransporte extends Reserva{
     private String medioTransporte;

@@ -1,9 +1,12 @@
-package Modelo;
+package Repositorio;
+
+import Modelo.*;
+import Modelo.Reserva.Reserva;
+import Modelo.Reserva.ReservaHotel;
+import Modelo.Reserva.ReservaViaje;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RepositorioLocalizador {
     private List<Localizador> localizadores = new ArrayList<>();

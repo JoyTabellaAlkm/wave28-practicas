@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Reserva;
 
 public class ReservaHotel extends Reserva{
     private String nombreHotel;

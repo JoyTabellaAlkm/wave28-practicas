@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Reserva.Reserva;
+
 import java.util.List;
 
 public class Localizador {
