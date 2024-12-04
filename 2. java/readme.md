@@ -571,3 +571,102 @@ Se requiere crear un repositorio cliente, para así poder buscar las reservas an
     - Obtener un diccionario de todas las reservas clasificados por tipo (hotel, boleto,comida,transporte).
     - Total de ventas.
     - Promedio de todas las ventas.
+
+## Ejercicio Integrador - Parte II 🚀
+
+### Supermercado
+
+Luego de la primera entrega satisfactoria, el Project Manager en conjunto con un analista funcional recabaron nuevos requerimientos para llevar a cabo una segunda parte de desarrollo en un nuevo sprint. Éstos se citan a continuación:
+
+
+#### Parte II
+
+- Crear una nueva factura.
+- Antes de querer agregar una factura a una collection de facturas tener en cuenta que:
+    - Será necesario validar si el cliente asociado a la factura se encuentra registrado en la collection de clientes. En caso de que no, el mismo deberá ser creado.
+    - Será necesario crear una lista de items y asociarla a la factura creada.
+    - El campo total de la factura es un campo calculado, por lo cual, para poder asignar este valor deberemos recorrer la lista de items y realizar las operaciones matemáticas necesarias para obtener el total.
+
+#### Bonus
+
+- Con la finalidad de optimizar el código, se requiere la creación de una interfaz “CRUD” que sea capaz de contener, mediante genéricos, todos los métodos necesarios para realizar altas, bajas, modificaciones y consultas.
+- Crear o utilizar las correspondientes clases que sean capaz de implementar los métodos de la interfaz creada en el punto anterior.
+- Modificar el método main para que, en lugar de realizar todo el código de manera secuencial, se pueda modularizar mediante el llamado de métodos.
+
+## Ejercicios Integradores - P2 - VIVO
+
+### DAKAR
+
+Hacer punto por punto ordenadamente, sin saltear.
+
+Realizar los diagramas de clase correspondientes en cada paso y aplicar los cambios a medida que vamos resolviendo los distintos puntos.
+
+
+- Crear la clase vehículo que tenga los siguientes atributos:
+    - Velocidad
+    - Aceleración
+    - AnguloDeGiro
+    - Patente
+    - Peso
+    - Ruedas
+
+- Modelar la clase Carrera que tiene los siguientes atributos:
+    - Distancia
+    - PremioEnDolares
+    - Nombre
+    - CantidadDeVehiculosPermitidos
+    - Lista de Vehiculos
+
+- Se quiere agregar dos nuevas categorías de Vehiculos:
+    - Autos
+    - Motos.
+
+    Los autos pesan 1.000 kilos y las motos 300 kilos, los autos tienen 4 ruedas y las motos 2.
+
+
+- Una carrera además tiene un conjunto de vehículos que participarán de la misma. Entonces, ahora la carrera va a tener la responsabilidad de poder agregar a un vehículo, por lo que debemos definir los siguientes métodos:
+    ```java 
+    public void darDeAltaAuto(velocidad,aceleracion,AnguloDeGiro,patente);
+
+    public void darDeAltaMoto(velocidad,aceleracion,AnguloDeGiro,patente); 
+    ```
+
+    Ambos métodos agregan un vehículo siempre y cuando haya cupo.
+
+
+    También vamos a tener la posibilidad de eliminar a un vehículo mediante dos métodos:
+    ```java
+    public void eliminarVehiculo(vehículo);
+
+    public void eliminarVehiculoConPatente String unaPatente);
+    ```
+- Queremos poder definir el ganador de una carrera:
+
+    El ganador será aquel que tenga el máximo valor determinado por la siguiente fórmula:
+    ```
+    Velocidad * ½ Aceleracion / (AnguloDeGiro*(Peso-Cantidad de Ruedas * 100)
+    ```
+
+- Las carreras también cuentan con vehículos socorristas que ante alguna emergencia van y reparan a un vehículo. Como los autos son muy diferentes a las motos, existen dos clases distintas de vehículos socorristas. Uno de estos solo sabe socorrer autos y otro solo sabe socorrer motos.
+
+    Agregar las clases
+            SocorristaAuto
+
+            SocorristaMoto
+
+    Agregar los métodos:
+                    SocorristaAuto → public void socorrer(Auto unAuto)
+
+            SocorristaMoto → public void socorrer(Moto unaMoto)
+
+
+    Cuando un socorrista se acerca a un auto imprime por pantalla “Socorriendo auto” y el número de patente, cuando socorre a una moto este imprime por pantalla “Socorriendo moto” y el número de patente.
+
+
+    Agregar a la clase carrera un socorrista de autos y uno de motos,.
+    Agregar a la carrera la responsabilidad de socorrer una moto y un auto:
+            
+
+    public void socorrerAuto(String patente);
+
+            public void socorrerMoto(String patente);
