@@ -65,6 +65,13 @@ public class Main {
         System.out.println("Con descuento por fidelidad: " + localizadorService.calcularPrecioFinal(localizador4));
         localizadorRepository.crear(localizador4);
 
+        System.out.println("========= PARTE 2 (OPCIONAL) =========");
+        System.out.println("Total de localizadores vendidos: " + localizadorService.obtenerTotalLocalizadores());
+        System.out.println("Total de reservas vendidas: " + localizadorService.obtenerTotalReservas());
+        System.out.println("Clasificación de reservas por tipo: ");
+        System.out.println(localizadorService.obtenerMapaReservasPorTipo());
+        System.out.println("Total generado por ventas: " + localizadorService.obtenerTotalVentas());
+        System.out.println("Promedio total generado por ventas: " + localizadorService.obtenerPromedioTotalVentas());
 
     }
 }
