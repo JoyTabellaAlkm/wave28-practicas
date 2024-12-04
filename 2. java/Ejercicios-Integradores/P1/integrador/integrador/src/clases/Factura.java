@@ -7,11 +7,13 @@ public class Factura {
     private Cliente cliente;
     private List<Item> items;
     private double total;
+    private int id;
 
-    public Factura(Cliente cliente, List<Item> items, double total) {
+    public Factura(int id, Cliente cliente, List<Item> items, double total) {
         this.cliente = cliente;
         this.items = items;
         this.total = total;
+        this.id = id;
     }
 
     public Cliente getCliente() {
@@ -36,6 +38,10 @@ public class Factura {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     @Override
