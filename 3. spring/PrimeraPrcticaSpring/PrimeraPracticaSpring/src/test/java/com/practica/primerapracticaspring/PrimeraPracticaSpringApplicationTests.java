@@ -1,0 +1,13 @@
+package com.practica.primerapracticaspring;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PrimeraPracticaSpringApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
