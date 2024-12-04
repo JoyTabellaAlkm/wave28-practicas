@@ -11,7 +11,6 @@ public class controladorNumRomano {
 
     @GetMapping("/decimal")
     public String convertirDecimalARomano(@RequestParam int num){
-        //1234
 
         if (num < 1 || num > 3999){
             return "No ingresa dentro del rango que trabaja nuestra API. " +

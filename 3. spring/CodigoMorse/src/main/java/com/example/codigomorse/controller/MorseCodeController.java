@@ -16,7 +16,6 @@ public class MorseCodeController {
     @GetMapping
     public String morseCodeToText(@RequestParam String morse){
 
-
         return morseCodeParseService.convertMorseCodeToText(morse);
     }
 

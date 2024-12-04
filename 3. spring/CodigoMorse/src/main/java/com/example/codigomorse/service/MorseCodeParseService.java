@@ -11,35 +11,34 @@ import java.util.Map;
 public class MorseCodeParseService {
 
     public String convertMorseCodeToText(String morse) {
-        StringBuilder result = new StringBuilder();
-
-        //Separar el codigo morse en palabras con if
         String wordMorse[] = morse.split(" {3}"); //queda para los dos
 
-        for (String word : wordMorse){
-            String letterMorse[] = word.split(" ");
-            for (String letter:letterMorse){
-                Character character = morseToLetterMap.get(letter);
-                if(character != null){
-                    result.append(character);
-                }
-            }
-            result.append(" ");
-        }
-
-        return result.toString().trim();
+        //Separar el codigo morse en palabras con for
+//        StringBuilder result = new StringBuilder();
+//        for (String word : wordMorse){
+//            String letterMorse[] = word.split(" ");
+//            for (String letter:letterMorse){
+//                Character character = morseToLetterMap.get(letter);
+//                if(character != null){
+//                    result.append(character);
+//                }
+//            }
+//            result.append(" ");
+//        }
+//
+//        return result.toString().trim();
 
         //Con stream
-//        List<String> wordsParsed = Arrays.stream(wordMorse).map(word -> {
-//            StringBuilder sb = new StringBuilder();
-//            Arrays.stream(word.split(" "))
-//                    .map(t -> morseToLetterMap.get(t)).forEach(letter -> {
-//                        sb.append(letter);
-//                    });
-//            return sb.toString();
-//        }).toList();
-//
-//        return String.join(" ",wordsParsed);
+        List<String> wordsParsed = Arrays.stream(wordMorse).map(word -> {
+            StringBuilder sb = new StringBuilder();
+            Arrays.stream(word.split(" "))
+                    .map(t -> morseToLetterMap.get(t)).forEach(letter -> {
+                        sb.append(letter);
+                    });
+            return sb.toString();
+        }).toList();
+
+        return String.join(" ",wordsParsed);
     }
 
     //Dato de Lucas: (?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" Para validar texto
