@@ -6,6 +6,7 @@ public class Cliente {
     private String dni;
 
 
+
     public Cliente(String nombre, String apellido, String dni) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -35,6 +36,8 @@ public class Cliente {
     public void setDni(String dni) {
         this.dni = dni;
     }
+
+
 
     @Override
     public String toString() {
