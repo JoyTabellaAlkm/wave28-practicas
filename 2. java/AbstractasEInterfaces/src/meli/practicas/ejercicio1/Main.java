@@ -1,7 +1,5 @@
 package meli.practicas.ejercicio1;
 
-package meli.practicas.ejercicio1;
-
 public class Main {
     public static void main(String[] args) {
         Cobrador cobrador = new Cobrador();
