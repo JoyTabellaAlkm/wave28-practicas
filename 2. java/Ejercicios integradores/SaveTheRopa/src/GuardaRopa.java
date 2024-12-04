@@ -39,10 +39,6 @@ public class GuardaRopa {
     }
 
     public List<Prenda> devolverPrendas(Integer numero){
-        return diccionario.entrySet().stream()
-                .filter(prendaAConsultar -> prendaAConsultar.getKey().equals(numero))
-                .map(Map.Entry::getValue)
-                .findFirst()
-                .orElse(null);
+        return diccionario.get(numero);
     }
 }
