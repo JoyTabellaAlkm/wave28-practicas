@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-    Guardarropa guardarropa = new Guardarropa();
+        Guardarropa guardarropa = new Guardarropa();
 
         Prenda nuevaPrenda = new Prenda("Levi", "Chomba", 1);
         Prenda nuevaPrenda1 = new Prenda("JC", "Campera", 2);
@@ -15,12 +15,12 @@ public class Main {
 
         List<Prenda> listaPrenda = new ArrayList<>();
 
+        guardarropa.guardarPrenda(listaPrenda);
+
         listaPrenda.add(nuevaPrenda);
         listaPrenda.add(nuevaPrenda1);
         listaPrenda.add(nuevaPrenda2);
         listaPrenda.add(nuevaPrenda3);
-
-        guardarropa.guardarPrenda(listaPrenda);
 
         guardarropa.mostrarPrendas();
 
