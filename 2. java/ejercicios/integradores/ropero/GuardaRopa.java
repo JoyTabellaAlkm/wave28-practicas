@@ -23,7 +23,7 @@ public class GuardaRopa {
     }
 
     public void mostrarPrendas() {
-        prendas.forEach((id, prendas) -> System.out.println("Número: " + id + "Prendas: " + prendas));
+        prendas.forEach((id, prendas) -> System.out.println("Número id de prendas: " + id + " prendas: " + prendas));
     }
 
     public List<Prenda> devolverPrendas(Integer numero) {
