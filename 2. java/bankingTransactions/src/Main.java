@@ -28,6 +28,5 @@ public class Main {
 
         collectorClient.makeTransaction(withdrawalOfCash);//Ok
         collectorClient.makeTransaction(transfer);
-
     }
 }
