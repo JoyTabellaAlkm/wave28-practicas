@@ -72,7 +72,7 @@ public class Main {
 
         unitOfWork.getClientRepository().readAll().stream()
                 .forEach(System.out::println);
-        
+
     }
 
 
