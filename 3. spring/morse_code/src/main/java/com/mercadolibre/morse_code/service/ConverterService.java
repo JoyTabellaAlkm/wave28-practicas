@@ -1,7 +1,9 @@
 package com.mercadolibre.morse_code.service;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ConverterService {
 
@@ -98,15 +100,23 @@ public class ConverterService {
         String word = "";
         String[] morseWords = morse.split("   ");
 
-        for (String morseWord: morseWords) {
-            String[] morseWordLetters = morseWord.split(" ");
-            for (String morseWordLetter: morseWordLetters) {
-                word += invertedMorseCodeValues.get(morseWordLetter);
-            }
-            word += " ";
-        }
+//        for (String morseWord: morseWords) {
+//            String[] morseWordLetters = morseWord.split(" ");
+//            for (String morseWordLetter: morseWordLetters) {
+//                word += invertedMorseCodeValues.get(morseWordLetter);
+//            }
+//            word += " ";
+//        }
+//
+//        return word.trim();
 
-        return word.trim();
+        return Arrays.stream(morseWords)
+                .reduce("", (acc, morseWord) -> {
+                    String[] morseWordLetters = morseWord.split(" ");
+                    return acc + " " + Arrays.stream(morseWordLetters)
+                            .map(invertedMorseCodeValues::get)
+                            .collect(Collectors.joining());
+                }).trim();
     }
 
 }
