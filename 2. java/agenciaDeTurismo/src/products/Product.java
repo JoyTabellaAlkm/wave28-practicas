@@ -1,8 +1,10 @@
 package products;
 
-import java.util.List;
 
 public class Product {
-    public String id;
-    protected List<Product> productList;
+    public double price;
+
+    public Product(Double price){
+        this.price = price;
+    }
 }
