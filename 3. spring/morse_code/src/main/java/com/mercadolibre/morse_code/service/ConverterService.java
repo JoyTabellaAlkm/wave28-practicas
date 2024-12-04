@@ -110,13 +110,20 @@ public class ConverterService {
 //
 //        return word.trim();
 
+//        return Arrays.stream(morseWords)
+//                .reduce("", (acc, morseWord) -> {
+//                    String[] morseWordLetters = morseWord.split(" ");
+//                    return acc + " " + Arrays.stream(morseWordLetters)
+//                            .map(invertedMorseCodeValues::get)
+//                            .collect(Collectors.joining());
+//                }).trim();
+
         return Arrays.stream(morseWords)
-                .reduce("", (acc, morseWord) -> {
-                    String[] morseWordLetters = morseWord.split(" ");
-                    return acc + " " + Arrays.stream(morseWordLetters)
+                .map(morseWord -> {
+                    return Arrays.stream(morseWord.split(" "))
                             .map(invertedMorseCodeValues::get)
                             .collect(Collectors.joining());
-                }).trim();
+                }).collect(Collectors.joining(" "));
     }
 
 }
