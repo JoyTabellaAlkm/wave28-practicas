@@ -50,45 +50,30 @@ public class Localizador {
         boolean hotel = false;
         boolean paqueteCompleto = false;
 
-        System.out.println(reservas.size());
-
         if (reservas.size() >= 4) {
-            System.out.println("Entre al switch");
             for (Reserva r : reservas) {
-
-                System.out.println("Entre al for");
-                System.out.println(r.getClass().getName());
-                switch (r.getClass().getName()) {
-                    case "ReservaBoletoViaje":
-                        System.out.println("Hay un vuelo");
-                        vuelos = true;
-                        break;
-                    case "ReservaTransporte":
-                        transporte = true;
-                        System.out.println("Hay un transporte");
-                        break;
-                    case "ReservaComida":
-                        System.out.println("Hay comida");
-                        comida = true;
-                        break;
-                    case "ReservaHotel":
-                        System.out.println("Hay hotel");
-                        hotel = true;
-                    default:
-                        break;
+                if (ReservaBoletosViaje.class.equals(r.getClass())) {
+                    vuelos = true;
+                } else if (ReservaTransporte.class.equals(r.getClass())) {
+                    transporte = true;
+                } else if (ReservaComida.class.equals(r.getClass())) {
+                    comida = true;
+                } else if (ReservaHotel.class.equals(r.getClass())) {
+                    hotel = true;
                 }
             }
         }
-        paqueteCompleto = hotel && comida && transporte && vuelos;
 
-        if ((reservas.stream().filter(x->x.getClass().getName() == "ReservaBoletosViaje").count() >= 2) || (reservas.stream().filter(x->x.getClass().getName() == "ReservaHotel").count() >= 2))
+        paqueteCompleto = hotel && comida && transporte && vuelos;
+        int i = 0;
+
+        if ((reservas.stream().filter(x->ReservaBoletosViaje.class.equals(x.getClass())).count() >= 2) || (reservas.stream().filter(x->ReservaHotel.class.equals(x.getClass())).count() >= 2))
         {
             for (Reserva r:reservas) {
-                if(r.getClass().getName() == "ReservaBoletosViaje"){
+                if(ReservaBoletosViaje.class.equals(r.getClass()) || ReservaHotel.class.equals(r.getClass())){
                     r.setCosto(r.getCosto()*0.95);
-                }
-                if(r.getClass().getName() == "ReservaHotel"){
-                    r.setCosto(r.getCosto()*0.95);
+                    System.out.println(r.getCosto() + "hola" + i);
+                    i++;
                 }
             }
         }

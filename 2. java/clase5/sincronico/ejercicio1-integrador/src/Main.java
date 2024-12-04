@@ -13,9 +13,11 @@ public class Main {
         ReservaBoletosViaje reservaBoletosViaje = new ReservaBoletosViaje("Aerolineas",123,new Date(), new Date(), 1400);
 
         List<Reserva> reservas = new ArrayList<>(List.of(reservaTransporte,reservaComida,reservaHotel,reservaBoletosViaje));
+        List<Reserva> reservas2 = new ArrayList<>(List.of(reservaHotel,reservaBoletosViaje,reservaHotel,reservaBoletosViaje));
 
         Localizador localizador = new Localizador(cliente,reservas);
+        Localizador localizador2 = new Localizador(cliente,reservas2);
 
-        System.out.println(localizador);
+        System.out.println(localizador2);
     }
 }
