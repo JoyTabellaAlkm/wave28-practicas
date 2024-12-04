@@ -1,6 +1,17 @@
 import java.util.List;
 
 public class Localizador {
+   private Integer id;
+   private Cliente cliente;
+   private List<Reserva> reservas;
+
+
+   public Localizador(Integer id, Cliente cliente, List<Reserva> reservas) {
+      this.id = id;
+      this.cliente = cliente;
+      this.reservas = reservas;
+   }
+
    public Integer getId() {
       return id;
    }
@@ -26,15 +37,7 @@ public class Localizador {
    }
 
    public Double getTotal() {
-      return total;
+      return reservas.stream().mapToDouble(Reserva::getCosto).sum();
    }
 
-   public void setTotal(Double total) {
-      this.total = total;
-   }
-
-   Integer id;
-   Cliente cliente;
-   List<Reserva> reservas;
-   Double total;
 }

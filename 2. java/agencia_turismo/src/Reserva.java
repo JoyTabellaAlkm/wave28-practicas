@@ -2,6 +2,11 @@ public class Reserva {
 private String tipo;
 private Double costo;
 
+    public Reserva(String tipo, Double costo) {
+        this.tipo = tipo;
+        this.costo = costo;
+    }
+
     public String getTipo() {
         return tipo;
     }
