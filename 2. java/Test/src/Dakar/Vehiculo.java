@@ -62,4 +62,9 @@ public class Vehiculo {
     public void setRuedas(int ruedas) {
         this.ruedas = ruedas;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo con patente='" + patente + '\'';
+    }
 }

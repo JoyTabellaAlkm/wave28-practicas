@@ -8,27 +8,32 @@ public class Carrera {
     private int premioEnDolares;
     private String nombre;
     private int cantVehPermitidos;
-    private ArrayList<Vehiculo> vehiculos;
+    private ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+    private SocorristaAuto socorristaAuto = new SocorristaAuto();
+    private SocorristaMoto socorristaMoto = new SocorristaMoto();
 
     public Carrera(double distancia, int premioEnDolares, String nombre, int cantVehPermitidos) {
         this.distancia = distancia;
         this.premioEnDolares = premioEnDolares;
         this.nombre = nombre;
         this.cantVehPermitidos = cantVehPermitidos;
-        this.vehiculos = new ArrayList<>();
+
     }
 
     public void darDeAltaAuto(double velocidad, double aceleracion, double anguloDeGiro, String patente){
         if(vehiculos.size() < cantVehPermitidos){
             Vehiculo auto = new Auto(velocidad,aceleracion,anguloDeGiro,patente);
-            this.vehiculos.add(auto);
+            vehiculos.add(auto);
+        }else{
+            System.out.println("No hay cupos disponibles para esta carrera");
         }
     }
     public void darDeAltaMoto(double velocidad, double aceleracion, double anguloDeGiro, String patente){
         if(vehiculos.size() < cantVehPermitidos){
             Vehiculo moto = new Moto(velocidad,aceleracion,anguloDeGiro,patente);
-            this.vehiculos.add(moto);
-        }
+            vehiculos.add(moto);
+        }else
+        System.out.println("No hay cupos disponibles para esta carrera");
     }
 
     public void eliminarVehiculo(Vehiculo vehiculo){
@@ -38,16 +43,38 @@ public class Carrera {
     public void eliminarVehiculoConPatente(String patente){
         vehiculos.removeIf(vehiculo -> vehiculo.getPatente().equals(patente));
     }
-
-    public void ganador(){
-        double resultado = 0;
+    /*
+    public void definirGanador(){
+        double valorMaximo = 0;
+        Vehiculo vehiculoGanador = null;
         for(Vehiculo vehiculo : vehiculos){
-            double resultadoFormula = vehiculo.getAceleracion()*0.5*vehiculo.getAceleracion()/(vehiculo.getAnguloDeGiro()*(vehiculo.getPeso()-vehiculo.getRuedas()*100));
-            if(resultadoFormula > resultadoFormula){
-                resultado = resultadoFormula;
-
+            double valorVehiculo = calcularValor(vehiculo);
+            if(valorVehiculo > valorMaximo){
+                valorMaximo = valorVehiculo;
+                vehiculoGanador = vehiculo;
             }
         }
+        System.out.println("El vehiculo Ganador es: "+vehiculoGanador);
+    }*/
+    public void definirGanador(){
+       Vehiculo vehiculo =  vehiculos.stream().max((v1,v2)->Double.compare(calcularValor(v1),calcularValor(v2))).orElse(null);
+        System.out.println("El vehiculo Ganador es: "+vehiculo);
+    }
+
+    public static double calcularValor(Vehiculo vehiculo){
+        return  vehiculo.getVelocidad()*0.5*vehiculo.getAceleracion()/(vehiculo.getAnguloDeGiro()*(vehiculo.getPeso()-vehiculo.getRuedas()*100));
+    }
+
+    public void socorrerAuto(String patente){
+        vehiculos.stream().filter(v -> v instanceof Auto && v.getPatente().equals(patente))
+                .findFirst()
+                .ifPresent(v->socorristaAuto.socorrer(patente));
+    }
+
+    public void socorrerMoto(String patente) {
+        vehiculos.stream().filter(v -> v instanceof Moto && v.getPatente().equals(patente))
+                .findFirst()
+                .ifPresent(v->socorristaMoto.socorrer(patente));
     }
 
 }
