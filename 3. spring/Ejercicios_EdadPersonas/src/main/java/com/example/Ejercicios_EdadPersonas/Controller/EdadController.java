@@ -1,7 +1,6 @@
 package com.example.Ejercicios_EdadPersonas.Controller;
 
-import com.example.Ejercicios_EdadPersonas.Service.EdadService;
-import lombok.RequiredArgsConstructor;
+import com.example.Ejercicios_EdadPersonas.Service.IEdadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +14,14 @@ import java.time.DateTimeException;
 @RequestMapping("/Edad")
 public class EdadController {
     @Autowired
-    private EdadService service;
+    private IEdadService service;
 
     @GetMapping("{dia}/{mes}/{anio}")
     public ResponseEntity<String> getEdad (@PathVariable int dia, @PathVariable int mes, @PathVariable int anio ){
         try{
             return ResponseEntity.ok().body(service.calcularEdad(dia, mes, anio));
         }catch (DateTimeException e){
-            return ResponseEntity.badRequest().body("Ha habido un problema con los datos ingresados");
+            return ResponseEntity.badRequest().body("Ha habido un problema con los datos ingresados: " + e.getMessage());
         }
     }
 
