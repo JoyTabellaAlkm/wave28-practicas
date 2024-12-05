@@ -1,35 +1,31 @@
 package org.bootcampmeli.ejerciciodeportistas.service;
 
-import org.bootcampmeli.ejerciciodeportistas.dto.DeporteDTO;
-import org.bootcampmeli.ejerciciodeportistas.dto.DeportistaDTO;
 import org.bootcampmeli.ejerciciodeportistas.model.Deporte;
-import org.bootcampmeli.ejerciciodeportistas.repositories.DeporteRepository;
+import org.bootcampmeli.ejerciciodeportistas.model.Persona;
+import org.bootcampmeli.ejerciciodeportistas.repositories.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class DeporteService implements IDeporteService {
 
     @Autowired
-    DeporteRepository deporteRepository;
+    Repository repository;
 
 
-    public List<DeportistaDTO> findSportPersons() {
-        return deporteRepository.findSportPersons();
+
+    public List<Persona> findSportPersons() {
+        return repository.findAllPersonas();
     }
 
-    public ResponseEntity<String> findSportByName(String name) {
-        return new ResponseEntity<>(deporteRepository.findByName(name), HttpStatus.OK);
+    public Deporte findSportByName(String name) {
+        return repository.findByName(name);
     }
 
-    public List<DeporteDTO> findSports(){
-        return deporteRepository.findSports();
+    public List<Deporte> findSports(){
+        return repository.findAllDeportes();
     }
 
 
