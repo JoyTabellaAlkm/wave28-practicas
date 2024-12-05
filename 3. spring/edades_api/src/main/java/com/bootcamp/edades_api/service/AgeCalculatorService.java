@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 @Service
-public class AgeCalculatorService {
+public class AgeCalculatorService implements IAgeCalculatorService {
 
     public Integer calculateAge(int day, int month, int year){
         LocalDate birthDate;
@@ -21,6 +21,7 @@ public class AgeCalculatorService {
         } catch (DateTimeException dateTimeException) {
             return -1;
         }
+
         Period period = Period.between(birthDate, currentDate);
         return period.getYears();
     }
