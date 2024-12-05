@@ -25,6 +25,10 @@ public class SintomaRestController {
 
     @GetMapping("findSymptom/{nombre}")
     public ResponseEntity<SintomaDto> obtenerSintomaPorNombre(@PathVariable String nombre) {
-        return new ResponseEntity<>(sintomaService.obtenerSintomaPorNombre(nombre), HttpStatus.OK);
+        SintomaDto sintomaObtenido = sintomaService.obtenerSintomaPorNombre(nombre);
+        if (sintomaObtenido == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(sintomaObtenido, HttpStatus.OK);
     }
 }
