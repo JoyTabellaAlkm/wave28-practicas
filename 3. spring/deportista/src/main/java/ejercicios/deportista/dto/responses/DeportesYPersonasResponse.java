@@ -1,11 +1,17 @@
-package ejercicios.deportista.dto.response;
+package ejercicios.deportista.dto.responses;
 
-public class ResponseDataDTO {
+public class DeportesYPersonasResponse {
     private String nombre;
     private String apellido;
     private String deporte;
 
-    public ResponseDataDTO() {
+    public DeportesYPersonasResponse() {
+    }
+
+    public DeportesYPersonasResponse(String nombre, String apellido, String deporte) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.deporte = deporte;
     }
 
     public String getNombre() {
