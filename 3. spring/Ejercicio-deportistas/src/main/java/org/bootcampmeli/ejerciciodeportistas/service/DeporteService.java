@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DeporteService implements IDeporteService {
@@ -20,8 +21,8 @@ public class DeporteService implements IDeporteService {
         return repository.findAllPersonas();
     }
 
-    public Deporte findSportByName(String name) {
-        return repository.findByName(name);
+    public Optional<Deporte> findSportByName(String name) {
+        return Optional.ofNullable(repository.findByName(name));
     }
 
     public List<Deporte> findSports(){

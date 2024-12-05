@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 
@@ -29,22 +30,26 @@ public class EjercicioController {
     @GetMapping("/findSportPersons")
     public ResponseEntity<List<DeportistaDTO>> findSportsPersons() {
         List<Persona> deportistas=  deporteService.findSportPersons();
-        List<DeportistaDTO> deportistaDTOs = deportistas.stream().map(d -> new DeportistaDTO(d.getNombre(),d.getApellido(),d.getDeporte().getNombre())).toList();
+        List<DeportistaDTO> deportistaDTOs = deportistas.stream().map(Persona::toDTO).toList();
 
         return new ResponseEntity<>(deportistaDTOs,HttpStatus.OK);
     }
 
     @GetMapping("/findSport/{name}")
     public ResponseEntity<DeporteDTO> findSport(@PathVariable String name){
-        Deporte deporte = deporteService.findSportByName(name);
-        DeporteDTO deporteDTO = new DeporteDTO(deporte.getNombre(), deporte.getNivel());
-        return new ResponseEntity<>(deporteDTO, HttpStatus.OK);
+        Optional<Deporte> deporte = deporteService.findSportByName(name);
+        if (deporte.isPresent()) {
+            DeporteDTO deporteDTO = deporte.get().toDTO();
+            return new ResponseEntity<>(deporteDTO,HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/findSports")
     public ResponseEntity<List<DeporteDTO>> findSports(){
         List<Deporte> deportes = deporteService.findSports();
-        List<DeporteDTO> deporteDTOS = deportes.stream().map(deporte -> new DeporteDTO(deporte.getNombre(),deporte.getNivel())).toList();
+        List<DeporteDTO> deporteDTOS = deportes.stream().map(Deporte::toDTO).toList();
         return new ResponseEntity<>(deporteDTOS, HttpStatus.OK);
     }
 
