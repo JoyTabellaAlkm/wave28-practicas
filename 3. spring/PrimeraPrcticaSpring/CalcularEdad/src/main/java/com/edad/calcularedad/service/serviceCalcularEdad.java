@@ -1,4 +1,4 @@
-package com.edad.calcularedad.calcularEdad;
+package com.edad.calcularedad.service;
 
 import org.springframework.stereotype.Service;
 
