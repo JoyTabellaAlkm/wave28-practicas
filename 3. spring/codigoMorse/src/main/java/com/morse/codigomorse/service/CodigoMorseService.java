@@ -4,10 +4,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class CodigoMorseService {
     private static Map<String, Character> morseDic = inicializarDiccionario();
+    private static Map<Character, String> LetrasDic = morseDic.entrySet()
+            .stream()
+            .collect(Collectors.toMap(
+                    entry -> entry.getValue(),
+                    entry -> entry.getKey()
+            ));
 
     public CodigoMorseService(){};
     public static Map<String, Character> inicializarDiccionario(){
@@ -56,7 +63,7 @@ public class CodigoMorseService {
         return morseToText;
     }
 
-    public String convertirMensaje(String morse){
+    public String convertirMensajeALetras(String morse){
 
         String[] divisionMorse = morse.split("   ");
         StringBuilder desencriptedMessage = new StringBuilder();
@@ -68,6 +75,23 @@ public class CodigoMorseService {
                 desencriptedMessage.append(morseDic.get(letra));
             }
             desencriptedMessage.append(" ");
+        };
+        return desencriptedMessage.toString();
+    }
+
+    public String convertirMensajeAMorse(String mensaje){
+        mensaje.toUpperCase();
+        String[] divisionMensaje = mensaje.split(" ");
+        StringBuilder desencriptedMessage = new StringBuilder();
+
+
+        for(String m: divisionMensaje){
+            String[] letras = m.split("");
+            for (String letra: letras){
+                desencriptedMessage.append(LetrasDic.get(letra.charAt(0)));
+                desencriptedMessage.append(" ");
+            }
+            desencriptedMessage.append("\u00A0\u00A0\u00A0");
         };
         return desencriptedMessage.toString();
     }
