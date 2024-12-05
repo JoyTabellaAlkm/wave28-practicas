@@ -3,13 +3,10 @@ package com.bootcamp.calculoedad.service;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
-import java.time.Year;
-import java.time.temporal.TemporalUnit;
 
 @Service
-public class EdadService {
+public class EdadServiceImpl implements IEdadService{
 
     public String calcularEdad(Integer dia, Integer mes, Integer anio) {
         int edadCalculada;

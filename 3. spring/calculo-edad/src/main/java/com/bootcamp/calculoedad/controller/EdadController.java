@@ -1,7 +1,7 @@
 package com.bootcamp.calculoedad.controller;
 
 
-import com.bootcamp.calculoedad.service.EdadService;
+import com.bootcamp.calculoedad.service.IEdadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("edad")
 public class EdadController {
     @Autowired
-    EdadService edadService;
+    IEdadService edadService;
 
 
     @GetMapping("{dia}/{mes}/{anio}")
