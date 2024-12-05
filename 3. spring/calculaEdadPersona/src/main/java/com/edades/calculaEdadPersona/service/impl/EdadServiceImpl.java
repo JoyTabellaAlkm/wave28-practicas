@@ -1,11 +1,13 @@
-package com.edades.calculaEdadPersona.service;
+package com.edades.calculaEdadPersona.service.impl;
 
+import com.edades.calculaEdadPersona.service.IEdad;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
 @Service
-public class EdadService {
+public class EdadServiceImpl implements IEdad {
+    @Override
     public String calculaEdad(int dia, int mes, int ano) {
         //System.out.println(fechaNacimiento);
         LocalDate fechaNacimiento = LocalDate.of(ano, mes, dia);
