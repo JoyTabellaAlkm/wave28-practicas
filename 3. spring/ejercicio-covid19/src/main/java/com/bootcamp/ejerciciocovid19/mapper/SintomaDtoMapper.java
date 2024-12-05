@@ -2,6 +2,7 @@ package com.bootcamp.ejerciciocovid19.mapper;
 
 import com.bootcamp.ejerciciocovid19.dto.SintomaDto;
 import com.bootcamp.ejerciciocovid19.model.Sintoma;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 

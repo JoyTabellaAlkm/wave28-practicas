@@ -12,10 +12,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class PersonaServiceImpl implements IPersonaService{
-
-    @Autowired
-    ISintomaService sintomaService;
-
     @Autowired
     PersonaDtoMapper personaDtoMapper;
 
