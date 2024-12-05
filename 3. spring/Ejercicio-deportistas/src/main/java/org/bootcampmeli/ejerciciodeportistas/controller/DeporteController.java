@@ -3,25 +3,22 @@ package org.bootcampmeli.ejerciciodeportistas.controller;
 
 import org.bootcampmeli.ejerciciodeportistas.dto.DeporteDTO;
 import org.bootcampmeli.ejerciciodeportistas.dto.DeportistaDTO;
+import org.bootcampmeli.ejerciciodeportistas.mapper.DeporteMapper;
 import org.bootcampmeli.ejerciciodeportistas.model.Deporte;
 import org.bootcampmeli.ejerciciodeportistas.model.Persona;
 import org.bootcampmeli.ejerciciodeportistas.service.DeporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 
 
-public class EjercicioController {
+public class DeporteController {
     @Autowired
     DeporteService deporteService;
 
@@ -51,6 +48,12 @@ public class EjercicioController {
         List<Deporte> deportes = deporteService.findSports();
         List<DeporteDTO> deporteDTOS = deportes.stream().map(Deporte::toDTO).toList();
         return new ResponseEntity<>(deporteDTOS, HttpStatus.OK);
+    }
+
+    @PostMapping("/addDeporte")
+    public ResponseEntity addDeporte(DeporteDTO deporteDTO) {
+        Deporte deporte = DeporteMapper.mapToDeporte(deporteDTO);
+        return deporteService.addDeporte(deporte);
     }
 
 }

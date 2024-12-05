@@ -16,4 +16,8 @@ public class Persona {
         return new DeportistaDTO(nombre,apellido, deporte.getNombre());
     }
 
+    public Persona toEntity() {
+        return new Persona(nombre, apellido, edad, deporte);
+    }
+
 }

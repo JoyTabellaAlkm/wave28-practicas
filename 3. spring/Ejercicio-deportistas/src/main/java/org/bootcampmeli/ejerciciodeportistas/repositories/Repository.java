@@ -42,6 +42,10 @@ public class Repository {
         return new ArrayList<>(personas);
     }
 
+    public void add(Deporte deporte) {
+        deportes.add(deporte);
+    }
+
 
 
 }
