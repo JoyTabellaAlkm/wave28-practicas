@@ -65,4 +65,16 @@ public abstract class Vehiculo {
     public void setCantidadRuedas(int cantidadRuedas) {
         this.cantidadRuedas = cantidadRuedas;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "velocidad=" + velocidad +
+                ", aceleracion=" + aceleracion +
+                ", anguloGiro=" + anguloGiro +
+                ", patente='" + patente + '\'' +
+                ", peso=" + peso +
+                ", cantidadRuedas=" + cantidadRuedas +
+                '}';
+    }
 }

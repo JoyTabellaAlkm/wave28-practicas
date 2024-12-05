@@ -1,6 +1,7 @@
 package dakar.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,17 +11,21 @@ public class Carrera {
     private double premioUsd;
     private String nombre;
     private int cantidadVehiculosPermitidos;
+    private SocorristaAuto socorristaAuto;
+    private SocorristaMoto socorristaMoto;
     private List<Vehiculo> vehiculos = new ArrayList<>();
 
-    public Carrera(double distancia, double premioUsd, String nombre, int cantidadVehiculosPermitidos, List<Vehiculo> vehiculos) {
+    public Carrera(double distancia, double premioUsd, String nombre, int cantidadVehiculosPermitidos, SocorristaAuto socorristaAuto, SocorristaMoto socorristaMoto, List<Vehiculo> vehiculos) {
         this.distancia = distancia;
         this.premioUsd = premioUsd;
         this.nombre = nombre;
         this.cantidadVehiculosPermitidos = cantidadVehiculosPermitidos;
+        this.socorristaAuto = socorristaAuto;
+        this.socorristaMoto = socorristaMoto;
         this.vehiculos = vehiculos;
     }
 
-    public void darDeAltaAuto(double velocidad,double aceleracion,double anguloDeGiro, String patente){
+    public void darDeAltaAuto(double velocidad, double aceleracion, double anguloDeGiro, String patente){
         if(vehiculos.size() < cantidadVehiculosPermitidos) {
             Auto auto = new Auto(velocidad, aceleracion,anguloDeGiro,patente);
             this.vehiculos.add(auto);
@@ -39,6 +44,14 @@ public class Carrera {
             System.out.println("No hay espacio en la carrera");
         }
     };
+
+    public Vehiculo encontrarGanador() {
+
+        Optional<Vehiculo> unVehiculo =  vehiculos.stream().max(Comparator
+                .comparing(vehiculo -> -(vehiculo.getVelocidad() * vehiculo.getAceleracion()) / (vehiculo.getAnguloGiro() * (vehiculo.getPeso() - 100 * vehiculo.getCantidadRuedas()))));
+
+        return unVehiculo.orElse(null);
+    }
 
     public void eliminarVehiculo(Vehiculo unVehiculo){
         Optional<Vehiculo> elVehiculo = this.vehiculos.stream()
@@ -86,11 +99,49 @@ public class Carrera {
         this.cantidadVehiculosPermitidos = cantidadVehiculosPermitidos;
     }
 
+    public SocorristaAuto getSocorristaAuto() {
+        return socorristaAuto;
+    }
+
+    public void setSocorristaAuto(SocorristaAuto socorristaAuto) {
+        this.socorristaAuto = socorristaAuto;
+    }
+
+    public SocorristaMoto getSocorristaMoto() {
+        return socorristaMoto;
+    }
+
+    public void setSocorristaMoto(SocorristaMoto socorristaMoto) {
+        this.socorristaMoto = socorristaMoto;
+    }
+
     public List<Vehiculo> getVehiculos() {
         return vehiculos;
     }
 
     public void setVehiculos(List<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
+    }
+
+    public void socorrerAuto(String patente) {
+        Optional<Vehiculo> vehiculo =  vehiculos.stream()
+                .filter(v -> v.getPatente().equals(patente)).findFirst();
+
+        if(vehiculo.isPresent() && vehiculo.get() instanceof Auto) {
+            socorristaAuto.socorrer((Auto) vehiculo.get());
+        } else {
+            System.out.println("No se encontró el auto con la patente indicada");
+        }
+    }
+
+    public void socorrerMoto(String patente) {
+        Optional<Vehiculo> vehiculo =  vehiculos.stream()
+                .filter(v -> v.getPatente().equals(patente)).findFirst();
+
+        if(vehiculo.isPresent() && vehiculo.get() instanceof Moto) {
+            socorristaMoto.socorrer((Moto) vehiculo.get());
+        } else {
+            System.out.println("No se encontró la moto con la patente indicada");
+        }
     }
 }
