@@ -1,7 +1,6 @@
 package com.spring.ejercicios.controllers;
 
-import com.spring.ejercicios.dto.personaDto;
-import com.spring.ejercicios.models.Persona;
+import com.spring.ejercicios.dto.personaDTO;
 import com.spring.ejercicios.models.Sintoma;
 import com.spring.ejercicios.services.iCovidService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class CovidController {
     }
 
     @GetMapping("/findRiskPerson")
-    public ResponseEntity<List<personaDto>> findRiskPersons() {
+    public ResponseEntity<List<personaDTO>> findRiskPersons() {
         return ResponseEntity.ok(service.personasRiesgo());
     }
 }

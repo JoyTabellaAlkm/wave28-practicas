@@ -1,10 +1,10 @@
 package com.spring.ejercicios.dto;
 
-public class personaDto {
+public class personaDTO {
     private String nombre;
     private String apellido;
 
-    public personaDto(String nombre, String apellido) {
+    public personaDTO(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
