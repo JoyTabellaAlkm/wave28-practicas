@@ -1,5 +1,6 @@
-package com.example.ejerciciodeportistas;
+package com.example.ejerciciodeportistas.service;
 
+import com.example.ejerciciodeportistas.model.Deporte;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,8 +18,10 @@ public class DeportesService {
     public List<Deporte> listarDeportes(){
         return listaDeportes;
     }
-    public Optional<Deporte> listarDeportePorNombre(String nombre){
-        Optional<Deporte> deporte = listaDeportes.stream().filter(d->d.getNombre().equals(nombre)).findFirst();
+    public Deporte listarDeportePorNombre(String nombre){
+        Deporte deporte = listaDeportes.stream()
+                .filter(d->d.getNombre().equals(nombre))
+                .findFirst().orElseThrow(RuntimeException::new);
         return deporte;
     }
 

@@ -1,5 +1,7 @@
-package com.example.ejerciciodeportistas;
+package com.example.ejerciciodeportistas.controller;
 
+import com.example.ejerciciodeportistas.model.Deporte;
+import com.example.ejerciciodeportistas.service.DeportesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,17 +20,13 @@ public class DeportesController {
     @GetMapping("/findSports")
     public ResponseEntity<List<Deporte>> listarDeportes(){
         List<Deporte> listaDeportes = deportesService.listarDeportes();
-        System.out.println(listaDeportes);
         return ResponseEntity.ok(listaDeportes);
     }
 
     @GetMapping("/findSports/{name}")
-    public ResponseEntity<Optional<Deporte>> listarDeportesPorNombre(@PathVariable String name){
-        Optional<Deporte> deportePorNombre = deportesService.listarDeportePorNombre(name);
-        System.out.println(deportePorNombre);
+    public ResponseEntity<Deporte> listarDeportesPorNombre(@PathVariable String name){
+        Deporte deportePorNombre = deportesService.listarDeportePorNombre(name);
         return ResponseEntity.ok(deportePorNombre);
     }
-
-
 
 }

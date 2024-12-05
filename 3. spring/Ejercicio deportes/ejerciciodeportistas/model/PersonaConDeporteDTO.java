@@ -1,4 +1,4 @@
-package com.example.ejerciciodeportistas;
+package com.example.ejerciciodeportistas.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
