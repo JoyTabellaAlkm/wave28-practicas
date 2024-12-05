@@ -3,7 +3,6 @@ package com.bootcamp.ejerciciocovid19.mapper;
 import com.bootcamp.ejerciciocovid19.dto.PersonaRiesgoDto;
 import com.bootcamp.ejerciciocovid19.model.Persona;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;

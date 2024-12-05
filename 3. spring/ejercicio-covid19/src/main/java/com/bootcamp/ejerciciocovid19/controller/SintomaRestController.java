@@ -1,8 +1,6 @@
 package com.bootcamp.ejerciciocovid19.controller;
 
-import com.bootcamp.ejerciciocovid19.dto.PersonaRiesgoDto;
 import com.bootcamp.ejerciciocovid19.dto.SintomaDto;
-import com.bootcamp.ejerciciocovid19.service.IPersonaService;
 import com.bootcamp.ejerciciocovid19.service.ISintomaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
