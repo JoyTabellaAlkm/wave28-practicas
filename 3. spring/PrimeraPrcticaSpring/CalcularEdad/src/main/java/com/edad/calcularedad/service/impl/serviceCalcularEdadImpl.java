@@ -1,5 +1,6 @@
-package com.edad.calcularedad.service;
+package com.edad.calcularedad.service.impl;
 
+import com.edad.calcularedad.service.IServiceCalcularEdad;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -7,8 +8,9 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 @Service
-public class serviceCalcularEdad {
+public class serviceCalcularEdadImpl implements IServiceCalcularEdad {
 
+    @Override
     public String calcularEdad(String fecha){
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechaNacimiento = LocalDate.parse(fecha, fmt);
