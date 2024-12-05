@@ -1,6 +1,10 @@
 package com.edadpersona.edaddeunapersona.service;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
 @lombok.NoArgsConstructor
+@Service
 public class ObtenerEdadService {
     public int calcularEdad(int day, int month, int year){
         java.time.LocalDate fechaActual = java.time.LocalDate.now();
