@@ -1,21 +1,22 @@
+package model;
+
 public class Product {
-    private String code;
+    private Integer code;
     private String name;
     private Integer quantity;
     private Double cost;
 
-    public Product(String code, String name, Integer quantity, Double cost) {
-        this.code = code;
+    public Product(String name, Integer quantity, Double cost) {
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

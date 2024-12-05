@@ -1,19 +1,21 @@
+package model;
+
 public class Customer {
-    private String dni;
+    private Integer dni;
     private String name;
     private String lastName;
 
-    public Customer(String dni, String name, String lastName) {
+    public Customer(Integer dni, String name, String lastName) {
         this.dni = dni;
         this.name = name;
         this.lastName = lastName;
     }
 
-    public String getDni() {
+    public Integer getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(Integer dni) {
         this.dni = dni;
     }
 

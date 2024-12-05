@@ -1,14 +1,17 @@
+package model;
+
 import java.util.List;
 
 public class Invoice {
     private Integer id;
     private Customer customer;
     private List<Product> products;
+    private final Double totalCost;
 
-    public Invoice(Integer id, Customer customer, List<Product> products) {
-        this.id = id;
+    public Invoice(Customer customer, List<Product> products) {
         this.customer = customer;
         this.products = products;
+        totalCost = calculateTotalCost();
     }
 
     public Integer getId() {
@@ -36,9 +39,13 @@ public class Invoice {
     }
 
     public Double getTotalCost() {
+        return this.totalCost;
+    }
+
+    public Double calculateTotalCost() {
         return products.stream()
-                 .mapToDouble( product -> product.getQuantity() * product.getCost())
-                 .sum();
+                .mapToDouble(product -> product.getQuantity() * product.getCost())
+                .sum();
     }
 
     @Override
