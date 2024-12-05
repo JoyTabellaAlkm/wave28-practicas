@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "efc23dc7-706f-4d07-92f0-16ab590d1d00",
+		"name": "Ejercicio Deportistas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11128582",
+		"_collection_link": "https://lively-comet-718291.postman.co/workspace/Bootcamp-Java~301240e5-1616-4058-9cb4-ee9eff002834/collection/11128582-efc23dc7-706f-4d07-92f0-16ab590d1d00?action=share&source=collection_link&creator=11128582"
+	},
+	"item": [
+		{
+			"name": "/findSports/",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/findSport/{name}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/findSportsPersons/",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
