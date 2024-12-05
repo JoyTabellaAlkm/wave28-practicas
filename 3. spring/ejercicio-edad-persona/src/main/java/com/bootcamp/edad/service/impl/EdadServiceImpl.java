@@ -1,8 +1,13 @@
-package com.bootcamp.edad.service;
+package com.bootcamp.edad.service.impl;
 
-public class EdadService {
+import com.bootcamp.edad.service.IEdadService;
+import org.springframework.stereotype.Service;
 
-    public static int calcularEdad(int dia, int mes, int anio) {
+@Service
+public class EdadServiceImpl implements IEdadService {
+
+    @Override
+    public int calcularEdad(int dia, int mes, int anio) {
 
         int diaHoy = 5;
         int mesHoy = 12;
