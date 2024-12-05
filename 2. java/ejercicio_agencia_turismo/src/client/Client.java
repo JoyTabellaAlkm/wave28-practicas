@@ -9,37 +9,22 @@ import java.util.List;
 public class Client {
     String name;
     private final LocatorRepository locatorRepository;
-    double discount;
 
-    public Client(String name){
+    public Client(String name) {
         this.name = name;
         this.locatorRepository = new LocatorRepository();
-        this.discount = 0;
     }
 
-    public LocatorRepository getRepository() {
-        return locatorRepository;
+    public boolean hasMoreThanOneLocator() {
+        return locatorRepository.getAmount() >= 2;
     }
 
-    public void buy(Package aPackage){
+    public void buy(Package aPackage) {
         Locator locator = new Locator(aPackage.productList, this);
         locatorRepository.add(locator);
     }
 
-    public double getFinalPrice(Package aPackage){
-        aPackage.getFinalPrice();
-//        Locator locator = new Locator(productList, this);
-        int locatorsAmount = locatorRepository.getAmount();
-        if(locatorsAmount >= 2) {
-            discount = 0.05;
-        }
-        if(aPackage.isFullPackage()) {
-           discount = 0.01;
-        }
-        if(productList.stream().anyMatch(Product::isPackage)) {
-            discount = 0.05;
-        }
+    public double getFinalPriceFor(Package aPackage) {
+        return aPackage.getPriceForClient(this);
     }
-
-
 }

@@ -1,10 +1,14 @@
 package products;
+
+import client.Client;
+
 import java.util.List;
 
 public class Package {
     public List<Product> productList;
+    private double price;
 
-    public Package(List<Product> packageProductList){
+    public Package(List<Product> packageProductList) {
         this.productList = packageProductList;
     }
 
@@ -12,23 +16,42 @@ public class Package {
         productList.forEach(System.out::println);
     }
 
-    public double getPrice() {
+    public double getPriceForClient(Client client) {
+        price = getTotalPriceWithEachProductDiscount();
+
+        if (isFullPackage()) {
+            applyDiscountOf(0.1);
+        }
+
+        if (client.hasMoreThanOneLocator()) {
+            applyDiscountOf(0.5);
+        }
+
+        return price;
+    }
+
+    private void applyDiscountOf(double discount) {
+        price = price - discount * price;
+    }
+
+    private double getTotalPriceWithEachProductDiscount() {
+        applyTwoHotelsOrTravelsDiscount();
+        return getProductsTotalPrice();
+    }
+
+    private double getProductsTotalPrice() {
+        return productList.stream()
+                .map(product -> product.price)
+                .reduce(0.0, Double::sum);
+    }
+
+    private void applyTwoHotelsOrTravelsDiscount() {
         if (hasTwoHotelReservations() || hasTwoTravelTickets()) {
             productList.forEach(Product::applyTwoReservationsDiscount);
         }
-
-        double totalPrice = productList.stream()
-                .map(product -> product.price)
-                .reduce(0.0, Double::sum);
-
-        if (isFullPackage()) {
-            totalPrice = totalPrice - 0.1 * totalPrice;
-        }
-
-        return totalPrice;
     }
 
-    public boolean isFullPackage() {
+    private boolean isFullPackage() {
         boolean hasFoodReservation = foodReservationsAmount() > 0;
         boolean hasHotelReservation = hotelReservationsAmount() > 0;
         boolean hasTravelTicket = travelTicketsAmount() > 0;
@@ -36,11 +59,11 @@ public class Package {
         return hasFoodReservation && hasHotelReservation && hasTravelTicket;
     }
 
-    public boolean hasTwoHotelReservations() {
+    private boolean hasTwoHotelReservations() {
         return hotelReservationsAmount() == 2;
     }
 
-    public boolean hasTwoTravelTickets() {
+    private boolean hasTwoTravelTickets() {
         return travelTicketsAmount() == 2;
     }
 

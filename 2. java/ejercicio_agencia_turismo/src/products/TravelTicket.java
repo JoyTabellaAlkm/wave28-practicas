@@ -27,7 +27,7 @@ public class TravelTicket extends Product {
                 '}';
     }
 
-    public void applyTwoReservationsDiscount(){
-        price =  price - 0.1 * price;
+    public void applyTwoReservationsDiscount() {
+        price = price - 0.1 * price;
     }
 }

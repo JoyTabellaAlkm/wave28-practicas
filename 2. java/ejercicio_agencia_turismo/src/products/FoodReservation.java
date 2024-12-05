@@ -21,7 +21,8 @@ public class FoodReservation extends Product {
     }
 
     @Override
-    public void applyTwoReservationsDiscount() {}
+    public void applyTwoReservationsDiscount() {
+    }
 
     @Override
     public String toString() {

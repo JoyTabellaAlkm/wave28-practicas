@@ -1,5 +1,6 @@
 package client;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -8,6 +9,9 @@ public final class ClientRepository implements IRepository<Client> {
 
     private List<Client> clientList;
 
+    public ClientRepository() {
+        this.clientList = new ArrayList<>();
+    }
 
     public Optional<Client> getBy(String clientName) {
         return clientList.stream().filter(clientToFind -> Objects.equals(clientToFind.name, clientName)).findAny();
