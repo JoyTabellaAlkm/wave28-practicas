@@ -1,6 +1,6 @@
-package com.spring.ejercicios.Controllers;
+package com.spring.ejercicios.controllers;
 
-import com.spring.ejercicios.Services.iCalculadoraEdadService;
+import com.spring.ejercicios.services.iCalculadoraEdadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
