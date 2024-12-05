@@ -1,6 +1,7 @@
 package com.bootcamp.edades_api.controller;
 
 import com.bootcamp.edades_api.service.AgeCalculatorService;
+import com.bootcamp.edades_api.service.IAgeCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AgeRestController {
 
-    private AgeCalculatorService ageCalculatorService;
+    private IAgeCalculatorService ageCalculatorService;
 
     public AgeRestController(@Autowired AgeCalculatorService ageCalculatorService) {
         this.ageCalculatorService = ageCalculatorService;
