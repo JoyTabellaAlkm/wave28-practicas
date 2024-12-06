@@ -1,15 +1,21 @@
 package ejercicios_integradores.supermercado_el_economico;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Factura {
+    private Integer id;
     private Cliente cliente;
     private List<Item> itemList;
     private Double total;
+    private static int TOTAL_FACTURAS = 0;
 
     public Factura(Cliente cliente) {
+        this.id = TOTAL_FACTURAS;
         this.cliente = cliente;
+        this.itemList = new ArrayList<>();
         this.total = 0.0;
+        TOTAL_FACTURAS++;
     }
 
     public Cliente getCliente() {

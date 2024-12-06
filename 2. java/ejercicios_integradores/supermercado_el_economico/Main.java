@@ -36,18 +36,22 @@ public class Main {
         System.out.println("========== Clientes ==========");
         clienteMap.values().forEach(System.out::println);
 
-        // Busco por DNI
+        // Busco por DNI (comentado para que no interrumpa el flujo de ejecución)
 
-        System.out.println("========== Búsqueda cliente por DNI ==========");
-        System.out.print("Ingrese el DNI (sin guiones ni espacios): ");
-        String dni = scanner.next();
-        Cliente clienteEncontrado = clienteMap.get(dni);
-        if(clienteEncontrado != null) {
-            System.out.println("Cliente encontrado:");
-            System.out.println(clienteEncontrado);
-        } else {
-            System.out.println("No se encontró al cliente con el DNI: " + dni);
-        }
+//        System.out.println("========== Búsqueda cliente por DNI ==========");
+//        System.out.print("Ingrese el DNI (sin guiones ni espacios): ");
+//        String dni = scanner.next();
+//        Cliente clienteEncontrado = clienteMap.get(dni);
+//        if(clienteEncontrado != null) {
+//            System.out.println("Cliente encontrado:");
+//            System.out.println(clienteEncontrado);
+//        } else {
+//            System.out.println("No se encontró al cliente con el DNI: " + dni);
+//        }
         // === FIN PARTE 1 ===
+
+        Facturador facturador = new FacturadorImpl();
+        Factura factura1 = facturador.crearFactura(cliente1);
+
     }
 }
