@@ -19,8 +19,10 @@ public class PersonajeServiceImpl implements PersonajeService {
     @Override
     public List<PersonajeDTO> findAllByName(String name) throws IOException {
         List<Personaje> personajes = repository.findAll();
-        List<Personaje> encontrados = personajes.stream().filter(p -> p.getName().toUpperCase().contains(name.toUpperCase())).toList();
-        return encontrados.stream().map(this::mapearaDTO).toList();
+        return personajes.stream().filter(
+                p -> p.getName().toUpperCase()
+                        .contains(name.toUpperCase())).
+                map(this::mapearaDTO).toList();
     }
 
     private PersonajeDTO mapearaDTO(Personaje personaje){
