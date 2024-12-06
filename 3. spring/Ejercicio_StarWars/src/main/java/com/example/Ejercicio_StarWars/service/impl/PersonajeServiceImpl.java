@@ -23,14 +23,16 @@ public class PersonajeServiceImpl implements IPersonajeService {
         List<Personaje> toRead = repository.listar();
         List<PersonajeDto> toReturn = new ArrayList<>();
         toRead.stream().filter(x -> x.getName().contains(toFind)).toList().stream().forEach(p ->
-            toReturn.add(mapeaAPersonajeDto(p)));
-
+        toReturn.add(mapeaAPersonajeDto(p)));
+        toRead.stream().forEach(System.out::println);
         return toReturn;
 }
 
 private PersonajeDto mapeaAPersonajeDto(Personaje p){
     return new PersonajeDto(p.getName(),p.getHeight(),p.getMass(),p.getGender(),p.getHomeworld(),p.getSpecies());
 }
+
+
 
 
 }
