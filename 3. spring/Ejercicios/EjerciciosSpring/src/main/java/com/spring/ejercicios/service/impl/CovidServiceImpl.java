@@ -1,9 +1,9 @@
-package com.spring.ejercicios.services.impl;
+package com.spring.ejercicios.service.impl;
 
 import com.spring.ejercicios.dto.PersonaCovidDTO;
-import com.spring.ejercicios.models.PersonaCovid;
-import com.spring.ejercicios.models.Sintoma;
-import com.spring.ejercicios.services.iCovidService;
+import com.spring.ejercicios.model.PersonaCovid;
+import com.spring.ejercicios.model.Sintoma;
+import com.spring.ejercicios.service.iCovidService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

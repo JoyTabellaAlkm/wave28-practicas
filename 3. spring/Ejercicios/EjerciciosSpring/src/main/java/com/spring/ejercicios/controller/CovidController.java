@@ -1,8 +1,8 @@
-package com.spring.ejercicios.controllers;
+package com.spring.ejercicios.controller;
 
 import com.spring.ejercicios.dto.PersonaCovidDTO;
-import com.spring.ejercicios.models.Sintoma;
-import com.spring.ejercicios.services.iCovidService;
+import com.spring.ejercicios.model.Sintoma;
+import com.spring.ejercicios.service.iCovidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

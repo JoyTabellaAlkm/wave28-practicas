@@ -1,4 +1,4 @@
-package com.spring.ejercicios.models;
+package com.spring.ejercicios.model;
 
 import java.util.ArrayList;
 import java.util.List;

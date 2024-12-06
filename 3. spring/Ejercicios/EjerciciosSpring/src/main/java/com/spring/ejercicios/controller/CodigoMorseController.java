@@ -1,6 +1,6 @@
-package com.spring.ejercicios.controllers;
+package com.spring.ejercicios.controller;
 
-import com.spring.ejercicios.services.impl.CodigoMorseService;
+import com.spring.ejercicios.service.impl.CodigoMorseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.spring.ejercicios.services;
+package com.spring.ejercicios.service;
 
 public interface iCalculadoraEdadService {
 

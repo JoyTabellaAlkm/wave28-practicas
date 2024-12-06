@@ -1,9 +1,9 @@
-package com.spring.ejercicios.services.impl;
+package com.spring.ejercicios.service.impl;
 
 import com.spring.ejercicios.dto.PersonaDeportistaDTO;
-import com.spring.ejercicios.models.Deporte;
-import com.spring.ejercicios.models.PersonaDerportista;
-import com.spring.ejercicios.services.iDeporteService;
+import com.spring.ejercicios.model.Deporte;
+import com.spring.ejercicios.model.PersonaDerportista;
+import com.spring.ejercicios.service.iDeporteService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

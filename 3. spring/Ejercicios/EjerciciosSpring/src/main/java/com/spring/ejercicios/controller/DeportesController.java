@@ -1,7 +1,7 @@
-package com.spring.ejercicios.controllers;
+package com.spring.ejercicios.controller;
 
 import com.spring.ejercicios.dto.PersonaDeportistaDTO;
-import com.spring.ejercicios.services.iDeporteService;
+import com.spring.ejercicios.service.iDeporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.spring.ejercicios.models;
+package com.spring.ejercicios.model;
 
 public class Sintoma {
     private int codigo;

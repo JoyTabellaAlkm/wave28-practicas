@@ -1,7 +1,7 @@
-package com.spring.ejercicios.services;
+package com.spring.ejercicios.service;
 
 import com.spring.ejercicios.dto.PersonaCovidDTO;
-import com.spring.ejercicios.models.Sintoma;
+import com.spring.ejercicios.model.Sintoma;
 
 import java.util.List;
 

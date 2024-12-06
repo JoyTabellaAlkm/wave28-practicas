@@ -1,4 +1,4 @@
-package com.spring.ejercicios.services;
+package com.spring.ejercicios.service;
 
 import com.spring.ejercicios.dto.PersonaDeportistaDTO;
 

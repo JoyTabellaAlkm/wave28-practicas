@@ -1,4 +1,4 @@
-package com.spring.ejercicios.services.impl;
+package com.spring.ejercicios.service.impl;
 
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,7 @@
-package com.spring.ejercicios.models;
+package com.spring.ejercicios.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

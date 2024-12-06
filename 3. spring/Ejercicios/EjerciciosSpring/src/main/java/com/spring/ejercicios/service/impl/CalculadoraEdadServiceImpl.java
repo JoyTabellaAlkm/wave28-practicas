@@ -1,6 +1,6 @@
-package com.spring.ejercicios.services.impl;
+package com.spring.ejercicios.service.impl;
 
-import com.spring.ejercicios.services.iCalculadoraEdadService;
+import com.spring.ejercicios.service.iCalculadoraEdadService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
