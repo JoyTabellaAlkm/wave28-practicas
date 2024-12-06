@@ -1,24 +1,29 @@
 package com.bootcamp.starWars.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Personaje {
     @JsonProperty("name")
     private String name;
     @JsonProperty("height")
-    private String height;
+    private Integer height;
     @JsonProperty("mass")
-    private String mass;
+    private Integer mass;
     @JsonProperty("hair_color")
-    private String hair_color;
+    private String hairColor;
     @JsonProperty("skin_color")
-    private String skin_color;
+    private String skinColor;
     @JsonProperty("eye_color")
-    private String eye_color;
+    private String eyeColor;
     @JsonProperty("birth_year")
-    private String birth_year;
+    private String birthYear;
     @JsonProperty("gender")
     private String gender;
     @JsonProperty("homeworld")
@@ -26,43 +31,20 @@ public class Personaje {
     @JsonProperty("species")
     private String species;
 
-    public String getName() {
-        return name;
+    @JsonSetter("height")
+    public void setHeightFromJSON(String height){
+        try {
+            this.height = Integer.parseInt(height);
+        }catch (NumberFormatException e){
+            this.height = null;
+        }
     }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public String getMass() {
-        return mass;
-    }
-
-    public String getHair_color() {
-        return hair_color;
-    }
-
-    public String getSkin_color() {
-        return skin_color;
-    }
-
-    public String getEye_color() {
-        return eye_color;
-    }
-
-    public String getBirth_year() {
-        return birth_year;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getHomeworld() {
-        return homeworld;
-    }
-
-    public String getSpecies() {
-        return species;
+    @JsonSetter("mass")
+    public void setMassFromJSON(String mass){
+        try {
+            this.mass = Integer.parseInt(mass);
+        }catch (NumberFormatException e){
+            this.mass = null;
+        }
     }
 }
