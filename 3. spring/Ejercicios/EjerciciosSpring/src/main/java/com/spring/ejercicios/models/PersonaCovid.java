@@ -3,14 +3,14 @@ package com.spring.ejercicios.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persona {
+public class PersonaCovid {
     private int id;
     private String nombre;
     private String apellido;
     private int edad;
     private List<Integer> sintomasCodigos;
 
-    public Persona(int id, int edad, String apellido, String nombre, List<Integer> sintomasCodigos) {
+    public PersonaCovid(int id, int edad, String apellido, String nombre, List<Integer> sintomasCodigos) {
         this.id = id;
         this.edad = edad;
         this.apellido = apellido;
@@ -18,7 +18,7 @@ public class Persona {
         this.sintomasCodigos = sintomasCodigos != null ? sintomasCodigos : new ArrayList<>();
     }
 
-    public Persona(int id, int edad, String apellido, String nombre) {
+    public PersonaCovid(int id, int edad, String apellido, String nombre) {
         this.id = id;
         this.edad = edad;
         this.apellido = apellido;

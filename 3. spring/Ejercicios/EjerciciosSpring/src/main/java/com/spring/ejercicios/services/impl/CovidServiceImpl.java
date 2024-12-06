@@ -1,7 +1,7 @@
 package com.spring.ejercicios.services.impl;
 
-import com.spring.ejercicios.dto.personaDTO;
-import com.spring.ejercicios.models.Persona;
+import com.spring.ejercicios.dto.PersonaCovidDTO;
+import com.spring.ejercicios.models.PersonaCovid;
 import com.spring.ejercicios.models.Sintoma;
 import com.spring.ejercicios.services.iCovidService;
 import org.springframework.stereotype.Service;
@@ -18,10 +18,10 @@ public class CovidServiceImpl implements iCovidService {
             new Sintoma(3, "Tos seca", 1)
     );
 
-    private List<Persona> personas = List.of(
-            new Persona(1, 44, "Pérez", "Juan", List.of(2)),
-            new Persona(2, 44, "González", "Ana"),
-            new Persona(3, 44, "López", "Carlos", List.of(1, 2, 3))
+    private List<PersonaCovid> personas = List.of(
+            new PersonaCovid(1, 44, "Pérez", "Juan", List.of(2)),
+            new PersonaCovid(2, 44, "González", "Ana"),
+            new PersonaCovid(3, 44, "López", "Carlos", List.of(1, 2, 3))
     );
 
     @Override
@@ -44,14 +44,14 @@ public class CovidServiceImpl implements iCovidService {
     }
 
     @Override
-    public List<personaDTO> personasRiesgo() {
-        List<Persona> personas1 = personas.stream()
+    public List<PersonaCovidDTO> personasRiesgo() {
+        List<PersonaCovid> personas1 = personas.stream()
                 .filter(x -> x.getEdad() >= 60 && !x.getSintomasCodigos().isEmpty())
                 .toList();
-        List<personaDTO> listaDto = new ArrayList<>();
+        List<PersonaCovidDTO> listaDto = new ArrayList<>();
         if (!personas1.isEmpty()){
-            for(Persona p : personas1) {
-                personaDTO pe = new personaDTO(p.getNombre(), p.getApellido());
+            for(PersonaCovid p : personas1) {
+                PersonaCovidDTO pe = new PersonaCovidDTO(p.getNombre(), p.getApellido());
                 listaDto.add(pe);
             }
         }
