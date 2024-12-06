@@ -3,10 +3,12 @@ package com.ejercicios.covid19.Repository;
 import com.ejercicios.covid19.DTO.PacienteDTO;
 import com.ejercicios.covid19.models.Persona;
 import com.ejercicios.covid19.models.Sintoma;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class PacienteRepositoryImpl implements PacienteRepository {
     private List<PacienteDTO> databasePacientes;
     private final List<Sintoma> databaseSintomas;

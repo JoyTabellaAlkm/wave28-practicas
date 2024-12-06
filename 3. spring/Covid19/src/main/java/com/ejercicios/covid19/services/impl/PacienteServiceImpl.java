@@ -31,19 +31,10 @@ public class PacienteServiceImpl implements IPacienteService {
     @Override
     public List<PacienteRiesgoDTO> devolverPacientesRiesgo() {
         List<PacienteDTO> rta = pacienteRepository.findPacientesByRiskAgeAge();
-
-        List<PacienteRiesgoDTO> algo = new ArrayList<>();
-        for (PacienteDTO p : rta){
-            algo.add(new PacienteRiesgoDTO(p.getPersona().getNombre(), p.getPersona().getApellido()));
-        }
-        return algo;
-
-/*        return rta.stream()
+        return rta.stream()
                 .map(pacienteDTO -> new PacienteRiesgoDTO(pacienteDTO.getPersona().getNombre(),
                         pacienteDTO.getPersona().getApellido())
-                ).toList();*/
-
-
+                ).toList();
 
     }
 
