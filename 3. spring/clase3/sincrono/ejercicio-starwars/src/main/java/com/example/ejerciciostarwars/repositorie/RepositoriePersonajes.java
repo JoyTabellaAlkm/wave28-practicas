@@ -22,7 +22,7 @@ public class RepositoriePersonajes {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        ObjectMapper objectMapper = new ObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);;
+        ObjectMapper objectMapper = new ObjectMapper();//.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);;
         TypeReference<List<Personaje>> typeRef = new TypeReference<List<Personaje>>() {};
         List<Personaje> characters = null;
         try {
