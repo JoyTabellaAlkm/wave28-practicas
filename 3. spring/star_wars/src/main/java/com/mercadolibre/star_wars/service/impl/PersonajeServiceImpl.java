@@ -24,6 +24,7 @@ public class PersonajeServiceImpl implements PersonajeService {
     }
 
     private PersonajeDTO mapearaDTO(Personaje personaje) {
+        List.of();
         PersonajeDTO personajeDTO = new PersonajeDTO(personaje.getName(), personaje.getHeight(), personaje.getMass(), personaje.getBirthYear(), personaje.getGender(), personaje.getHomeworld(), personaje.getSpecies());
         return personajeDTO;
     }
