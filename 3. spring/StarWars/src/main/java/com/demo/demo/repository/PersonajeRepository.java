@@ -2,11 +2,14 @@ package com.demo.demo.repository;
 
 import com.demo.demo.dto.PersonajeDTO;
 import com.demo.demo.model.Personaje;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -38,32 +41,18 @@ public class PersonajeRepository {
         return personaje;
     }
 
-    public List<Personaje> populateFromFile() {
-        List<Personaje> personajes = new ArrayList<>();
-        personajes.add(new Personaje(
-                "Luke Skywalker",
-                72,
-                7,
-                "blond",
-                "fair",
-                "blue",
-                "19BBY",
-                "male",
-                "Tatooine",
-                "Human"
-        ));
-        personajes.add(new Personaje(
-                "C-3PO",
-                167,
-                75,
-                "NA",
-                "gold",
-                "yellow",
-                "112BBY",
-                "NA",
-                "Tatooine",
-                "Droid"
-        ));
-        return personajes;
+    private List<Personaje> populateFromFile() {
+        try {
+            Resource resource = new ClassPathResource("characters.json");
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+            return objectMapper.readValue(
+                    resource.getInputStream(),
+                    objectMapper.getTypeFactory().constructCollectionType(List.class, Personaje.class)
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
