@@ -31,7 +31,7 @@ public class Main {
     Reserva reserva4 = new Reserva(200);
     compra3.agregarReserva(reserva4);
     //Mariana recibe descuento por segunda compra para futuras compras
-    if(repositorio.contarComprasPorUsuario(1) == 2)cliente1.setDescuento(0.5);
+    if(repositorio.contarComprasPorUsuario(1) == 2)cliente1.setDescuento(0.05);
   }
   
 }
