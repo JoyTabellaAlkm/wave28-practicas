@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "a95fc3a7-a1b7-4ab7-9070-e5b1824897ca",
+		"name": "startwar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11128582",
+		"_collection_link": "https://lively-comet-718291.postman.co/workspace/Bootcamp-Java~301240e5-1616-4058-9cb4-ee9eff002834/collection/11128582-a95fc3a7-a1b7-4ab7-9070-e5b1824897ca?action=share&source=collection_link&creator=11128582"
+	},
+	"item": [
+		{
+			"name": "findByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/personaje?name=a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personaje"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
