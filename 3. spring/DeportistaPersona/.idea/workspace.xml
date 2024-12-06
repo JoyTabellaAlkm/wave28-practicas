@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e810166-c19b-4a2c-b145-4ec0193e7abb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/DeportistaPersonaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/controller/DeportePersonaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/dto/PersonaDeporteDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/model/Deporte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/model/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/repository/RepositoryDeporte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/repository/RepositoryPersona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/service/IPersonaDeporte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mercadolibre/deportistapersona/service/impl/PersonaDeporteImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mercadolibre/deportistapersona/DeportistaPersonaApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/DeportistasApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/controller/DeportistaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/dto/request/DeporteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/dto/request/PersonaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/dto/response/DeporteNombreDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/dto/response/DeportistaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/model/Deporte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/model/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/service/IDeporteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/service/IPersonaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/service/impl/DeporteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/java/com/mercadolibre/deportistas/service/impl/PersonaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deportistas/src/test/java/com/mercadolibre/deportistas/DeportistasApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2po4MXnc64OhBoyrCvkKOjt0Ogw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "abarca__juan",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/jabarca/Documents/BootCamp/wave28-practicas/3. spring/DeportistaPersona",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "proofread",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="DeportistaPersonaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="DeportistaPersona" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mercadolibre.deportistapersona.DeportistaPersonaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e810166-c19b-4a2c-b145-4ec0193e7abb" name="Changes" comment="" />
+      <created>1732804937451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732804937451</updated>
+      <workItem from="1732804939142" duration="14000" />
+      <workItem from="1733419047692" duration="3593000" />
+      <workItem from="1733491648810" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
