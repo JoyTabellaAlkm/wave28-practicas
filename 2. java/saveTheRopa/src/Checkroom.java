@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Checkroom {
-    private Map<Integer, List<Garment>> checkroomMap;
+    private final Map<Integer, List<Garment>> checkroomMap;
     private static Integer id;
 
     public Checkroom() {

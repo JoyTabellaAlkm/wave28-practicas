@@ -23,14 +23,5 @@ public class Main {
         if (garments == null){
             System.out.println("No hay prendas en el guardarropa con ese identificador");
         } else System.out.println(garments);
-
-
-
-
-
-
-
-
-
     }
 }
