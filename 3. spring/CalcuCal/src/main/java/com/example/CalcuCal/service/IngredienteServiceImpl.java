@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IngredienteServiceImpl implements IIngredienteService{
+public class IngredienteServiceImpl implements IIngredienteService {
 
     @Autowired
     private IIngredientesRepository ingredienteRepository;
@@ -38,14 +38,12 @@ public class IngredienteServiceImpl implements IIngredienteService{
                 .mapToInt(ingredienteConPesoDTO -> {
                     int peso = ingredienteConPesoDTO.getWeight();
                     int caloriasPorCada100Gramos = obtenerIngredientes(ingredienteConPesoDTO.getName()).getCalories();
-                    return  ingredienteConPesoDTO.getWeight() * (obtenerIngredientes(ingredienteConPesoDTO.getName()).getCalories()  / 100 );
+                    return ingredienteConPesoDTO.getWeight() * (obtenerIngredientes(ingredienteConPesoDTO.getName()).getCalories() / 100);
                 })
                 .sum();
 
         return new RespuestaDTO("Las calorias totales del plato son: " + caloriasTotales);
     }
-
-
 
 
 }

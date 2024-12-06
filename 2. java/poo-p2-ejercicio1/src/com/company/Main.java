@@ -3,10 +3,11 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         PracticaExcepciones p1 = new PracticaExcepciones("hola");
     }
 }
+
 class PracticaExcepciones {
     int a;
     int b = 300;

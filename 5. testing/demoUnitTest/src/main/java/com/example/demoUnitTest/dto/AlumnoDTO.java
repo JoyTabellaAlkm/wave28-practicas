@@ -18,12 +18,12 @@ public class AlumnoDTO {
     @Positive(message = "El valor debe ser POSITIVO")
     private Integer id;
 
-    @Size(min = 3, max= 10, message = "El nombre debe tener al menos 3 caracteres")
-    @Pattern(regexp="([A-Z]|[0-9])[\\s|[0-9]|A-Z|a-z|ñ|ó|í|á|é|ú|Á|Ó|É|Í|Ú]*$", message = "El nombre del estudiante debe comenzar con mayúscula.")
+    @Size(min = 3, max = 10, message = "El nombre debe tener al menos 3 caracteres")
+    @Pattern(regexp = "([A-Z]|[0-9])[\\s|[0-9]|A-Z|a-z|ñ|ó|í|á|é|ú|Á|Ó|É|Í|Ú]*$", message = "El nombre del estudiante debe comenzar con mayúscula.")
     private String nombre;
 
-    @Size(min = 3, max= 10, message = "El apellido debe tener al menos 3 caracteres")
-    @Pattern(regexp="([A-Z]|[0-9])[\\s|[0-9]|A-Z|a-z|ñ|ó|í|á|é|ú|Á|Ó|É|Í|Ú]*$", message = "El apellido del estudiante debe comenzar con mayúscula.")
+    @Size(min = 3, max = 10, message = "El apellido debe tener al menos 3 caracteres")
+    @Pattern(regexp = "([A-Z]|[0-9])[\\s|[0-9]|A-Z|a-z|ñ|ó|í|á|é|ú|Á|Ó|É|Í|Ú]*$", message = "El apellido del estudiante debe comenzar con mayúscula.")
     private String apellidos;
 
     @NotEmpty(message = "La lista de cursos no puede estar vacía")

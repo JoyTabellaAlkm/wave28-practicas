@@ -1,8 +1,11 @@
 package com.example.ejerciciolinks.exception;
 
-public class BadPasswordException extends RuntimeException{
+public class BadPasswordException extends RuntimeException {
 
-    public BadPasswordException (){}
+    public BadPasswordException() {
+    }
 
-    public BadPasswordException(String message){super(message);}
+    public BadPasswordException(String message) {
+        super(message);
+    }
 }

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Repository
-public class AlumnoRepositoryImpl implements IAlumnoRepository{
+public class AlumnoRepositoryImpl implements IAlumnoRepository {
 
     List<Alumno> alumnosList;
 
@@ -48,7 +48,8 @@ public class AlumnoRepositoryImpl implements IAlumnoRepository{
                 .setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
                 .registerModule(new JavaTimeModule());
 
-        TypeReference<List<Alumno>> typeRef = new TypeReference<>() {};
+        TypeReference<List<Alumno>> typeRef = new TypeReference<>() {
+        };
 
         try {
             file = ResourceUtils.getFile("classpath:users.json");
@@ -63,7 +64,6 @@ public class AlumnoRepositoryImpl implements IAlumnoRepository{
 
         return loadedData;
     }
-
 
 
 }

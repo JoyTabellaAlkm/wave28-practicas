@@ -1,6 +1,7 @@
 package client;
 
 import products.Locator;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -18,7 +19,7 @@ public class LocatorRepository implements IRepository<Locator> {
         return locatorList;
     }
 
-    public int getAmount(){
+    public int getAmount() {
         return locatorList.size();
     }
 }

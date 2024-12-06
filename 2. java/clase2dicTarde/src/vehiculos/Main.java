@@ -20,20 +20,20 @@ public class Main {
         Vehiculo fortuner = new Vehiculo("Fortuner", "Toyota", 3000);
         Vehiculo logan = new Vehiculo("Logan", "Renault", 950);
 
-        Garage instancia1 = new Garage(1, List.of(fiesta,focus,explorer,uno,cronos,torino,aveo,spin,corola,fortuner,logan));
+        Garage instancia1 = new Garage(1, List.of(fiesta, focus, explorer, uno, cronos, torino, aveo, spin, corola, fortuner, logan));
 
         //        Ordenar por costo
 
-        instancia1.getListaVehiculos().stream().sorted((a,b) -> a.getCostos() - b.getCostos()).forEach(System.out::println);
+        instancia1.getListaVehiculos().stream().sorted((a, b) -> a.getCostos() - b.getCostos()).forEach(System.out::println);
 
         // Ordenar por costo y marca
 
         System.out.println("Ordenado por marca y costo");
         instancia1.getListaVehiculos()
                 .stream()
-                .sorted((a,b)->{
-                    int marca =a.getMarca().compareTo(b.getMarca());
-                    if(marca != 0){
+                .sorted((a, b) -> {
+                    int marca = a.getMarca().compareTo(b.getMarca());
+                    if (marca != 0) {
                         return marca;
                     }
                     return a.getCostos() - b.getCostos();
@@ -43,10 +43,10 @@ public class Main {
 
         //        Mostrar vehiculos menores a mil
 
-        List<Vehiculo> vehiculosMenoresA1000= instancia1.getListaVehiculos().stream().filter(v->v.getCostos()<1000).collect(Collectors.toList());
+        List<Vehiculo> vehiculosMenoresA1000 = instancia1.getListaVehiculos().stream().filter(v -> v.getCostos() < 1000).collect(Collectors.toList());
 //        Mostrar vehiculos mayores o igual a mil
 
-        List<Vehiculo> vehiculosMayoresA1000= instancia1.getListaVehiculos().stream().filter(v->v.getCostos()>=1000).collect(Collectors.toList());
+        List<Vehiculo> vehiculosMayoresA1000 = instancia1.getListaVehiculos().stream().filter(v -> v.getCostos() >= 1000).collect(Collectors.toList());
 
 //        Traer promedio
         double promedio = instancia1.getListaVehiculos()

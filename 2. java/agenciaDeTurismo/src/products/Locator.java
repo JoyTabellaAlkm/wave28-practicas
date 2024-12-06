@@ -1,12 +1,13 @@
 package products;
 
 import client.Client;
+
 import java.util.List;
 
 import java.util.List;
 
 public class Locator {
-    public Locator(List<Product> productList, Client owner){
+    public Locator(List<Product> productList, Client owner) {
         this.productList = productList;
     }
 

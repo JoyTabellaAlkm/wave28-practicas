@@ -1,5 +1,5 @@
 package com.company;
 
-public class serieA extends Prototipo{
+public class serieA extends Prototipo {
 
 }

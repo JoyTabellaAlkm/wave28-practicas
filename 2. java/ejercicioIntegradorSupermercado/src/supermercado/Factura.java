@@ -8,5 +8,4 @@ public class Factura {
     public List<Item> productosComprados;
 
 
-
 }

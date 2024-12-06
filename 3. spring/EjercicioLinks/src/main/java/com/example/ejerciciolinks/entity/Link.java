@@ -13,7 +13,7 @@ public class Link {
     Integer contadorEstadistica;
     String password;
 
-    public void actualizarContador(){
-        this.contadorEstadistica+=1;
+    public void actualizarContador() {
+        this.contadorEstadistica += 1;
     }
 }

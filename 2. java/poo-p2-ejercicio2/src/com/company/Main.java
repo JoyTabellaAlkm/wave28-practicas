@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         List<Producto> productos = new ArrayList<Producto>();
 
         productos.add(new Perecedero("1", 100, 5));
@@ -24,7 +24,7 @@ public class Main {
 
         double totalVentas = 0;
 
-        for (Producto p: productos) {
+        for (Producto p : productos) {
             totalVentas += p.calcular(5);
         }
 
@@ -112,7 +112,8 @@ class Perecedero extends Producto {
                 valorConDescuento /= 2;
                 break;
 
-            default: break;
+            default:
+                break;
 
 
         }

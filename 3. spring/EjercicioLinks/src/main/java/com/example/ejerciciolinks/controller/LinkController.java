@@ -22,30 +22,31 @@ public class LinkController {
     ILinkService service;
 
     @PostMapping("/link")
-    public ResponseEntity<?> newLink (@RequestBody LinkDTO newLink){
+    public ResponseEntity<?> newLink(@RequestBody LinkDTO newLink) {
         return new ResponseEntity<>(service.saveLink(newLink), HttpStatus.CREATED);
     }
 
 
     @GetMapping("/metrics/{linkID}")
-    public ResponseEntity<?> metricById(@PathVariable Integer linkID){
+    public ResponseEntity<?> metricById(@PathVariable Integer linkID) {
         return new ResponseEntity<>(service.getLinkMetrics(linkID), HttpStatus.OK);
 
     }
+
     @GetMapping("")
-    public ResponseEntity<?> getById(){
+    public ResponseEntity<?> getById() {
         return new ResponseEntity<>(repository.getAllLink(), HttpStatus.OK);
 
     }
 
     @DeleteMapping("/invalidate/{linkId}")
-    public ResponseEntity<?> invalidateLink(@PathVariable Integer linkId){
+    public ResponseEntity<?> invalidateLink(@PathVariable Integer linkId) {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/link/{linkId}")
-    public ResponseEntity<?> redirect(@PathVariable int linkId, @RequestParam(required = false) String password){
-        LinkDTO linkDTO = service.redirect(linkId,password);
+    public ResponseEntity<?> redirect(@PathVariable int linkId, @RequestParam(required = false) String password) {
+        LinkDTO linkDTO = service.redirect(linkId, password);
         return ResponseEntity.status(302)
                 .header("Location", linkDTO.getUrl())
                 .build();

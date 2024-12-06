@@ -5,7 +5,7 @@ import java.util.List;
 public class Package extends Product {
     public List<Product> productList;
 
-    public Package(Double price, List<Product> packageProductList){
+    public Package(Double price, List<Product> packageProductList) {
         super(price);
         this.productList = packageProductList;
     }

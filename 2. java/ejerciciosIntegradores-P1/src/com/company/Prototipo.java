@@ -14,10 +14,12 @@ public class Prototipo {
         valor += incremento;
         return valor;
     }
-    public void reiniciar(){
+
+    public void reiniciar() {
         valor = 0;
     }
-    public void valorInicial(Integer inicial){
+
+    public void valorInicial(Integer inicial) {
         this.valor = inicial;
     }
 

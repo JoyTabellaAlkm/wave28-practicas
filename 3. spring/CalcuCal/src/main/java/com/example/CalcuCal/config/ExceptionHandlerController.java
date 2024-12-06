@@ -13,10 +13,9 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(IngredienteNonExistException.class)
     public ResponseEntity<ErrorDTO> handleIngredienteNonExistException(IngredienteNonExistException ex) {
-        ErrorDTO error = new ErrorDTO("Uno de los ingredientes de su plato no existe o no esta registrado, revise por favor",404);
+        ErrorDTO error = new ErrorDTO("Uno de los ingredientes de su plato no existe o no esta registrado, revise por favor", 404);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
-
 
 
 }

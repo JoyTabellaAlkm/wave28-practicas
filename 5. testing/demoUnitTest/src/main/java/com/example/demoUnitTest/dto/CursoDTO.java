@@ -16,7 +16,7 @@ public class CursoDTO {
     @NotNull(message = "El codigo es obligatorio")
     @Positive(message = "El valor debe ser POSITIVO")
     private Integer codigo;
-    @Size(min = 3, max= 10, message = "El nombre debe tener al menos 3 caracteres")
+    @Size(min = 3, max = 10, message = "El nombre debe tener al menos 3 caracteres")
     @NotNull(message = "El nombre es obligatorio")
     private String nombre;
 

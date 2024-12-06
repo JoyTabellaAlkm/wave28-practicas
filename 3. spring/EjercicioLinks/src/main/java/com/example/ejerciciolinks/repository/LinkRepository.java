@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class LinkRepository implements ILinkRepository{
+public class LinkRepository implements ILinkRepository {
     private HashMap<Integer, Link> database = new HashMap<>();
 
     @Override
@@ -18,17 +18,16 @@ public class LinkRepository implements ILinkRepository{
         List<Link> allLink = this.getAllLink();
         newLink.setId(allLink.size());
 
-        if (this.getLinkByUrl(newLink.getLink())==null){
+        if (this.getLinkByUrl(newLink.getLink()) == null) {
             this.database.put(newLink.getId(), newLink);
             return newLink.getId();
-        }
-        else return null;
+        } else return null;
     }
 
     @Override
     public List<Link> getAllLink() {
         List<Link> allLinks = new ArrayList<>();
-        for (Map.Entry<Integer, Link> entry: this.database.entrySet()) {
+        for (Map.Entry<Integer, Link> entry : this.database.entrySet()) {
             allLinks.add(this.database.get(entry.getKey()));
         }
         return allLinks;
@@ -36,8 +35,8 @@ public class LinkRepository implements ILinkRepository{
 
     @Override
     public Link getLinkByUrl(String url) {
-        for (Map.Entry<Integer, Link> entry: this.database.entrySet()) {
-            if(url.equals(entry.getValue().getLink())){
+        for (Map.Entry<Integer, Link> entry : this.database.entrySet()) {
+            if (url.equals(entry.getValue().getLink())) {
                 return entry.getValue();
             }
         }
@@ -47,9 +46,9 @@ public class LinkRepository implements ILinkRepository{
 
     @Override
     public Link getLinkById(Integer linkId) {
-        if (this.database.containsKey(linkId)){
+        if (this.database.containsKey(linkId)) {
             return this.database.get(linkId);
-        }else return null;
+        } else return null;
     }
 
     @Override

@@ -15,11 +15,11 @@ public class AlumnoRepositoryTest {
 
     IAlumnoRepository alumnoRepository = new AlumnoRepositoryImpl();
 
-    private static final Alumno alumnoDeEntrada = new Alumno( 1, "Juan", "Martinez",
-           List.of(new Curso(101, "Matemáticas", 10.0),
-                   new Curso(102, "Historia", 10.0)
-           ));
-    private static final Alumno alumnoDeEntrada2 = new Alumno( 2, "María" , "González",
+    private static final Alumno alumnoDeEntrada = new Alumno(1, "Juan", "Martinez",
+            List.of(new Curso(101, "Matemáticas", 10.0),
+                    new Curso(102, "Historia", 10.0)
+            ));
+    private static final Alumno alumnoDeEntrada2 = new Alumno(2, "María", "González",
             List.of(new Curso(102, "Historia", 1.0),
                     new Curso(105, "Ciencias Naturales", 1.0)
             ));

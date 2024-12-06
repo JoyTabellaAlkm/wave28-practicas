@@ -1,4 +1,5 @@
 package client;
+
 import products.Locator;
 import products.Product;
 
@@ -8,7 +9,7 @@ public class Client {
     String name;
     private final LocatorRepository locatorRepository;
 
-    public Client(String name){
+    public Client(String name) {
         this.name = name;
         this.locatorRepository = new LocatorRepository();
     }
@@ -17,7 +18,7 @@ public class Client {
         return locatorRepository;
     }
 
-    public void buy(List<Product> productList){
+    public void buy(List<Product> productList) {
         Locator locator = new Locator(productList, this);
         locatorRepository.add(locator);
     }

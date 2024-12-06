@@ -26,11 +26,11 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class CalculadoraPromedioControllerTest {
 
-    private static final Alumno alumnoDeEntrada = new Alumno( 1, "Juan", "Martinez",
+    private static final Alumno alumnoDeEntrada = new Alumno(1, "Juan", "Martinez",
             List.of(new Curso(101, "Matemáticas", 10.0),
                     new Curso(102, "Historia", 10.0)
             ));
-    private static final Alumno alumnoDeEntrada2 = new Alumno( 2, "María" , "González",
+    private static final Alumno alumnoDeEntrada2 = new Alumno(2, "María", "González",
             List.of(new Curso(102, "Historia", 1.0),
                     new Curso(105, "Ciencias Naturales", 1.0)
             ));
@@ -59,7 +59,6 @@ public class CalculadoraPromedioControllerTest {
         //ASSERT
         Assertions.assertEquals(promedioEsperadoResponseEntity, promedioObtenidoResponseEntity, "Los StatusCode son diferentes");
     }
-
 
 
     // public ResponseEntity<Double> sumar(@PathVariable Double n1, @PathVariable Double n2){

@@ -32,7 +32,8 @@ public class IngredienteRepositoryImpl implements IIngredientesRepository {
         ObjectMapper objectMapper = new ObjectMapper()
                 .setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
 
-        TypeReference<List<Ingrediente>> typeRef = new TypeReference<>() {};
+        TypeReference<List<Ingrediente>> typeRef = new TypeReference<>() {
+        };
 
         try {
             file = ResourceUtils.getFile("classpath:food.json");
