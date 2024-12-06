@@ -1,6 +1,6 @@
-package com.primer_proyecto_spring.pruebaspring.controllers;
+package com.primer_proyecto_spring.pruebaspring.practicas.controllers;
 
-import com.primer_proyecto_spring.pruebaspring.services.EdadService;
+import com.primer_proyecto_spring.pruebaspring.practicas.services.EdadService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

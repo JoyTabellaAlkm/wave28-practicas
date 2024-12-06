@@ -1,7 +1,7 @@
-package com.primer_proyecto_spring.pruebaspring.services.deportistasServices;
+package com.primer_proyecto_spring.pruebaspring.practicas.services.deportistasServices;
 
-import com.primer_proyecto_spring.pruebaspring.entities.dto.DeporteDto;
-import com.primer_proyecto_spring.pruebaspring.entities.dto.PersonaDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.DeporteDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.PersonaDto;
 
 import java.util.List;
 import java.util.Optional;

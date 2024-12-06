@@ -1,4 +1,4 @@
-package com.primer_proyecto_spring.pruebaspring.entities.dto;
+package com.primer_proyecto_spring.pruebaspring.practicas.dto;
 import lombok.*;
 
 @NoArgsConstructor

@@ -1,9 +1,9 @@
-package com.primer_proyecto_spring.pruebaspring.services.deportistasServices.impl;
+package com.primer_proyecto_spring.pruebaspring.practicas.services.deportistasServices.impl;
 
-import com.primer_proyecto_spring.pruebaspring.entities.dto.DeporteDto;
-import com.primer_proyecto_spring.pruebaspring.entities.dto.PersonaDto;
-import com.primer_proyecto_spring.pruebaspring.repository.deportesRepository.DeportesRepository;
-import com.primer_proyecto_spring.pruebaspring.services.deportistasServices.IDeportistasService;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.DeporteDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.PersonaDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.deportesRepository.DeportesRepository;
+import com.primer_proyecto_spring.pruebaspring.practicas.services.deportistasServices.IDeportistasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.primer_proyecto_spring.pruebaspring.services;
+package com.primer_proyecto_spring.pruebaspring.practicas.services;
 
 import java.util.HashMap;
 import java.util.Map;

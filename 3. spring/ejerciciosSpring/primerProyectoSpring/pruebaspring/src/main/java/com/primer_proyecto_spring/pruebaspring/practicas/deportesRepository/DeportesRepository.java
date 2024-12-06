@@ -1,7 +1,7 @@
-package com.primer_proyecto_spring.pruebaspring.repository.deportesRepository;
+package com.primer_proyecto_spring.pruebaspring.practicas.deportesRepository;
 
-import com.primer_proyecto_spring.pruebaspring.entities.dto.DeporteDto;
-import com.primer_proyecto_spring.pruebaspring.entities.dto.PersonaDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.DeporteDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.PersonaDto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

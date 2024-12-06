@@ -1,4 +1,4 @@
-package com.primer_proyecto_spring.pruebaspring.services;
+package com.primer_proyecto_spring.pruebaspring.practicas.services;
 
 public class InumeroRomanoServiceImpl implements NumeroRomanoService{
 

@@ -1,7 +1,7 @@
-package com.primer_proyecto_spring.pruebaspring.controllers;
+package com.primer_proyecto_spring.pruebaspring.practicas.controllers;
 
-import com.primer_proyecto_spring.pruebaspring.entities.dto.DeporteDto;
-import com.primer_proyecto_spring.pruebaspring.services.deportistasServices.IDeportistasService;
+import com.primer_proyecto_spring.pruebaspring.practicas.dto.DeporteDto;
+import com.primer_proyecto_spring.pruebaspring.practicas.services.deportistasServices.IDeportistasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,5 +19,4 @@ public class DeportistasController {
     ResponseEntity<List<DeporteDto>> consultarDeportes (){
     return ResponseEntity.status(HttpStatus.OK).body(deportistasService.traerTodosDepoertes());
     }
-
 }

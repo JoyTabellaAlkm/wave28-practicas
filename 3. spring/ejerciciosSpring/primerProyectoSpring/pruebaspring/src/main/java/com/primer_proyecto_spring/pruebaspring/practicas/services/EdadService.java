@@ -1,4 +1,4 @@
-package com.primer_proyecto_spring.pruebaspring.services;
+package com.primer_proyecto_spring.pruebaspring.practicas.services;
 
 import org.springframework.stereotype.Service;
 
