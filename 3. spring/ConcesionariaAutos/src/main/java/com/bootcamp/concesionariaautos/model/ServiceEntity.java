@@ -9,8 +9,9 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Service {
+public class ServiceEntity {
     private Long id;
+    private Long vehicleID;
     private LocalDate date;
     private Double km;
     private String description;

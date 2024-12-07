@@ -4,6 +4,7 @@ import com.bootcamp.concesionariaautos.model.Vehicle;
 import com.bootcamp.concesionariaautos.repository.VehicleRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +12,20 @@ import java.util.Optional;
 @Repository
 public class VehicleRepositoryImpl implements VehicleRepository {
 
-    private static long CONTADOR_VEHICULOS = 0;
-    private static final List<Vehicle> vehicleList = new ArrayList<>();
+    private static long CONTADOR_VEHICULOS = 1;
+    private static final List<Vehicle> vehicleList = new ArrayList<>() {{
+        add(new Vehicle(
+                1L,
+                "Chevrolet",
+                "Meriva",
+                LocalDate.of(2008, 10, 25),
+                10568.5,
+                5,
+                5000000.0,
+                "AR",
+                1
+        ));
+    }};
 
     @Override
     public Vehicle deleteById(Long id) {
@@ -36,8 +49,8 @@ public class VehicleRepositoryImpl implements VehicleRepository {
 
     @Override
     public Vehicle save(Vehicle obj) {
-        obj.setId(CONTADOR_VEHICULOS);
         CONTADOR_VEHICULOS++;
+        obj.setId(CONTADOR_VEHICULOS);
         vehicleList.add(obj);
         return obj;
     }
