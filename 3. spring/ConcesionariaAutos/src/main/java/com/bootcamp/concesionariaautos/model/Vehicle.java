@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -19,7 +20,7 @@ public class Vehicle {
     @JsonProperty("number_of_kilometers")
     private Double km;
     private Integer doors;
-    private Double price;
+    private BigDecimal price;
     private String currency;
     @JsonProperty("count_of_owners")
     private Integer countOfOwners;

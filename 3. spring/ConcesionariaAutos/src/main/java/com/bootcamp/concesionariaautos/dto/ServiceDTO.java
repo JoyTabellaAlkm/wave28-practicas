@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ServiceDTO {
     private String date;
-    @JsonAlias("km")
+    @JsonAlias({"km"})
     private String kilometers;
     private String description;
 }

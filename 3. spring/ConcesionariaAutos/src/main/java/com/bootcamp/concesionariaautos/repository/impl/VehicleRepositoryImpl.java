@@ -4,6 +4,7 @@ import com.bootcamp.concesionariaautos.model.Vehicle;
 import com.bootcamp.concesionariaautos.repository.VehicleRepository;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class VehicleRepositoryImpl implements VehicleRepository {
                 LocalDate.of(2008, 10, 25),
                 10568.5,
                 5,
-                5000000.0,
+                BigDecimal.valueOf(5000000),
                 "AR",
                 1
         ));

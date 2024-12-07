@@ -1,6 +1,7 @@
 package com.bootcamp.concesionariaautos.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class VehicleDTONoServices {
     @JsonAlias("km")
     private String km;
     private String doors;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private String price;
     private String currency;
     @JsonProperty("count_of_owners")

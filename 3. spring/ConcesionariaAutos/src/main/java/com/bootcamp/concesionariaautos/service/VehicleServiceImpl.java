@@ -11,18 +11,25 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class VehicleServiceImpl implements VehicleService {
 
+    private final VehicleRepository vehicleRepository;
+    private final ServiceRepository serviceRepository;
+    private final ObjectMapper objectMapper;
+
     @Autowired
-    private VehicleRepository vehicleRepository;
-    @Autowired
-    private ServiceRepository serviceRepository;
-    @Autowired
-    private ObjectMapper objectMapper;
+    public VehicleServiceImpl(ObjectMapper objectMapper, ServiceRepository serviceRepository, VehicleRepository vehicleRepository) {
+        this.objectMapper = objectMapper;
+        this.serviceRepository = serviceRepository;
+        this.vehicleRepository = vehicleRepository;
+    }
 
     @Override
     public VehicleDTO deleteById(Long id) {
@@ -53,18 +60,21 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleDTO save(VehicleDTO vehicleDTO) {
+        // Mapping to entities
         Vehicle newVehicle = objectMapper.convertValue(vehicleDTO, Vehicle.class);
-        List<ServiceEntity> vehicleServices = vehicleDTO.getServices()
+        List<ServiceEntity> newVehicleServices = vehicleDTO.getServices()
                 .stream()
                 .map(s -> objectMapper.convertValue(s, ServiceEntity.class))
                 .toList();
+        // Persisting the new entities
         Vehicle finalNewVehicle = vehicleRepository.save(newVehicle);
-        vehicleServices = vehicleServices.stream().map(s -> {
+        newVehicleServices = newVehicleServices.stream().map(s -> {
             s.setVehicleID(finalNewVehicle.getId());
             return serviceRepository.save(s);
         }).toList();
+        // Mapping back to DTO
         vehicleDTO = objectMapper.convertValue(finalNewVehicle, VehicleDTO.class);
-        List<ServiceDTO> serviceDTOList = vehicleServices.stream().map(s -> objectMapper.convertValue(s, ServiceDTO.class)).toList();
+        List<ServiceDTO> serviceDTOList = newVehicleServices.stream().map(s -> objectMapper.convertValue(s, ServiceDTO.class)).toList();
         vehicleDTO.setServices(serviceDTOList);
         return vehicleDTO;
     }
@@ -72,5 +82,35 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public VehicleDTO update(VehicleDTO vehicleDTO) {
         return null;
+    }
+
+    @Override
+    public List<VehicleDTONoServices> findAllByManufacturingDate(LocalDate since, LocalDate to) {
+        if(since.isAfter(to) || since.isEqual(to)) {
+            throw new DateTimeException("La fecha 'since' no puede ser posterior o igual a la fecha 'to'");
+        }
+        List<Vehicle> vehicleListFilteredByDate = vehicleRepository.findAll()
+                .stream()
+                .filter(v -> v.getManufacturingDate().isAfter(since) && v.getManufacturingDate().isBefore(to))
+                .toList();
+        return vehicleListFilteredByDate
+                .stream()
+                .map(v -> objectMapper.convertValue(v, VehicleDTONoServices.class))
+                .toList();
+    }
+
+    @Override
+    public List<VehicleDTONoServices> findAllByPrice(BigDecimal since, BigDecimal to) {
+        if(since.compareTo(to) > 0) {
+            throw new IllegalArgumentException("El precio 'since' no puede ser mayor al precio 'to'");
+        }
+        List<Vehicle> vehicleListFilteredByDate = vehicleRepository.findAll()
+                .stream()
+                .filter(v -> v.getPrice().compareTo(since) >= 0 && v.getPrice().compareTo(to) <= 0)
+                .toList();
+        return vehicleListFilteredByDate
+                .stream()
+                .map(v -> objectMapper.convertValue(v, VehicleDTONoServices.class))
+                .toList();
     }
 }
