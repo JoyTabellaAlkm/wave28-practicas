@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="adeed44c-8976-4c4c-bd39-51658833f9d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../2. java/practicaAgenciaTurismo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2. java/practicaAgenciaTurismo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/CalcuCalApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/config/ExceptionHandlerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/controller/dietaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/dto/ErrorDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/dto/request/IngredienteConPesoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/dto/request/PlatoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/dto/response/IngredientePorCaloriasYPesoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/dto/response/RespuestaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/exception/IngredienteNonExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/model/Ingrediente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/repository/IIngredientesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/repository/IngredienteRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/service/IIngredienteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/java/com/example/CalcuCal/service/IngredienteServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/resources/food.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalcuCal/src/test/java/com/example/CalcuCal/CalcuCalApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meli/calculadoraCalorias/controller/CalculadoraController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meli/calculadoraCalorias/dto/IngredientesDto.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2prBxMt6HMfZKKGPfpa1hUHYeyV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ksierrav/Documents/wave28-practicas/3. spring/calculadoraCalorias",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CalculadoraCaloriasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="calculadoraCalorias" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.meli.calculadoraCalorias.CalculadoraCaloriasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="adeed44c-8976-4c4c-bd39-51658833f9d0" name="Changes" comment="" />
+      <created>1733514559839</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733514559839</updated>
+      <workItem from="1733514561078" duration="1800000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
