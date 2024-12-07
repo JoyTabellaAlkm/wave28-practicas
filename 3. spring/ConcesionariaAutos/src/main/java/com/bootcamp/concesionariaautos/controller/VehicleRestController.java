@@ -1,7 +1,9 @@
 package com.bootcamp.concesionariaautos.controller;
 
 import com.bootcamp.concesionariaautos.dto.VehicleDTO;
+import com.bootcamp.concesionariaautos.exception.VehicleNotFoundException;
 import com.bootcamp.concesionariaautos.service.VehicleService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +30,7 @@ public class VehicleRestController {
         if(vehicleDTO != null) {
             return ResponseEntity.ok(vehicleService.findById(id));
         }
-        return ResponseEntity.status(404).body("Vehicle not found");
+        throw new VehicleNotFoundException();
     }
 
     @PostMapping
@@ -56,6 +58,11 @@ public class VehicleRestController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<?> handleVehicleNotFound(VehicleNotFoundException e) {
+        return ResponseEntity.status(404).body("No se encontró el vehiculo.");
     }
 
 }
