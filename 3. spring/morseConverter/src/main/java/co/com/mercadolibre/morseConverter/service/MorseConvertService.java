@@ -1,6 +1,5 @@
 package co.com.mercadolibre.morseConverter.service;
 
-import co.com.mercadolibre.morseConverter.model.Morse;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashMap;
@@ -9,70 +8,66 @@ import java.util.Map;
 @Service
 public class MorseConvertService {
 
-    private final Map<String, Character> morseCodeMap = new LinkedHashMap<>();
+    private final Map<String, Character> morseCode = new LinkedHashMap<>();
 
-    public String convertToWords(Morse morse){
+    public MorseConvertService() {
         fillMap();
-        String code = morse.getCode();
-        char[] charArray = code.toCharArray();
-        String morseWord = "";
-        String letter = "";
-        String word = "";
+    }
 
-        for (char character: charArray) {
-            if (character != ' '){
-                morseWord += character;
-            } else {
-                    letter += morseCodeMap.get(morseWord);
-                    word += letter;
-                    morseWord = "";
+    public String convertToWords(String code) {
+        StringBuilder stringBuilder = new StringBuilder();
+        String[] words = code.split(" {3}");
+
+        for (String word : words) {
+            String[] characters = word.split(" ");
+            for (String character : characters) {
+                stringBuilder.append(morseCode.get(character));
             }
+            stringBuilder.append(" ");
         }
-        return word;
+        return stringBuilder.toString();
 
     }
 
-    private void fillMap(){
-        morseCodeMap.put(".-", 'A');
-        morseCodeMap.put("-...", 'B');
-        morseCodeMap.put("-.-.", 'C');
-        morseCodeMap.put("-..", 'D');
-        morseCodeMap.put(".", 'E');
-        morseCodeMap.put("..-.", 'F');
-        morseCodeMap.put("--.", 'G');
-        morseCodeMap.put("....", 'H');
-        morseCodeMap.put("..", 'I');
-        morseCodeMap.put(".---", 'J');
-        morseCodeMap.put("-.-", 'K');
-        morseCodeMap.put(".-..", 'L');
-        morseCodeMap.put("--", 'M');
-        morseCodeMap.put("-.", 'N');
-        morseCodeMap.put("---", 'O');
-        morseCodeMap.put(".--.", 'P');
-        morseCodeMap.put("--.-", 'Q');
-        morseCodeMap.put(".-.", 'R');
-        morseCodeMap.put("...", 'S');
-        morseCodeMap.put("-", 'T');
-        morseCodeMap.put("..-", 'U');
-        morseCodeMap.put("...-", 'V');
-        morseCodeMap.put(".--", 'W');
-        morseCodeMap.put("-..-", 'X');
-        morseCodeMap.put("-.--", 'Y');
-        morseCodeMap.put("--..", 'Z');
-        morseCodeMap.put(".----", '1');
-        morseCodeMap.put("..---", '2');
-        morseCodeMap.put("...--", '3');
-        morseCodeMap.put("....-", '4');
-        morseCodeMap.put(".....", '5');
-        morseCodeMap.put("-....", '6');
-        morseCodeMap.put("--...", '7');
-        morseCodeMap.put("---..", '8');
-        morseCodeMap.put("----.", '9');
-        morseCodeMap.put("-----", '0');
-        morseCodeMap.put(" ", ' ');
+    private void fillMap() {
+        morseCode.put(".-", 'A');
+        morseCode.put("-...", 'B');
+        morseCode.put("-.-.", 'C');
+        morseCode.put("-..", 'D');
+        morseCode.put(".", 'E');
+        morseCode.put("..-.", 'F');
+        morseCode.put("--.", 'G');
+        morseCode.put("....", 'H');
+        morseCode.put("..", 'I');
+        morseCode.put(".---", 'J');
+        morseCode.put("-.-", 'K');
+        morseCode.put(".-..", 'L');
+        morseCode.put("--", 'M');
+        morseCode.put("-.", 'N');
+        morseCode.put("---", 'O');
+        morseCode.put(".--.", 'P');
+        morseCode.put("--.-", 'Q');
+        morseCode.put(".-.", 'R');
+        morseCode.put("...", 'S');
+        morseCode.put("-", 'T');
+        morseCode.put("..-", 'U');
+        morseCode.put("...-", 'V');
+        morseCode.put(".--", 'W');
+        morseCode.put("-..-", 'X');
+        morseCode.put("-.--", 'Y');
+        morseCode.put("--..", 'Z');
+        morseCode.put(".----", '1');
+        morseCode.put("..---", '2');
+        morseCode.put("...--", '3');
+        morseCode.put("....-", '4');
+        morseCode.put(".....", '5');
+        morseCode.put("-....", '6');
+        morseCode.put("--...", '7');
+        morseCode.put("---..", '8');
+        morseCode.put("----.", '9');
+        morseCode.put("-----", '0');
 
     }
-
 
 
 }

@@ -1,20 +1,12 @@
 package co.com.mercadolibre.morseConverter.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Morse {
     private String code;
-
-    public Morse() {
-    }
-
-    public Morse(String code) {
-        this.code = code;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
 }

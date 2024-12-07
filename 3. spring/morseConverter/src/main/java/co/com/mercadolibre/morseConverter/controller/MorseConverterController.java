@@ -18,9 +18,7 @@ public class MorseConverterController {
     }
 
     @PostMapping
-    public String convertToWords(@RequestBody Morse morse){
-        return morseConvertService.convertToWords(morse);
+    public String convertToWords(@RequestBody Morse morse) {
+        return morseConvertService.convertToWords(morse.getCode());
     }
-
-
 }
