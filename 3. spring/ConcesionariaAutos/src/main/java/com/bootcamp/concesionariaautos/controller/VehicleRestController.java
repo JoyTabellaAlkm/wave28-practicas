@@ -26,11 +26,7 @@ public class VehicleRestController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {
-        VehicleDTO vehicleDTO = vehicleService.findById(id);
-        if(vehicleDTO != null) {
-            return ResponseEntity.ok(vehicleService.findById(id));
-        }
-        throw new VehicleNotFoundException();
+        return ResponseEntity.ok(vehicleService.findById(id));
     }
 
     @PostMapping
@@ -42,27 +38,14 @@ public class VehicleRestController {
     public ResponseEntity<?> findAllByManufacturingDate(
             @RequestParam LocalDate since,
             @RequestParam LocalDate to) {
-        try {
-            return ResponseEntity.ok(vehicleService.findAllByManufacturingDate(since, to));
-        } catch (DateTimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        return ResponseEntity.ok(vehicleService.findAllByManufacturingDate(since, to));
     }
 
     @GetMapping("prices")
     public ResponseEntity<?> findAllByPrice(
             @RequestParam BigDecimal since,
             @RequestParam BigDecimal to) {
-        try {
-            return ResponseEntity.ok(vehicleService.findAllByPrice(since, to));
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<?> handleVehicleNotFound(VehicleNotFoundException e) {
-        return ResponseEntity.status(404).body("No se encontró el vehiculo.");
+        return ResponseEntity.ok(vehicleService.findAllByPrice(since, to));
     }
 
 }

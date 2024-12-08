@@ -3,6 +3,7 @@ package com.bootcamp.concesionariaautos.service;
 import com.bootcamp.concesionariaautos.dto.ServiceDTO;
 import com.bootcamp.concesionariaautos.dto.VehicleDTO;
 import com.bootcamp.concesionariaautos.dto.VehicleDTONoServices;
+import com.bootcamp.concesionariaautos.exception.VehicleNotFoundException;
 import com.bootcamp.concesionariaautos.model.ServiceEntity;
 import com.bootcamp.concesionariaautos.model.Vehicle;
 import com.bootcamp.concesionariaautos.repository.ServiceRepository;
@@ -55,7 +56,7 @@ public class VehicleServiceImpl implements VehicleService {
             vehicleDTO.setServices(serviceDTOList);
             return vehicleDTO;
         }
-        return null;
+        throw new VehicleNotFoundException("El vehiculo con el id: " + id + " no existe.");
     }
 
     @Override
