@@ -1,4 +1,4 @@
-package com.mercadolibre.covid19.model;
+package com.mercadolibre.covid19.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Person {
-    private Integer id;
+public class RiskPersonDto {
     private String firstname;
     private String lastname;
-    private Integer age;
-    private List<Symptom> symptoms;
+    private List<String> symptoms;
 }

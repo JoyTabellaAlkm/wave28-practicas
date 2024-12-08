@@ -1,4 +1,4 @@
-package com.mercadolibre.covid19.model;
+package com.mercadolibre.covid19.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Symptom {
+public class SymptomDto {
     private Integer code;
     private String name;
     private Integer levelOfSeverity;
