@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Service
-public class EdadService {
+public class EdadService implements  IEdadService{
     public  String calcularEdad(Integer dia, Integer mes, Integer anio){
 
         LocalDate fechaActual = LocalDate.now();
