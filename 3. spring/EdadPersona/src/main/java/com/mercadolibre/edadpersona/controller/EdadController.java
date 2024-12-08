@@ -17,7 +17,7 @@ public class EdadController {
     @GetMapping("/{dia}/{mes}/{anio}")
     public int calcularEdad(@PathVariable int dia,
                             @PathVariable int mes,
-                            @PathVariable int anio){
+                            @PathVariable int anio) {
         return edadService.calcularEdad(dia, mes, anio);
     }
 }
