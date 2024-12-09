@@ -45,23 +45,5 @@ public class Personaje {
     @JsonProperty("species")
     private String species;
 
-    @Override
-    public String toString() {
-        return "Personaje{" +
-                "name='" + name + '\'' +
-                ", height=" + height +
-                ", mass=" + mass +
-                ", hairColor='" + hairColor + '\'' +
-                ", skinColor='" + skinColor + '\'' +
-                ", eyeColor='" + eyeColor + '\'' +
-                ", birthYear='" + birthYear + '\'' +
-                ", gender='" + gender + '\'' +
-                ", homeworld='" + homeworld + '\'' +
-                ", species='" + species + '\'' +
-                '}';
-    }
 
-    public String getName() {
-        return name;
-    }
 }
