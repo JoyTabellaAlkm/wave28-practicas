@@ -2,13 +2,13 @@ package com.deportistas.model;
 
 import java.util.List;
 
-public class Persona {
+public class PersonaDTO {
     private String nombre;
     private String apellido;
     private int edad;
     private List<Deportista> deportes;
 
-    public Persona(String nombre, String apellido, int edad, List<Deportista> deportes) {
+    public PersonaDTO(String nombre, String apellido, int edad, List<Deportista> deportes) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;

@@ -1,10 +1,11 @@
 package com.deportistas.model;
 
-public class Deportista {
+
+public class DeportistaDTO {
     private String nombre;
     private String nivel;
 
-    public Deportista(String nombre, String nivel) {
+    public DeportistaDTO(String nombre, String nivel) {
         this.nombre = nombre;
         this.nivel = nivel;
     }
