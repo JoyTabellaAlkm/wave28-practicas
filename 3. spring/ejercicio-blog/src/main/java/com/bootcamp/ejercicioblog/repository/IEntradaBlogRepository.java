@@ -8,7 +8,5 @@ import java.util.Optional;
 public interface IEntradaBlogRepository {
     Long crearEntradaBlog(EntradaBlog entradaBlog);
 
-    EntradaBlog obtenerEntradaPorId(Long id);
-
     List<EntradaBlog> obtenerEntradas();
 }

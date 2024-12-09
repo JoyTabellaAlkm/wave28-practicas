@@ -22,20 +22,8 @@ public class EntradaBlogRepositoryImpl implements IEntradaBlogRepository {
 
     @Override
     public Long crearEntradaBlog(EntradaBlog entradaBlog) {
-        if (entradas.containsKey(entradaBlog.getId())) {
-            throw new EntradaBlogYaExisteException("El id proporcionado ya existe, ingrese otro");
-        }
-
         entradas.put(entradaBlog.getId(), entradaBlog);
         return entradaBlog.getId();
-    }
-
-    @Override
-    public EntradaBlog obtenerEntradaPorId(Long id) {
-        if(!entradas.containsKey(id)) {
-            throw new EntradaBlogNoExisteException("El id proporcionado no corresponde a ninguna entrada del blog");
-        }
-        return entradas.get(id);
     }
 
     @Override
