@@ -41,6 +41,8 @@ public class BlogServiceImpl implements IBlogService {
     @Override
     public List<BlogDTO> traerTodosBlogs() {
         List<Blog> listaBlogs = blogRepository.traerTodosBlogs();
+        System.out.println(listaBlogs);
+        System.out.println(listaBlogs.isEmpty());
         if (listaBlogs.isEmpty()) {
             throw new NoContentException("Todavía no hay ningún blog.");
         }

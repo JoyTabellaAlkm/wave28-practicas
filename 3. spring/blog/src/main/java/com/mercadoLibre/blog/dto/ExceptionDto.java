@@ -1,4 +1,4 @@
-package com.mercadoLibre.blog.exception;
+package com.mercadoLibre.blog.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

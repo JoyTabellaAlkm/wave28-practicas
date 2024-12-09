@@ -1,5 +1,6 @@
 package com.mercadoLibre.blog.exception;
 
+import com.mercadoLibre.blog.dto.ExceptionDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,7 +24,7 @@ public class ExceptionController {
     @ExceptionHandler(NoContentException.class)
     public ResponseEntity<?> noContent(NoContentException e){
         ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
-        return new ResponseEntity<>(exceptionDto, HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
         //return new ResponseEntity<>(e.getMessage(), HttpStatus.NO_CONTENT);
     }
 }
