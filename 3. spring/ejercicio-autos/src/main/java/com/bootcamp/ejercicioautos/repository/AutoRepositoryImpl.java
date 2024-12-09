@@ -1,13 +1,13 @@
 package com.bootcamp.ejercicioautos.repository;
 
 import com.bootcamp.ejercicioautos.dto.request.PostAutoDto;
+import com.bootcamp.ejercicioautos.dto.response.ResponseAutoDto;
 import com.bootcamp.ejercicioautos.model.Auto;
 import com.bootcamp.ejercicioautos.model.Service;
 import com.bootcamp.ejercicioautos.service.mapper.IAutoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +27,14 @@ public class AutoRepositoryImpl implements IAutoRepository{
 
     @Override
     public Long agregarAuto(PostAutoDto autoDto) {
-        Auto autoAgregado = autoMapper.postDtoToAuto(autoDto);
+        Auto autoAgregado = autoMapper.mapPostAutoDtoToAuto(autoDto);
         autos.add(autoAgregado);
 
         return autoAgregado.getId();
+    }
+
+    @Override
+    public List<ResponseAutoDto> obtenerAutos() {
+        return autoMapper.mapListaAutoToResponseAutoDto(autos);
     }
 }

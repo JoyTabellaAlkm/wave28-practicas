@@ -18,4 +18,9 @@ public class AutoRestController {
     public ResponseEntity<?> agregarAuto(@RequestBody PostAutoDto auto) {
         return new ResponseEntity<>(autoService.agregarAuto(auto), HttpStatus.CREATED);
     }
+    
+    @GetMapping
+    public ResponseEntity<?> obtenerAutos() {
+        return new ResponseEntity<>(autoService.obtenerAutos(), HttpStatus.OK);
+    }
 }
