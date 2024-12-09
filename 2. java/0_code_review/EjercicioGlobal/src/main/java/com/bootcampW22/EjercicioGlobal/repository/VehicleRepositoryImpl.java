@@ -24,6 +24,49 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
         return listOfVehicles;
     }
 
+    @Override
+    public String save(Vehicle vehicle){
+        File file;
+        ObjectMapper objectMapper = new ObjectMapper();
+        listOfVehicles.add(vehicle);
+
+        try{
+            file = ResourceUtils.getFile("classpath:vehicles_100.json");
+            objectMapper.writeValue(file, listOfVehicles);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return "Vehículo creado exitosamente";
+    }
+
+    @Override
+    public void update(List<Vehicle> vehicleList) {
+        File file;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try{
+            file = ResourceUtils.getFile("classpath:vehicles_100.json");
+            objectMapper.writeValue(file, vehicleList);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @Override
+    public void delete(List<Vehicle> vehicleList) {
+        File file;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try{
+            file = ResourceUtils.getFile("classpath:vehicles_100.json");
+            objectMapper.writeValue(file, vehicleList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void loadDataBase() throws IOException {
         File file;
         ObjectMapper objectMapper = new ObjectMapper();
