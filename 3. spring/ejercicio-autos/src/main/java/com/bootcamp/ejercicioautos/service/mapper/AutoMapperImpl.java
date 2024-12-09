@@ -30,15 +30,20 @@ public class AutoMapperImpl implements IAutoMapper {
 
     @Override
     public List<ResponseAutoDto> mapListaAutoToResponseAutoDto(List<Auto> autos) {
-        return autos.stream().map(a -> new ResponseAutoDto(
-                a.getBrand(),
-                a.getModel(),
-                a.getManufacturingDate(),
-                a.getNumberOfKilometers(),
-                a.getDoors(),
-                a.getPrice(),
-                a.getCurrency(),
-                a.getCountOfOwners()
-        )).collect(Collectors.toList());
+        return autos.stream().map(this::mapAutoToResponseAutoDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public ResponseAutoDto mapAutoToResponseAutoDto(Auto auto) {
+        return new ResponseAutoDto(
+                auto.getBrand(),
+                auto.getModel(),
+                auto.getManufacturingDate(),
+                auto.getNumberOfKilometers(),
+                auto.getDoors(),
+                auto.getPrice(),
+                auto.getCurrency(),
+                auto.getCountOfOwners()
+        );
     }
 }

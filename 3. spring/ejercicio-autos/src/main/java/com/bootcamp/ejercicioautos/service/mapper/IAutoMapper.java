@@ -10,4 +10,6 @@ public interface IAutoMapper {
     Auto mapPostAutoDtoToAuto(PostAutoDto postAutoDto);
 
     List<ResponseAutoDto> mapListaAutoToResponseAutoDto(List<Auto> autos);
+
+    ResponseAutoDto mapAutoToResponseAutoDto(Auto auto);
 }

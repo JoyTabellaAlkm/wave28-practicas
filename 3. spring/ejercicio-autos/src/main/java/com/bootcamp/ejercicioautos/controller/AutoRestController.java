@@ -23,4 +23,9 @@ public class AutoRestController {
     public ResponseEntity<?> obtenerAutos() {
         return new ResponseEntity<>(autoService.obtenerAutos(), HttpStatus.OK);
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<?> obtenerAutoPorId(@PathVariable Long id) {
+        return new ResponseEntity<>(autoService.obtenerAutoPorId(id), HttpStatus.OK);
+    }
 }

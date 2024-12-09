@@ -8,4 +8,5 @@ import java.util.List;
 public interface IAutoService {
     Long agregarAuto(PostAutoDto autoDto);
     List<ResponseAutoDto> obtenerAutos();
+    ResponseAutoDto obtenerAutoPorId(Long id);
 }

@@ -24,4 +24,9 @@ public class AutoServiceImpl implements IAutoService{
     public List<ResponseAutoDto> obtenerAutos() {
         return autoRepository.obtenerAutos();
     }
+
+    @Override
+    public ResponseAutoDto obtenerAutoPorId(Long id) {
+        return autoRepository.obtenerAutoPorId(id);
+    }
 }

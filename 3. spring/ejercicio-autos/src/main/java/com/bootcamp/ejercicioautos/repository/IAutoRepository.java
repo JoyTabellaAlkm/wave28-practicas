@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface IAutoRepository {
     Long agregarAuto(PostAutoDto autoDto);
+
     List<ResponseAutoDto> obtenerAutos();
+
+    ResponseAutoDto obtenerAutoPorId(Long id);
+
 }
