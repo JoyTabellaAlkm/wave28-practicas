@@ -47,12 +47,7 @@ public class LinkService implements ILinkService {
         Link link = repository.getLinkById(linkId);
         if (link == null) {
             throw new NotFoundException("Link incorrecto");
-        }else{
-            if(link.getPassword() == null){
-                link.actualizarContador();
-                repository.updateLink(link);
-                return new LinkDTO(link.getLink(), link.getPassword());
-            }else if (!link.getPassword().equals(password) || link.getPassword().isEmpty()) {
+        }else if (!link.getPassword().equals(password) || link.getPassword().isEmpty()) {
                 throw new BadPasswordException("Contraseña incorrecta!");//Error de contraseña
             }
             link.actualizarContador();
