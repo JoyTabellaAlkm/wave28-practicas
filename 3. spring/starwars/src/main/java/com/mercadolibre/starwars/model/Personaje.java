@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Personaje {
+
+    private long id ;
     @JsonProperty("name")
     private String name;
     @JsonProperty("height")
