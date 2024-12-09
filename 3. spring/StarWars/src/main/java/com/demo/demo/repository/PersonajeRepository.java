@@ -10,6 +10,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -52,7 +53,7 @@ public class PersonajeRepository {
             );
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            return new ArrayList<>();
         }
     }
 }
