@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class GetVehiclesByPricesRequest {
+public class VehicleByPricesRequest {
     private double since;
     private double to;
 }

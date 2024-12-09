@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class GetVehiclesByDateRequest {
+public class VehicleByDatesRequest {
     private LocalDate since;
     private LocalDate to;
 }
