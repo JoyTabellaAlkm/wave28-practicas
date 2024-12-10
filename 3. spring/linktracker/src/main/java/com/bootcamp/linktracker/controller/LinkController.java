@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.http.HttpResponse;
+import java.util.Optional;
 
 @RestController
 public class LinkController {
@@ -23,9 +24,9 @@ public class LinkController {
     }
 
     @GetMapping("/links/{id}")
-    public ResponseEntity<?> redirect(@PathVariable Integer id) {
+    public ResponseEntity<?> redirect(@PathVariable Integer id, @RequestParam Optional<String> password) {
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create(linkService.redirect(id)));
+        headers.setLocation(URI.create(linkService.redirect(id, password)));
         return new ResponseEntity<>(headers, HttpStatus.SEE_OTHER);
     }
 
@@ -36,7 +37,7 @@ public class LinkController {
 
     @PostMapping("/invalidate/{linkId}")
     public ResponseEntity<?> invalidate(@PathVariable Integer linkId) {
-        //linkService.invalidate(linkId);
+        linkService.invalidate(linkId);
         return ResponseEntity.noContent().build();
     }
 }

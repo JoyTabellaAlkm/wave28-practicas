@@ -9,4 +9,6 @@ public interface ILinkDao {
     void create(LinkDTO linkDTO);
 
     Optional<LinkDTO> findById(Integer linkId);
+    void update(LinkDTO link);
+    void delete(LinkDTO linkDTO);
 }

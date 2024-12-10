@@ -2,6 +2,7 @@ package com.bootcamp.linktracker.service;
 
 import com.bootcamp.linktracker.dto.LinkDTO;
 import com.bootcamp.linktracker.exception.LinkNoEncontradoException;
+import com.bootcamp.linktracker.exception.PasswordInvalidaException;
 import com.bootcamp.linktracker.repository.ILinkDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,14 +32,26 @@ public class LinkServiceImpl implements ILinkService {
     }
 
     @Override
-    public String redirect(Integer linkId) {
+    public String redirect(Integer linkId, Optional<String> password) {
         Optional<LinkDTO> opt = linkDao.findById(linkId);
         if (opt.isEmpty())
             throw new LinkNoEncontradoException();
 
         LinkDTO link = opt.get();
-        link.setCantRedirecciones(link.getCantRedirecciones()+1);
+        if (link.getPassword() != null
+                && !(password.isPresent() && password.get().equals(link.getPassword()))) {
+            throw new PasswordInvalidaException();
+        }
+        
         linkDao.update(link);
         return link.getLink();
+    }
+
+    @Override
+    public void invalidate(Integer linkId) {
+        Optional<LinkDTO> opt = linkDao.findById(linkId);
+        if (opt.isEmpty())
+            throw new LinkNoEncontradoException();
+        linkDao.delete(opt.get());
     }
 }

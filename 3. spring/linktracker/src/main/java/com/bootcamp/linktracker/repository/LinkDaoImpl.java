@@ -26,4 +26,16 @@ public class LinkDaoImpl implements ILinkDao {
     public Optional<LinkDTO> findById(Integer linkId) {
         return data.stream().filter(dto -> dto.getId().equals(linkId)).findFirst();
     }
+
+    @Override
+    public void update(LinkDTO link) {
+        int index = data.indexOf(link);
+        data.remove(index);
+        data.add(index, link);
+    }
+
+    @Override
+    public void delete(LinkDTO linkDTO) {
+        data.remove(linkDTO);
+    }
 }
