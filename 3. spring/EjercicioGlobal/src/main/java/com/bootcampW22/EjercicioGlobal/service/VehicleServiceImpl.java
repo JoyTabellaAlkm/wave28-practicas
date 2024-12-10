@@ -16,6 +16,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 public class VehicleServiceImpl implements IVehicleService{
@@ -159,6 +160,42 @@ public class VehicleServiceImpl implements IVehicleService{
         responseDTO.setMessage("Vehiculos creados");
         return responseDTO;
     }
+
+    @Override
+    public List<VehicleDto> findAllVehicleWithSpecificDimensions(String height, String width) {
+
+        try {
+            String[] heightRange = height.split("-");
+            String[] widthRange = width.split("-");
+
+            Integer minHeight = Integer.parseInt(heightRange[0]);
+            Integer maxLength = Integer.parseInt(heightRange[1]);
+
+            Integer minWidth = Integer.parseInt(widthRange[0]);
+            Integer maxWidth = Integer.parseInt(widthRange[1]);
+
+            List<Vehicle> vehicles = vehicleRepository.findAll()
+                    .stream()
+                    .filter(vehicle ->
+                            ((vehicle.getHeight() >= minHeight && vehicle.getHeight() <= maxLength) && (vehicle.getWidth() >= minWidth && vehicle.getWidth() <= maxWidth))
+                    ).toList();
+            if(vehicles.isEmpty()){
+                throw new BadRequestException("No se encontraron vehiculos con estas especificaciones");
+            }
+
+            List<VehicleDto> allVehicleDtos = vehicles.stream()
+                    .map(vehicle -> mapper.convertValue(vehicle, VehicleDto.class))
+                    .toList();
+
+            return allVehicleDtos;
+        } catch (RuntimeException e) {
+            throw new BadRequestException("Parametros mal formateados");
+        }
+    }
+
+
+
+
 
 
 }

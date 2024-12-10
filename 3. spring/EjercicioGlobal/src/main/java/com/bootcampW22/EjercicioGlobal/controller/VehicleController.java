@@ -63,6 +63,13 @@ public class VehicleController {
 
     }
 
+    @GetMapping("/vehicles/dimensions")
+    public ResponseEntity<?> getVehiclesByDimensions(@RequestParam("length") String length,
+                                                     @RequestParam("width") String width){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vehicleService.findAllVehicleWithSpecificDimensions(length, width));
+    }
+
 
 
 }

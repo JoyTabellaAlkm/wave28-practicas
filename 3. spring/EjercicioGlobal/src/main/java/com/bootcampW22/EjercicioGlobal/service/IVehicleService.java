@@ -14,4 +14,5 @@ public interface IVehicleService {
     ResponseDTO createVehicle(VehicleDto vehiclesDtos);
     ResponseDTO updateVehicleBySpeed(long id, UpdateVehicleBySpeedDTO updateVehicleBySpeedDTO);
     ResponseDTO createMultipleVehicles(List<VehicleDto> vehiclesDtos);
+    List<VehicleDto> findAllVehicleWithSpecificDimensions(String length, String width);
 }
