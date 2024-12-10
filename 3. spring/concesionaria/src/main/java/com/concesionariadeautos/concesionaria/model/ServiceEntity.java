@@ -11,6 +11,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ServiceEntity {
     private LocalDate date;
-    private int kilometers;
+    private Integer kilometers;
     private String description;
 }
