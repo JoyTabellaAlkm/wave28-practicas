@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "url": "https://google.com/",
+    "active": true,
+    "opens": 5
+  },
+  {
+    "id": "2",
+    "url": "https:/facebook.com/",
+    "active": false,
+    "opens": 1
+  },
+  {
+    "id": "3",
+    "url": "https://youtube.com/",
+    "active": true,
+    "opens": 2
+  },
+  {
+    "id": "4",
+    "url": "https://instagram.com/",
+    "active": false,
+    "opens": 3
+  },
+  {
+    "id": "5",
+    "url": "https://linkedin.com/",
+    "active": true,
+    "opens": 1
+  }
+]
