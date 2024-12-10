@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -19,18 +20,19 @@ public class VehicleServiceImpl implements IVehicleService{
 
     IVehicleRepository vehicleRepository;
 
+    ObjectMapper objectMapper = new ObjectMapper();
+
     public VehicleServiceImpl(VehicleRepositoryImpl vehicleRepository){
         this.vehicleRepository = vehicleRepository;
     }
     @Override
     public List<VehicleDto> searchAllVehicles() {
-        ObjectMapper mapper = new ObjectMapper();
         List<Vehicle> vehicleList = vehicleRepository.findAll();
         if(vehicleList.isEmpty()){
             throw new NotFoundException("No se encontró ningun auto en el sistema.");
         }
         return vehicleList.stream()
-                .map(v -> mapper.convertValue(v,VehicleDto.class))
+                .map(v -> objectMapper.convertValue(v,VehicleDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -143,7 +145,6 @@ public class VehicleServiceImpl implements IVehicleService{
     @Override
     public String updateSpeed(Long id, String speed) {
         List<VehicleDto> vehicleList = searchAllVehicles();
-        ObjectMapper mapper = new ObjectMapper();
 
         List<VehicleDto> vehicleFound = vehicleList.stream().filter(vehicle -> vehicle.getId().equals(id)).toList();
 
@@ -156,7 +157,7 @@ public class VehicleServiceImpl implements IVehicleService{
                 .findFirst().ifPresent(vehicleDto -> vehicleDto.setMax_speed(speed));
 
         List<Vehicle> vehicleListUpdate = vehicleList.stream()
-                .map(vehicleDto -> mapper.convertValue(vehicleDto, Vehicle.class))
+                .map(vehicleDto -> objectMapper.convertValue(vehicleDto, Vehicle.class))
                 .toList();
 
         vehicleRepository.update(vehicleListUpdate);
@@ -184,8 +185,7 @@ public class VehicleServiceImpl implements IVehicleService{
     public String deleteVehicle(Long id) {
 
         //Ejercicio 8
-        List<VehicleDto> vehicleDtoList = searchAllVehicles();
-        ObjectMapper mapper = new ObjectMapper();
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();;
 
         List<VehicleDto> vehicleFound =
                 vehicleDtoList.stream()
@@ -198,12 +198,102 @@ public class VehicleServiceImpl implements IVehicleService{
 
         vehicleDtoList.removeAll(vehicleFound);
 
-        List<Vehicle> vehicleListUpdate = vehicleDtoList.stream().map(vehicleDto -> mapper.convertValue(vehicleDto,
+        List<Vehicle> vehicleListUpdate = vehicleDtoList.stream().map(vehicleDto -> objectMapper.convertValue(vehicleDto,
                 Vehicle.class)).toList();
 
         vehicleRepository.update(vehicleListUpdate);
 
         return "Vehículo eliminado exitosamente.";
+    }
+
+    @Override
+    public List<VehicleDto> findVehiclesByTransmission(String transmission) {
+
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();
+        List<VehicleDto> vehiclesFound = vehicleDtoList.stream()
+                .filter(vehicleDto -> vehicleDto.getTransmission().equalsIgnoreCase(transmission))
+                .toList();
+
+        if(vehiclesFound.isEmpty()){
+            throw new NotFoundException("No se encontraron vehículos con ese tipo de transmisión");
+        }
+
+        return vehiclesFound;
+    }
+
+    @Override
+    public String updateFuel(Long id, String fuel) {
+
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();
+        Optional<VehicleDto> vehicleFound = vehicleDtoList.stream()
+                .filter(vehicleDto -> vehicleDto.getId().equals(id))
+                .findFirst();
+
+        if (vehicleFound.isEmpty()){
+            throw new NotFoundException("No se encontró el vehículo");
+        }
+
+        vehicleDtoList.stream()
+                .filter(vehicleDto -> vehicleDto.getId().equals(id))
+                .findFirst().ifPresent(vehicleDto -> vehicleDto.setFuel_type(fuel));
+
+        List<Vehicle> vehicleListUpdate = vehicleDtoList.stream()
+                .map(vehicleDto -> objectMapper.convertValue(vehicleDto, Vehicle.class))
+                .toList();
+
+        vehicleRepository.update(vehicleListUpdate);
+
+        return "Tipo de combustible del vehiculo actualizado exitosamente";
+    }
+
+    @Override
+    public Double averageCapacityByBrand(String brand) {
+
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();
+
+        List<VehicleDto> vehiclesFound = vehicleDtoList.stream()
+                .filter(vehicleDto -> vehicleDto.getBrand().equalsIgnoreCase(brand)).toList();
+
+        if (vehiclesFound.isEmpty()){
+            throw new NotFoundException("No se encontraron vehículos de esa marca");
+        }
+
+        return vehiclesFound.stream()
+                .mapToDouble(VehicleDto::getPassengers)
+                .average()
+                .orElse(1.0);
+    }
+
+    @Override
+    public List<VehicleDto> findVehiclesByDimension(Double minLength, Double maxLength, Double minWidth, Double maxWidth) {
+
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();
+
+        List<VehicleDto> vehiclesFound =
+                vehicleDtoList.stream()
+                        .filter(vehicleDto -> (vehicleDto.getHeight() >= minLength && vehicleDto.getHeight() <= maxLength))
+                        .filter(vehicleDto -> (vehicleDto.getWidth() >= minWidth && vehicleDto.getWidth() <= maxWidth))
+                        .toList();
+
+        if (vehiclesFound.isEmpty()){
+            throw new NotFoundException("No se encontraron vehiculos con esas dimensiones");
+        }
+
+        return vehiclesFound;
+    }
+
+    @Override
+    public List<VehicleDto> findVehiclesByWeight(Double minWeight, Double maxWeight) {
+        List<VehicleDto> vehicleDtoList = searchAllVehicles();
+        List<VehicleDto> vehicleFound = vehicleDtoList.stream()
+                .filter(vehicleDto -> vehicleDto.getWeight() >= minWeight && vehicleDto.getWeight() <= maxWeight)
+                .toList();
+
+        if(vehicleFound.isEmpty()){
+            throw new NotFoundException("No se encontraron vehiculos en ese rango de peso");
+        }
+
+        return vehicleFound;
     }
 
 

@@ -65,5 +65,41 @@ public class VehicleController {
     public ResponseEntity<?> deleteVehicle(@PathVariable Long id){
         return new ResponseEntity<>(vehicleService.deleteVehicle(id), HttpStatus.OK);
     }
+
+    @GetMapping("/vehicles/transmission/{type}")
+    public ResponseEntity<?> findByTransmission(@PathVariable String type){
+        return  new ResponseEntity<>(vehicleService.findVehiclesByTransmission(type), HttpStatus.OK);
+    }
+
+    @PutMapping("/vehicles/{id}/update_fuel")
+    public ResponseEntity<?> updateFuelType(@PathVariable Long id, @RequestBody Vehicle vehicle){
+        return new ResponseEntity<>(vehicleService.updateFuel(id, vehicle.getFuel_type()), HttpStatus.OK);
+    }
+
+    @GetMapping("/vehicles/average_capacity/brand/{brand}")
+    public ResponseEntity<?> averageCapacityByBrand (@PathVariable String brand){
+        return new ResponseEntity<>(vehicleService.averageCapacityByBrand(brand), HttpStatus.OK);
+    }
+
+    @GetMapping("/vehicles/dimensions")
+    public ResponseEntity<?> findVehiclesByDimensions(@RequestParam String length,
+                                                      @RequestParam String width){
+
+        String[] vLength = length.split("-");
+        String[] vWidth = width.split("-");
+
+        Double min_length = Double.parseDouble(vLength[0]);
+        Double max_length = Double.parseDouble(vLength[1]);
+        Double min_width = Double.parseDouble(vWidth[0]);
+        Double max_width = Double.parseDouble(vWidth[1]);
+
+        return new ResponseEntity<>(vehicleService.findVehiclesByDimension(min_length,max_length,min_width,max_width)
+                , HttpStatus.OK);
+    }
+
+    @GetMapping("/vehicles/weight")
+    public ResponseEntity<?> findVehiclesByWeight(@RequestParam Double min, @RequestParam Double max){
+        return new ResponseEntity<>(vehicleService.findVehiclesByWeight(min, max), HttpStatus.OK);
+    }
 }
 

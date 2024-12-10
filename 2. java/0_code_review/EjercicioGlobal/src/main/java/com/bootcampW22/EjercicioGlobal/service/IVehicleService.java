@@ -17,4 +17,10 @@ public interface IVehicleService {
     String updateSpeed(Long id, String speed);
     List<VehicleDto> findVehicleByFuel(String fuel);
     String deleteVehicle(Long id);
+    List<VehicleDto> findVehiclesByTransmission(String transmission);
+    String updateFuel (Long id, String fuel);
+    Double averageCapacityByBrand(String brand);
+    List<VehicleDto> findVehiclesByDimension(Double minLength, Double maxLength, Double minWidth,
+                                             Double maxWidth);
+    List<VehicleDto> findVehiclesByWeight(Double minWeight, Double maxWeight);
 }
