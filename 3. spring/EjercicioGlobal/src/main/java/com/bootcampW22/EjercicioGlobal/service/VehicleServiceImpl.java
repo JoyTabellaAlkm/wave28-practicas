@@ -179,6 +179,7 @@ public class VehicleServiceImpl implements IVehicleService{
                     .filter(vehicle ->
                             ((vehicle.getHeight() >= minHeight && vehicle.getHeight() <= maxLength) && (vehicle.getWidth() >= minWidth && vehicle.getWidth() <= maxWidth))
                     ).toList();
+
             if(vehicles.isEmpty()){
                 throw new BadRequestException("No se encontraron vehiculos con estas especificaciones");
             }
@@ -193,9 +194,29 @@ public class VehicleServiceImpl implements IVehicleService{
         }
     }
 
+    @Override
+    public List<VehicleDto> findAllVehiclesWithSpecificWeigth(int min, int max) {
 
+        if((max > min) || min < 0) {
+            throw new BadRequestException("Parametro invalidos");
+        }
 
+        List<Vehicle> vehicles = vehicleRepository.findAll()
+                .stream()
+                .filter(vehicle -> vehicle.getWeight() >= min && vehicle.getWeight() <= max)
+                .toList();
 
+        if (vehicles.isEmpty()){
+            throw new BadRequestException("No se encontraron vehiculos con estas especificaciones");
+        }
+
+        List<VehicleDto> vehicleDtos = vehicles
+                .stream()
+                .map(vehicle -> mapper.convertValue(vehicle, VehicleDto.class))
+                .toList();
+
+        return vehicleDtos;
+    }
 
 
 }

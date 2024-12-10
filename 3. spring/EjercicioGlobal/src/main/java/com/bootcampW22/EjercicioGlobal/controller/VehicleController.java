@@ -64,11 +64,20 @@ public class VehicleController {
     }
 
     @GetMapping("/vehicles/dimensions")
-    public ResponseEntity<?> getVehiclesByDimensions(@RequestParam("length") String length,
-                                                     @RequestParam("width") String width){
+    public ResponseEntity<?> getVehiclesWithSpecificDimensions(@RequestParam("length") String length,
+                                                               @RequestParam("width") String width){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(vehicleService.findAllVehicleWithSpecificDimensions(length, width));
     }
+
+
+    @GetMapping("/vehicles/weight")
+    public ResponseEntity<?> getVehiclesWithSpecificWeights(@RequestParam("min")  int min,
+                                                            @RequestParam("max") int max){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vehicleService.findAllVehiclesWithSpecificWeigth(min, max));
+    }
+
 
 
 
