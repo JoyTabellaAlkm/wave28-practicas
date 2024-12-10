@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionController {
 
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<?> notFound(NotFoundException e){
-        return new ResponseEntity<>(
-                new ExceptionDTO(e.getMessage()),
-                HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(AlreadyExistsException.class)
-    public ResponseEntity<?> alreadyExist(AlreadyExistsException e){
-        return new ResponseEntity<>(
-                new ExceptionDTO(e.getMessage()),
-                HttpStatus.CONFLICT);
-    }
-
-    @ExceptionHandler(NoContentException.class)
-    public ResponseEntity<?> noContent(){
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+//    @ExceptionHandler(NotFoundException.class)
+//    public ResponseEntity<?> notFound(NotFoundException e){
+//        return new ResponseEntity<>(
+//                new ExceptionDTO(e.getMessage()),
+//                HttpStatus.NOT_FOUND);
+//    }
+//
+//    @ExceptionHandler(AlreadyExistsException.class)
+//    public ResponseEntity<?> alreadyExist(AlreadyExistsException e){
+//        return new ResponseEntity<>(
+//                new ExceptionDTO(e.getMessage()),
+//                HttpStatus.CONFLICT);
+//    }
+//
+//    @ExceptionHandler(NoContentException.class)
+//    public ResponseEntity<?> noContent(){
+//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//    }
 }

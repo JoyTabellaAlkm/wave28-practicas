@@ -1,6 +1,8 @@
 package com.example.linktracker.service.impl;
 
 import com.example.linktracker.dto.LinkResponseDTO;
+import com.example.linktracker.dto.MetricsResponseDTO;
+import com.example.linktracker.entity.Link;
 import com.example.linktracker.exception.customizedExceptions.NotFoundException;
 import com.example.linktracker.exception.customizedExceptions.NotValidLinkException;
 import com.example.linktracker.respository.ILinkRepository;
@@ -14,22 +16,51 @@ import java.net.URL;
 
 @Service
 public class LinkServiceImpl implements ILinkService {
+    private static final String notValidExceptionMessage = "Link invalido";
+    private static final String linkNotFoundExceptionMessage = "No se ha encontrado ningun link con ese id";
+
     @Autowired
     ILinkRepository linkRepository;
 
     @Override
     public LinkResponseDTO createLink(String link) {
         if (!isValidURL(link))
-            throw new NotValidLinkException("Link invalido");
+            throw new NotValidLinkException(notValidExceptionMessage);
 
         return new LinkResponseDTO(linkRepository.createLink(link));
     }
 
     @Override
     public String getLinkById(int id) {
-        String link = linkRepository.getLinkById(id);
+        Link link = getEntityById(id);
+        link.incrementRedirectsCount();
+        return link.getLink();
+    }
+
+    @Override
+    public MetricsResponseDTO getMetrics(int id) {
+        Integer redirectsCount = linkRepository.getRedirectsCountById(id);
+
+        if (redirectsCount == null)
+            throw new NotFoundException(linkNotFoundExceptionMessage);
+
+        return new MetricsResponseDTO(redirectsCount);
+    }
+
+    @Override
+    public void invalidate(int id) {
+        Link link = getEntityById(id);
+        link.invalidate();
+    }
+
+    private Link getEntityById(int id){
+        Link link = linkRepository.getLinkById(id);
+
         if (link == null)
-            throw new NotFoundException("no se ha encontrado el link con el id especificado");
+            throw new NotFoundException(linkNotFoundExceptionMessage);
+        if (!link.isValid())
+            throw new NotValidLinkException(notValidExceptionMessage);
+
         return link;
     }
 

@@ -1,14 +1,11 @@
 package com.example.linktracker.respository.impl;
 
 import com.example.linktracker.entity.Link;
-import com.example.linktracker.exception.customizedExceptions.NotFoundException;
-import com.example.linktracker.exception.customizedExceptions.NotValidLinkException;
 import com.example.linktracker.respository.ILinkRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Repository
 public class LinkRepositoryImpl implements ILinkRepository {
@@ -25,10 +22,19 @@ public class LinkRepositoryImpl implements ILinkRepository {
     }
 
     @Override
-    public String getLinkById(int id) {
-        return Objects.requireNonNull(links.stream()
+    public Link getLinkById(int id) {
+        return links.stream()
                 .filter(x -> x.getLinkId() == id)
                 .findFirst()
-                .orElse(null)).getLink();
+                .orElse(null);
+    }
+
+    @Override
+    public Integer getRedirectsCountById(int id) {
+        return links.stream()
+                .filter(x -> x.getLinkId() == id)
+                .map(Link::getRedirectsCount)
+                .findFirst()
+                .orElse(null);
     }
 }
