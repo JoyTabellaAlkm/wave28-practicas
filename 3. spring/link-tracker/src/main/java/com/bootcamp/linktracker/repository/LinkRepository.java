@@ -21,5 +21,8 @@ public class LinkRepository implements ILinkRepository {
         return links;
     }
 
-
+    @Override
+    public void deleteLink(Link link) {
+        links.remove(link);
+    }
 }
