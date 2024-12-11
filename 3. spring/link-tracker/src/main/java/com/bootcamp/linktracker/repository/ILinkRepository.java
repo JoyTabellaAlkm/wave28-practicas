@@ -8,4 +8,6 @@ public interface ILinkRepository {
     int saveLink(Link link);
 
     List<Link> getAllLinks();
+
+    void deleteLink(Link link);
 }
