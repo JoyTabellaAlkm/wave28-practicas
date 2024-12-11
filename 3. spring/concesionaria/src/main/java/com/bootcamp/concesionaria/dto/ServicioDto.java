@@ -1,4 +1,4 @@
-package com.bootcamp.concesionaria.model;
+package com.bootcamp.concesionaria.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Servicio {
+public class ServicioDto {
     public LocalDate date;
     public String kilometers;
     public String descriptions;
