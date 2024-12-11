@@ -14,13 +14,14 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 
 @Repository
-public class VehicleRepositoryImpl implements IVehicleRepository{
+public class VehicleRepositoryImpl implements IVehicleRepository {
 
     private List<Vehicle> listOfVehicles = new ArrayList<>();
 
     public VehicleRepositoryImpl() throws IOException {
         loadDataBase();
     }
+
     @Override
     public List<Vehicle> findAll() {
         return listOfVehicles;
@@ -35,28 +36,29 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     @Override
     public List<Vehicle> findByColorAndYear(String color, int year) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getColor().equalsIgnoreCase(color) && vehicle.getYear() == year)
+                .filter(vehicle -> vehicle.getColor().equalsIgnoreCase(color) && vehicle.getYear() == year)
                 .toList();
     }
 
     @Override
     public List<Vehicle> findByBrandAndBetweenYear(String brand, int startYear, int endYear) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getBrand().equalsIgnoreCase(brand) && vehicle.getYear() >= startYear && vehicle.getYear() <= endYear)
+                .filter(vehicle -> vehicle.getBrand().equalsIgnoreCase(brand) && vehicle.getYear() >= startYear && vehicle.getYear() <= endYear)
                 .toList();
     }
 
     @Override
     public OptionalDouble averageSpeedByBrand(String brand) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getBrand().equalsIgnoreCase(brand))
-                .mapToDouble( vehicle -> Double.parseDouble(vehicle.getMax_speed()))
+                .filter(vehicle -> vehicle.getBrand().equalsIgnoreCase(brand))
+                .mapToDouble(vehicle -> Double.parseDouble(vehicle.getMax_speed()))
                 .average();
     }
 
     @Override
-    public void multipleSaving(List<Vehicle> vehicles) {
+    public String multipleSaving(List<Vehicle> vehicles) {
         listOfVehicles.addAll(vehicles);
+        return "Vehículos creados exitosamente";
     }
 
     @Override
@@ -68,7 +70,7 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     @Override
     public List<Vehicle> findByFuelType(String fuelType) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getFuel_type().equalsIgnoreCase(fuelType))
+                .filter(vehicle -> vehicle.getFuel_type().equalsIgnoreCase(fuelType))
                 .toList();
     }
 
@@ -81,7 +83,7 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     @Override
     public List<Vehicle> findByTransmissionType(String transmissionType) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getTransmission().equalsIgnoreCase(transmissionType))
+                .filter(vehicle -> vehicle.getTransmission().equalsIgnoreCase(transmissionType))
                 .toList();
     }
 
@@ -92,31 +94,31 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     }
 
     @Override
-    public Double averageCapacityByBrand(String brand) {
+    public OptionalDouble averageCapacityByBrand(String brand) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getBrand().equalsIgnoreCase(brand))
+                .filter(vehicle -> vehicle.getBrand().equalsIgnoreCase(brand))
                 .mapToDouble(Vehicle::getPassengers)
-                .average()
-                .orElse(-1);
+                .average();
     }
 
     @Override
     public List<Vehicle> findByDimensions(double minLength, double maxLength, double minWidth, double maxWidth) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getHeight() >= minLength && vehicle.getHeight() <= maxLength && vehicle.getWidth() >= minWidth && vehicle.getWidth() <= maxWidth)
+                .filter(vehicle -> vehicle.getHeight() >= minLength && vehicle.getHeight() <= maxLength && vehicle.getWidth() >= minWidth && vehicle.getWidth() <= maxWidth)
                 .toList();
     }
 
     @Override
     public List<Vehicle> findByWeightRange(double minWeight, double maxWeight) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getWeight() >= minWeight && vehicle.getWeight() <= maxWeight )
+                .filter(vehicle -> vehicle.getWeight() >= minWeight && vehicle.getWeight() <= maxWeight)
                 .toList();
     }
 
-    public Optional<Vehicle> findById(Long id){
+    @Override
+    public Optional<Vehicle> findById(Long id) {
         return listOfVehicles.stream()
-                .filter( vehicle -> vehicle.getId().equals(id))
+                .filter(vehicle -> vehicle.getId().equals(id))
                 .findFirst();
     }
 
@@ -124,10 +126,11 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     private void loadDataBase() throws IOException {
         File file;
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Vehicle> vehicles ;
+        List<Vehicle> vehicles;
 
-        file= ResourceUtils.getFile("classpath:vehicles_100.json");
-        vehicles= objectMapper.readValue(file,new TypeReference<List<Vehicle>>(){});
+        file = ResourceUtils.getFile("classpath:vehicles_100.json");
+        vehicles = objectMapper.readValue(file, new TypeReference<List<Vehicle>>() {
+        });
 
         listOfVehicles = vehicles;
     }

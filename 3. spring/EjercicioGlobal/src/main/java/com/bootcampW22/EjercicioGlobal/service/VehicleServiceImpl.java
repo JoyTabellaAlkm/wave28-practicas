@@ -7,50 +7,46 @@ import com.bootcampW22.EjercicioGlobal.exception.BadRequestException;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
 import com.bootcampW22.EjercicioGlobal.repository.VehicleRepositoryImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 @Service
-public class VehicleServiceImpl implements IVehicleService{
+public class VehicleServiceImpl implements IVehicleService {
 
     private final IVehicleRepository vehicleRepository;
     private final ModelMapper modelMapper;
 
-    public VehicleServiceImpl(VehicleRepositoryImpl vehicleRepository, ModelMapper modelMapper){
+    public VehicleServiceImpl(VehicleRepositoryImpl vehicleRepository, ModelMapper modelMapper) {
         this.vehicleRepository = vehicleRepository;
         this.modelMapper = modelMapper;
     }
 
     @Override
     public List<VehicleDto> findAll() {
-        ObjectMapper mapper = new ObjectMapper();
-        List<Vehicle> vehicleList = vehicleRepository.findAll();
-        if(vehicleList.isEmpty()){
-            throw new NotFoundException("No se encontró ningún auto en el sistema.");
+        List<Vehicle> vehicles = vehicleRepository.findAll();
+        if (vehicles.isEmpty()) {
+            throw new NotFoundException("No se encontró ningún auto en el sistema");
         }
-        return vehicleList.stream()
-                .map(v -> mapper.convertValue(v,VehicleDto.class))
+        return vehicles.stream()
+                .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public String save(VehicleDto vehicle) {
-        validateExistingVehicle(vehicle.getId());
-        return vehicleRepository.save(modelMapper.map(vehicle, Vehicle.class));
+    public String save(VehicleDto vehicleDto) {
+        validateVehicleExistence(vehicleDto.getId());
+        return vehicleRepository.save(modelMapper.map(vehicleDto, Vehicle.class));
     }
 
     @Override
     public List<VehicleDto> findByColorAndYear(String color, int year) {
         List<Vehicle> vehicles = vehicleRepository.findByColorAndYear(color, year);
-        if (vehicles.isEmpty()){
-            throw new NotFoundException("No se encontraron vehículos con esos criterios");
-        }
+        validateEmptyList(vehicles);
+
         return vehicles.stream()
                 .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
                 .toList();
@@ -59,9 +55,8 @@ public class VehicleServiceImpl implements IVehicleService{
     @Override
     public List<VehicleDto> findByBrandAndBetweenYear(String brand, int startYear, int endYear) {
         List<Vehicle> vehicles = vehicleRepository.findByBrandAndBetweenYear(brand, startYear, endYear);
-        if (vehicles.isEmpty()){
-            throw new NotFoundException("No se encontraron vehículos con esos criterios");
-        }
+        validateEmptyList(vehicles);
+
         return vehicles.stream()
                 .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
                 .toList();
@@ -70,37 +65,35 @@ public class VehicleServiceImpl implements IVehicleService{
     @Override
     public Double averageSpeedByBrand(String brand) {
         OptionalDouble averageSped = vehicleRepository.averageSpeedByBrand(brand);
-        if (averageSped.isEmpty()){
+        if (averageSped.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos de esa marca");
         }
         return averageSped.getAsDouble();
     }
 
     @Override
-    public String multipleSaving(List<VehicleDto> vehicles) {
+    public String multipleSaving(List<VehicleDto> vehiclesDto) {
 
-        vehicles.forEach( vehicleDto -> validateExistingVehicle(vehicleDto.getId()));
+        vehiclesDto.forEach(vehicleDto -> validateVehicleExistence(vehicleDto.getId()));
 
-        List<Vehicle> vehiclesList = vehicles.stream()
+        List<Vehicle> vehicles = vehiclesDto.stream()
                 .map(vehicleDto -> modelMapper.map(vehicleDto, Vehicle.class))
                 .toList();
 
-        vehicleRepository.multipleSaving(vehiclesList);
-
-        return "Vehículos creados exitosamente";
+        return vehicleRepository.multipleSaving(vehicles);
     }
 
     @Override
     public String updateMaxSpeed(Long id, VehicleDto vehicleDto) {
-        Vehicle vehicle = findById(vehicleDto.getId());
+        Vehicle vehicle = findById(id);
 
         try {
             double value = Double.parseDouble(vehicleDto.getMax_speed());
-            if( value <= 0 || value > 500){
+            if (value <= 0 || value > 500) {
                 throw new NumberFormatException();
             }
         } catch (NumberFormatException |
-                 NullPointerException e){
+                 NullPointerException e) {
             throw new BadRequestException("Velocidad mal formada o fuera de rango");
         }
 
@@ -110,9 +103,8 @@ public class VehicleServiceImpl implements IVehicleService{
     @Override
     public List<VehicleDto> findByFuelType(String fuelType) {
         List<Vehicle> vehicles = vehicleRepository.findByFuelType(fuelType);
-        if (vehicles.isEmpty()){
-            throw new NotFoundException("No se encontraron vehículos con esos criterios");
-        }
+        validateEmptyList(vehicles);
+
         return vehicles.stream()
                 .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
                 .toList();
@@ -126,18 +118,29 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     public List<VehicleDto> findByTransmissionType(String transmissionType) {
-        return List.of();
+        List<Vehicle> vehicles = vehicleRepository.findByTransmissionType(transmissionType);
+        validateEmptyList(vehicles);
+
+        return vehicles.stream()
+                .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
+                .toList();
     }
 
     @Override
     public String updateFuelType(Long id, VehicleDto vehicleDto) {
-        Vehicle vehicle = findById(vehicleDto.getId());
+        Vehicle vehicle = findById(id);
         return vehicleRepository.updateFuelType(vehicle, vehicleDto.getFuel_type());
     }
 
     @Override
     public Double averageCapacityByBrand(String brand) {
-        return 0.0;
+        OptionalDouble averageCapacity = vehicleRepository.averageCapacityByBrand(brand);
+
+        if (averageCapacity.isEmpty()) {
+            throw new NotFoundException("No se encontraron vehículos de esa marca");
+        }
+
+        return averageCapacity.getAsDouble();
     }
 
     @Override
@@ -145,34 +148,41 @@ public class VehicleServiceImpl implements IVehicleService{
         String[] lengths = length.split("-");
         double minLength = Double.parseDouble(lengths[0]);
         double maxLength = Double.parseDouble(lengths[1]);
-
         String[] widths = width.split("-");
         double minWidth = Double.parseDouble(widths[0]);
         double maxWidth = Double.parseDouble(widths[1]);
 
         List<Vehicle> vehicles = vehicleRepository.findByDimensions(minLength, maxLength, minWidth, maxWidth);
-
-        if (vehicles.isEmpty()){
-            throw new NotFoundException("No se encontraron vehículos con esos criterios");
-        }
+        validateEmptyList(vehicles);
 
         return vehicles.stream()
-                .map( vehicle -> modelMapper.map(vehicle, VehicleDto.class))
+                .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
                 .toList();
     }
 
     @Override
     public List<VehicleDto> findByWeightRange(double minWeight, double maxWeight) {
-        return List.of();
+        List<Vehicle> vehicles = vehicleRepository.findByWeightRange(minWeight, maxWeight);
+        validateEmptyList(vehicles);
+
+        return vehicles.stream()
+                .map(vehicle -> modelMapper.map(vehicle, VehicleDto.class))
+                .toList();
     }
 
-    public Vehicle findById(Long id){
-        return vehicleRepository.findById(id).orElseThrow( () -> new NotFoundException("No se encontró el vehículo"));
+    private Vehicle findById(Long id) {
+        return vehicleRepository.findById(id).orElseThrow(() -> new NotFoundException("No se encontró el vehículo"));
     }
 
-    public void validateExistingVehicle(Long id){
+    private void validateVehicleExistence(Long id) {
         if (vehicleRepository.findById(id).isPresent()) {
             throw new AlreadyExistsException("Identificador del vehículo ya existente: " + id);
+        }
+    }
+
+    private void validateEmptyList(List<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            throw new NotFoundException("No se encontraron vehículos con esos criterios");
         }
     }
 }
