@@ -57,4 +57,11 @@ public class VehicleController {
     public ResponseEntity<?> createVehicleBatch(@RequestBody List<VehicleDto> vehicleDtoList) {
         return ResponseEntity.status(201).body(vehicleService.createVehicleBatch(vehicleDtoList));
     }
+
+    @GetMapping("/vehicles/dimensions")
+    public ResponseEntity<?> getVehiclesByDirections(
+            @RequestParam String length,
+            @RequestParam String width) {
+        return ResponseEntity.ok(vehicleService.findVehiclesByDimensions(length, width));
+    }
 }

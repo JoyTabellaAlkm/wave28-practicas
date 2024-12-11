@@ -3,6 +3,7 @@ package com.bootcampW22.EjercicioGlobal.service;
 import com.bootcampW22.EjercicioGlobal.dto.AverageSpeedDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
+import com.bootcampW22.EjercicioGlobal.exception.BadRequestException;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.exception.VehicleAlreadyExistsException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
@@ -18,24 +19,25 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class VehicleServiceImpl implements IVehicleService{
+public class VehicleServiceImpl implements IVehicleService {
 
     IVehicleRepository vehicleRepository;
     ObjectMapper objectMapper;
 
     @Autowired
-    public VehicleServiceImpl(VehicleRepositoryImpl vehicleRepository, ObjectMapper objectMapper){
+    public VehicleServiceImpl(VehicleRepositoryImpl vehicleRepository, ObjectMapper objectMapper) {
         this.vehicleRepository = vehicleRepository;
         this.objectMapper = objectMapper;
     }
+
     @Override
     public List<VehicleDto> searchAllVehicles() {
         List<Vehicle> vehicleList = vehicleRepository.findAll();
-        if(vehicleList.isEmpty()){
+        if (vehicleList.isEmpty()) {
             throw new NotFoundException("No hay vehículos en la concesionaria.");
         }
         return vehicleList.stream()
-                .map(v -> objectMapper.convertValue(v,VehicleDto.class))
+                .map(v -> objectMapper.convertValue(v, VehicleDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -45,7 +47,7 @@ public class VehicleServiceImpl implements IVehicleService{
                 .stream()
                 .filter(v -> v.getColor().equalsIgnoreCase(color) && v.getYear() == year)
                 .toList();
-        if(vehicleList.isEmpty()){
+        if (vehicleList.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos con esos criterios.");
         }
         return vehicleList.stream().map(v -> objectMapper.convertValue(v, VehicleDto.class)).toList();
@@ -59,7 +61,7 @@ public class VehicleServiceImpl implements IVehicleService{
                         v.getYear() >= startYear &&
                         v.getYear() <= endYear)
                 .toList();
-        if(vehicleList.isEmpty()){
+        if (vehicleList.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos con esos criterios.");
         }
         return vehicleList.stream().map(v -> objectMapper.convertValue(v, VehicleDto.class)).toList();
@@ -71,7 +73,7 @@ public class VehicleServiceImpl implements IVehicleService{
                 .stream()
                 .filter(v -> v.getBrand().equalsIgnoreCase(brand))
                 .toList();
-        if(vehicleList.isEmpty()){
+        if (vehicleList.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos de esa marca.");
         }
         double avgSpeed = vehicleList
@@ -90,24 +92,47 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     public List<VehicleDto> createVehicleBatch(List<VehicleDto> vehicleDtoList) {
-         List<Vehicle> newVehiclesList = vehicleDtoList
-                 .stream()
-                 .map(v -> objectMapper.convertValue(v, Vehicle.class))
-                 .toList();
-         List<Long> createdVehiclesIds = new ArrayList<>();
-         newVehiclesList.forEach(v -> {
-             try {
+        List<Vehicle> newVehiclesList = vehicleDtoList
+                .stream()
+                .map(v -> objectMapper.convertValue(v, Vehicle.class))
+                .toList();
+        List<Long> createdVehiclesIds = new ArrayList<>();
+        newVehiclesList.forEach(v -> {
+            try {
                 vehicleRepository.save(v);
-             } catch (VehicleAlreadyExistsException e) {
-                 StringBuilder sb = new StringBuilder();
-                 createdVehiclesIds.forEach(id -> {
-                     sb.append(id).append(" ");
-                 });
-                 throw new VehicleAlreadyExistsException("No se pudo ejecutar el batch completamente." +
-                         " Sin embargo se crearon los ids: " + sb.toString());
-             }
-             createdVehiclesIds.add(v.getId());
-         });
-         return vehicleDtoList;
+            } catch (VehicleAlreadyExistsException e) {
+                StringBuilder sb = new StringBuilder();
+                createdVehiclesIds.forEach(id -> {
+                    sb.append(id).append(" ");
+                });
+                throw new VehicleAlreadyExistsException("No se pudo ejecutar el batch completamente." +
+                        " Sin embargo se crearon los ids: " + sb.toString());
+            }
+            createdVehiclesIds.add(v.getId());
+        });
+        return vehicleDtoList;
+    }
+
+    @Override
+    public List<VehicleDto> findVehiclesByDimensions(String length, String width) {
+        double minLength, maxLength, minWidth, maxWidth;
+        try {
+            String[] lengthValues = length.split("-");
+            String[] widthValues = width.split("-");
+            minLength = Double.parseDouble(lengthValues[0]);
+            maxLength = Double.parseDouble(lengthValues[1]);
+            minWidth = Double.parseDouble(widthValues[0]);
+            maxWidth = Double.parseDouble(widthValues[1]);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            throw new BadRequestException("El formato de los rangos 'width' y 'height' es incorrecto.");
+        }
+        List<Vehicle> vehicleList = vehicleRepository.findAll();
+        return vehicleList.stream()
+                .filter(v -> v.getWidth() >= minWidth
+                        && v.getWidth() <= maxWidth
+                        && v.getHeight() <= maxLength
+                        && v.getHeight() >= minLength)
+                .map(v -> objectMapper.convertValue(v, VehicleDto.class))
+                .toList();
     }
 }

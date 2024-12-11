@@ -17,4 +17,6 @@ public interface IVehicleService {
     AverageSpeedDto findAverageSpeedOfBrand(String brand);
 
     List<VehicleDto> createVehicleBatch(List<VehicleDto> vehicleDtoList);
+
+    List<VehicleDto> findVehiclesByDimensions(String length, String width);
 }
