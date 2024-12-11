@@ -21,8 +21,5 @@ public class dietaController {
     @GetMapping("/retornarCaloriasTotales")
     public ResponseEntity<RespuestaDTO> retornarCaloriasTotales(@RequestBody PlatoDTO platoDTO) {
         return new ResponseEntity<>(ingredienteService.retornarCaloriasTotales(platoDTO), HttpStatus.OK);
-
     }
-
-
 }

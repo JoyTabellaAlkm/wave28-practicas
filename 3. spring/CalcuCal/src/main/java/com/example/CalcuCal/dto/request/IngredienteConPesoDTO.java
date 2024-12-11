@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class IngredienteConPesoDTO {
-
     private String name;
     private Integer weight;
-
 }
