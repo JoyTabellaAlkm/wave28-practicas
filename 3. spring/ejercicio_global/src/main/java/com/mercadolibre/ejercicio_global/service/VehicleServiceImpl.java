@@ -28,7 +28,9 @@ public class VehicleServiceImpl implements IVehicleService {
 			throw new NotFoundException("No se encontró ningún auto en el sistema.");
 		}
 
-		return vehicleList.stream().map(v -> mapper.convertValue(v, VehicleDto.class)).collect(Collectors.toList());
+		return vehicleList.stream()
+				.map(v -> mapper.convertValue(v, VehicleDto.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
