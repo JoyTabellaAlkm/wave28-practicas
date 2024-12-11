@@ -16,7 +16,7 @@ public class VehicleDto {
     private String registration;
     private String color;
     private int year;
-    private String max_speed;
+    private int max_speed;
     private int passengers;
     private String fuel_type;
     private String transmission;
