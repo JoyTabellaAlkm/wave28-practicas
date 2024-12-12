@@ -24,6 +24,23 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
         return listOfVehicles;
     }
 
+    @Override
+    public Vehicle postVehicle(Vehicle vehicleNew) {
+        return null;
+    }
+
+    @Override
+    public List<Vehicle> getVehiclesByDimensions(int minLength, int maxLength, int minWidth, int maxWidth) {
+        return listOfVehicles.stream().filter(vehicle ->
+                vehicle.getHeight() >= minLength && vehicle.getHeight() <= maxLength &&
+                        vehicle.getWidth() >= minWidth && vehicle.getWidth() <= maxWidth ).toList();
+    }
+
+    @Override
+    public List<Vehicle> vehiclesForBrand(String brand) {
+        return listOfVehicles.stream().filter(v -> v.getBrand().equals(brand)).toList();
+    }
+
     private void loadDataBase() throws IOException {
         File file;
         ObjectMapper objectMapper = new ObjectMapper();
