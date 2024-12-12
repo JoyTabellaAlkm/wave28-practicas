@@ -38,17 +38,17 @@ public class VehicleServiceImpl implements IVehicleService{
     public List<VehicleDto> findByFuelType(String fuelType) {
         ObjectMapper mapper = new ObjectMapper();
 
-        List<Vehicle> vehicleList = vehicleRepository.findAll(); // Recupera todos los vehículos
-        List<Vehicle> filteredVehicles = vehicleList.stream() // Usa Streams para filtrar
-                .filter(v -> v.getFuel_type().equalsIgnoreCase(fuelType)) // Filtra por tipo de combustible
-                .collect(Collectors.toList());
+        List<Vehicle> vehicleList = vehicleRepository.findAll();
+        List<Vehicle> filteredVehicles = vehicleList.stream()
+                .filter(v -> v.getFuel_type().equalsIgnoreCase(fuelType))
+                .toList();
 
         if (filteredVehicles.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos con ese tipo de combustible.");
         }
 
         return filteredVehicles.stream()
-                .map(v -> mapper.convertValue(v, VehicleDto.class)) // Convierte a DTO
+                .map(v -> mapper.convertValue(v, VehicleDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -69,49 +69,39 @@ public class VehicleServiceImpl implements IVehicleService{
     }
 
     public AvarageCapacityDto calculateAverageCapacityByBrand(String brand) {
-        List<Vehicle> vehicleList = vehicleRepository.findAll(); // Obtener todos los vehículos
-
-        // Filtrar los vehículos por marca
+        List<Vehicle> vehicleList = vehicleRepository.findAll();
         List<Vehicle> filteredVehicles = vehicleList.stream()
                 .filter(v -> v.getBrand().equalsIgnoreCase(brand))
                 .toList();
-
-        // Comprobar si se encontraron vehículos de la marca
         if (filteredVehicles.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos con la marca" + brand+  "ingresada");
         }
 
-        // Calcular la capacidad promedio de pasajeros
         double averageCapacity = filteredVehicles.stream()
-                .mapToInt(Vehicle::getPassengers) // Suponiendo que hay un método getPassengerCapacity()
+                .mapToInt(Vehicle::getPassengers)
                 .average()
                 .orElse(0);
 
-        // Devolver el DTO con la marca y la capacidad promedio
         return new AvarageCapacityDto(brand, averageCapacity);
     }
 
 
     public AvarageSpeedDto calculateAverageSpeedByBrand(String brand) {
-        List<Vehicle> vehicleList = vehicleRepository.findAll(); // Obtener todos los vehículos
+        List<Vehicle> vehicleList = vehicleRepository.findAll();
 
-        // Filtrar los vehículos por marca
         List<Vehicle> filteredVehicles = vehicleList.stream()
                 .filter(v -> v.getBrand().equalsIgnoreCase(brand))
                 .toList();
 
-        // Comprobar si se encontraron vehículos de la marca
         if (filteredVehicles.isEmpty()) {
             throw new NotFoundException("No se encontraron vehículos con la marca" + brand +  "ingresada");
         }
 
-        // Calcular la capacidad promedio de pasajeros
         double averageSpeed = filteredVehicles.stream()
-                .mapToDouble(v -> Double.parseDouble(v.getMax_speed())) // Asegúrate de que este método devuelva un String
+                .mapToDouble(v -> Double.parseDouble(v.getMax_speed()))
                 .average()
-                .orElse(0);  // Retorna 0 si no hay vehículos
+                .orElse(0);
 
-        // Devolver el DTO con la marca y la capacidad promedio
         return new AvarageSpeedDto(brand, averageSpeed);
     }
 

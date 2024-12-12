@@ -33,11 +33,7 @@ public class VehicleController {
     @PathVariable int year){
 
     List< VehicleDto> vehiculosDto=vehicleService.findByColorAndYear (color, year);
-    if(vehiculosDto.isEmpty()){
 
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-    }
     return new ResponseEntity<>(vehiculosDto,HttpStatus.OK);
 
     }
@@ -49,10 +45,7 @@ public class VehicleController {
             @PathVariable int end_year)
     {
         List<VehicleDto> vehiculosDto=vehicleService.findByBrandAndYear(brand,start_year,end_year);
-         if(vehiculosDto.isEmpty()){
-             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-         }
          return new ResponseEntity<>(vehiculosDto,HttpStatus.OK);
 
     }
@@ -61,35 +54,28 @@ public class VehicleController {
     public ResponseEntity<List<VehicleDto>> getVehiclesByTypeTransmission(
             @PathVariable  String transmission){
         List <VehicleDto> vehiculosDto=vehicleService.findByTypeTransmission(transmission);
-        if(vehiculosDto.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        }
          return new ResponseEntity<>(vehiculosDto,HttpStatus.OK);
 
  }
 
     @GetMapping("/vehicles/dimensions")
     public ResponseEntity<List<VehicleDto>> getVehiclesByDimensions(
-            @RequestParam String weight, // Recibir como String
-            @RequestParam String width) { // Recibir como String
+            @RequestParam String weight,
+            @RequestParam String width) {
 
-        // Extraer y convertir los valores de rango para peso
+
         String[] weightRange = weight.split("-");
         double min_weight = Double.parseDouble(weightRange[0]);
         double max_weight = Double.parseDouble(weightRange[1]);
 
-        // Extraer y convertir los valores de rango para ancho
+
         String[] widthRange = width.split("-");
         double min_width = Double.parseDouble(widthRange[0]);
         double max_width = Double.parseDouble(widthRange[1]);
 
-        // Llamar a la lógica de servicio con los valores convertidos
-        List<VehicleDto> vehiculosDto = vehicleService.findByWidthAndWeight(min_weight, max_weight, min_width, max_width);
 
-        if (vehiculosDto.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        List<VehicleDto> vehiculosDto = vehicleService.findByWidthAndWeight(min_weight, max_weight, min_width, max_width);
 
         return new ResponseEntity<>(vehiculosDto, HttpStatus.OK);
     }

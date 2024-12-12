@@ -29,9 +29,6 @@ public class VehicleController {
             @PathVariable String type) {
         List<VehicleDto> vehiculosDto = vehicleService.findByFuelType(type); // Llama al servicio con el tipo de combustible
 
-        if (vehiculosDto.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404 si no se encuentran vehículos
-        }
 
         return new ResponseEntity<>(vehiculosDto, HttpStatus.OK); // 200 OK con la lista de vehículos
     }
@@ -41,10 +38,7 @@ public class VehicleController {
             @RequestParam double min,
             @RequestParam double max) {
         List<VehicleDto> vehiculosDto = vehicleService.findByWeightRange(min, max);
-        if (vehiculosDto.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        }
         return new ResponseEntity<>(vehiculosDto, HttpStatus.OK);
     }
 
@@ -52,9 +46,7 @@ public class VehicleController {
     public ResponseEntity<AvarageCapacityDto> getAverageCapacityByBrand
             (@PathVariable String brand) {
         AvarageCapacityDto averageCapacityDto = vehicleService.calculateAverageCapacityByBrand(brand);
-        if (averageCapacityDto.getAverageCapacity() == 0) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
         return new ResponseEntity<>(averageCapacityDto, HttpStatus.OK);
     }
 
@@ -62,9 +54,7 @@ public class VehicleController {
     public ResponseEntity<AvarageSpeedDto> getAvarageSpedByBrand
             (@PathVariable String brand) {
         AvarageSpeedDto avarageSpeedDto = vehicleService.calculateAverageSpeedByBrand(brand);
-        if (avarageSpeedDto.getAverageSpeed() == 0) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
 
         return new ResponseEntity<>(avarageSpeedDto, HttpStatus.OK);
     }

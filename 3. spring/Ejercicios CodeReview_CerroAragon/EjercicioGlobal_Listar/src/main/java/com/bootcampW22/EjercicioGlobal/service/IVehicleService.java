@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IVehicleService {
     List<VehicleDto> searchAllVehicles();
-    List<VehicleDto> findByFuelType(String fuelType); // Nuevo método
+    List<VehicleDto> findByFuelType(String fuelType);
     List<VehicleDto> findByWeightRange(double minWeight, double maxWeight);
     AvarageCapacityDto calculateAverageCapacityByBrand(String brand);
     AvarageSpeedDto calculateAverageSpeedByBrand (String brand);
