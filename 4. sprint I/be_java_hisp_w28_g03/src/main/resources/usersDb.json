@@ -1,0 +1,99 @@
+[
+  {
+    "user_id": 1,
+    "user_name": "vendedor1",
+    "followers": [
+      {
+        "user_id": 2,
+        "user_name": "usuario1"
+      },
+      {
+        "user_id": 3,
+        "user_name": "usuario2"
+      },
+      {
+        "user_id": 6,
+        "user_name": "usuario 6"
+      }
+    ],
+    "followed": [
+      {
+        "user_id": 2,
+        "user_name": "usuario1"
+      },
+      {
+        "user_id": 4,
+        "user_name": "vendedor2"
+      },
+      {
+        "user_id": 5,
+        "user_name": "vendedor3"
+      }
+    ]
+  },
+  {
+    "user_id": 2,
+    "user_name": "usuario1",
+    "followers": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ],
+    "followed": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ]
+  },
+  {
+    "user_id": 3,
+    "user_name": "usuario2",
+    "followers": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ],
+    "followed": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ]
+  },
+  {
+    "user_id": 4,
+    "user_name": "vendedor2",
+    "followers": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ],
+    "followed": []
+  },
+  {
+    "user_id": 5,
+    "user_name": "vendedor3",
+    "followers": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ],
+    "followed": []
+  },
+  {
+    "user_id": 6,
+    "user_name": "usuario 6",
+    "followers": [
+      {
+        "user_id": 1,
+        "user_name": "vendedor1"
+      }
+    ],
+    "followed": []
+  }
+]
