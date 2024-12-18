@@ -114,6 +114,7 @@ public class VehicleServiceImpl implements IVehicleService {
             throw new IllegalArgumentException("La velocidad no puede ser negativa.");
 
         Vehicle vehicle = vehicleRepository.findById(id);
+        
         if (vehicle == null)
             throw new NotFoundException("No se encontró el vehículo con id " + id);
 
