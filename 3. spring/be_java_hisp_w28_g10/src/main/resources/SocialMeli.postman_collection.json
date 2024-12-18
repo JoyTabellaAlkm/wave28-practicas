@@ -1,0 +1,1259 @@
+{
+	"info": {
+		"_postman_id": "dc450058-bbec-460b-b385-68be99f0998a",
+		"name": "SocialMeli",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40213653",
+		"_collection_link": "https://grupo-10-1968.postman.co/workspace/grupo10~fee5a1fb-e54c-42b3-9f66-6a46dc97b56a/collection/40029573-dc450058-bbec-460b-b385-68be99f0998a?action=share&source=collection_link&creator=40213653"
+	},
+	"item": [
+		{
+			"name": "US 0001",
+			"item": [
+				{
+					"name": "Poder realizar la acción de “Follow” (seguir) a un determinado vendedor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/2/follow/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Conflict caso: mismo id de usuario y usuario a seguir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/users/8/follow/8"
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound caso: mismo id de usuario y usuario a seguir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/users/8/follow/300"
+					},
+					"response": []
+				},
+				{
+					"name": "BadRequest caso: id de usuario no existe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/users/1/follow/asdasd"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0002",
+			"item": [
+				{
+					"name": "Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/4/followers/count"
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound caso: id no encontrado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/200/followers/count"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0003 + US 0008",
+			"item": [
+				{
+					"name": "Obtener un listado de todos los usuarios que siguen a un determinado vendedor sin ordernar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users/4/followers/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un listado de todos los usuarios que siguen a un determinado vendedor con ordenamiento por nombre ascendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/4/followers/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"4",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un listado de todos los usuarios que siguen a un determinado vendedor  con ordenamiento por nombre descendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/4/followers/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"4",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound caso: no existe el id del usuario seleccionado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/11/followers/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"11",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BadRequest caso:  se envía una forma de ordenamiento inválida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followers/list?order=hola",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "hola"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0004 + US 0008",
+			"item": [
+				{
+					"name": "Obtener un listado de todos los vendedores a los cuales sigue un determinado usuario sin ordenamiento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/users/1/followed/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un listado de todos los vendedores a los cuales sigue un determinado usuario con ordenamiento por nombre ascendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followed/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un listado de todos los vendedores a los cuales sigue un determinado usuario con ordenamiento por nombre descendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followed/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound caso: no existe el id del usuario seleccionado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/11/followed/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"11",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BadRequest caso:  se envía una forma de ordenamiento inválida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followed/list?order=hola",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "hola"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0005",
+			"item": [
+				{
+					"name": "Dar de alta una nueva publicación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 4, \n    \"date\": \"19-12-2024\", \n    \"product\": {\n        \"product_id\": 505, \n        \"product_name\": \"Silla Gamer\", \n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100, \n    \"price\": 1500.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/post"
+					},
+					"response": []
+				},
+				{
+					"name": "Bad Request: Parametros invalidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": -4, \n    \"date\": \"20-12-2024\", \n    \"product\": {\n        \"product_id\": -505, \n        \"product_name\": \"Silla Gamer\", \n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100, \n    \"price\": 1500.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/post"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0006",
+			"item": [
+				{
+					"name": "Obtener listado de posts por vendedores seguidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/followed/5/list"
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound caso: No existe el id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/products/followed/40/list"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0007",
+			"item": [
+				{
+					"name": "Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/1/unfollow/3"
+					},
+					"response": []
+				},
+				{
+					"name": "UserRelationNotFound caso: no existe relación entre los usuarios dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/users/101/unfollow/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0009",
+			"item": [
+				{
+					"name": "Obtener listado de productos de usuarios seguidos por orden ascendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/5/list?order=date_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"5",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener listado de productos de usuarios seguidos por orden descendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/5/list?order=date_desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"5",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BadRequest caso: Order no valido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/1/list?order=date_aaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"1",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_aaa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0010",
+			"item": [
+				{
+					"name": "Llevar a cabo la publicación de un nuevo producto en promoción",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 5, \n    \"date\": \"17-12-2024\", \n    \"product\": {\n        \"product_id\": 60, \n        \"product_name\": \"Silla Gamer\", \n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100, \n    \"price\": 1500.50, \n    \"has_promo\": true, \n    \"discount\": 0.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/promo-post"
+					},
+					"response": []
+				},
+				{
+					"name": "Bad Request: Llevar a cabo la publicación de un nuevo producto en promoción",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": -8, \n    \"date\": \"29-04-20211\", \n    \"product\": {\n        \"product_id\": -60, \n        \"product_name\": \"Silla Gamer\", \n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": -100, \n    \"price\": -1500.50, \n    \"has_promo\": true, \n    \"discount\": 0.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/products/promo-post"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0011",
+			"item": [
+				{
+					"name": "Obtener la cantidad de productos en promoción de un determinado vendedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/promo-post/count?user_id=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserNotFound: caso usuario no encontrado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/promo-post/count?user_id=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0012",
+			"item": [
+				{
+					"name": "USERS_BY_FOLLOWERS",
+					"item": [
+						{
+							"name": "Obtener reporte USERS_BY_FOLLOWERS orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWERS?order=count_desc&top=10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWERS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_desc"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte USERS_BY_FOLLOWERS orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWERS?order=count_asc&top=10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWERS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_asc"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest caso: order o top no valido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWERS?order=hola&top=100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWERS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "hola"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USERS_BY_FOLLOWS",
+					"item": [
+						{
+							"name": "Obtener reporte USERS_BY_FOLLOWS orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWS?order=count_desc&top=4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_desc"
+										},
+										{
+											"key": "top",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte USERS_BY_FOLLOWS orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWS?order=count_asc&top=100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_asc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest caso: order no valido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/reports/getReport/USERS_BY_FOLLOWS?order=\"\"&top=100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_FOLLOWS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "\"\""
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USERS_BY_POSTS",
+					"item": [
+						{
+							"name": "Obtener reporte USERS_BY_POSTS orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/USERS_BY_POSTS?order=count_asc&top=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_POSTS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_asc"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte USERS_BY_POSTS orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/USERS_BY_POSTS?order=count_desc&top=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_POSTS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_desc"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest caso: Order no valido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/USERS_BY_POSTS?order=count_des&top=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"USERS_BY_POSTS"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "count_des"
+										},
+										{
+											"key": "top",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POSTS_BY_PRICE",
+					"item": [
+						{
+							"name": "Obtener reporte POSTS_BY_PRICE orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_PRICE?order=price_asc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_PRICE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "price_asc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte POSTS_BY_PRICE orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_PRICE?order=price_desc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_PRICE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "price_desc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest: Valor top invalido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_PRICE?order=price_asc&top=-12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_PRICE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "price_asc"
+										},
+										{
+											"key": "top",
+											"value": "-12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadReques: valor order invalido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_PRICE?order=price_assadasdasc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_PRICE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "price_assadasdasc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POSTS_BY_DISCOUNT",
+					"item": [
+						{
+							"name": "Obtener reporte  POSTS_BY_DISCOUNT orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DISCOUNT?order=discount_asc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DISCOUNT"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "discount_asc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte  POSTS_BY_DISCOUNT orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DISCOUNT?order=discount_desc&top=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DISCOUNT"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "discount_desc"
+										},
+										{
+											"key": "top",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest: valor order invalido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DISCOUNT?order=dcount_asc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DISCOUNT"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "dcount_asc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POSTS_BY_DATE",
+					"item": [
+						{
+							"name": "Obtener reporte  POSTS_BY_DATE orden ascendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DATE?order=date_asc&top=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DATE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										},
+										{
+											"key": "top",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener reporte  POSTS_BY_DATE orden descendente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DATE?order=date_desc&top=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DATE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_desc"
+										},
+										{
+											"key": "top",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BadRequest: valor order invalido",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/reports/getReport/POSTS_BY_DATE?order=daaa_asc&top=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"reports",
+										"getReport",
+										"POSTS_BY_DATE"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "daaa_asc"
+										},
+										{
+											"key": "top",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "BadRequest caso:  nombre de reporte inválido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reports/getReport/Hola?order=count_desc&top=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reports",
+								"getReport",
+								"Hola"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "count_desc"
+								},
+								{
+									"key": "top",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
