@@ -1,17 +1,14 @@
 package com.bootcampW22.EjercicioGlobal.service;
 
-import com.bootcampW22.EjercicioGlobal.dto.FuelDto;
-import com.bootcampW22.EjercicioGlobal.dto.SpeedDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
-import com.bootcampW22.EjercicioGlobal.exception.BadRequestException;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
+import com.bootcampW22.EjercicioGlobal.utils.Validator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +33,21 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public Long saveVehicle(VehicleDto vehicleDto) {
-        areAllAttributesNotNull(vehicleDto);
+        Validator.validateObjectList(List.of(
+                vehicleDto.getBrand(),
+                vehicleDto.getId(),
+                vehicleDto.getModel(),
+                vehicleDto.getRegistration(),
+                vehicleDto.getColor(),
+                vehicleDto.getYear(),
+                vehicleDto.getMaxSpeed(),
+                vehicleDto.getPassengers(),
+                vehicleDto.getFuelType(),
+                vehicleDto.getTransmission(),
+                vehicleDto.getHeight(),
+                vehicleDto.getWidth(),
+                vehicleDto.getWeight()
+        ));
         Long id = vehicleRepository.create(mapper.convertValue(vehicleDto, Vehicle.class));
         return id;
     }
@@ -83,13 +94,13 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
-    public Long updateSpeed(SpeedDto speedDto, Long id) {
-        areAllAttributesNotNull(speedDto);
+    public Long updateSpeed(VehicleDto vehicleDto, Long id) {
+        Validator.validateObject(vehicleDto.getMaxSpeed());
         Vehicle vehicle = vehicleRepository.findById(id);
         if (vehicle == null) {
             throw new NotFoundException("No se encontró ningun auto en el sistema con id: " + id);
         }
-        Long idUpdated = vehicleRepository.updateSpeed(vehicle, speedDto.getMaxSpeed());
+        Long idUpdated = vehicleRepository.updateSpeed(vehicle, vehicleDto.getMaxSpeed());
         return idUpdated;
     }
 
@@ -127,13 +138,13 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
-    public Long updateFuel(FuelDto fuelDto, Long id) {
-        areAllAttributesNotNull(fuelDto);
+    public Long updateFuel(VehicleDto vehicleDto, Long id) {
+        Validator.validateObject(vehicleDto.getFuelType());
         Vehicle vehicle = vehicleRepository.findById(id);
         if (vehicle == null) {
             throw new NotFoundException("No se encontró ningun auto en el sistema con id: " + id);
         }
-        Long idUpdated = vehicleRepository.updateFuel(vehicle, fuelDto.getFuelType());
+        Long idUpdated = vehicleRepository.updateFuel(vehicle, vehicle.getFuelType());
         return idUpdated;
     }
 
@@ -176,23 +187,4 @@ public class VehicleServiceImpl implements IVehicleService {
                 .collect(Collectors.toList());
     }
 
-    private void areAllAttributesNotNull(Object obj) {
-        if (obj == null) {
-            throw new BadRequestException("El " + obj.getClass().getName() + " no puede ser nulo");
-        }
-
-        Field[] fields = obj.getClass().getDeclaredFields();
-
-        for (Field field : fields) {
-            field.setAccessible(true);
-            try {
-                Object value = field.get(obj);
-                if (value == null) {
-                    throw new BadRequestException("El campo " + field.getName() + " no puede ser nulo");
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

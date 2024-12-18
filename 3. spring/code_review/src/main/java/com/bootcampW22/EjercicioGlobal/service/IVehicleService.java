@@ -1,7 +1,5 @@
 package com.bootcampW22.EjercicioGlobal.service;
 
-import com.bootcampW22.EjercicioGlobal.dto.FuelDto;
-import com.bootcampW22.EjercicioGlobal.dto.SpeedDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 
 import java.util.List;
@@ -19,7 +17,7 @@ public interface IVehicleService {
 
     String saveManyVehicle(List<VehicleDto> vehicleDtos);
 
-    Long updateSpeed(SpeedDto speedDto, Long id);
+    Long updateSpeed(VehicleDto vehicleDto, Long id);
 
     List<VehicleDto> searchByFuelType(String type);
 
@@ -27,7 +25,7 @@ public interface IVehicleService {
 
     List<VehicleDto> searchByTransmissionType(String type);
 
-    Long updateFuel(FuelDto fuelDto, Long id);
+    Long updateFuel(VehicleDto vehicleDto, Long id);
 
     Double searchAverageCapacityByBrand(String brand);
 

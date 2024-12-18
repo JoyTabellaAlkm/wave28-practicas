@@ -1,7 +1,5 @@
 package com.bootcampW22.EjercicioGlobal.controller;
 
-import com.bootcampW22.EjercicioGlobal.dto.FuelDto;
-import com.bootcampW22.EjercicioGlobal.dto.SpeedDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.service.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,8 +61,8 @@ public class VehicleController {
 
     //    6.Actualizar velocidad máxima de un vehículo
     @PutMapping("/{id}/update_speed")
-    public ResponseEntity<?> updateSpeed(@RequestBody SpeedDto speedDto, @PathVariable Long id) {
-        return new ResponseEntity<>(vehicleService.updateSpeed(speedDto, id), HttpStatus.OK);
+    public ResponseEntity<?> updateSpeed(@RequestBody VehicleDto vehicleDto, @PathVariable Long id) {
+        return new ResponseEntity<>(vehicleService.updateSpeed(vehicleDto, id), HttpStatus.OK);
     }
 
     //    7.Listar vehículos por tipo de combustible
@@ -92,8 +90,8 @@ public class VehicleController {
 
     //    10.Listar vehículos por tipo de combustible
     @PutMapping("/{id}/update_fuel")
-    public ResponseEntity<?> updateFuel(@RequestBody FuelDto fuelDto, @PathVariable Long id) {
-        return new ResponseEntity<>(vehicleService.updateFuel(fuelDto, id), HttpStatus.OK);
+    public ResponseEntity<?> updateFuel(@RequestBody VehicleDto vehicleDto, @PathVariable Long id) {
+        return new ResponseEntity<>(vehicleService.updateFuel(vehicleDto, id), HttpStatus.OK);
     }
 
     //    11.Listar vehículos por tipo de combustible
