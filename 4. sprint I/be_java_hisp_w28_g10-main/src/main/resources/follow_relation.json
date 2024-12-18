@@ -1,0 +1,42 @@
+[
+  {
+    "id_follower": 1,
+    "id_followed": 2
+  },
+  {
+    "id_follower": 1,
+    "id_followed": 3
+  },
+  {
+    "id_follower": 1,
+    "id_followed": 4
+  },
+  {
+    "id_follower": 2,
+    "id_followed": 5
+  },
+  {
+    "id_follower": 2,
+    "id_followed": 6
+  },
+  {
+    "id_follower": 2,
+    "id_followed": 7
+  },
+  {
+    "id_follower": 2,
+    "id_followed": 4
+  },
+  {
+    "id_follower": 3,
+    "id_followed": 4
+  },
+  {
+    "id_follower": 5,
+    "id_followed": 4
+  },
+  {
+    "id_follower": 5,
+    "id_followed": 1
+  }
+]
