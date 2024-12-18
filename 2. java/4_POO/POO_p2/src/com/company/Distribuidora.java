@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class Distribuidora {
     public static void main(String[] args) {
         Producto[] productos = {
                 new Perecedero(2, "Banana", 3.50),
@@ -18,7 +18,7 @@ public class Main {
         Double total = 0.0;
         Double totalPerecedero = 0.0;
         Double totalNoPerecedero = 0.0;
-        Double calculo = 0.0;
+        Double calculo;
         for (Producto producto : productos) {
             calculo = producto.calcular((int) (Math.random() * 10) + 1);
             total += calculo;
