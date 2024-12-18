@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class User {
+    - id: Long
+    - firstName: String
+    - lastName: String
+    - username: String
+    - followed: List<User>
+    - followers: List<User>
+}
+
+User --> User
+
+Post --> User
+
+class Post {
+    - id: Long
+    - user: User
+    - createDate: LocalDate
+    - product: Product
+    - category: Integer
+    - price: Double
+    - has_promo: Boolean
+    - discount: Double
+}
+
+Product <-- Post
+
+class Product {
+    - id: Long
+    - name: String
+    - type: String
+    - brand: String
+    - color: String
+    - notes: String
+}
+
+@enduml
