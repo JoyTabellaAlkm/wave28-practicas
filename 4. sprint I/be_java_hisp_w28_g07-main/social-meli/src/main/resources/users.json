@@ -1,0 +1,162 @@
+[
+  {
+    "user_id": 1,
+    "user_name": "Ana Martínez",
+    "followed": [3, 4, 5],
+    "followers": [],
+    "posts": [],
+    "favourites": [1, 2]
+  },
+  {
+    "user_id": 2,
+    "user_name": "Carlos Gómez",
+    "followed": [],
+    "followers": [6],
+    "posts": [1],
+    "favourites": []
+  },
+  {
+    "user_id": 3,
+    "user_name": "María López",
+    "followed": [],
+    "followers": [1, 6, 5],
+    "posts": [2, 4, 5],
+    "favourites": [3]
+  },
+  {
+    "user_id": 4,
+    "user_name": "Juan Pérez",
+    "followed": [],
+    "followers": [1],
+    "posts": [6, 7],
+    "favourites": [2]
+  },
+  {
+    "user_id": 5,
+    "user_name": "Lucía Fernández",
+    "followed": [],
+    "followers": [1],
+    "posts": [8, 9],
+    "favourites": [1, 3]
+  },
+  {
+    "user_id": 6,
+    "user_name": "Miguel Rodríguez",
+    "followed": [2, 3],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 7,
+    "user_name": "Sofía González",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [2]
+  },
+  {
+    "user_id": 8,
+    "user_name": "Diego Sánchez",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [1]
+  },
+  {
+    "user_id": 9,
+    "user_name": "Valentina Ramírez",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 10,
+    "user_name": "Andrés Torres",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [3]
+  },
+  {
+    "user_id": 11,
+    "user_name": "Elena Navarro",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [1, 2]
+  },
+  {
+    "user_id": 12,
+    "user_name": "Jorge Morales",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 13,
+    "user_name": "Paula Vázquez",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 14,
+    "user_name": "Tomás Castro",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [2]
+  },
+  {
+    "user_id": 15,
+    "user_name": "Isabella Ortiz",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [1]
+  },
+  {
+    "user_id": 16,
+    "user_name": "Sebastián Herrera",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 17,
+    "user_name": "Camila Reyes",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [3]
+  },
+  {
+    "user_id": 18,
+    "user_name": "Luis Díaz",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  },
+  {
+    "user_id": 19,
+    "user_name": "Natalia Cruz",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": [1, 3]
+  },
+  {
+    "user_id": 20,
+    "user_name": "Gabriel Molina",
+    "followed": [],
+    "followers": [],
+    "posts": [],
+    "favourites": []
+  }
+]
