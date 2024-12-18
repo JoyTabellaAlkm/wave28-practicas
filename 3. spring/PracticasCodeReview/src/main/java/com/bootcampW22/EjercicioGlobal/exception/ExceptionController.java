@@ -17,5 +17,16 @@ public class ExceptionController {
         return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(DuplicateException.class)
+    public ResponseEntity<?> notFound(DuplicateException e){
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return new ResponseEntity<>(exceptionDto, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(BadRequestData.class)
+    public ResponseEntity<?> notFound(BadRequestData e){
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return new ResponseEntity<>(exceptionDto, HttpStatus.CONFLICT);
+    }
 
 }

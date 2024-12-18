@@ -15,12 +15,14 @@ public class VehicleDto {
     private String model;
     private String registration;
     private String color;
-    private int year;
+    private Integer year;
     private String max_speed;
-    private int passengers;
+    private Integer passengers;
     private String fuel_type;
     private String transmission;
-    private double height;
-    private double width;
-    private double weight;
+    private Double height;
+    private Double width;
+    private Double weight;
 }
+
+

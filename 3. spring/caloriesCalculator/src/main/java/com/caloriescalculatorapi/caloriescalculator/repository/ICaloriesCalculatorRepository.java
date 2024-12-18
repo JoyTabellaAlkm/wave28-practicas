@@ -1,4 +1,4 @@
-package com.caloriescalculatorapi.caloriescalculator.repository.impl;
+package com.caloriescalculatorapi.caloriescalculator.repository;
 
 public interface ICaloriesCalculatorRepository {
 }

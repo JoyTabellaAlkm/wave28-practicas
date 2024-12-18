@@ -1,6 +1,5 @@
 package com.bootcampW22.EjercicioGlobal.controller;
 
-import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.service.IVehicleService;
 import com.bootcampW22.EjercicioGlobal.service.VehicleServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,7 @@ public class VehicleController {
         this.vehicleService = vehicleService;
     }
 
-    @GetMapping(" /vehicles/average_speed/brand/{brand}")
+    @GetMapping("/vehicles/average_speed/brand/{brand}")
     public ResponseEntity<?> getAverageSpeedByBrand(@PathVariable String brand){
         return new ResponseEntity<>(vehicleService.getAverageSpeedByBrand(brand), HttpStatus.OK);
     }
