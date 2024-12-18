@@ -1,0 +1,70 @@
+[
+  {
+    "post_id": 201,
+    "user_id": 1,
+    "date": "15-12-2024",
+    "product": {
+      "product_id": 101,
+      "product_name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 100,
+    "price": 1500.50,
+    "has_promo": true,
+    "discount": 0.40
+  },
+  {
+    "post_id": 202,
+    "user_id": 1,
+    "date": "02-11-2024",
+    "product": {
+      "product_id": 102,
+      "product_name": "Teclado Mecánico",
+      "type": "Teclado",
+      "brand": "Logitech",
+      "color": "Black",
+      "notes": "RGB Backlit"
+    },
+    "category": 58,
+    "price": 250.00,
+    "has_promo": true,
+    "discount": 0.30
+  },
+  {
+    "post_id": 203,
+    "user_id": 1,
+    "date": "03-08-2023",
+    "product": {
+      "product_id": 103,
+      "product_name": "Mouse Gamer",
+      "type": "Gamer",
+      "brand": "Razer",
+      "color": "Green",
+      "notes": "Wireless"
+    },
+    "category": 60,
+    "price": 120.00,
+    "has_promo": true,
+    "discount": 0.25
+  },
+  {
+    "post_id": 204,
+    "user_id": 2,
+    "date": "12-09-2024",
+    "product": {
+      "product_id": 104,
+      "product_name": "Monitor Gamer",
+      "type": "Gamer",
+      "brand": "AOC",
+      "color": "Black",
+      "notes": "Curved"
+    },
+    "category": 60,
+    "price": 240.00,
+    "has_promo": false,
+    "discount": 0.00
+  }
+]
