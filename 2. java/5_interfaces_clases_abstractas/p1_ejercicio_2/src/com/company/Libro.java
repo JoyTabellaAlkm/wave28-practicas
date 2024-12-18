@@ -1,6 +1,6 @@
 package com.company;
 
-public class Libro implements IImprimir<Libro> {
+public class Libro implements IImprimir {
     int cantidadPaginas;
     String nombreAutor;
     String titulo;
@@ -14,7 +14,7 @@ public class Libro implements IImprimir<Libro> {
     }
 
     @Override
-    public void imprimible(Libro document) {
+    public void imprimible() {
         System.out.println("Data Libro: Titulo: " + this.titulo + ", autor: " + this.nombreAutor + ", genero: " + this.genero + ", cantidad de paginas: " + this.cantidadPaginas);
     }
 }

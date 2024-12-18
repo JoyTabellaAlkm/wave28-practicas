@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class Curriculum implements IImprimir<Curriculum> {
+public class Curriculum implements IImprimir {
 
     String nombre;
     List<String> habilidades;
@@ -13,7 +13,7 @@ public class Curriculum implements IImprimir<Curriculum> {
     }
 
     @Override
-    public void imprimible(Curriculum document) {
+    public void imprimible() {
         System.out.println("Data Curriculum: Nombre: " + this.nombre + ", habilidades: " + this.habilidades.toString());
     }
 }

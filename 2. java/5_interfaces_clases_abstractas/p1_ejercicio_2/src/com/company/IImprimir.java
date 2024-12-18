@@ -1,5 +1,5 @@
 package com.company;
 
-public interface IImprimir <T> {
-    public void imprimible(T document);
+public interface IImprimir  {
+    public void imprimible();
 }
