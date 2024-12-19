@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b82415ec-ea97-4245-9b35-4f35822425aa" name="Changes" comment="" />
+    <list default="true" id="b82415ec-ea97-4245-9b35-4f35822425aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +30,16 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2pqbItook9elYdQUkHkuH8B3iDn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,15 +48,30 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Maven.ejercicio-star-wars [clean].executor": "Run",
+    "Maven.ejercicio-star-wars [compile].executor": "Run",
+    "Maven.ejercicio-star-wars [deploy].executor": "Run",
+    "Maven.ejercicio-star-wars [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Arias__David",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/daarias/Documents/Bootcamp/3. spring/starwars",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "spring.configuration.checksum": "5badcaf789d3d1d09794d8f021f40f0e"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -47,9 +79,31 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="StarwarsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EjercicioStarWarsApplication (1)">
+    <configuration name="EjercicioStarWarsApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ejercicio-star-wars" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bootcamp.ejerciciostarwars.EjercicioStarWarsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EjercicioStarWarsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="starwars" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bootcamp.ejerciciostarwars.EjercicioStarWarsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StarwarsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <module name="ejercicio-star-wars" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.starwars.starwars.StarwarsApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -65,6 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733496476046</updated>
       <workItem from="1733496477166" duration="2414000" />
+      <workItem from="1733753817401" duration="1232000" />
     </task>
     <servers />
   </component>
