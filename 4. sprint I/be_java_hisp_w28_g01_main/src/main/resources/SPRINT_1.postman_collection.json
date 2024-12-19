@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "f21f483d-d91a-49c7-b7ba-d2ba80c6e152",
+		"name": "SPRINT 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40016548",
+		"_collection_link": "https://sprint-1-meli.postman.co/workspace/SPRINT-1-MELI-Workspace~8531f094-23b3-4d0f-be99-ed048023d8df/collection/40016548-f21f483d-d91a-49c7-b7ba-d2ba80c6e152?action=share&source=collection_link&creator=40016548"
+	},
+	"item": [
+		{
+			"name": "8 y 9 (ordenación)",
+			"item": [
+				{
+					"name": "8.1 Seguidores alfab asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/{UserId}/followers/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{UserId}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.2 Seguidores alfab desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/{UserId}/followers/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{UserId}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.3 Seguidos alfab asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/{UserId}/followed/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{UserId}",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.4 Seguidos alfab desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/{UserId}/followed/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{UserId}",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.1 Public (realizadas por vendedores q un user sigue) Fecha publicación asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/followed/{userId}/list?order=date_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{userId}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.2 Public (realizadas por vendedores q un user sigue) Fecha publicación desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/followed/{userId}/list?order=date_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{userId}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1. Seguir a usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/follow/{userIdToFollow}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"follow",
+						"{userIdToFollow}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get cant users que siguen a un det vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/followers/count",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"followers",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get list de users que siguen a un det vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/followers/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"followers",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get list todos los vendedores a los cuales sigue un det user (a quien sigo?)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/followed/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"followed",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Nueva publicación",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":123,\n    \"date\":\"29-04-2021\",\n    \"product\":{\n        \"product_id\":1,\n        \"product_name\":\"Silla Gamer\",\n        \"type\":\"Gamer\",\n        \"brand\":\"Racer\",\n        \"color\":\"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\":100,\n    \"price\":1500.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get list publicaciones (last 2 weeks) por los vendedores q un user sigue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/followed/{userId}/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"{userId}",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Dejar de seguir a un det vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/unfollow/{userIdToUnfollow}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"unfollow",
+						"{userIdToUnfollow}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Post producto en promoción",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":234,\n    \"date\":\"29-04-2021\",\n    \"product\":{\n        \"product_id\":1,\n        \"product_name\":\"Silla Gamer\",\n        \"type\":\"Gamer\",\n        \"brand\":\"Racer\",\n        \"color\":\"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\":100,\n    \"price\":1500.5,\n    \"has_promo\":true,\n    \"discount\":0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/promo-post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Get cant prod en promo de un det vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/promo-post/count?user_id={userId}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"count"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{userId}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. Get lista post por tipo de producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/type/gamer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"type",
+						"gamer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
