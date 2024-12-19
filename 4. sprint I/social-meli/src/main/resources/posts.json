@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "date": "12-12-2024",
+    "product": {
+      "id": 101,
+      "name": "Wireless Mouse",
+      "type": "Electronics",
+      "brand": "Logitech",
+      "color": "Black",
+      "notes": "Ergonomic design.",
+      "price": 29.99
+    },
+    "category": 1,
+    "has_promo": true,
+    "discount": 5.0
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "date": "10-12-2024",
+    "product": {
+      "id": 202,
+      "name": "Smartphone",
+      "type": "Electronics",
+      "brand": "Samsung",
+      "color": "Blue",
+      "notes": "Latest model.",
+      "price": 799.99
+    },
+    "category": 2,
+    "has_promo": false,
+    "discount": 0.0
+  },
+  {
+    "id": 3,
+    "user_id": 3,
+    "date": "15-12-2024",
+    "product": {
+      "id": 301,
+      "name": "Laptop",
+      "type": "Electronics",
+      "brand": "Dell",
+      "color": "Silver",
+      "notes": "Lightweight.",
+      "price": 999.99
+    },
+    "category": 2,
+    "has_promo": true,
+    "discount": 100.0
+  },
+  {
+    "id": 4,
+    "user_id": 4,
+    "date": "25-09-2024",
+    "product": {
+      "id": 102,
+      "name": "Keyboard",
+      "type": "Electronics",
+      "brand": "Logitech",
+      "color": "White",
+      "notes": "Mechanical.",
+      "price": 49.99
+    },
+    "category": 1,
+    "has_promo": false,
+    "discount": 0.0
+  },
+  {
+    "id": 5,
+    "user_id": 5,
+    "date": "05-08-2024",
+    "product": {
+      "id": 401,
+      "name": "Tablet",
+      "type": "Electronics",
+      "brand": "Apple",
+      "color": "Gray",
+      "notes": "Retina display.",
+      "price": 499.99
+    },
+    "category": 3,
+    "has_promo": true,
+    "discount": 50.0
+  },
+  {
+    "id": 6,
+    "user_id": 6,
+    "date": "20-07-2024",
+    "product": {
+      "id": 402,
+      "name": "Smartwatch",
+      "type": "Electronics",
+      "brand": "Garmin",
+      "color": "Black",
+      "notes": "Fitness tracking.",
+      "price": 199.99
+    },
+    "category": 4,
+    "has_promo": false,
+    "discount": 0.0
+  },
+  {
+    "id": 7,
+    "user_id": 7,
+    "date": "30-06-2024",
+    "product": {
+      "id": 103,
+      "name": "Gaming Chair",
+      "type": "Furniture",
+      "brand": "SecretLab",
+      "color": "Red",
+      "notes": "Adjustable height.",
+      "price": 299.99
+    },
+    "category": 5,
+    "has_promo": true,
+    "discount": 30.0
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "following": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "followers": [
+      6
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "following": [
+      3
+    ],
+    "followers": [
+      1,
+      7
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "following": [],
+    "followers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Diana",
+    "following": [
+      5
+    ],
+    "followers": [
+      1
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Eve",
+    "following": [],
+    "followers": [
+      1,
+      4
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Frank",
+    "following": [
+      1
+    ],
+    "followers": []
+  },
+  {
+    "id": 7,
+    "name": "Grace",
+    "following": [
+      2
+    ],
+    "followers": []
+  },
+  {
+    "id": 8,
+    "name": "Hank",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 9,
+    "name": "Ivy",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 10,
+    "name": "Jack",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 11,
+    "name": "Jack",
+    "following": [],
+    "followers": []
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 101,
+    "name": "Wireless Mouse",
+    "type": "Electronics",
+    "brand": "Logitech",
+    "color": "Black",
+    "notes": "Ergonomic design.",
+    "price": 29.99
+  },
+  {
+    "id": 102,
+    "name": "Keyboard",
+    "type": "Electronics",
+    "brand": "Logitech",
+    "color": "White",
+    "notes": "Mechanical.",
+    "price": 49.99
+  },
+  {
+    "id": 103,
+    "name": "Gaming Chair",
+    "type": "Furniture",
+    "brand": "SecretLab",
+    "color": "Red",
+    "notes": "Adjustable height.",
+    "price": 299.99
+  },
+  {
+    "id": 202,
+    "name": "Smartphone",
+    "type": "Electronics",
+    "brand": "Samsung",
+    "color": "Blue",
+    "notes": "Latest model.",
+    "price": 799.99
+  },
+  {
+    "id": 301,
+    "name": "Laptop",
+    "type": "Electronics",
+    "brand": "Dell",
+    "color": "Silver",
+    "notes": "Lightweight.",
+    "price": 999.99
+  },
+  {
+    "id": 401,
+    "name": "Tablet",
+    "type": "Electronics",
+    "brand": "Apple",
+    "color": "Gray",
+    "notes": "Retina display.",
+    "price": 499.99
+  },
+  {
+    "id": 402,
+    "name": "Smartwatch",
+    "type": "Electronics",
+    "brand": "Garmin",
+    "color": "Black",
+    "notes": "Fitness tracking.",
+    "price": 199.99
+  }
+]
