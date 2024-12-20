@@ -29,6 +29,7 @@
       <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../CalcuCal/src/main/resources/food.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../CalcuCal/src/test/java/com/example/CalcuCal/CalcuCalApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meli/calculadoraCalorias/controller/CalculadoraController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meli/calculadoraCalorias/dto/IngredientesDto.java" beforeDir="false" />
     </list>

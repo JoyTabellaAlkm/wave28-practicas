@@ -2,7 +2,7 @@ package com.meli.deportista.controller;
 
 import com.meli.deportista.dto.DeporteDto;
 import com.meli.deportista.dto.responses.DeportesYPersonasResponse;
-import com.meli.deportista.services.IDeporte;
+import com.meli.deportista.entity.IDeporte;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
