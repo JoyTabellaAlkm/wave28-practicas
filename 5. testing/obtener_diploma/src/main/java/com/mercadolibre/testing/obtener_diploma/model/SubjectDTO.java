@@ -3,6 +3,7 @@ package com.mercadolibre.testing.obtener_diploma.model;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubjectDTO {
     @NotBlank
+    @Pattern(regexp = "^[A-Z]")
     String name;
 
     @Min(0)
