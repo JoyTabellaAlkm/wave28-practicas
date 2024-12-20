@@ -8,6 +8,7 @@ import com.deportistas.model.PersonaDTO;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class DeportistaService implements IDeportistaService<DeportistaDTO, PersonaDTO>{
 
     List<Persona> personaList = new ArrayList<Persona>();
