@@ -1,0 +1,87 @@
+[
+  {
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    },
+    "date": "2023-10-01",
+    "product": {
+      "id": 0,
+      "name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 150.50
+  },
+  {
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    },
+    "date": "2023-10-02",
+    "product": {
+      "id": 1,
+      "name": "Galaxy Buds FE Black",
+      "type": "Audio",
+      "brand": "Samsung",
+      "color": "Black",
+      "notes": "Long duration"
+    },
+    "category": 2,
+    "price": 80.00
+  },
+  {
+    "seller": {
+      "id": 3,
+      "name": "Carlos Martínez"
+    },
+    "date": "2023-10-03",
+    "product": {
+      "id": 2,
+      "name": "Nintendo Switch",
+      "type": "Gamer",
+      "brand": "Nintendo",
+      "color": "White",
+      "notes": "Includes 2 games"
+    },
+    "category": 1,
+    "price": 299.99
+  },
+  {
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    },
+    "date": "2023-10-04",
+    "product": {
+      "id": 3,
+      "name": "Headset RGB Inalambrico",
+      "type": "Gamer",
+      "brand": "Razer",
+      "color": "Green with RGB",
+      "notes": "Sin Batería"
+    },
+    "category": 1,
+    "price": 120.00
+  },
+  {
+    "seller": {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    },
+    "date": "2023-10-05",
+    "product": {
+      "id": 4,
+      "name": "Bicicleta Deportiva",
+      "type": "Sport",
+      "brand": "Oxford",
+      "color": "Pink",
+      "notes": "Size M"
+    },
+    "category": 3,
+    "price": 200.00
+  }
+]
