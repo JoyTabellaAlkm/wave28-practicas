@@ -2,6 +2,7 @@ package com.meli.obtenerdiploma.service;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
