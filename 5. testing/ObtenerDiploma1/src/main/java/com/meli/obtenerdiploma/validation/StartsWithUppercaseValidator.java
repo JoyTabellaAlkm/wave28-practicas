@@ -13,10 +13,13 @@ public class StartsWithUppercaseValidator implements ConstraintValidator<StartsW
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
+        if(value.isBlank()) {
+            return true;
+        }
         char firstLetter = value.charAt(0);
         if(!Character.isUpperCase(firstLetter)) {
             context.disableDefaultConstraintViolation(); // personalizo el mensaje
-            context.buildConstraintViolationWithTemplate(message);
+            context.buildConstraintViolationWithTemplate(message).addConstraintViolation();
             return false;
         }
         return true;
