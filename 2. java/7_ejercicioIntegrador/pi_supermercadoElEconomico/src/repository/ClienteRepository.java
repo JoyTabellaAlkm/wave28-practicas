@@ -22,21 +22,16 @@ public class ClienteRepository {
                                                        .filter(cliente -> cliente.getDni().equals(dni))
                                                        .findFirst();
 
-         if (clienteEncontrado.isEmpty()){
-             throw  new IllegalArgumentException("Usuario no encontrado");
-         }
+        return clienteEncontrado.orElse(null);
 
-        return clienteEncontrado.get();
     }
 
-    public String crearCliente (Cliente cliente){
+    public void crearCliente(Cliente cliente){
         clientes.add(cliente);
-        return "Cliente creado correctamente.";
     }
 
-    public String eliminarCliente(Cliente cliente){
+    public void eliminarCliente(Cliente cliente){
         clientes.remove(cliente);
-        return  "Cliente eliminado correctamente";
     }
 
 }
