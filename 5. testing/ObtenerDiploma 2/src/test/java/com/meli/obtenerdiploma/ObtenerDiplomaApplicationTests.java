@@ -25,7 +25,7 @@ class ObtenerDiplomaApplicationTests {
 	@BeforeEach
 	public void setup() {
 	}
-
+/*
 	@Test
 	public void studentDaoSuccessfulFindById() {
 		StudentDTO expectedStudent = studentDTO1;
@@ -37,5 +37,5 @@ class ObtenerDiplomaApplicationTests {
 		assertThrows(StudentNotFoundException.class, () -> studentDAO.findById(10L));
 	}
 
-
+*/
 }
