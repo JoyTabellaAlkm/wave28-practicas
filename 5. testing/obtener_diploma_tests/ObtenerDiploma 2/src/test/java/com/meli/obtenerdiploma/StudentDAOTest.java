@@ -26,7 +26,7 @@ public class StudentDAOTest {
     }
 
     @Test
-    public void testSaveExistingStudent() { //esperamos que no encuentre al que ya existia, y encuentro al nuevo
+    public void testSaveExistingStudent() {
         StudentDTO student = new StudentDTO(1L, "Jane Doe", "Sample message", 90.0, null);
         studentDAO.save(student);
 
