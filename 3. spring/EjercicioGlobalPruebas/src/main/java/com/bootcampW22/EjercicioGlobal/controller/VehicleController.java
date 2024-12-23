@@ -4,11 +4,10 @@ import com.bootcampW22.EjercicioGlobal.service.IVehicleService;
 import com.bootcampW22.EjercicioGlobal.service.VehicleServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/vehicles")
 public class VehicleController {
 
     IVehicleService vehicleService;
@@ -17,13 +16,17 @@ public class VehicleController {
         this.vehicleService = vehicleService;
     }
 
-    @GetMapping("/vehicles")
+    @GetMapping()
     public ResponseEntity<?> getVehicles(){
         return new ResponseEntity<>(vehicleService.searchAllVehicles(), HttpStatus.OK);
     }
 
-    @GetMapping("/vehicles/dimensions")
-    public ResponseEntity<?> getVehiclesByDimension(@RequestParam String length,@RequestParam String width){
-        return new ResponseEntity<>(vehicleService.searchByDimension(length,width),HttpStatus.OK);
+    @PostMapping()
+    public ResponseEntity<?> postVehicles(){
+        return new ResponseEntity<>(vehicleService.searchAllVehicles(),HttpStatus.OK);
+    }
+    @GetMapping("/average_speed/brand/{brand}")
+    public ResponseEntity<?> averageSpeedByBrand(@PathVariable String brand){
+        return new ResponseEntity<>(vehicleService.averageSpeedByBrand(brand),HttpStatus.OK);
     }
 }

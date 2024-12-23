@@ -14,6 +14,8 @@ import java.util.List;
 @Repository
 public class VehicleRepositoryImpl implements IVehicleRepository{
 
+   Long idCount = 1L;
+
     private List<Vehicle> listOfVehicles = new ArrayList<>();
 
     public VehicleRepositoryImpl() throws IOException {
@@ -23,7 +25,11 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     public List<Vehicle> findAll() {
         return listOfVehicles;
     }
-
+    public Long add(Vehicle vehicle){
+        vehicle.setId(idCount);
+        listOfVehicles.add(vehicle);
+        return idCount++;
+    }
     private void loadDataBase() throws IOException {
         File file;
         ObjectMapper objectMapper = new ObjectMapper();
@@ -31,7 +37,7 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
 
         file= ResourceUtils.getFile("classpath:vehicles_100.json");
         vehicles= objectMapper.readValue(file,new TypeReference<List<Vehicle>>(){});
-
+        idCount =vehicles.stream().mapToLong(Vehicle::getId).max().orElse(0L) ;
         listOfVehicles = vehicles;
     }
 }

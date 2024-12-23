@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IVehicleRepository {
     List<Vehicle> findAll();
+    Long add(Vehicle vehicle);
 }
