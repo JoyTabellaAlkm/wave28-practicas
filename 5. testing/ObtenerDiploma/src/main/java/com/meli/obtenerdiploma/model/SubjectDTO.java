@@ -1,16 +1,15 @@
 package com.meli.obtenerdiploma.model;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
+@AllArgsConstructor
 public class SubjectDTO {
 
-    @NotNull(message = "El nombre del alumno no puede estar vacio")
+    @NotBlank(message = "El nombre de la materia no puede estar vacio")
     String name;
 
     @NotNull(message = "El puntaje del alumno no puede estar vacio")

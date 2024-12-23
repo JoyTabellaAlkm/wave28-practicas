@@ -1,17 +1,20 @@
 package com.meli.obtenerdiploma.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
 @Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentDTO {
-    @NotNull(message = "El nombre del alumno no puede estar vacio")
+    @NotBlank(message = "El nombre del alumno no puede estar vacio")
     @Size(min = 1, max= 100, message = "El nombre debe tener entre 1 y 100 caracteres")
     String studentName;
 
@@ -20,6 +23,7 @@ public class StudentDTO {
 
     Double averageScore;
 
-    @NotNull(message = "La lista de materias no puede estar vacia")
+    @NotEmpty(message = "La lista de materias no puede estar vacia")
+    @Valid
     List<SubjectDTO> subjects;
 }
