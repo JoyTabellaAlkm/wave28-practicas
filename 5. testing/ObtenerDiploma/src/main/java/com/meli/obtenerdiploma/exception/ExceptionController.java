@@ -10,8 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.util.stream.Collectors;
-
 @ControllerAdvice
 public class ExceptionController {
 
@@ -48,7 +46,7 @@ public class ExceptionController {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ExceptionDto> validationRuntime(RuntimeException e){
-        return ResponseEntity.badRequest().body( new ExceptionDto("Se encontraron errores", e.getLocalizedMessage()));
+        return ResponseEntity.badRequest().body( new ExceptionDto("Se encontraron errores: ", e.getLocalizedMessage()));
     }
 
 }

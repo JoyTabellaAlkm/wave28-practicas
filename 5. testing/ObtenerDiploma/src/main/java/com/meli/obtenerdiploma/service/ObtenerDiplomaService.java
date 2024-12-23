@@ -3,13 +3,9 @@ package com.meli.obtenerdiploma.service;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.iObtenerDiplomaRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.naming.NameNotFoundException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

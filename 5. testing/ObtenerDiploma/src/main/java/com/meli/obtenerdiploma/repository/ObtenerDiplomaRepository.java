@@ -2,7 +2,6 @@ package com.meli.obtenerdiploma.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 
