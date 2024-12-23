@@ -1,10 +1,10 @@
-package com.meli.obtenerdiploma.repository;
+package com.meli.obtenerdiploma.unitTest.repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meli.obtenerdiploma.model.StudentDTO;
+import com.meli.obtenerdiploma.repository.StudentDAO;
 import org.junit.jupiter.api.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.ResourceUtils;
 
@@ -21,9 +21,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class StudentDAOTest {
 
-    private StudentDAO studentDAO;
+    private final StudentDAO studentDAO;
 
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
     private Set<StudentDTO> initialData;
 
