@@ -46,4 +46,9 @@ public class ExceptionController {
         );
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ExceptionDto> validationRuntime(RuntimeException e){
+        return ResponseEntity.badRequest().body( new ExceptionDto("Se encontraron errores", e.getLocalizedMessage()));
+    }
+
 }

@@ -37,6 +37,11 @@ public class ObtenerDiplomaController {
         return ResponseEntity.ok(service.findByName(name));
     }
 
+    @DeleteMapping("/delete/{name}")
+    public ResponseEntity<?> deleteByName(@PathVariable @NotBlank(message = "El nombre no puede estar vacio") String name) {
+        return ResponseEntity.ok(service.deleteByName(name));
+    }
+
 
 
 }

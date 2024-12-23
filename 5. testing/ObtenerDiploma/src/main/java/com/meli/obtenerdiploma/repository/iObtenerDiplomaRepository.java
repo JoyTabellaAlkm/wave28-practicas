@@ -1,12 +1,10 @@
-package com.meli.obtenerdiploma.service;
+package com.meli.obtenerdiploma.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 
 import java.util.List;
 
-public interface IObtenerDiplomaService {
-
-    StudentDTO analyzeScores(StudentDTO rq);
+public interface iObtenerDiplomaRepository {
 
     StudentDTO addStudent (StudentDTO student);
 
@@ -14,5 +12,5 @@ public interface IObtenerDiplomaService {
 
     StudentDTO findByName (String student);
 
-    String deleteByName (String name);
+    boolean deleteByName (String name);
 }

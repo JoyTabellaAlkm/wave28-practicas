@@ -2,7 +2,9 @@ package com.meli.obtenerdiploma.service;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
+import com.meli.obtenerdiploma.repository.iObtenerDiplomaRepository;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.NameNotFoundException;
@@ -13,13 +15,15 @@ import java.util.List;
 @Service
 public class ObtenerDiplomaService implements IObtenerDiplomaService {
 
-    List<StudentDTO> students = new ArrayList<>();
+
+    @Autowired
+    iObtenerDiplomaRepository repository;
 
     @Override
     public StudentDTO analyzeScores(StudentDTO rq) {
         rq.setAverageScore(calculateAverage(rq.getSubjects()));
         rq.setMessage(getGreetingMessage(rq.getStudentName(), rq.getAverageScore()));
-        students.add(rq);
+        repository.addStudent(rq);
         return rq;
     }
 
@@ -36,17 +40,27 @@ public class ObtenerDiplomaService implements IObtenerDiplomaService {
 
     @Override
     public StudentDTO addStudent(StudentDTO student) {
-        students.add(student);
-        return student;
+        return repository.addStudent(student);
     }
 
     @Override
     public List<StudentDTO> getAll() {
-        return students.stream().toList();
+        return repository.getAll();
     }
 
     @Override
     public StudentDTO findByName(String student) {
-        return students.stream().filter(value -> value.getStudentName().equals(student)).findAny().orElse(null);
+        StudentDTO s = repository.findByName(student);
+        if(s != null)
+            return s;
+        throw new RuntimeException("no se encontro el alumno");
+
+    }
+
+    @Override
+    public String deleteByName(String name) {
+        if(repository.deleteByName(name))
+            return "Alumno eliminado con éxito";
+        return "hubo un problema eliminando al alumno";
     }
 }
