@@ -18,21 +18,12 @@ import java.util.Set;
 @Repository
 public class StudentDAO implements IStudentDAO {
 
-    private String SCOPE;
 
     private Set<StudentDTO> students;
 
 
     public StudentDAO() {
-        Properties properties =  new Properties();
-
-        try {
-            properties.load(new ClassPathResource("application.properties").getInputStream());
-            this.SCOPE = properties.getProperty("api.scope");
-            this.loadData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.loadData();
     }
 
     @Override
@@ -86,7 +77,7 @@ public class StudentDAO implements IStudentDAO {
         ObjectMapper objectMapper = new ObjectMapper();
         File file;
         try {
-            file = ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json");
+            file = new ClassPathResource("users.json").getFile();
             loadedData = objectMapper.readValue(file, new TypeReference<Set<StudentDTO>>(){});
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -102,7 +93,7 @@ public class StudentDAO implements IStudentDAO {
     private void saveData() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            File file = ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json");
+            File file = new ClassPathResource("users.json").getFile();
             objectMapper.writeValue(file, this.students);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

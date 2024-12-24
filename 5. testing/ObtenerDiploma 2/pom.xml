@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.meli</groupId>
-	<artifactId>obtenerdiploma</artifactId>
+	<artifactId>obtenerdiploma2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>obtenerDiploma</name>
+	<name>obtenerDiploma2</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
+            <version>1.18.30</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
