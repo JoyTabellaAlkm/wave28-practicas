@@ -26,13 +26,16 @@ public class ObtenerDiplomaService implements IObtenerDiplomaService {
     }
 
     private String getGreetingMessage(String studentName, Double average) {
-        return "El alumno " + studentName + " ha obtenido un promedio de " + new DecimalFormat("#.##").format(average)
+        return "El alumno " + studentName + " ha obtenido un promedio de "
+                + new DecimalFormat("0.00").format(average)  // Rounds to 2 decimal places
                 + ((average > 9) ? ". Felicitaciones!" : ". Puedes mejorar.");
     }
 
     private Double calculateAverage(List<SubjectDTO> scores) {
-        return scores.stream()
+        double average= scores.stream()
                 .reduce(0D, (partialSum, score)  -> partialSum + score.getScore(), Double::sum)
                 / scores.size();
+        return Math.round(average * 100.0)/100.0;
+
     }
 }
