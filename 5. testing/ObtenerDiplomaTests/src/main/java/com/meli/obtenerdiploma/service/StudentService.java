@@ -18,8 +18,9 @@ public class StudentService implements IStudentService {
     IStudentRepository studentRepository;
 
     @Override
-    public void create(StudentDTO stu) {
+    public StudentDTO create(StudentDTO stu) {
         studentDAO.save(stu);
+        return stu;
     }
 
     @Override
