@@ -8,17 +8,22 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestConstructor;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 public class StudentDAOTest {
 
-    @Autowired
-    private IStudentDAO studentDAO;
+    private final IStudentDAO studentDAO;
     private StudentDTO studentDTO;
+
+    public StudentDAOTest(IStudentDAO studentDAO) {
+        this.studentDAO = studentDAO;
+    }
 
     @BeforeEach
     void setUp() {
