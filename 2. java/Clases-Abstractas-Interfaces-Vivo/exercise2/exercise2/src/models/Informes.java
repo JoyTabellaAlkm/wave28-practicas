@@ -1,25 +1,27 @@
-package interfaces;
+package models;
 
-public class Informes implements IImprimible{
+import interfaces.IImprimible;
 
-    String longitud;
-    int cantPaginas:
+public class Informes implements IImprimible {
+
+    String text;
+    int cantPaginas;
     Persona autor;
     Persona revisor;
 
-    public Informes(String longitud, int cantPaginas, Persona autor, Persona revisor) {
-        this.longitud = longitud;
+    public Informes(String text, int cantPaginas, Persona autor, Persona revisor) {
+        this.text = text;
         this.cantPaginas = cantPaginas;
         this.autor = autor;
         this.revisor = revisor;
     }
 
-    public String getLongitud() {
-        return longitud;
+    public String getText() {
+        return text;
     }
 
-    public void setLongitud(String longitud) {
-        this.longitud = longitud;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public int getCantPaginas() {
@@ -49,7 +51,7 @@ public class Informes implements IImprimible{
     @Override
     public String toString() {
         return "Informes{" +
-                "longitud='" + longitud + '\'' +
+                "longitud='" + text + '\'' +
                 ", cantPaginas=" + cantPaginas +
                 ", autor=" + autor +
                 ", revisor=" + revisor +

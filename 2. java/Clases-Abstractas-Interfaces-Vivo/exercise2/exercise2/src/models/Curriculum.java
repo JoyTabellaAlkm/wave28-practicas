@@ -1,8 +1,10 @@
-package interfaces;
+package models;
+
+import interfaces.IImprimible;
 
 import java.util.List;
 
-public class Curriculum implements IImprimible{
+public class Curriculum implements IImprimible {
 
     private Persona persona;
     private List<String> habilidades;

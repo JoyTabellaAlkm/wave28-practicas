@@ -1,6 +1,8 @@
-package interfaces;
+package models;
 
-public class LibrosEnPDF implements IImprimible{
+import interfaces.IImprimible;
+
+public class LibrosEnPDF implements IImprimible {
 
     String titulo;
     String genero;
