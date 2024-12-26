@@ -34,8 +34,6 @@ public class StudentDTO {
         return "StudentDTO{" +
                 "id=" + id +
                 ", studentName='" + studentName + '\'' +
-                ", message='" + message + '\'' +
-                ", averageScore=" + averageScore +
                 ", subjects=" + subjects +
                 '}';
     }
@@ -56,5 +54,7 @@ public class StudentDTO {
     public int hashCode() {
         return Objects.hash(id, studentName, message, averageScore, subjects);
     }
+
+
 
 }

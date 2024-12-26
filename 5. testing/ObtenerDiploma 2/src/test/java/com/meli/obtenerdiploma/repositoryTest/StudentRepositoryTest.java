@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @SpringBootTest
-public class RepositoreyTest {
+public class StudentRepositoryTest {
 
     @Autowired
     IStudentRepository studentRepository = new StudentRepository();
@@ -48,7 +48,6 @@ public class RepositoreyTest {
         //ASSERT
 
         Assertions.assertEquals(studentsExpected,studentsObtained, "las conjuntos no son iguales");
-        //Assertions.assertTrue(studentsObtained.containsAll(studentsExpected), "los conjuntos no son iguales");
 
     }
 }
