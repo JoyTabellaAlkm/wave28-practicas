@@ -8,6 +8,6 @@ public interface IStudentService {
     StudentDTO create(StudentDTO stu);
     StudentDTO read(Long id);
     void update(StudentDTO stu);
-    void delete(Long id);
+    boolean delete(Long id);
     Set<StudentDTO> getAll();
 }

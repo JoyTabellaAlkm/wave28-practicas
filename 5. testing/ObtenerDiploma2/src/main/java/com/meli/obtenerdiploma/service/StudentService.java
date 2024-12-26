@@ -33,8 +33,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void delete(Long id) {
-        studentDAO.delete(id);
+    public boolean delete(Long id) {
+        return studentDAO.delete(id);
     }
 
     @Override
