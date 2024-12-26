@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="619b80ca-dbdd-4503-bd7a-079cd35da0fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/test/java/com/meli/obtenerdiploma/service/ObtenerDiploServiceTestMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/test/java/com/meli/obtenerdiploma/service/ObtenerDiplomaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obtenerdiploma/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obtenerdiploma/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/obtenerdiploma/integration/StudentControllerITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/obtenerdiploma/integration/StudentControllerITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/main/java/com/meli/obtenerdiploma/service/IObtenerDiplomaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/main/java/com/meli/obtenerdiploma/service/IObtenerDiplomaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/main/java/com/meli/obtenerdiploma/service/ObtenerDiplomaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ObtenerDiploma Validaciones/src/main/java/com/meli/obtenerdiploma/service/ObtenerDiplomaService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2qllDKSo49uhE9t6gbt6MlOtVaX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/asuarique/Documents/BootCamp/Ejercicios/wave28-practicas/5. testing/ObtenerDiploma UnitTest y IntegrationTest",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.All in obtenerdiploma">
+    <configuration name="All in obtenerdiploma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="obtenerdiploma" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentControllerITest.testModifyStudentOK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="obtenerdiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.obtenerdiploma.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.obtenerdiploma.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.obtenerdiploma.integration.StudentControllerITest" />
+      <option name="METHOD_NAME" value="testModifyStudentOK" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentControllerITest.testRemoveStudentsByIdBadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="obtenerdiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.obtenerdiploma.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.obtenerdiploma.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.obtenerdiploma.integration.StudentControllerITest" />
+      <option name="METHOD_NAME" value="testRemoveStudentsByIdBadRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentControllerITest.testRemoveStudentsByIdOK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="obtenerdiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.obtenerdiploma.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.obtenerdiploma.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.obtenerdiploma.integration.StudentControllerITest" />
+      <option name="METHOD_NAME" value="testRemoveStudentsByIdOK" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentControllerITest.testStudentsByIdBadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="obtenerdiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.obtenerdiploma.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.obtenerdiploma.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.obtenerdiploma.integration.StudentControllerITest" />
+      <option name="METHOD_NAME" value="testStudentsByIdBadRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="obtenerdiploma" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="obtenerdiploma" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObtenerDiplomaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="obtenerdiploma" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.obtenerdiploma.ObtenerDiplomaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in obtenerdiploma" />
+        <item itemvalue="JUnit.StudentControllerITest.testStudentsByIdBadRequest" />
+        <item itemvalue="JUnit.StudentControllerITest.testRemoveStudentsByIdBadRequest" />
+        <item itemvalue="JUnit.StudentControllerITest.testRemoveStudentsByIdOK" />
+        <item itemvalue="JUnit.StudentControllerITest.testModifyStudentOK" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="619b80ca-dbdd-4503-bd7a-079cd35da0fe" name="Changes" comment="" />
+      <created>1735244921920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735244921920</updated>
+      <workItem from="1735244923007" duration="2751000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ObtenerDiploma_UnitTest_y_IntegrationTest$All_in_obtenerdiploma.ic" NAME="All in obtenerdiploma Coverage Results" MODIFIED="1735246938997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
