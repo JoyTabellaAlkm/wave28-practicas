@@ -1,14 +1,12 @@
-package com.mercadolibre.starwars.repositories;
+package com.mercadolibre.starwars.unit.repositories;
 
 import com.mercadolibre.starwars.dto.CharacterDTO;
+import com.mercadolibre.starwars.repositories.CharacterRepositoryImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.List;
-import java.util.stream.Collectors;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 @SpringBootTest
 class CharacterRepositoryTest {
