@@ -1,5 +1,7 @@
 package ar.com.mercadolibre.mundial.unit;
 
+import ar.com.mercadolibre.mundial.exceptions.ConflictException;
+import ar.com.mercadolibre.mundial.exceptions.NotFoundException;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import ar.com.mercadolibre.mundial.repository.JugadorRepository;
 import ar.com.mercadolibre.mundial.services.impl.JugadorServiceImpl;
@@ -128,6 +130,14 @@ class JugadorServiceTest {
     }
 
     @Test
+    @DisplayName("Validar que se lanza una ConflictException si el usuario ya existe")
+    void validarExcepcionSiElUsuarioYaExiste() {
+        Jugador jugadorEsperado = new Jugador(1, "Lionel Messi", "Argentina", 91);
+
+        assertThrows(ConflictException.class, () -> jugadorService.crearJugador(jugadorEsperado));
+    }
+
+    @Test
     void eliminarJugador() {
         int jugadorAEliminar = 1;
 
@@ -139,6 +149,14 @@ class JugadorServiceTest {
     }
 
     @Test
+    @DisplayName("Validar que se lanza una NotFoundException si el usuario no existe")
+    void validarExcepcionSiElUsuarioNoExisteDelete() {
+        int jugadorId = 1000;
+
+        assertThrows(NotFoundException.class, () -> jugadorService.eliminarJugador(jugadorId));
+    }
+
+    @Test
     void actualizarJugador() {
         Jugador jugadorEsperado = new Jugador(1, "Lionel Messi", "Argentina", 101);
 
@@ -147,5 +165,13 @@ class JugadorServiceTest {
         verify(jugadorRepository, atLeastOnce()).cargarJugadores();
         assertEquals(jugadorEsperado, jugadorObtenido);
         assertEquals(jugadorEsperado.getGoles(), jugadorObtenido.getGoles());
+    }
+
+    @Test
+    @DisplayName("Validar que se lanza una NotFoundException si el usuario no existe")
+    void validarExcepcionSiElUsuarioNoExisteUpdate() {
+        Jugador jugadorEsperado = new Jugador(1000, "Lionel Messi", "Argentina", 91);
+
+        assertThrows(NotFoundException.class, () -> jugadorService.actualizarJugador(jugadorEsperado));
     }
 }
