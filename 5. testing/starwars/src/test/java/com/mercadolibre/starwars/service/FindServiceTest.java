@@ -3,14 +3,18 @@ package com.mercadolibre.starwars.service;
 import com.mercadolibre.starwars.dto.CharacterDTO;
 import com.mercadolibre.starwars.repositories.CharacterRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
+
+@ExtendWith(MockitoExtension.class)
 class FindServiceTest {
 
     @Mock
@@ -25,13 +29,14 @@ class FindServiceTest {
         // arrange
         List<CharacterDTO> characterDTOList = List.of(new CharacterDTO());
         when(characterRepository.findAllByNameContains("Luke")).thenReturn(characterDTOList);
+
         //act
 
         List<CharacterDTO> characterDTOList1 = findService.find("Luke");
 
         //assert
 
-        assertEquals(1, characterDTOList.size());
+        assertEquals(1, characterDTOList1.size());
 
     }
 }

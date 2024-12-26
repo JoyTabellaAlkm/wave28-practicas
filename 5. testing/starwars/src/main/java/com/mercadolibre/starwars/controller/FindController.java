@@ -18,5 +18,7 @@ public class FindController {
   @GetMapping("/{query}")
   public List<CharacterDTO> find(@PathVariable String query) {
     return findService.find(query);
+
+
   }
 }

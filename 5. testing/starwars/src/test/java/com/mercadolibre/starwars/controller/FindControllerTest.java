@@ -36,7 +36,7 @@ class FindControllerTest {
 
         //assert
 
-        assertEquals(1, characterDTOList.size());
+        assertEquals(1, characterDTOList1.size());
 
     }
 
