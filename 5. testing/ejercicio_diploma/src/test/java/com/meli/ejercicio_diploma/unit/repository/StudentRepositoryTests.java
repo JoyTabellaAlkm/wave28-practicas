@@ -1,4 +1,4 @@
-package com.meli.ejercicio_diploma.uniTest.repository;
+package com.meli.ejercicio_diploma.unit.repository;
 
 import com.meli.ejercicio_diploma.model.StudentDTO;
 import com.meli.ejercicio_diploma.model.SubjectDTO;

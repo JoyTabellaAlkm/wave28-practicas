@@ -1,4 +1,4 @@
-package com.meli.ejercicio_diploma.uniTest.controller;
+package com.meli.ejercicio_diploma.unit.controller;
 
 import com.meli.ejercicio_diploma.controller.ObtenerDiplomaController;
 import com.meli.ejercicio_diploma.model.StudentDTO;

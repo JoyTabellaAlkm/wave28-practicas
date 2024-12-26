@@ -1,4 +1,4 @@
-package com.meli.ejercicio_diploma.integrationTest;
+package com.meli.ejercicio_diploma.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meli.ejercicio_diploma.model.StudentDTO;
