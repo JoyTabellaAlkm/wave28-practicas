@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa9af0aa-5d9d-4679-bc54-c33a8cf496c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerencia/src/NoPerecedero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerencia/src/Perecedero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerencia/src/Producto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerenciaAnimal/src/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerenciaAnimal/src/Gato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjercicioHerenciaAnimal/src/Perro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EjerciciosJava/src/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaExcepciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Copia de EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/dto/VehicleCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Copia de EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/exception/DuplicateVehicleException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/EjercicioGlobalApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/controller/VehicleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/dto/ExceptionDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/dto/VehicleDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/entity/Vehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/exception/ExceptionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/exception/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/repository/IVehicleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/repository/VehicleRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/service/IVehicleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/java/com/bootcampW22/EjercicioGlobal/service/VehicleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/main/resources/vehicles_100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioGlobal/src/test/java/com/bootcampW22/EjercicioGlobal/EjercicioGlobalApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ingcdsantamaria&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JoyTabellaAlkm/wave28-practicas.git&quot;,
+    &quot;accountId&quot;: &quot;3dc66a4e-e11f-4701-9bc7-53e57417b8e1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2qHLuMBumoJuvnnnNIdwv1OTK35" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.PracticaExcepciones.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "santamaria__cristhian",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa9af0aa-5d9d-4679-bc54-c33a8cf496c3" name="Changes" comment="" />
+      <created>1734314775404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734314775404</updated>
+      <workItem from="1734314776408" duration="1537000" />
+      <workItem from="1734833618228" duration="138000" />
+      <workItem from="1734833898469" duration="2000" />
+      <workItem from="1734842664924" duration="19000" />
+      <workItem from="1734842708378" duration="93000" />
+      <workItem from="1734842807642" duration="294000" />
+      <workItem from="1734843107460" duration="125000" />
+      <workItem from="1734843279367" duration="759000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
