@@ -6,28 +6,47 @@ import com.meli.obtenerdiploma.model.SubjectDTO;
 import java.util.List;
 
 public class StudentFactory {
-    public static final StudentDTO juanStudentDTO = new StudentDTO(
+    public static StudentDTO createJuanStudentDTO() {
+        StudentDTO juanStudentDTO = new StudentDTO();
+        juanStudentDTO.setId(1L);
+        juanStudentDTO.setStudentName("Juan");
+        juanStudentDTO.setSubjects(createJuanSubjects());
+
+        return juanStudentDTO;
+    }
+
+    public static StudentDTO createPedroStudentDTO() {
+        StudentDTO pedroStudentDTO = new StudentDTO();
+        pedroStudentDTO.setId(2L);
+        pedroStudentDTO.setStudentName("Pedro");
+        pedroStudentDTO.setSubjects(createPedroSubjects());
+
+        return pedroStudentDTO;
+    }
+
+    public static StudentDTO createSofiaStudentDTO() {
+        StudentDTO pedroStudentDTO = new StudentDTO();
+        pedroStudentDTO.setId(3L);
+        pedroStudentDTO.setStudentName("Sofia");
+        pedroStudentDTO.setSubjects(createSofiaSubjects());
+
+        return pedroStudentDTO;
+    }
+
+    public static final StudentDTO juanStudentWithScoresDTO = new StudentDTO(
             1L,
             "Juan",
-            "mensaje1",
-            4.0,
+            "El alumno Juan ha obtenido un promedio de 7,33. Puedes mejorar.",
+            (double) 22 / 3,
             createJuanSubjects()
     );
 
-    public static final StudentDTO pedroStudentDTO = new StudentDTO(
+    public static final StudentDTO pedroStudentWithScoresDTO = new StudentDTO(
             2L,
             "Pedro",
-            "mensaje2",
-            8.0,
+            "El alumno Pedro ha obtenido un promedio de 9,33. Felicitaciones!",
+            (double) 28 / 3,
             createPedroSubjects()
-    );
-
-    public static final StudentDTO sofiaStudentDTO = new StudentDTO(
-            3L,
-            "Sofia",
-            "mensaje3",
-            8.5,
-            createSofiaSubjects()
     );
 
     private static List<SubjectDTO> createJuanSubjects() {
@@ -41,8 +60,8 @@ public class StudentFactory {
     private static List<SubjectDTO> createPedroSubjects() {
         return List.of(
                 new SubjectDTO("Matemática", 10.0),
-                new SubjectDTO("Física", 8.0),
-                new SubjectDTO("Química", 4.0)
+                new SubjectDTO("Física", 9.0),
+                new SubjectDTO("Química", 9.0)
         );
     }
 

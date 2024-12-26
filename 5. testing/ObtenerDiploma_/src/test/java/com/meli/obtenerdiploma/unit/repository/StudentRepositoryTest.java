@@ -1,4 +1,4 @@
-package com.meli.obtenerdiploma.unit;
+package com.meli.obtenerdiploma.unit.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.repository.StudentRepository;
@@ -22,8 +22,8 @@ public class StudentRepositoryTest {
     @Test
     public void findAll() {
         Set<StudentDTO> students = Set.of(
-                StudentFactory.juanStudentDTO,
-                StudentFactory.pedroStudentDTO
+                StudentFactory.createJuanStudentDTO(),
+                StudentFactory.createPedroStudentDTO()
         );
 
         Set<StudentDTO> expected = studentRepository.findAll();

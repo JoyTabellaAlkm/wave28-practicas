@@ -2,8 +2,6 @@
   {
     "id": 1,
     "studentName": "Juan",
-    "message": "mensaje1",
-    "averageScore": 4.0,
     "subjects": [
       {
         "name": "Matemática",
@@ -22,8 +20,6 @@
   {
     "id": 2,
     "studentName": "Pedro",
-    "message": "mensaje2",
-    "averageScore": 8.0,
     "subjects": [
       {
         "name": "Matemática",
@@ -31,11 +27,11 @@
       },
       {
         "name": "Física",
-        "score": 8
+        "score": 9
       },
       {
         "name": "Química",
-        "score": 4
+        "score": 9
       }
     ]
   }

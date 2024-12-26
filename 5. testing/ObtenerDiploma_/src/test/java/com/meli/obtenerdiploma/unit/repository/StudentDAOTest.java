@@ -1,4 +1,4 @@
-package com.meli.obtenerdiploma.unit;
+package com.meli.obtenerdiploma.unit.repository;
 
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
@@ -32,43 +32,55 @@ public class StudentDAOTest {
 
     @Test
     public void saveNewStudent() {
-        studentDAO.save(StudentFactory.sofiaStudentDTO);
+        StudentDTO sofiaStudentDTO = StudentFactory.createSofiaStudentDTO();
 
-        Assertions.assertTrue(studentDAO.exists(StudentFactory.sofiaStudentDTO));
+        studentDAO.save(sofiaStudentDTO);
+
+        Assertions.assertTrue(studentDAO.exists(sofiaStudentDTO));
     }
 
     @Test
     public void saveExistingStudent() {
-        studentDAO.save(StudentFactory.juanStudentDTO);
+        StudentDTO juanStudentDTO = StudentFactory.createJuanStudentDTO();
 
-        Assertions.assertTrue(studentDAO.exists(StudentFactory.juanStudentDTO));
+        studentDAO.save(juanStudentDTO);
+
+        Assertions.assertTrue(studentDAO.exists(juanStudentDTO));
     }
 
     @Test
     public void findByExistingId() {
-        StudentDTO pedro = studentDAO.findById(StudentFactory.pedroStudentDTO.getId());
+        StudentDTO pedroStudentDTO = StudentFactory.createPedroStudentDTO();
 
-        Assertions.assertEquals(StudentFactory.pedroStudentDTO, pedro);
+        StudentDTO pedro = studentDAO.findById(pedroStudentDTO.getId());
+
+        Assertions.assertEquals(pedroStudentDTO, pedro);
     }
 
     @Test
     public void findByNotExistingId() {
+        Long nonExistentId = 10L;
+
         Assertions.assertThrows(
                 StudentNotFoundException.class,
-                () -> studentDAO.findById(StudentFactory.sofiaStudentDTO.getId())
+                () -> studentDAO.findById(nonExistentId)
         );
     }
 
     @Test
     public void deleteExistingStudent() {
-        boolean deleted = studentDAO.delete(1L);
+        Long juanStudentId = StudentFactory.createJuanStudentDTO().getId();
+
+        boolean deleted = studentDAO.delete(juanStudentId);
 
         Assertions.assertTrue(deleted);
     }
 
     @Test
     public void deleteNotExistingStudent() {
-        boolean deleted = studentDAO.delete(3L);
+        Long nonExistentId = 10L;
+
+        boolean deleted = studentDAO.delete(nonExistentId);
 
         Assertions.assertFalse(deleted);
     }
