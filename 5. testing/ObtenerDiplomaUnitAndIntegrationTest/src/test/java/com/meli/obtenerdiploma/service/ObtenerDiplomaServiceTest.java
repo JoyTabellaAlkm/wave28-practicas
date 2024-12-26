@@ -9,55 +9,23 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-/*
-Ejercicio 2:
-
-Pasos del test Unitario con Mocks
-
-Crear el mock IStudentDAO.
-Inyectarlo en ObtenerDiplomaService.
-Configurar su comportamiento (setup) con el método when.
-Realizar el test con un nombre de los casos borde, usar los asserts correspondientes.*/
-
 @ExtendWith(MockitoExtension.class)
 public class ObtenerDiplomaServiceTest {
 
-    /*
-        Crear el mock IStudentDAO.
-     */
     @Mock
     IStudentDAO studentDAO;
 
-    /*
-        Inyectarlo en ObtenerDiplomaService.
-     */
     @InjectMocks
     ObtenerDiplomaService obtenerDiplomaService;
 
-    /*
-        @BeforeEach
-        Esta annotation se usa para inicializar settings necesarios para cada prueba de manera individual
-        Cada prueba comienza con un contexto limpio y todas las dependencias simuladas configuradas
-
-        MockitoAnnotations.openMocks(this)
-        Este method inicializa los objetos anotados con Mockito, como @Mock y @InjectMocks.
-
-        Si no se incluye esta línea y se intenta usar un mock, obtendrás un NullPointerException
-        porque el mock no se habrá inicializado correctamente.
-     */
     @BeforeEach
     void setUp(){
         MockitoAnnotations.openMocks(this);
@@ -93,7 +61,6 @@ public class ObtenerDiplomaServiceTest {
     @Test
     public void analyzeScores_WithLowAverage_ReturnsMotivationMessage(){
         //Arrage
-
         Long studentID = 2L;
 
         List<SubjectDTO> subjects = List.of(

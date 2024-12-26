@@ -76,16 +76,4 @@ public class ObtenerDiplomaControllerIntegrationTest {
         Assertions.assertEquals(expectedJson, actualJson, "La respuesta JSON no coincide con la esperada.");
     }
 
-/*    @Test
-    void testGivenAnInvalidStudentIdThrowExceptionMessage() throws Exception {
-
-        mockMvc.perform(get("/analyzeScores/{studentId}", 590L)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound())
-                .andExpect(content().contentType("application/json"))
-                .andExpect(jsonPath("$.name").value("StudentNotFoundException"))
-                .andDo(print())
-                .andReturn();
-    }*/
-
 }

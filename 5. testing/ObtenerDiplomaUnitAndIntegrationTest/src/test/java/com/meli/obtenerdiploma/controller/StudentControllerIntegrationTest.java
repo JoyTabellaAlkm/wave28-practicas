@@ -7,16 +7,13 @@ import com.meli.obtenerdiploma.utils.StudentsDtos;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.client.RequestMatcher;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -82,7 +79,6 @@ public class StudentControllerIntegrationTest {
         String URL = "/student/modifyStudent";
         ResultMatcher expertedStatus = status().isOk();
 
-        // Perform the request
         mockMvc.perform(post(URL)
                         .contentType(contentType)
                         .content(body))
@@ -144,7 +140,6 @@ public class StudentControllerIntegrationTest {
         ResultMatcher expectedContentType = MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON);
         String URL = "/student/listStudents";
 
-        // Realizar la solicitud y validar la respuesta
         MvcResult mvcResult = mockMvc.perform(get(URL))
                 .andExpect(expertedStatus)
                 .andExpect(expectedContentType)
