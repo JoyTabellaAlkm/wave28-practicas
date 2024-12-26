@@ -1,5 +1,25 @@
 [
   {
+    "id": 3,
+    "studentName": "Gabriel",
+    "message": null,
+    "averageScore": null,
+    "subjects": [
+      {
+        "name": "Fisica",
+        "score": 1.0
+      },
+      {
+        "name": "Quimica",
+        "score": 9.0
+      },
+      {
+        "name": "Plástica",
+        "score": 10.0
+      }
+    ]
+  },
+  {
     "id": 2,
     "studentName": "Pedro",
     "message": null,
