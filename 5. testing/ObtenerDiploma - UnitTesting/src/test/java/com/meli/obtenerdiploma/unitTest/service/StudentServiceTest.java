@@ -80,7 +80,6 @@ public class StudentServiceTest {
         Assertions.assertEquals(receivedStudent, testSubject);
     }
 
-
     @Test
     @DisplayName("Test 3.1: Update OK")
     public void updateOK(){
@@ -92,7 +91,6 @@ public class StudentServiceTest {
         verify(studentDAO, times(1)).save(testSubject);
     }
 
-
     @Test
     @DisplayName("Test 4.1: Delete OK")
     public void deleteOK(){
@@ -103,7 +101,6 @@ public class StudentServiceTest {
         //ASSERT
         verify(studentDAO, times(1)).delete(toDelete);
     }
-
 
     @Test
     @DisplayName("Test 4.1: GetAll OK")
@@ -155,9 +152,5 @@ public class StudentServiceTest {
         verify(studentRepository, times(1)).findAll();
         Assertions.assertEquals(receivedList, expectedList);
     }
-
-
-
-
 
 }
