@@ -1,5 +1,6 @@
 package com.meli.obtenerdiploma.controller;
 
+import com.meli.obtenerdiploma.exception.NotFoundException;
 import com.meli.obtenerdiploma.exception.ObtenerDiplomaException;
 import com.meli.obtenerdiploma.model.ErrorDTO;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,13 @@ public class ObtenerDiplomaExceptionController {
     protected ResponseEntity<ErrorDTO> handleValidationExceptions(HttpMessageNotReadableException e) {
         ErrorDTO error = new ErrorDTO("HttpMessageNotReadableException", e.getMessage());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    protected ResponseEntity<ErrorDTO> handleNotFoundExceptions(NotFoundException e) {
+        ErrorDTO error = new ErrorDTO("NotFoundException", e.getMessage());
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
 }

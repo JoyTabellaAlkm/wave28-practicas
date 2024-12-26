@@ -1,5 +1,6 @@
 package com.meli.obtenerdiploma.service;
 
+import com.meli.obtenerdiploma.exception.NotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
@@ -31,8 +32,12 @@ public class ObtenerDiplomaService implements IObtenerDiplomaService {
     }
 
     private Double calculateAverage(List<SubjectDTO> scores) {
+        if(scores == null || scores.isEmpty()) {
+            throw new NotFoundException("No se han encontrado materias asociadas al alumno");
+        }
         return scores.stream()
                 .reduce(0D, (partialSum, score)  -> partialSum + score.getScore(), Double::sum)
                 / scores.size();
+
     }
 }

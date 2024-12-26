@@ -49,12 +49,13 @@ public class StudentDAOTest {
     @Test
     @DisplayName("Se debe actualizar el usuario en el JSON")
     void update() {
-        studentDAO.save(studentDTO);
-        studentDTO.setMessage("testing");
-        studentDAO.save(studentDTO);
+        String expectedMessage = "testing";
+        StudentDTO currentStudent = studentDAO.save(studentDTO);
+        currentStudent.setMessage(expectedMessage);
+        studentDAO.save(currentStudent);
+
         StudentDTO savedStudent = studentDAO.findById(studentDTO.getId());
-        assertEquals("testing", savedStudent.getMessage());
-        studentDAO.delete(savedStudent.getId());
+        assertEquals(expectedMessage, savedStudent.getMessage());
     }
 
     @Test
