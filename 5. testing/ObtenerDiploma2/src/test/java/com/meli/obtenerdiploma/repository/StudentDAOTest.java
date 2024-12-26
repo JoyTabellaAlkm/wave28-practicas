@@ -6,7 +6,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestConstructor;
 
@@ -55,6 +54,7 @@ public class StudentDAOTest {
         studentDAO.save(studentDTO);
         StudentDTO savedStudent = studentDAO.findById(studentDTO.getId());
         assertEquals("testing", savedStudent.getMessage());
+        studentDAO.delete(savedStudent.getId());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class StudentDAOTest {
 
     @Test
     @DisplayName("No debe poder borrar un usuario inexistente del JSON")
-    void deleteNonExistant() {
+    void deleteNonExistent() {
         boolean deleted = studentDAO.delete(500L);
         assertFalse(deleted);
     }
