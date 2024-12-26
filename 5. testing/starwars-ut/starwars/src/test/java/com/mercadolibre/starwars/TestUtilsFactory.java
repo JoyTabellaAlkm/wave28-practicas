@@ -1,4 +1,4 @@
-package com.mercadolibre.starwars.unit_tests;
+package com.mercadolibre.starwars;
 
 import com.mercadolibre.starwars.dto.CharacterDTO;
 
