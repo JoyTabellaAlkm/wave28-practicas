@@ -36,7 +36,9 @@ public class ObtenerDiplomaService implements IObtenerDiplomaService {
             throw new NotFoundException("No se han encontrado materias asociadas al alumno");
         }
         return scores.stream()
-                .reduce(0D, (partialSum, score)  -> partialSum + score.getScore(), Double::sum)
+                .reduce(0D, (partialSum, score)  -> {
+                    return partialSum + score.getScore();
+                }, Double::sum)
                 / scores.size();
 
     }

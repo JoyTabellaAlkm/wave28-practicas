@@ -1,5 +1,6 @@
 package com.meli.obtenerdiploma.service;
 
+import com.meli.obtenerdiploma.exception.NotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
@@ -65,7 +66,7 @@ class ObtenerDiplomaServiceTest {
     }
 
     @Test
-    @DisplayName("El metodo analyzeScore debe devolver el studentDAO esperado")
+    @DisplayName("Se debe devolver el studentDAO esperado")
     void analyzeScoresShouldReturnCorrectStudentDTO() {
         StudentDTO expectedStudent = bestStudentDTO;
 
@@ -78,7 +79,7 @@ class ObtenerDiplomaServiceTest {
     }
 
     @Test
-    @DisplayName("El metodo analyzeScore debe calcular el promedio correctamente")
+    @DisplayName("Se debe calcular el promedio correctamente")
     void analyzeScoresShouldCalculateCorrectAverage() {
         StudentDTO expectedStudent = studentDTO;
         double expectedAverage = 8.98;
@@ -92,7 +93,7 @@ class ObtenerDiplomaServiceTest {
     }
 
     @Test
-    @DisplayName("El metodo analyzeScore debe tener la leyenda de diploma correcta")
+    @DisplayName("Se debe retornar la leyenda de diploma correcta")
     void analyzeScoresShouldReturnTheCorrectMessage() {
         StudentDTO expectedStudent = studentDTO;
         String expectedMessage = "El alumno Dummy User ha obtenido un promedio de 8,98. Puedes mejorar.";
@@ -106,8 +107,8 @@ class ObtenerDiplomaServiceTest {
     }
 
     @Test
-    @DisplayName("El metodo analyzeScore debe devolver el mensaje de diploma con honores si el promedio es igual o superior a 9")
-    void analyzeScoresShouldReturnCongratsMessageIfAverageIsHigherOrEqualsNine() {
+    @DisplayName("Se debe devolver el mensaje de diploma con honores si el promedio es igual o superior a 9")
+    void shouldReturnCongratsMessageIfAverageIsHigherOrEqualsNine() {
         StudentDTO expectedStudent = bestStudentDTO;
         String expectedMessage = "El alumno Dummy User ha obtenido un promedio de 9,67. Felicitaciones!";
         double expectedAverage = 9.67;
@@ -122,5 +123,14 @@ class ObtenerDiplomaServiceTest {
         assertEquals(expectedAverage, currentAverage, 0.02);
     }
 
+    @Test
+    @DisplayName("Se debe lanzar una NotFoundException si el alumno no tiene lista de materias cuando se calcula el promedio")
+    void shouldThrowNotFoundExceptionIfStudentDoesNotHaveASubjectsList() {
+        StudentDTO expectedStudent = notValidStudentDTO;
+        when(studentDAO.findById(1L)).thenReturn(expectedStudent);
 
+        assertThrows(NotFoundException.class, () -> {
+            obtenerDiplomaService.analyzeScores(expectedStudent.getId());
+        });
+    }
 }
