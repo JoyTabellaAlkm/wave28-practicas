@@ -1,9 +1,10 @@
-package com.meli.obtenerdiploma.service;
+package com.meli.obtenerdiploma.unit.service;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentRepository;
 import com.meli.obtenerdiploma.repository.StudentDAO;
+import com.meli.obtenerdiploma.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,8 +33,6 @@ class StudentServiceTest {
     private StudentService studentService;
 
     private StudentDTO studentDTO;
-    private StudentDTO bestStudentDTO;
-    private StudentDTO notValidStudentDTO;
 
     @BeforeEach
     public void setStudentDTO() {
@@ -48,26 +47,6 @@ class StudentServiceTest {
                         add(new SubjectDTO("Química", 9.0));
                     }
                 }
-        );
-
-        bestStudentDTO = new StudentDTO(1L,
-                "Dummy User",
-                "",
-                0.0,
-                new ArrayList<>(){
-                    {
-                        add(new SubjectDTO("Matemática", 9.0));
-                        add(new SubjectDTO("Física", 10.0));
-                        add(new SubjectDTO("Química", 10.0));
-                    }
-                }
-        );
-
-        notValidStudentDTO = new StudentDTO(1L,
-                "Dummy User",
-                "",
-                0.0,
-                new ArrayList<>()
         );
     }
 

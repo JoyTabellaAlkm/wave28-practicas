@@ -1,6 +1,7 @@
-package com.meli.obtenerdiploma.repository;
+package com.meli.obtenerdiploma.unit.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
+import com.meli.obtenerdiploma.repository.IStudentRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
