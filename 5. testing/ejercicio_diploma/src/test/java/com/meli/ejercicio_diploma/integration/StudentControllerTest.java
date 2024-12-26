@@ -49,7 +49,7 @@ public class StudentControllerTest {
         );
     }
 
-    @BeforeEach @AfterEach
+    @BeforeEach
     public void setUp() {
         PrintWriter writer = null;
 
@@ -84,6 +84,20 @@ public class StudentControllerTest {
                 "]");
         writer.close();
     }
+    @AfterEach
+    public void setDown() {
+        PrintWriter writer = null;
+
+        try {
+            writer = new PrintWriter(ResourceUtils.getFile("./src/test/resources/users.json"));
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+
+        writer.print("[]");
+        writer.close();
+    }
 
     @Test
     public void testRegisterStudent() throws Exception {
@@ -113,7 +127,7 @@ public class StudentControllerTest {
 
     @Test
     public void testGetStudent() throws Exception {
-        mockMvc.perform(get("/student/getStudent/{id}", 1))
+        mockMvc.perform(get("/student/getStudent/1"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
