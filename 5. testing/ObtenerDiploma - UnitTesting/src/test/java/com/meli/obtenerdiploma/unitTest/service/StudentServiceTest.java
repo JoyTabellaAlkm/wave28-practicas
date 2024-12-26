@@ -85,6 +85,7 @@ public class StudentServiceTest {
     public void updateOK(){
         //ARRANGE
         StudentDTO testSubject = testStudent;
+        //doNothing().when(studentDAO.save())
         //ACT
         studentService.update(testSubject);
         //ASSERT
