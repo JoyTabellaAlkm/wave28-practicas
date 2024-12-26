@@ -1,4 +1,4 @@
-package com.mercadolibre.calculadorametroscuadrados;
+package com.mercadolibre.calculadorametroscuadrados.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

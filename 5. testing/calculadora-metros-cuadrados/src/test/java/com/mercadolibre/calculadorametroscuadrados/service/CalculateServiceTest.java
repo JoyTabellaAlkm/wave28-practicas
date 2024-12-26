@@ -1,18 +1,14 @@
-package com.mercadolibre.calculadorametroscuadrados;
+package com.mercadolibre.calculadorametroscuadrados.service;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.mercadolibre.calculadorametroscuadrados.dto.HouseDTO;
 import com.mercadolibre.calculadorametroscuadrados.dto.HouseResponseDTO;
 import com.mercadolibre.calculadorametroscuadrados.dto.RoomDTO;
-import com.mercadolibre.calculadorametroscuadrados.service.CalculateService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @SpringBootTest
