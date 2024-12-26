@@ -1,12 +1,12 @@
 package com.bootcamp.ejerciciojoyeria.dto;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class JoyaDto {
+public class RequestJoyaDto {
     private String nombre;
 
     private String material;
@@ -15,7 +15,9 @@ public class JoyaDto {
 
     private String particularidad;
 
+    @JsonAlias("posee_piedra")
     private boolean poseePiedra;
 
+    @JsonAlias("venta_o_no")
     private boolean ventaONo;
 }

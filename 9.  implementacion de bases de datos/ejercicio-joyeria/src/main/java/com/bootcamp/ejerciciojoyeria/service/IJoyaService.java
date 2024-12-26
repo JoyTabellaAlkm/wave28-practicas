@@ -1,15 +1,15 @@
 package com.bootcamp.ejerciciojoyeria.service;
 
-import com.bootcamp.ejerciciojoyeria.dto.JoyaDto;
+import com.bootcamp.ejerciciojoyeria.dto.*;
 
 import java.util.List;
 
 public interface IJoyaService {
-    Long createJewel(JoyaDto joyaDto);
+    ResponsePostDto createJewel(RequestJoyaDto requestJoyaDto);
 
-    List<JoyaDto> getAllJewels();
+    List<ResponseJoyaDto> getAllJewels();
 
-    void deleteJewel(Long id);
+    boolean deleteJewel(Long id);
 
-    JoyaDto updateJewel(Long idUpdate, JoyaDto joyaDto);
+    UpdateJoyaDto updateJewel(Long id, UpdateJoyaDto updateJoyaDto);
 }
