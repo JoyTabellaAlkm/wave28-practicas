@@ -3,13 +3,14 @@ package com.meli.obtenerdiploma.repository;
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@SpringBootTest
 class StudentDAOTest {
 
     StudentDAO studentDAO = new StudentDAO();
