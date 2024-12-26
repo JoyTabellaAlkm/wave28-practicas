@@ -56,9 +56,13 @@ public class StudentServiceTest {
 
         StudentDTO student = studentService.read(studentDTO.getId());
 
+        //Act
+        studentService.update(studentDTO);
+
         assertNotNull(student);
         assertEquals(studentDTO, student);
         verify(studentDAO, times(1)).findById(studentDTO.getId());
+
     }
 
     @Test
