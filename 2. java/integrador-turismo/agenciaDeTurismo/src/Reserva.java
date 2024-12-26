@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class Reserva {
+public class Reserva {
+    ReservaEnum tipoReserva;
+    double costo;
+    Cliente cliente;
+
+
 }

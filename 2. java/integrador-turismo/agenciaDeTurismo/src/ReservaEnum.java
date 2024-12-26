@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public enum ReservaEnum {
+public enum ReservaEnum {
+    HOTEL,
+    COMIDA,
+    BOLETO,
+    TRANSPORTE;
+
 }
