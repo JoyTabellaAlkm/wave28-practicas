@@ -19,23 +19,14 @@ import java.util.*;
 
 public class TestUtilsGenerator {
 
-    private static String SCOPE;
     private static ObjectWriter mapper;
 
     public static void emptyUsersFile() {
-        Properties properties = new Properties();
-
-        try {
-            properties.load(new ClassPathResource("application.properties").getInputStream());
-            SCOPE = properties.getProperty("api.scope");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         PrintWriter writer = null;
 
         try {
-            writer = new PrintWriter(ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json"));
+            writer = new PrintWriter(new ClassPathResource("users.json").getFile());
         } catch (
                 IOException e) {
             e.printStackTrace();
@@ -56,7 +47,7 @@ public class TestUtilsGenerator {
         subjects.add(subject3);
 
         StudentDTO stu = new StudentDTO();
-        stu.setId(9999L);
+        stu.setId(1L);
         stu.setStudentName(name);
         stu.setSubjects(subjects);
 
@@ -116,8 +107,8 @@ public class TestUtilsGenerator {
         PrintWriter writer = null;
 
         try {
-            String content = Files.readString(new File("./src/" + SCOPE + "/resources/users.json").getAbsoluteFile().toPath(), StandardCharsets.US_ASCII);
-            writer = new PrintWriter(ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json"));
+            String content = Files.readString(new ClassPathResource("users.json").getFile().getAbsoluteFile().toPath(), StandardCharsets.US_ASCII);
+            writer = new PrintWriter(new ClassPathResource("users.json").getFile());
 
             try {
                 String studentAsString = mapper.writeValueAsString(stu);

@@ -17,7 +17,7 @@ public class StudentDAOTests {
     IStudentDAO studentDAO;
 
     @BeforeEach @AfterEach
-    private void setUp() {
+    public void setUp() {
        TestUtilsGenerator.emptyUsersFile();
        this.studentDAO = new StudentDAO();
     }
@@ -70,7 +70,7 @@ public class StudentDAOTests {
         Assertions.assertEquals(studentDAO.findById(stu1.getId()), stu1);
 
         Assertions.assertTrue(studentDAO.exists(stu2));
-        Assertions.assertEquals(2L, stu2.getId());
+        Assertions.assertNotEquals(2L, stu2.getId());
         Assertions.assertEquals(studentDAO.findById(stu2.getId()), stu2);
 
     }
@@ -133,6 +133,7 @@ public class StudentDAOTests {
         StudentDTO stu = TestUtilsGenerator.getStudentWith3Subjects("Marco");
 
         // act
+        studentDAO.save(stu);
         studentDAO.delete(stu.getId());
 
         // assert

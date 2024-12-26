@@ -27,9 +27,6 @@ public class StudentDAO implements IStudentDAO {
 
     @Override
     public void save(StudentDTO stu) {
-        boolean removed = this.delete(stu.getId());
-
-        if (!removed) stu.setId((this.students.size() + 1L));
 
         students.add(stu);
 
@@ -40,16 +37,21 @@ public class StudentDAO implements IStudentDAO {
     public boolean delete(Long id) {
         boolean ret = false;
 
-        try {
-            StudentDTO found = this.findById(id);
-
+        StudentDTO found = this.findById(id);
+        if(found != null) {
             students.remove(found);
-            ret  = true;
+            ret = true;
             this.saveData();
-
-        } catch (StudentNotFoundException e) {}
+        }
+        else{
+        throw new StudentNotFoundException(id) ;
+        }
 
         return ret;
+    }
+
+    public void deleteAll(){
+        this.students.clear();
     }
 
     public boolean exists(StudentDTO stu) {
