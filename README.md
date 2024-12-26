@@ -52,3 +52,5 @@ Cada desarrolador cuenta con una branch con la estructura ya creada a su nombre 
 ## Estructura de carpetas en proyectos, por ej.
 
 ![](https://res.cloudinary.com/dgt2h7onu/image/upload/v1684190033/folder_structure_ibfbv5.png)
+
+test
