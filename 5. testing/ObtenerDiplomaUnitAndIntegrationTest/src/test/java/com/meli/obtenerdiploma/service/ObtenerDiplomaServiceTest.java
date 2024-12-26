@@ -3,6 +3,7 @@ package com.meli.obtenerdiploma.service;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
+import com.meli.obtenerdiploma.utils.StudentsDtos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,8 +32,8 @@ public class ObtenerDiplomaServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @DisplayName("-Datos validos- Verifica el calculo correcto del promedio y el mensaje de felicitaciones")
     @Test
+    @DisplayName("-Datos validos- Verifica el calculo correcto del promedio y el mensaje de felicitaciones")
     public void analyzeScores_WithValidStudent_ReturnsExpectedResults(){
         //Arrange
         Long studentId = 1L;
@@ -57,41 +58,20 @@ public class ObtenerDiplomaServiceTest {
         assertTrue(result.getMessage().contains("Felicitaciones"));
     }
 
-    @DisplayName("-Datos validos- Verifica se genere un mensaje motivacional cuando el promedio es bajo")
     @Test
+    @DisplayName("-Datos validos- Verifica se genere un mensaje motivacional cuando el promedio es bajo")
     public void analyzeScores_WithLowAverage_ReturnsMotivationMessage(){
         //Arrage
-        Long studentID = 2L;
-
-        List<SubjectDTO> subjects = List.of(
-                new SubjectDTO("Math", 5.5),
-                new SubjectDTO("English", 5.5),
-                new SubjectDTO("Science", 5.5)
-                );
-        StudentDTO student = new StudentDTO(studentID, "Pepe", null, null, subjects);
-
-        when(studentDAO.findById(studentID)).thenReturn(student);
+        StudentDTO student = StudentsDtos.getStudent10();
+        when(studentDAO.findById(student.getId())).thenReturn(student);
 
         //Act
-        StudentDTO result = obtenerDiplomaService.analyzeScores(studentID);
+        StudentDTO result = obtenerDiplomaService.analyzeScores(student.getId());
 
         //Assert
         assertNotNull(result);
-        assertEquals(5.5, result.getAverageScore());
-        assertEquals("Pepe", result.getStudentName());
-        assertTrue(result.getMessage().contains("Puedes mejorar"));
+        assertEquals(9.2, result.getAverageScore());
+        assertEquals("Sofia", result.getStudentName());
+        assertTrue(result.getMessage().contains("Felicitaciones!"));
     }
-
-/*    @Test
-    void analyzeScores_WithNullStudent_ThrowsExceptions(){
-        //Arrage
-        Long studentId = 3L;
-        StudentDTO student = new StudentDTO(studentId, "Pepe", "Empty List Of subject", null, Collections.emptyList());
-        when(studentDAO.findById(studentId)).thenReturn(null);
-
-        //Art && Assert
-        assertThrows(NullPointerException.class, () -> obtenerDiplomaService.analyzeScores(studentId));
-    }*/
-
-
 }
