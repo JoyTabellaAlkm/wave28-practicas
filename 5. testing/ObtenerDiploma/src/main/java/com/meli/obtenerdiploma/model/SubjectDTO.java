@@ -1,18 +1,23 @@
 package com.meli.obtenerdiploma.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.*;
+import java.io.Serializable;
 
 @Getter @Setter
-public class SubjectDTO {
-    @NotBlank(message = "El nombre la materia no puede estar vacío")
-    @Pattern(regexp = "^[A-Z][a-zA-ZÀ-ÿ]*$", message = "El nombre la materia debe comenzar con mayúscula.")
-    @Size(max = 30, message = "La longitud del nombre no puede superar los 30 caracteres.")
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+public class SubjectDTO implements Serializable {
+    @NotBlank(message = "El nombre de la materia no puede estar vacio.")
+    @Pattern(regexp="([A-Z]|[0-9])[\\s|[0-9]|A-Z|a-z|ñ|ó|í|á|é|ú|Á|Ó|É|Í|Ú]*$", message = "El " +
+            "nombre de la materia debe comenzar con mayuscula.")
+    @Size(max = 30, message = "La longitud del nombre de la materia no puede superar los 30 caracteres.")
     String name;
-    @NotNull(message = "La nota no puede estar vacía.")
-    @Min(value = 0, message = "La mínima nota es 0.0.")
-    @Max(value = 10, message = "La maxima nota es 10.0.")
+
+    @NotNull(message = "La nota de la materia no puede estar vacia.")
+    @DecimalMax(value = "10.0", message = "La nota maxima de la materia es de 10 pts.")
+    @DecimalMin(value = "0.0", message = "La nota minima de la materia es de 0 pts.")
     Double score;
 }
