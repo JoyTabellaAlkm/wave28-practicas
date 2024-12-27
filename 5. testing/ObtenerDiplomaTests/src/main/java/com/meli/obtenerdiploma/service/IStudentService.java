@@ -7,7 +7,7 @@ import java.util.Set;
 public interface IStudentService {
     StudentDTO create(StudentDTO stu);
     StudentDTO read(Long id);
-    void update(StudentDTO stu);
+    StudentDTO update(StudentDTO stu);
     void delete(Long id);
     Set<StudentDTO> getAll();
 }

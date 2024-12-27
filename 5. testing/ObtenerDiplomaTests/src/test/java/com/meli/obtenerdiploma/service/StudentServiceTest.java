@@ -90,9 +90,7 @@ public class StudentServiceTest {
         StudentDTO updated = studentService.update(dto);
         Assertions.assertEquals(Collections.emptyList(), updated.getSubjects());
     }
-
-    // para el delete no se me han ocurrido tests
-
+    
     @Test
     public void findAllWithEmptyResultTest() {
         when(studentRepository.findAll()).thenReturn(Collections.emptySet());
