@@ -25,12 +25,19 @@ public class StudentFactory {
     }
 
     public static StudentDTO createSofiaStudentDTO() {
-        StudentDTO pedroStudentDTO = new StudentDTO();
-        pedroStudentDTO.setId(3L);
-        pedroStudentDTO.setStudentName("Sofia");
-        pedroStudentDTO.setSubjects(createSofiaSubjects());
+        StudentDTO sofiaStudentDTO = new StudentDTO();
+        sofiaStudentDTO.setId(3L);
+        sofiaStudentDTO.setStudentName("Sofia");
+        sofiaStudentDTO.setSubjects(createSofiaSubjects());
 
-        return pedroStudentDTO;
+        return sofiaStudentDTO;
+    }
+
+    public static StudentDTO createInvalidStudentDTO() {
+        StudentDTO sofiaStudentDTO = new StudentDTO();
+        sofiaStudentDTO.setId(4L);
+
+        return sofiaStudentDTO;
     }
 
     public static final StudentDTO juanStudentWithScoresDTO = new StudentDTO(
