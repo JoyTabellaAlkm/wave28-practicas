@@ -12,6 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class StudentDTO {
 
+    @NotNull(message = "El id no puede ser nulo")
+    @Min(value = 0, message = "El id no puede ser menor a 0")
     Long id;
 
     @NotBlank(message = "El nombre del estudiante no puede estar vacío.")

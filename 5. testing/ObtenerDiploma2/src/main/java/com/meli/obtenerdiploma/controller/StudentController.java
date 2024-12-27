@@ -27,13 +27,13 @@ public class StudentController {
         return this.studentService.read(id);
     }
 
-    @PostMapping("/modifyStudent")
+    @PutMapping("/modifyStudent")
     public ResponseEntity<?> modifyStudent(@RequestBody @Valid StudentDTO stu) {
         this.studentService.update(stu);
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/removeStudent/{id}")
+    @DeleteMapping("/removeStudent/{id}")
     public ResponseEntity<?> removeStudent(@PathVariable Long id) {
         this.studentService.delete(id);
         return ResponseEntity.ok(null);
