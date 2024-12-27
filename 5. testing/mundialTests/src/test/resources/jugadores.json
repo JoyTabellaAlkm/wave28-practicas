@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lionel Messi",
+    "pais": "Argentina",
+    "goles": 91
+  },
+  {
+    "id": 2,
+    "nombre": "Cristiano Ronaldo",
+    "pais": "Portugal",
+    "goles": 85
+  }
+]
