@@ -2,6 +2,7 @@ package ar.com.mercadolibre.mundial.unit;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
 import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import ar.com.mercadolibre.mundial.repository.JugadorRepository;
 import ar.com.mercadolibre.mundial.services.impl.JugadorServiceImpl;
@@ -52,8 +53,9 @@ class JugadorServiceTest {
                 new Jugador(19, "Zlatan Ibrahimović", "Suecia", 62),
                 new Jugador(20, "Edinson Cavani", "Uruguay", 56)
         );
-       // when(jugadorRepository.cargarJugadores()).thenReturn(jugadoresMock);
+        // when(jugadorRepository.cargarJugadores()).thenReturn(jugadoresMock);
     }
+
     ObjectMapper objectMapper = new ObjectMapper();
 
 
@@ -62,7 +64,7 @@ class JugadorServiceTest {
     @Test
     @DisplayName("1- Validar que el método de obtener un jugador por su ID sea correcto")
     @Order(1)
-    // Tiene un nombre de Test que se podría usar por convención "WHEN pasa X cosa, THEN return X cosa"
+        // Tiene un nombre de Test que se podría usar por convención "WHEN pasa X cosa, THEN return X cosa"
     void whenIdExists_thenReturnJugador() {
         //ARRANGE
         int idEnviado = 1;
@@ -84,10 +86,10 @@ class JugadorServiceTest {
         //ARRANGE
         int idEntrada = 100;
         //ACT
-        ErrorDTO excepcionEsperada= new ErrorDTO("Jugador no encontrado");
+        ErrorDTO excepcionEsperada = new ErrorDTO("Jugador no encontrado");
         Mockito.when(jugadorRepository.findById(idEntrada)).thenReturn(null);
         //ASSERT
-        Assertions.assertThrows( IllegalArgumentException.class,
+        Assertions.assertThrows(IllegalArgumentException.class,
                 () -> jugadorService.obtenerJugadorPorId(idEntrada));
 
         Assertions.assertEquals(excepcionEsperada.getMessage(), "Jugador no encontrado");
@@ -111,7 +113,7 @@ class JugadorServiceTest {
         List<JugadorDTO> jugadoresObtenidos = jugadorService.obtenerJugadoresOrdenadosPorGoles();
         List<JugadorDTO> jugadoresEsperadosDTO = jugadoresOrdenadosEsperados
                 .stream()
-                .map( jugador -> objectMapper.convertValue(jugador, JugadorDTO.class))
+                .map(jugador -> objectMapper.convertValue(jugador, JugadorDTO.class))
                 .toList();
 
         assertEquals(jugadoresOrdenadosEsperados.get(0).getGoles(), jugadoresObtenidos.get(0).getGoles(),
@@ -145,5 +147,41 @@ class JugadorServiceTest {
         assertNotNull(jugadorObtenido, "El jugador no debería ser null");
         assertEquals(jugadorEsperadoDTO, jugadorObtenido, "El jugador debería ser el esperado");
         verify(jugadorRepository, times(1)).cargarJugadores();
+    }
+
+
+    @Test
+    @DisplayName("5- Validar que el método de registrar un jugador cuando el mismo no existe sea correcto")
+    @Order(5)
+    void whenJugadorDoesNotExists_thenRegistrarJugador() {
+        //ARRANGE
+        JugadorDTO jugadorEsperadoDTO = new JugadorDTO(21, "Pepito", "Portugal", 9);
+        Jugador jugadorEsperado = objectMapper.convertValue(jugadorEsperadoDTO, Jugador.class);
+        MensajeDTO mensajeEsperado = new MensajeDTO("Jugador registrado");
+
+        //ACT
+        when(jugadorRepository.exist(jugadorEsperadoDTO.getId())).thenReturn(false);
+        when(jugadorRepository.save(jugadorEsperado)).thenReturn(jugadorEsperado);
+
+        MensajeDTO mensajeObtenido = jugadorService.registrarJugador(jugadorEsperadoDTO);
+
+        //ASSERT
+        assertEquals(mensajeObtenido, mensajeEsperado, "El mensaje debería ser el esperado");
+        verify(jugadorRepository, times(1)).exist(jugadorEsperadoDTO.getId());
+        verify(jugadorRepository, times(1)).save(jugadorEsperado);
+    }
+
+    @Test
+    @DisplayName("6- Validar que el método de registrar un jugador cuando el mismo existe sea correcto")
+    @Order(6)
+    void whenJugadorExists_thenRegistrarJugadorThrowsException() {
+        //ARRANGE
+        JugadorDTO jugadorEsperadoDTO = new JugadorDTO(2, "Cristiano Ronaldo", "Portugal", 90);
+
+        //ACT & ASSERT
+        when(jugadorRepository.exist(jugadorEsperadoDTO.getId())).thenReturn(true);
+
+        assertThrows(IllegalArgumentException.class, () -> jugadorService.registrarJugador(jugadorEsperadoDTO));
+        verify(jugadorRepository, times(1)).exist(jugadorEsperadoDTO.getId());
     }
 }

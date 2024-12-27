@@ -1,6 +1,8 @@
 package ar.com.mercadolibre.mundial.integration;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
+import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -64,12 +67,12 @@ public class JugadorControllerITest {
         //ARRANGE
         int parametroEntrada = 1;
 
-        ResultMatcher statusEsperado= status().isOk();
+        ResultMatcher statusEsperado = status().isOk();
         ResultMatcher contentTypeEsperado = content().contentType("application/json");
         ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(jugador1));
 
         //ACT && ASSERT
-        mockMvc.perform(get("/jugador/{id}",parametroEntrada))
+        mockMvc.perform(get("/jugador/{id}", parametroEntrada))
                 .andExpectAll(
                         statusEsperado, contentTypeEsperado, bodyEsperado
                 ).andDo(print());
@@ -82,14 +85,14 @@ public class JugadorControllerITest {
 
         //ARRANGE
         int parametroEntrada = 0;
-        ErrorDTO mensajeEsperado = new ErrorDTO( "Jugador no encontrado");
+        ErrorDTO mensajeEsperado = new ErrorDTO("Jugador no encontrado");
 
-        ResultMatcher statusEsperado= status().isNotFound();
+        ResultMatcher statusEsperado = status().isNotFound();
         ResultMatcher contentTypeEsperado = content().contentType("application/json");
         ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(mensajeEsperado));
 
         //ACT && ASSERT
-        mockMvc.perform(get("/jugador/{id}",parametroEntrada))
+        mockMvc.perform(get("/jugador/{id}", parametroEntrada))
                 .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
                 .andDo(print());
     }
@@ -100,7 +103,7 @@ public class JugadorControllerITest {
     public void obtenerJugadoresOrdenadosPorGolesOk() throws Exception {
 
         //ARRANGE
-        ResultMatcher statusEsperado= status().isOk();
+        ResultMatcher statusEsperado = status().isOk();
         ResultMatcher contentTypeEsperado = content().contentType("application/json");
         ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(jugadoresDePrueba));
 
@@ -111,4 +114,83 @@ public class JugadorControllerITest {
                 ).andDo(print());
     }
 
+    @Test
+    @DisplayName("Registra un jugador que todavía no fue registrado")
+    @Order(4)
+    public void registrarJugadorOk() throws Exception {
+        //ARRANGE
+        MensajeDTO mensajeEsperado = new MensajeDTO("Jugador registrado");
+
+        ResultMatcher statusEsperado = status().isCreated();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(mensajeEsperado));
+
+        JugadorDTO jugadorEsperadoDTO = new JugadorDTO(21, "Pepito", "Portugal", 9);
+
+        //ACT && ASSERT
+        mockMvc.perform(post("/jugador")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(jugadorEsperadoDTO)))
+                .andExpectAll(
+                        statusEsperado, contentTypeEsperado, bodyEsperado
+                ).andDo(print());
+    }
+
+    @Test
+    @DisplayName("Lanza excepción cuando se intenta registrar un jugador que ya fue registrado")
+    @Order(5)
+    public void registrarJugadorAlreadyExists() throws Exception {
+        //ARRANGE
+        ErrorDTO mensajeEsperado = new ErrorDTO("Ya existe un jugador con este ID");
+
+        ResultMatcher statusEsperado = status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(mensajeEsperado));
+
+        JugadorDTO jugadorEsperadoDTO = new JugadorDTO(2, "Cristiano Ronaldo", "Portugal", 90);
+
+        //ACT && ASSERT
+        mockMvc.perform(post("/jugador")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(jugadorEsperadoDTO)))
+                .andExpectAll(
+                        statusEsperado, contentTypeEsperado, bodyEsperado
+                ).andDo(print());
+    }
+
+    @Test
+    @DisplayName("Obtiene un jugador por su nombre")
+    @Order(6)
+    public void obtenerJugadorPorNombreOk() throws Exception {
+        //ARRANGE
+        ResultMatcher statusEsperado = status().isOk();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(jugador1));
+
+        //ACT && ASSERT
+        mockMvc.perform(get("/jugador")
+                        .param("nombre", jugador1.getNombre()))
+                .andExpectAll(
+                        statusEsperado, contentTypeEsperado, bodyEsperado
+                ).andDo(print());
+    }
+
+    @Test
+    @DisplayName("Lanza excepcion cuando el nombre no existe")
+    @Order(7)
+    public void obtenerJugadorPorNombreNotFound() throws Exception {
+        //ARRANGE
+        String notExistingName = "John Doe";
+        ErrorDTO mensajeEsperado = new ErrorDTO("Jugador no encontrado");
+
+        ResultMatcher statusEsperado = status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(mensajeEsperado));
+
+        //ACT && ASSERT
+        mockMvc.perform(get("/jugador")
+                        .param("nombre", notExistingName))
+                .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
+                .andDo(print());
+    }
 }
