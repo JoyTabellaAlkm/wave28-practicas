@@ -38,6 +38,11 @@ class RomanNumeralsApplicationTests {
     performTest("15", "XV");
   }
 
+  @Test
+  void fiftyShouldBeL() throws Exception {
+    performTest("50", "L");
+  }
+
   private void performTest(String decimal, String roman) throws Exception {
     this.mockMvc.perform(get("/" + decimal))
         .andDo(print())
