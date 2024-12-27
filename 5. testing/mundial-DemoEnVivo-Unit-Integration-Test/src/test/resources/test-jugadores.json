@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lionel Messi",
+    "pais": "Argentina",
+    "goles": 91
+  },
+  {
+    "id": 2,
+    "nombre": "Cristiano Ronaldo",
+    "pais": "Portugal",
+    "goles": 85
+  },
+  {
+    "id": 3,
+    "nombre": "Neymar Jr",
+    "pais": "Brasil",
+    "goles": 77
+  },
+  {
+    "id": 4,
+    "nombre": "Kylian Mbappé",
+    "pais": "Francia",
+    "goles": 52
+  },
+  {
+    "id": 5,
+    "nombre": "Luis Suárez",
+    "pais": "Uruguay",
+    "goles": 68
+  }
+]
