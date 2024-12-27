@@ -1,12 +1,9 @@
 package com.meli.obtenerdiploma.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.*;
-
+@EqualsAndHashCode
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
