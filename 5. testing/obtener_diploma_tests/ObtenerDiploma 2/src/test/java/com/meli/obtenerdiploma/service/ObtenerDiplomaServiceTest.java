@@ -1,9 +1,8 @@
-package com.meli.obtenerdiploma;
+package com.meli.obtenerdiploma.service;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
-import com.meli.obtenerdiploma.service.ObtenerDiplomaService;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -126,7 +125,7 @@ public class ObtenerDiplomaServiceTest {
     }
 
     @Test
-    void testMessageExactAverage9() {
+    void testMessageExactAverage() {
         List<SubjectDTO> subjects = List.of(new SubjectDTO("Math", 9.0),
                 new SubjectDTO("English", 9.0),
                 new SubjectDTO("Science", 9.0));

@@ -1,9 +1,8 @@
-package com.meli.obtenerdiploma;
+package com.meli.obtenerdiploma.repository;
 
 
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
-import com.meli.obtenerdiploma.repository.StudentDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
