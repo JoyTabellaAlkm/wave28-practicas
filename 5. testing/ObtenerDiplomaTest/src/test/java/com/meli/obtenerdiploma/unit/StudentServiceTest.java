@@ -32,7 +32,7 @@ class StudentServiceTest {
     @Test
     public void create() { // same as update
         // Arrange
-        StudentDTO student = new StudentDTO(1L, "Inaki", "", 7.0, null);
+        StudentDTO student = new StudentDTO(1L, "Agustin", "", 9.0, null);
 
         // Act
         doNothing().when(studentDAO).save(student);
@@ -59,13 +59,12 @@ class StudentServiceTest {
     @Test
     void delete() {
         // Arrange
-        StudentDTO student = new StudentDTO(1L, "Inaki", "", 7.0, null);
-
+        Long studentId = 2L;
         // Act
-        doNothing().when(studentDAO).delete(student.getId());
-        studentService.delete(student.getId());
+        Mockito.when(studentDAO.delete(studentId)).thenReturn(true);
+        studentService.delete(studentId);
         // Assert
-        Mockito.verify(studentDAO, Mockito.times(1)).delete(student.getId());
+        Mockito.verify(studentDAO, Mockito.times(1)).delete(studentId);
     }
 
     @Test

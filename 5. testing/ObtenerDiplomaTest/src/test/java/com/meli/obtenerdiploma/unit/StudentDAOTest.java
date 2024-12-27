@@ -20,7 +20,7 @@ public class StudentDAOTest {
     @Test
     public void saveTest(){
         // Arrange
-        StudentDTO student = new StudentDTO(1L, "Inaki", "", 7.0,null);
+        StudentDTO student = new StudentDTO(1L, "Camila", "", 8.0,null);
         // Act
         studentDAO.save(student);
         // Assert
@@ -30,7 +30,7 @@ public class StudentDAOTest {
     @Test
     public void deleteTest(){
         // Arrange
-        StudentDTO student = new StudentDTO(1L, "Inaki", "", 7.0,null);
+        StudentDTO student = new StudentDTO(1L, "Martin", "", 10.0,null);
         studentDAO.save(student);
         // Act
         studentDAO.delete(student.getId());
@@ -41,7 +41,7 @@ public class StudentDAOTest {
     @Test
     public void deleteTestNotFound(){
         // Arrange
-        StudentDTO student = new StudentDTO(999L, "Inaki", "", 7.0,null);
+        StudentDTO student = new StudentDTO(999L, "Tomas", "", 6.0,null);
         // Act & Assert
         assertFalse(studentDAO.delete(student.getId()));
     }
@@ -68,7 +68,7 @@ public class StudentDAOTest {
     @Test
     public void existsTest(){
         // Arrange
-        StudentDTO student = new StudentDTO(1L, "Inaki", "", 7.0,null);
+        StudentDTO student = new StudentDTO(1L, "Franco", "", 3.0,null);
         studentDAO.save(student);
         // Act
         boolean exists = studentDAO.exists(student);
