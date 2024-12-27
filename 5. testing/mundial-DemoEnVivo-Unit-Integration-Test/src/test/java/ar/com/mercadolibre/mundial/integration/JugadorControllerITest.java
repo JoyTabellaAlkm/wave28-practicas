@@ -1,16 +1,19 @@
 package ar.com.mercadolibre.mundial.integration;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
+import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.junit.jupiter.api.*;
+import org.mockito.internal.matchers.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -19,12 +22,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class JugadorControllerITest {
 
     @Autowired
@@ -57,7 +62,7 @@ public class JugadorControllerITest {
     ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    @DisplayName("Obtiene un jugador por su ID")
+    @DisplayName("1 - Obtiene un jugador por su ID")
     @Order(1)
     public void obtenerJugadorPorIdOk() throws Exception {
 
@@ -76,7 +81,7 @@ public class JugadorControllerITest {
     }
 
     @Test
-    @DisplayName("Lanza excepcion cuando ID no existe")
+    @DisplayName("2 - Lanza excepcion cuando ID no existe")
     @Order(2)
     public void obtenerJugadorPorIdNotFound() throws Exception {
 
@@ -95,7 +100,7 @@ public class JugadorControllerITest {
     }
 
     @Test
-    @DisplayName("Obtiene la lista de jugadores ordenados por cantidad de goles")
+    @DisplayName("3 - Obtiene la lista de jugadores ordenados por cantidad de goles")
     @Order(3)
     public void obtenerJugadoresOrdenadosPorGolesOk() throws Exception {
 
@@ -109,6 +114,87 @@ public class JugadorControllerITest {
                 .andExpectAll(
                         statusEsperado, contentTypeEsperado, bodyEsperado
                 ).andDo(print());
+    }
+
+    @Test
+    @DisplayName("4 - Registra jugador ok")
+    @Order(4)
+    public void registrarJugador() throws Exception {
+
+
+        ObjectWriter objectWriter = objectMapper.writer();
+        String jsonString = objectWriter.writeValueAsString(new JugadorDTO(21,"Juan","Peru", 4));
+
+        //ARRANGE
+        ResultMatcher statusEsperado= status().isCreated();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(new MensajeDTO("Jugador registrado")));
+
+
+
+        mockMvc.perform(post("/jugador")
+                        .content(jsonString)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        statusEsperado, contentTypeEsperado, bodyEsperado
+                ).andDo(print());
+    }
+
+    @Test
+    @DisplayName("5 - Registra jugador ya existente")
+    @Order(5)
+    public void registrarJugadorException() throws Exception {
+
+
+        ObjectWriter objectWriter = objectMapper.writer();
+        String jsonString = objectWriter.writeValueAsString(new JugadorDTO(1,"Juan","Peru", 4));
+
+        //ARRANGE
+        ResultMatcher statusEsperado= status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(new ErrorDTO("Ya existe un jugador con este ID")));
+
+
+
+        mockMvc.perform(post("/jugador")
+                        .content(jsonString)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        statusEsperado, contentTypeEsperado, bodyEsperado
+                ).andDo(print());
+    }
+
+
+    @Test
+    @DisplayName("6 - Obtener jugador por nombre Ok")
+    @Order(6)
+    public void obtenerPorNombre() throws Exception {
+
+        String parametroEntrada = "Lionel Messi";
+        ResultMatcher statusEsperado= status().isOk();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(new JugadorDTO(1,"Lionel Messi","Argentina", 91)));
+
+        mockMvc.perform(get("/jugador").param("nombre",parametroEntrada))
+                .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
+                .andDo(print());
+
+    }
+
+    @Test
+    @DisplayName("7 - Obtener jugador por nombre inexistente")
+    @Order(7)
+    public void obtenerPorNombreException() throws Exception {
+
+        String parametroEntrada = "Lucas Caraballo";
+        ResultMatcher statusEsperado= status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(new ErrorDTO("Jugador no encontrado")));
+
+        mockMvc.perform(get("/jugador").param("nombre",parametroEntrada))
+                .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
+                .andDo(print());
+
     }
 
 }

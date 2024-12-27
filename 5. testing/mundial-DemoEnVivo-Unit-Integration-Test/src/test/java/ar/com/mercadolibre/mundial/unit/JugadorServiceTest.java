@@ -2,6 +2,7 @@ package ar.com.mercadolibre.mundial.unit;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
 import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import ar.com.mercadolibre.mundial.repository.JugadorRepository;
 import ar.com.mercadolibre.mundial.services.impl.JugadorServiceImpl;
@@ -146,4 +147,40 @@ class JugadorServiceTest {
         assertEquals(jugadorEsperadoDTO, jugadorObtenido, "El jugador debería ser el esperado");
         verify(jugadorRepository, times(1)).cargarJugadores();
     }
+
+    @Test
+    @DisplayName("Registrar usuario")
+    void registerPlayer(){
+        // ARRANGE
+        JugadorDTO jugadorDTO = new JugadorDTO(21,"Marcelo","Brasil",60);
+        Jugador jugador = objectMapper.convertValue(jugadorDTO, Jugador.class);
+
+        // ACT
+        when(jugadorRepository.save(jugador)).thenReturn(jugador);
+        MensajeDTO mensaje = jugadorService.registrarJugador(jugadorDTO);
+
+        //ASSERT
+        assertEquals("Jugador registrado", mensaje.getMensaje());
+    }
+
+    @Test
+    @DisplayName("Registrar usuario lanza exception")
+    void registerPlayerException() {
+        // ARRANGE
+        JugadorDTO jugadorDTO = new JugadorDTO(1, "Marcelo", "Brasil", 60);
+        Jugador jugador = objectMapper.convertValue(jugadorDTO, Jugador.class);
+
+
+        when(jugadorRepository.exist(jugador.getId())).thenReturn(true);
+
+
+        // ACT & ASSERT
+        assertThrows(IllegalArgumentException.class, () -> {jugadorService.registrarJugador(jugadorDTO);
+        });
+
+    }
+
+
+
+
 }
