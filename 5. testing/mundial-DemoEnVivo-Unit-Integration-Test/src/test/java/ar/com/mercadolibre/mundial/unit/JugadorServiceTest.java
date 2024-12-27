@@ -2,6 +2,7 @@ package ar.com.mercadolibre.mundial.unit;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
 import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import ar.com.mercadolibre.mundial.repository.JugadorRepository;
 import ar.com.mercadolibre.mundial.services.impl.JugadorServiceImpl;
@@ -145,5 +146,31 @@ class JugadorServiceTest {
         assertNotNull(jugadorObtenido, "El jugador no debería ser null");
         assertEquals(jugadorEsperadoDTO, jugadorObtenido, "El jugador debería ser el esperado");
         verify(jugadorRepository, times(1)).cargarJugadores();
+    }
+
+    @Test
+    @DisplayName("5 - Validar que el metodo de registrar jugador registre correctamente un nuevo jugador")
+    @Order(5)
+    void registerPlayerWhenPlayerIdIsCorrectANewPlayerShouldBeCreated(){
+        JugadorDTO jugadorAGuardar = new JugadorDTO(1, "Lionel Messi", "Argentina", 91);
+        Jugador jugadorGuardado = new Jugador(1, "Lionel Messi", "Argentina", 91);
+        MensajeDTO mensajeEsperado = new MensajeDTO("Jugador registrado");
+
+        when(jugadorRepository.exist(jugadorAGuardar.getId())).thenReturn(false);
+        when(jugadorRepository.save(jugadorGuardado)).thenReturn(jugadorGuardado);
+        MensajeDTO mensajeObtenido = jugadorService.registrarJugador(jugadorAGuardar);
+
+        assertEquals(mensajeEsperado, mensajeObtenido);
+    }
+
+    @Test
+    @DisplayName("6 - Validar que el metodo de registrar jugador lanza una IllegalArgumentException si el id de usuario ya existe")
+    @Order(6)
+    void registerPlayerWhenPlayerIdIsNotCorrectAnIllegalArgumentExceptionShouldBeThrown(){
+        JugadorDTO jugadorAGuardar = new JugadorDTO(1, "Lionel Messi", "Argentina", 91);
+        String errorEsperado = "Jugador registrado";
+
+        when(jugadorRepository.exist(jugadorAGuardar.getId())).thenReturn(true);
+        assertThrows(IllegalArgumentException.class, () -> jugadorService.registrarJugador(jugadorAGuardar), errorEsperado);
     }
 }

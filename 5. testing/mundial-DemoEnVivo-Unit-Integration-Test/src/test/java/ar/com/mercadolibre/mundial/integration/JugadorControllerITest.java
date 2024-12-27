@@ -1,16 +1,18 @@
 package ar.com.mercadolibre.mundial.integration;
 
 import ar.com.mercadolibre.mundial.dto.ErrorDTO;
+import ar.com.mercadolibre.mundial.dto.JugadorDTO;
+import ar.com.mercadolibre.mundial.dto.MensajeDTO;
 import ar.com.mercadolibre.mundial.models.Jugador;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -19,12 +21,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class JugadorControllerITest {
 
     @Autowired
@@ -111,4 +115,43 @@ public class JugadorControllerITest {
                 ).andDo(print());
     }
 
+    @Test
+    @DisplayName("Debe registrar correctamente a un jugador")
+    @Order(4)
+    public void whenIdIsCorrectANewPlayerShouldBeCreated() throws Exception {
+        JugadorDTO jugadorARegistrar = new JugadorDTO(21, "Lionel Messi", "Argentina", 91);
+        MensajeDTO mensajeEsperado = new MensajeDTO("Jugador registrado");
+        ResultMatcher statusEsperado = status().isCreated();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(mensajeEsperado));
+
+        ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
+        String requestBody = objectWriter.writeValueAsString(jugadorARegistrar);
+
+        mockMvc.perform(post("/jugador")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(requestBody))
+                .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
+                .andDo(print());
+    }
+
+    @Test
+    @DisplayName("Debe lanzar una excepcion si al registrar un jugador el id ya existe")
+    @Order(5)
+    public void whenIdIsAlreadyCreatedAnIllegalArgumentExceptionShouldBeThrown() throws Exception {
+        JugadorDTO jugadorARegistrar = new JugadorDTO(1, "Lionel Messi", "Argentina", 91);
+        ErrorDTO errorEsperado = new ErrorDTO("Ya existe un jugador con este ID");
+        ResultMatcher statusEsperado = status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(errorEsperado));
+
+        ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
+        String requestBody = objectWriter.writeValueAsString(jugadorARegistrar);
+
+        mockMvc.perform(post("/jugador")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpectAll(statusEsperado, contentTypeEsperado, bodyEsperado)
+                .andDo(print());
+    }
 }

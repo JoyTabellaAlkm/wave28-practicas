@@ -50,6 +50,7 @@ public class JugadorRepositoryImpl implements JugadorRepository {
     @Override
     public Jugador save(Jugador jugador) {
         jugadoresList.add(jugador);
+
         return jugador;
     }
 
