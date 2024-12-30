@@ -117,4 +117,81 @@ public class JugadorControllerITest {
                         statusEsperado, contentTypeEsperado, bodyEsperado
                 ).andDo(print());
     }
+
+    @Test
+    @DisplayName("Validar que al registrar un jugador funcione correctamente")
+    @Order(4)
+    public void registerPlayerIsOk() throws Exception{
+        //Arrange
+        ResultMatcher statusEsperado = status().isCreated();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+
+        String body = objectMapper.writeValueAsString(jugadorNuevo);
+
+        //ACT && ASSERT
+        mockMvc.perform(post("/jugador")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(body))
+                .andExpect(statusEsperado)
+                .andExpect(contentTypeEsperado)
+                .andExpect(jsonPath("$.mensaje").value("Jugador registrado"));
+    }
+
+    @Test
+    @DisplayName("Si no consigue el jugador lanzar excepcion y codigo de status correspondiente ")
+    @Order(5)
+    public void registerPlayerIsNotFound() throws Exception {
+
+        ResultMatcher statusEsperado = status().isNotFound();
+        ResultMatcher contentTypeEsperado = content().contentType("application/json");
+        String body = objectMapper.writeValueAsString(jugadoresDePrueba.get(1));
+
+        mockMvc.perform(post("/jugador")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body))
+                .andExpect(contentTypeEsperado)
+                .andExpect(statusEsperado)
+                .andExpect(jsonPath("$.message").value("Ya existe un jugador con este ID"))
+                .andDo(print());
+
+    }
+
+
+    @Test
+    @DisplayName("Validar que cuando se busque por nombre, funcione correctamente")
+    @Order(6)
+    public void obtenerJugadorPorNombresOk() throws Exception {
+
+        //ARRANGE
+        ResultMatcher bodyEsperado = content().json(objectMapper.writeValueAsString(jugadoresDePrueba.get(1)));
+        String parametroEntrada = jugadoresDePrueba.get(1).getNombre();
+
+        //ACT && ASSERT
+        mockMvc.perform(get("/jugador")
+                        .param("nombre", parametroEntrada)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(bodyEsperado)
+                .andDo(print());
+        ;
+    }
+
+    @Test
+    @DisplayName("Cuando el jugador no existe, verificar excepciones")
+    @Order(7)
+    public void obtenerJugadorPorNombreIsNotFound() throws Exception{
+
+        //ARRANGE
+        String name = "Pepe";
+
+        //ACT && ASSERT
+        mockMvc.perform(get("/jugador")
+                        .param("nombre", name)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message").value("Jugador no encontrado"))
+                .andDo(print());
+        ;
+
+    }
 }
