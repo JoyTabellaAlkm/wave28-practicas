@@ -147,5 +147,43 @@ class JugadorServiceTest {
         verify(jugadorRepository, times(1)).cargarJugadores();
     }
 
+    @Test
+    @DisplayName("5- Validar que el metodo de registrar jugador funcione correctamente ")
+    @Order(5)
+    void whenRegisterPlayer_shouldReturnOk(){
+        //ARRANGE
+        JugadorDTO jugadorNuevo =  new JugadorDTO(100, "Maria", "Venezuela", 1);
+        List<Jugador> jugadoresList = Arrays.asList(
+                new Jugador(100, "Maria", "Venezuela", 1),
+                new Jugador(2, "Cristiano Ronaldo", "Portugal", 90));
+
+        //ACT
+        when(jugadorRepository.cargarJugadores()).thenReturn(jugadoresList);
+        JugadorDTO jugadorObtenido = jugadorService.obtenerJugadorPorNombre(jugadorNuevo.getNombre());
+
+        //ASSERT
+        assertNotNull(jugadorObtenido, "El jugador no deberia ser nulo");
+        assertEquals(jugadorNuevo, jugadorObtenido, "El jugador obtenido no es igual al enviado");
+        verify(jugadorRepository, times(1)).cargarJugadores();
+    }
+
+    @Test
+    @DisplayName("Valida que si el jugador ya existe no deje crear otro y lanzar la excepcion correspondiente")
+    @Order(6)
+    void whenRegisterPlayer_shouldReturnThrownException(){
+        //ARRANGE
+        JugadorDTO jugadorNuevo =  new JugadorDTO(1, "Maria", "Venezuela", 1);
+        ErrorDTO exceptionEsperada = new ErrorDTO("Ya existe un jugador con este ID");
+
+        // ACT
+        when(jugadorRepository.exist(1)).thenReturn(true);
+        IllegalArgumentException thrownException = assertThrows(IllegalArgumentException.class,
+                () -> jugadorService.registrarJugador(jugadorNuevo)
+        );
+
+        //ASSERT
+        assertEquals(exceptionEsperada.getMessage(), thrownException.getMessage());
+        verify(jugadorRepository, times(1)).exist(1);
+    }
 
 }
