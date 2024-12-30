@@ -138,7 +138,7 @@ public class StudentDAOTest {
         );
 
         //ASSERT
-        Assertions.assertEquals(messageExpected, exception.getError().getDescription(), "No se encuentra un estudiante existente");
+        Assertions.assertEquals(messageExpected, exception.getError().getDescription(), "Se encuentra un estudiante inexistente");
     }
 
 }
