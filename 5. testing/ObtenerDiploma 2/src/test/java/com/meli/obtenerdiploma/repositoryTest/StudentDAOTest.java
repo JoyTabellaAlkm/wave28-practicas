@@ -7,8 +7,7 @@ import com.meli.obtenerdiploma.repository.IStudentDAO;
 import com.meli.obtenerdiploma.repository.IStudentRepository;
 import com.meli.obtenerdiploma.repository.StudentDAO;
 import com.meli.obtenerdiploma.repository.StudentRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class StudentDAOTest {
     private static final StudentDTO student1 = new StudentDTO(1L, "Juan", null, null,
             List.of(
@@ -45,11 +45,11 @@ public class StudentDAOTest {
     IStudentRepository studentRepository = new StudentRepository();
 
     @Test
+    @Order(1)
     public void saveTest(){
 
         //ARRANGE
         Set<StudentDTO> studentsExpected = Set.of(student1,student2, student3);
-
         //ACT
         studentDAO.save(student3);
 
@@ -60,9 +60,11 @@ public class StudentDAOTest {
 
 
     @Test
+    @Order(2)
     public void deleteTest(){
         //ARRANGE
         Set<StudentDTO> studentsExpected = Set.of(student1,student2);
+
 
         //ACT
         studentDAO.delete(3L);
@@ -72,6 +74,7 @@ public class StudentDAOTest {
     }
 
     @Test
+    @Order(3)
     public void deleteFailTest(){
         //ARRANGE
         Long idDelete= 3L;
@@ -97,6 +100,19 @@ public class StudentDAOTest {
     }
 
     @Test
+    public void existsFailTest(){
+        //ARRANGE
+        StudentDTO student= student3;
+
+
+        //ACT
+        boolean obtained = studentDAO.exists(student);
+
+        //ASSERT
+        Assertions.assertFalse(obtained, "Se muestra que encontró un estudiante inexistente");
+    }
+
+    @Test
     public void findByIdTest(){
         //ARRANGE
         Long idFind= 2L;
@@ -107,6 +123,22 @@ public class StudentDAOTest {
 
         //ASSERT
         Assertions.assertEquals(studentObtained, studentExpected, "No se encuentra un estudiante existente");
+    }
+
+    @Test
+    public void findByIdFailTest(){
+        //ARRANGE
+        Long idFind= 3L;
+        String messageExpected = "El alumno con Id " + idFind + " no se encuetra registrado.";
+
+        //ACT
+        StudentNotFoundException exception = Assertions.assertThrows(
+                StudentNotFoundException.class,
+                () -> studentDAO.findById(idFind)
+        );
+
+        //ASSERT
+        Assertions.assertEquals(messageExpected, exception.getError().getDescription(), "No se encuentra un estudiante existente");
     }
 
 }
