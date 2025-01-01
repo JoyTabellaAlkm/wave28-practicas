@@ -27,17 +27,16 @@ public class ObtenerDiplomaServiceTest {
     @Test
     public void analyzeScores() {
         //arrange
-        Long id = 1L;
-        StudentDTO stu = new StudentDTO(id, "Geraldo", "mensaje1", 4.0,
+        StudentDTO stu = new StudentDTO(1L, "Geraldo", "mensaje1", 4.0,
                 List.of(new SubjectDTO("Ciencias", 9.0)));
 
-        when(studentDAO.findById(id)).thenReturn(stu);
+        when(studentDAO.findById(stu.getId())).thenReturn(stu);
 
         //act
-        obtenerDiplomaService.analyzeScores(id);
+        obtenerDiplomaService.analyzeScores(stu.getId());
         //assert
-        verify(studentDAO, atLeastOnce()).findById(id);
-        assertEquals(9.0, studentDAO.findById(id).getAverageScore());
+        verify(studentDAO, atLeastOnce()).findById(stu.getId());
+        assertEquals(9.0, studentDAO.findById(stu.getId()).getAverageScore());
     }
 
     @Test
