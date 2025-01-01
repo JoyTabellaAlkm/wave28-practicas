@@ -42,16 +42,16 @@ public class ObtenerDiplomaServiceTest {
     @Test
     public void analyzeScoresMessage() {
         //arrange
-        Long id = 1L;
-        StudentDTO stu = new StudentDTO(id, "Geraldo", "mensaje1", 4.0,
+        //Long id = 1L;
+        StudentDTO stu = new StudentDTO(1L, "Geraldo", "mensaje1", 4.0,
                 List.of(new SubjectDTO("Ciencias", 9.0)));
 
-        when(studentDAO.findById(id)).thenReturn(stu);
+        when(studentDAO.findById(stu.getId())).thenReturn(stu);
 
         //act
-        obtenerDiplomaService.analyzeScores(id);
+        obtenerDiplomaService.analyzeScores(stu.getId());
         //assert
-        verify(studentDAO, atLeastOnce()).findById(id);
+        verify(studentDAO, atLeastOnce()).findById(stu.getId());
         assertEquals("El alumno Geraldo ha obtenido un promedio de 9. Puedes mejorar.", stu.getMessage());
     }
 
