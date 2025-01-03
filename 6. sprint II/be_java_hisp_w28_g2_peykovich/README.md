@@ -153,6 +153,8 @@ Se agregaron otros tests unitarios extras para aumentar el coverage.
 | **10** | `/products/promo-post`                                                                                  | David Alexander Arias Parra  |
 | **11** | `/products/promo-post/count?user_id={userId}`                                                           | Hugo Nicolás Peykovich       |
 
+#### El Proyecto alcanzó un coverage total del 100% en las metricas de Class y Method, un 99% en Line, y un 96% en Branch. Este coverage garantiza que el proyecto cumple con altos estandares de calidad.
+
 ## Integrantes - Equipo 2
 
 - Ariana Luz Manusovich
