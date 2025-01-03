@@ -1,0 +1,252 @@
+[
+  {
+    "buyer": {
+      "id": 1,
+      "name": "Aspen Fernández"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 2,
+      "name": "Celeste Blanco"
+    },
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    }
+  },
+  {
+    "buyer": {
+      "id": 3,
+      "name": "Rowan Blanco"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 3,
+      "name": "Rowan Blanco"
+    },
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    }
+  },
+  {
+    "buyer": {
+      "id": 4,
+      "name": "Aurora Ramírez"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 5,
+      "name": "Jamie Ortega"
+    },
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    }
+  },
+  {
+    "buyer": {
+      "id": 6,
+      "name": "Sasha Serrano"
+    },
+    "seller": {
+      "id": 3,
+      "name": "Carlos Martínez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 7,
+      "name": "Índigo Díaz"
+    },
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    }
+  },
+  {
+    "buyer": {
+      "id": 8,
+      "name": "Sasha Rubio"
+    },
+    "seller": {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    }
+  },
+  {
+    "buyer": {
+      "id": 9,
+      "name": "River Sánchez"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 10,
+      "name": "Atlas Castillo"
+    },
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    }
+  },
+  {
+    "buyer": {
+      "id": 11,
+      "name": "Morgan Medina"
+    },
+    "seller": {
+      "id": 3,
+      "name": "Carlos Martínez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 12,
+      "name": "Jasper Núñez"
+    },
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    }
+  },
+  {
+    "buyer": {
+      "id": 13,
+      "name": "Rhys Núñez"
+    },
+    "seller": {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    }
+  },
+  {
+    "buyer": {
+      "id": 14,
+      "name": "Atlas López"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 15,
+      "name": "Jamie López"
+    },
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    }
+  },
+  {
+    "buyer": {
+      "id": 16,
+      "name": "Morgan Flores"
+    },
+    "seller": {
+      "id": 3,
+      "name": "Carlos Martínez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 17,
+      "name": "Jasper López"
+    },
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    }
+  },
+  {
+    "buyer": {
+      "id": 18,
+      "name": "Blake Serrano"
+    },
+    "seller": {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    }
+  },
+  {
+    "buyer": {
+      "id": 19,
+      "name": "Riley Ortega"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 20,
+      "name": "Silas Flores"
+    },
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 20,
+      "name": "Silas Flores"
+    },
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    }
+  },
+  {
+    "buyer": {
+      "id": 20,
+      "name": "Silas Flores"
+    },
+    "seller": {
+      "id": 3,
+      "name": "Carlos Martínez"
+    }
+  },
+  {
+    "buyer": {
+      "id": 20,
+      "name": "Silas Flores"
+    },
+    "seller": {
+      "id": 4,
+      "name": "Ana García"
+    }
+  },
+  {
+    "buyer": {
+      "id": 20,
+      "name": "Silas Flores"
+    },
+    "seller": {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    }
+  }
+]
