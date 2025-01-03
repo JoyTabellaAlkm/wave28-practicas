@@ -1,0 +1,34 @@
+[
+  {
+    "product_id": 101,
+    "product_name": "Silla Gamer",
+    "type": "Gamer",
+    "brand": "Racer",
+    "color": "Red & Black",
+    "notes": "Special Edition"
+  },
+  {
+    "product_id": 102,
+    "product_name": "Teclado Mecánico",
+    "type": "Teclado",
+    "brand": "Logitech",
+    "color": "Black",
+    "notes": "RGB Backlit"
+  },
+  {
+    "product_id": 103,
+    "product_name": "Mouse Gamer",
+    "type": "Gamer",
+    "brand": "Razer",
+    "color": "Green",
+    "notes": "Wireless"
+  },
+  {
+    "product_id": 104,
+    "product_name": "Monitor Gamer",
+    "type": "Gamer",
+    "brand": "AOC",
+    "color": "Black",
+    "notes": "Curved"
+  }
+]
