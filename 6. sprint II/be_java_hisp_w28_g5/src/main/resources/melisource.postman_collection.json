@@ -1,0 +1,5100 @@
+{
+	"info": {
+		"_postman_id": "6e8f3621-4bb6-475b-9044-76c7cdf3f804",
+		"name": "Meli collection",
+		"description": "Mercado Libre sigue creciendo y para el año que viene tiene como objetivo empezar a implementar una serie de herramientas que permitan a los compradores y vendedores tener una experiencia totalmente innovadora, en donde el lazo que los una sea mucho más cercano.\n\nLa fecha de lanzamiento se aproxima, por lo cual es necesaria la presentación de una versión Beta de lo que va a ser conocido como “SocialMeli”, en donde los compradores van a poder seguir a sus vendedores favoritos y enterarse de todas las novedades que los mismos posteen.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40393267",
+		"_collection_link": "https://grupo-5-4311.postman.co/workspace/Bootcamp-Sprint-1~70d9d9c5-bab8-489b-8631-b8a1268c7348/collection/40207081-6e8f3621-4bb6-475b-9044-76c7cdf3f804?action=share&source=collection_link&creator=40393267"
+	},
+	"item": [
+		{
+			"name": "Init data",
+			"item": [
+				{
+					"name": "CREATE USERS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {",
+									"  pm.response.to.have.status(201);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\"name\": \"Tomas Peiretti\"},\n    {\"name\": \"Francisco Caloia\"},\n    {\"name\": \"Zully Martinez\"},\n    {\"name\": \"Mauricio Rodriguez\"},\n    {\"name\": \"Nicolas Arias\"},\n    {\"name\": \"Juan Vecchio\"}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/createMultiple",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"createMultiple"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\"name\": \"Tomas Peiretti\"},\n    {\"name\": \"Francisco Caloia\"},\n    {\"name\": \"Zully Martinez\"},\n    {\"name\": \"Mauricio Rodriguez\"},\n    {\"name\": \"Nicolas Arias\"},\n    {\"name\": \"Juan Vecchio\"}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/createMultiple",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"createMultiple"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:00:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"user_id\": 0,\n        \"user_name\": \"Tomas Peiretti\"\n    },\n    {\n        \"user_id\": 1,\n        \"user_name\": \"Francisco Caloia\"\n    },\n    {\n        \"user_id\": 2,\n        \"user_name\": \"Zully Martinez\"\n    },\n    {\n        \"user_id\": 3,\n        \"user_name\": \"Mauricio Rodriguez\"\n    },\n    {\n        \"user_id\": 4,\n        \"user_name\": \"Nicolas Arias\"\n    },\n    {\n        \"user_id\": 5,\n        \"user_name\": \"Juan Vecchio\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "CREATE POSTS & PRODUCTS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {",
+									"  pm.response.to.have.status(201);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"user_id\": 1,\n    \"date\": \"13-12-2024\",\n    \"product\": {\n        \"product_id\":1,\n      \"product_name\": \"Wireless Headphones\",\n      \"type\": \"Electronics1\",\n      \"brand\": \"Sony\",\n      \"color\": \"Black\",\n      \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 1,\n    \"price\": 199.99\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\":2,\n      \"product_name\": \"Leather Jacket\",\n      \"type\": \"Apparel\",\n      \"brand\": \"Gucci\",\n      \"color\": \"Brown\",\n      \"notes\": \"Brand new with tags\"\n    },\n    \"category\": 6,\n    \"price\": 799.99\n  },\n  {\n    \"user_id\": 3,\n    \"date\": \"11-12-2024\",\n    \"product\": {\n        \"product_id\":3,\n      \"product_name\": \"Laptop\",\n      \"name\": \"Laptop\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Apple\",\n      \"color\": \"Space Gray\",\n      \"notes\": \"Almost new, comes with accessories\"\n    },\n    \"category\": 51,\n    \"price\": 1499.99\n  },\n  {\n    \"user_id\": 4,\n    \"date\": \"10-12-2024\",\n    \"product\": {\n        \"product_id\":4,\n      \"product_name\": \"Smartphone\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Samsung\",\n      \"color\": \"White\",\n      \"notes\": \"Used, minor scratches\"\n    },\n    \"category\": 96,\n    \"price\": 899.99\n  },\n  {\n    \"user_id\": 5,\n    \"date\": \"09-12-2024\",\n    \"product\": {\n        \"product_id\":5,\n      \"product_name\": \"Tennis Shoes\",\n      \"type\": \"Footwear\",\n      \"brand\": \"Nike\",\n      \"color\": \"Red/White\",\n      \"notes\": \"Brand new, never worn\"\n    },\n    \"category\": 51,\n    \"price\": 120.00\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"08-12-2024\",\n    \"product\": {\n        \"product_id\":6,\n      \"product_name\": \"4K TV\",\n      \"type\": \"Electronics\",\n      \"brand\": \"LG\",\n      \"color\": \"Black\",\n      \"notes\": \"Used, excellent condition\"\n    },\n    \"category\": 82,\n    \"price\": 999.99\n  },\n  {\n    \"user_id\": 1,\n    \"date\": \"07-12-2024\",\n    \"product\": {\n        \"product_id\":7,\n      \"product_name\": \"Gaming Console\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Microsoft\",\n      \"color\": \"Black\",\n      \"notes\": \"Like new, comes with two controllers\"\n    },\n    \"category\": 22,\n    \"price\": 499.99\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"06-12-2024\",\n    \"product\": {\n        \"product_id\":8,\n      \"product_name\": \"Designer Handbag\",\n      \"type\": \"Fashion\",\n      \"brand\": \"Louis Vuitton\",\n      \"color\": \"Monogram Brown\",\n      \"notes\": \"Used but in excellent condition\"\n    },\n    \"category\": 85,\n    \"price\": 1200.00\n  },\n  {\n    \"user_id\": 3,\n    \"date\": \"05-12-2024\",\n    \"product\": {\n        \"product_id\":9,\n      \"product_name\": \"Bluetooth Speaker\",\n      \"type\": \"Electronics\",\n      \"brand\": \"JBL\",\n      \"color\": \"Blue\",\n      \"notes\": \"Good condition, minor scratches\"\n    },\n    \"category\": 9,\n    \"price\": 79.99\n  },\n  {\n    \"user_id\": 4,\n    \"date\": \"04-12-2024\",\n    \"product\": {\n        \"product_id\":10,\n      \"product_name\": \"Smartwatch\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Fitbit\",\n      \"color\": \"Black\",\n      \"notes\": \"Brand new, never used\"\n    },\n    \"category\": 15,\n    \"price\": 199.99\n  },\n  {\n    \"user_id\": 5,\n    \"date\": \"03-12-2024\",\n    \"product\": {\n        \"product_id\":11,\n      \"product_name\": \"Winter Coat\",\n      \"type\": \"Apparel\",\n      \"brand\": \"Columbia\",\n      \"color\": \"Navy Blue\",\n      \"notes\": \"Gently used, no visible damage\"\n    },\n    \"category\": 44,\n    \"price\": 160.00\n  },\n  {\n    \"user_id\": 1,\n    \"date\": \"02-12-2024\",\n    \"product\": {\n        \"product_id\":12,\n      \"product_name\": \"Digital Camera\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Canon\",\n      \"color\": \"Black\",\n      \"notes\": \"Almost new, comes with lens and case\"\n    },\n    \"category\": 12,\n    \"price\": 649.99\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/posts/createMultiple",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								"createMultiple"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"user_id\": 1,\n    \"date\": \"13-12-2024\",\n    \"product\": {\n      \"product_name\": \"Wireless Headphones\",\n      \"type\": \"Electronics1\",\n      \"brand\": \"Sony\",\n      \"color\": \"Black\",\n      \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 1,\n    \"price\": 199.99\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n      \"product_name\": \"Leather Jacket\",\n      \"type\": \"Apparel\",\n      \"brand\": \"Gucci\",\n      \"color\": \"Brown\",\n      \"notes\": \"Brand new with tags\"\n    },\n    \"category\": 6,\n    \"price\": 799.99\n  },\n  {\n    \"user_id\": 3,\n    \"date\": \"11-12-2024\",\n    \"product\": {\n      \"product_name\": \"Laptop\",\n      \"name\": \"Laptop\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Apple\",\n      \"color\": \"Space Gray\",\n      \"notes\": \"Almost new, comes with accessories\"\n    },\n    \"category\": 51,\n    \"price\": 1499.99\n  },\n  {\n    \"user_id\": 4,\n    \"date\": \"10-12-2024\",\n    \"product\": {\n      \"product_name\": \"Smartphone\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Samsung\",\n      \"color\": \"White\",\n      \"notes\": \"Used, minor scratches\"\n    },\n    \"category\": 96,\n    \"price\": 899.99\n  },\n  {\n    \"user_id\": 5,\n    \"date\": \"09-12-2024\",\n    \"product\": {\n      \"product_name\": \"Tennis Shoes\",\n      \"type\": \"Footwear\",\n      \"brand\": \"Nike\",\n      \"color\": \"Red/White\",\n      \"notes\": \"Brand new, never worn\"\n    },\n    \"category\": 51,\n    \"price\": 120.00\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"08-12-2024\",\n    \"product\": {\n      \"product_name\": \"4K TV\",\n      \"type\": \"Electronics\",\n      \"brand\": \"LG\",\n      \"color\": \"Black\",\n      \"notes\": \"Used, excellent condition\"\n    },\n    \"category\": 82,\n    \"price\": 999.99\n  },\n  {\n    \"user_id\": 1,\n    \"date\": \"07-12-2024\",\n    \"product\": {\n      \"product_name\": \"Gaming Console\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Microsoft\",\n      \"color\": \"Black\",\n      \"notes\": \"Like new, comes with two controllers\"\n    },\n    \"category\": 22,\n    \"price\": 499.99\n  },\n  {\n    \"user_id\": 2,\n    \"date\": \"06-12-2024\",\n    \"product\": {\n      \"product_name\": \"Designer Handbag\",\n      \"type\": \"Fashion\",\n      \"brand\": \"Louis Vuitton\",\n      \"color\": \"Monogram Brown\",\n      \"notes\": \"Used but in excellent condition\"\n    },\n    \"category\": 85,\n    \"price\": 1200.00\n  },\n  {\n    \"user_id\": 3,\n    \"date\": \"05-12-2024\",\n    \"product\": {\n      \"product_name\": \"Bluetooth Speaker\",\n      \"type\": \"Electronics\",\n      \"brand\": \"JBL\",\n      \"color\": \"Blue\",\n      \"notes\": \"Good condition, minor scratches\"\n    },\n    \"category\": 9,\n    \"price\": 79.99\n  },\n  {\n    \"user_id\": 4,\n    \"date\": \"04-12-2024\",\n    \"product\": {\n      \"product_name\": \"Smartwatch\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Fitbit\",\n      \"color\": \"Black\",\n      \"notes\": \"Brand new, never used\"\n    },\n    \"category\": 15,\n    \"price\": 199.99\n  },\n  {\n    \"user_id\": 5,\n    \"date\": \"03-12-2024\",\n    \"product\": {\n      \"product_name\": \"Winter Coat\",\n      \"type\": \"Apparel\",\n      \"brand\": \"Columbia\",\n      \"color\": \"Navy Blue\",\n      \"notes\": \"Gently used, no visible damage\"\n    },\n    \"category\": 44,\n    \"price\": 160.00\n  },\n  {\n    \"user_id\": 1,\n    \"date\": \"02-12-2024\",\n    \"product\": {\n      \"product_name\": \"Digital Camera\",\n      \"type\": \"Electronics\",\n      \"brand\": \"Canon\",\n      \"color\": \"Black\",\n      \"notes\": \"Almost new, comes with lens and case\"\n    },\n    \"category\": 12,\n    \"price\": 649.99\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/posts/createMultiple",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"posts",
+										"createMultiple"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:01:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"date\": \"13-12-2024\",\n        \"category\": 1,\n        \"price\": 199.99,\n        \"product\": {\n            \"type\": \"Electronics1\",\n            \"brand\": \"Sony\",\n            \"color\": \"Black\",\n            \"notes\": \"Good condition, lightly used\",\n            \"product_id\": null,\n            \"product_name\": \"Wireless Headphones\"\n        },\n        \"post_id\": 1\n    },\n    {\n        \"date\": \"12-12-2024\",\n        \"category\": 6,\n        \"price\": 799.99,\n        \"product\": {\n            \"type\": \"Apparel\",\n            \"brand\": \"Gucci\",\n            \"color\": \"Brown\",\n            \"notes\": \"Brand new with tags\",\n            \"product_id\": null,\n            \"product_name\": \"Leather Jacket\"\n        },\n        \"post_id\": 2\n    },\n    {\n        \"date\": \"11-12-2024\",\n        \"category\": 51,\n        \"price\": 1499.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Apple\",\n            \"color\": \"Space Gray\",\n            \"notes\": \"Almost new, comes with accessories\",\n            \"product_id\": null,\n            \"product_name\": \"Laptop\"\n        },\n        \"post_id\": 3\n    },\n    {\n        \"date\": \"10-12-2024\",\n        \"category\": 96,\n        \"price\": 899.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Samsung\",\n            \"color\": \"White\",\n            \"notes\": \"Used, minor scratches\",\n            \"product_id\": null,\n            \"product_name\": \"Smartphone\"\n        },\n        \"post_id\": 4\n    },\n    {\n        \"date\": \"09-12-2024\",\n        \"category\": 51,\n        \"price\": 120,\n        \"product\": {\n            \"type\": \"Footwear\",\n            \"brand\": \"Nike\",\n            \"color\": \"Red/White\",\n            \"notes\": \"Brand new, never worn\",\n            \"product_id\": null,\n            \"product_name\": \"Tennis Shoes\"\n        },\n        \"post_id\": 5\n    },\n    {\n        \"date\": \"08-12-2024\",\n        \"category\": 82,\n        \"price\": 999.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"LG\",\n            \"color\": \"Black\",\n            \"notes\": \"Used, excellent condition\",\n            \"product_id\": null,\n            \"product_name\": \"4K TV\"\n        },\n        \"post_id\": 6\n    },\n    {\n        \"date\": \"07-12-2024\",\n        \"category\": 22,\n        \"price\": 499.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Microsoft\",\n            \"color\": \"Black\",\n            \"notes\": \"Like new, comes with two controllers\",\n            \"product_id\": null,\n            \"product_name\": \"Gaming Console\"\n        },\n        \"post_id\": 7\n    },\n    {\n        \"date\": \"06-12-2024\",\n        \"category\": 85,\n        \"price\": 1200,\n        \"product\": {\n            \"type\": \"Fashion\",\n            \"brand\": \"Louis Vuitton\",\n            \"color\": \"Monogram Brown\",\n            \"notes\": \"Used but in excellent condition\",\n            \"product_id\": null,\n            \"product_name\": \"Designer Handbag\"\n        },\n        \"post_id\": 8\n    },\n    {\n        \"date\": \"05-12-2024\",\n        \"category\": 9,\n        \"price\": 79.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"JBL\",\n            \"color\": \"Blue\",\n            \"notes\": \"Good condition, minor scratches\",\n            \"product_id\": null,\n            \"product_name\": \"Bluetooth Speaker\"\n        },\n        \"post_id\": 9\n    },\n    {\n        \"date\": \"04-12-2024\",\n        \"category\": 15,\n        \"price\": 199.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Fitbit\",\n            \"color\": \"Black\",\n            \"notes\": \"Brand new, never used\",\n            \"product_id\": null,\n            \"product_name\": \"Smartwatch\"\n        },\n        \"post_id\": 10\n    },\n    {\n        \"date\": \"03-12-2024\",\n        \"category\": 44,\n        \"price\": 160,\n        \"product\": {\n            \"type\": \"Apparel\",\n            \"brand\": \"Columbia\",\n            \"color\": \"Navy Blue\",\n            \"notes\": \"Gently used, no visible damage\",\n            \"product_id\": null,\n            \"product_name\": \"Winter Coat\"\n        },\n        \"post_id\": 11\n    },\n    {\n        \"date\": \"02-12-2024\",\n        \"category\": 12,\n        \"price\": 649.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Canon\",\n            \"color\": \"Black\",\n            \"notes\": \"Almost new, comes with lens and case\",\n            \"product_id\": null,\n            \"product_name\": \"Digital Camera\"\n        },\n        \"post_id\": 12\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "FOLLOW USERS 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/1/follow/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"follow",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:01:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Zully Martinez\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Francisco Caloia\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 myself",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You can't follow yourself\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 already follow user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You already follow this user\"\n}"
+						},
+						{
+							"name": "404  user from non exis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/30/follow/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"30",
+										"follow",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 30 not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FOLLOW USERS 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/1/follow/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"follow",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:01:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Zully Martinez\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Francisco Caloia\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 myself",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You can't follow yourself\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 already follow user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You already follow this user\"\n}"
+						},
+						{
+							"name": "404  user from non exis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/30/follow/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"30",
+										"follow",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 30 not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FOLLOW USERS 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/3/follow/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:01:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Zully Martinez\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Francisco Caloia\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 myself",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You can't follow yourself\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 already follow user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You already follow this user\"\n}"
+						},
+						{
+							"name": "404  user from non exis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/30/follow/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"30",
+										"follow",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 30 not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0001",
+			"item": [
+				{
+					"name": "Follow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"id\");",
+									"    pm.expect(pm.response.text()).to.include(\"name\");",
+									"    pm.expect(pm.response.text()).to.include(\"followed\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/follow/{{userIdToFollow}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"follow",
+								"{{userIdToFollow}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:01:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Zully Martinez\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Francisco Caloia\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 myself",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You can't follow yourself\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/1/follow/100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:02:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 already follow user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/2/follow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"You already follow this user\"\n}"
+						},
+						{
+							"name": "404  user from non exis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/30/follow/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"30",
+										"follow",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:04:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 30 not found\"\n}"
+						},
+						{
+							"name": "400 invalid userIdToFollow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users/1/follow/-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"-1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:09:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0002",
+			"item": [
+				{
+					"name": "GET Followers COUNT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"followers_count\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followers/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/1/followers/count",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:07:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user_id\": 1,\n    \"user_name\": \"Francisco Caloia\",\n    \"followers_count\": 1\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/100/followers/count",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"100",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:07:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/0/followers/count",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"0",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:10:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0003",
+			"item": [
+				{
+					"name": "GET Followers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"followers\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followers/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/followers/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 16:18:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followers\": [\n        {\n            \"id\": 2,\n            \"name\": \"Zully Martinez\"\n        }\n    ],\n    \"user_id\": 1,\n    \"user_name\": \"Francisco Caloia\"\n}"
+						},
+						{
+							"name": "not found userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/followers/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:08:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 7 not found\"\n}"
+						},
+						{
+							"name": "order desc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=name_desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 19:35:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followers\": [\n        {\n            \"id\": 2,\n            \"name\": \"Zully Martinez\"\n        },\n        {\n            \"id\": 0,\n            \"name\": \"Tomas Peiretti\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nicolas Arias\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mauricio Rodriguez\"\n        }\n    ],\n    \"user_id\": 1,\n    \"user_name\": \"Francisco Caloia\"\n}"
+						},
+						{
+							"name": "order asc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=name_asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 19:48:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followers\": [\n        {\n            \"id\": 3,\n            \"name\": \"Mauricio Rodriguez\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nicolas Arias\"\n        },\n        {\n            \"id\": 0,\n            \"name\": \"Tomas Peiretti\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Zully Martinez\"\n        }\n    ],\n    \"user_id\": 1,\n    \"user_name\": \"Francisco Caloia\"\n}"
+						},
+						{
+							"name": "bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=dasfdasda",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "dasfdasda"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 20:07:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"order no valido.\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/-100/followers/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"-100",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:11:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0004",
+			"item": [
+				{
+					"name": "GET Followed list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"followed\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followed/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2/followed/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 20:14:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followed\": [\n        {\n            \"id\": 1,\n            \"name\": \"Francisco Caloia\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mauricio Rodriguez\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nicolas Arias\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Juan Vecchio\"\n        }\n    ],\n    \"user_id\": 2,\n    \"user_name\": \"Zully Martinez\"\n}"
+						},
+						{
+							"name": "order desc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2/followed/list?order=name_desc",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 20:13:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followed\": [\n        {\n            \"id\": 4,\n            \"name\": \"Nicolas Arias\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mauricio Rodriguez\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Juan Vecchio\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Francisco Caloia\"\n        }\n    ],\n    \"user_id\": 2,\n    \"user_name\": \"Zully Martinez\"\n}"
+						},
+						{
+							"name": "order asc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2/followed/list?order=name_asc",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Dec 2024 20:13:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followed\": [\n        {\n            \"id\": 1,\n            \"name\": \"Francisco Caloia\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Juan Vecchio\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mauricio Rodriguez\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nicolas Arias\"\n        }\n    ],\n    \"user_id\": 2,\n    \"user_name\": \"Zully Martinez\"\n}"
+						},
+						{
+							"name": "bad request order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/5/followed/list?order=asdfaf",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"5",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "asdfaf"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:10:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: Invalid Sort order\"\n}"
+						},
+						{
+							"name": "not found userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/8/followed/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"8",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:11:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 8 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/0/followed/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"0",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:12:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0005",
+			"item": [
+				{
+					"name": "CREATE Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"post_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"product\");",
+									"    pm.expect(pm.response.text()).to.include(\"price\");",
+									"    pm.expect(pm.response.text()).to.include(\"category\");",
+									"    pm.expect(pm.response.text()).to.include(\"date\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red y Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/post",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:09:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"date\": \"29-04-2021\",\n    \"category\": 100,\n    \"price\": 1500.5,\n    \"product\": {\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\",\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\"\n    },\n    \"post_id\": 13\n}"
+						},
+						{
+							"name": "200 existent product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:16:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"date\": \"29-04-2021\",\n    \"category\": 100,\n    \"price\": 1500.5,\n    \"product\": {\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\",\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\"\n    },\n    \"post_id\": 6\n}"
+						},
+						{
+							"name": "400 invalid data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\"\n    },\n    \"price\": 1500.50\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:10:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: User ID must not be null; Product notes must not be null or empty; Category must be greater than zero;\"\n}"
+						},
+						{
+							"name": "404 not found userId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 7,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 6,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190\n  }\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:19:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 7 not found\"\n}"
+						},
+						{
+							"name": "400 invalid data existent product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 5,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 6,\n        \"product_name\": \"fd\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190\n  }\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 17:22:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: Inconsistent data on existing new product.\"\n}"
+						},
+						{
+							"name": "400 invalid body (no price)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red y Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": \"100\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 03:09:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El precio no puede estar vacío\"\n}"
+						},
+						{
+							"name": "400 invalid body (invalid notes)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 25,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red y Black\",\n        \"notes\": \"$pecial Edition\"\n    },\n    \"category\": 100,\n    \"price\": 2000\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/products/post",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:14:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Las notas no puede poseer caracteres especiales\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0006",
+			"item": [
+				{
+					"name": "GET Followed Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"posts\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/{{userId}}/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/products/followed/2/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"2",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:19:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"posts\": [\n        {\n            \"date\": \"13-12-2024\",\n            \"category\": 1,\n            \"price\": 199.99,\n            \"product\": {\n                \"type\": \"Electronics1\",\n                \"brand\": \"Sony\",\n                \"color\": \"Black\",\n                \"notes\": \"Good condition, lightly used\",\n                \"product_id\": null,\n                \"product_name\": \"Wireless Headphones\"\n            },\n            \"post_id\": 1,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"07-12-2024\",\n            \"category\": 22,\n            \"price\": 499.99,\n            \"product\": {\n                \"type\": \"Electronics\",\n                \"brand\": \"Microsoft\",\n                \"color\": \"Black\",\n                \"notes\": \"Like new, comes with two controllers\",\n                \"product_id\": null,\n                \"product_name\": \"Gaming Console\"\n            },\n            \"post_id\": 7,\n            \"user_id\": 1\n        }\n    ],\n    \"user_id\": 2\n}"
+						},
+						{
+							"name": "200 user not follows",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/products/followed/5/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"5",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:19:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"posts\": [],\n    \"user_id\": 5\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/products/followed/77/list",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"77",
+										"list"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:19:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 77 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/0/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"0",
+										"list"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:14:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0007",
+			"item": [
+				{
+					"name": "Unfollow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"followed\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/unfollow/{{userIdToUnfollow}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"unfollow",
+								"{{userIdToUnfollow}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2/unfollow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"unfollow",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:23:29 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"followed\": [],\n    \"user_id\": 2,\n    \"user_name\": \"Zully Martinez\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/1/unfollow/100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"unfollow",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:23:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "403 user not following",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/2/unfollow/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"2",
+										"unfollow",
+										"1"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 16:24:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 403,\n    \"message\": \"User with id: 2 is not following user with id: 1\"\n}"
+						},
+						{
+							"name": "400 invalid param",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/unfollow/{{userIdToUnfollow}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"unfollow",
+										"{{userIdToUnfollow}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 03:11:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: Method parameter 'userId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: \\\"string\\\"\"\n}"
+						},
+						{
+							"name": "400 invalid userIdToUnfollow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/1/unfollow/-20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"1",
+										"unfollow",
+										"-20"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:15:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0008",
+			"item": [
+				{
+					"name": "GET Followers List Order (name_asc)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=name_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Followers List Order (name_desc)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=name_desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Followers List Order (invalid order)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 400\", function () {",
+									"  pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"message\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/followers/list?order=name_ascdesc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_ascdesc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0009",
+			"item": [
+				{
+					"name": "GET Followed Posts Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"{{userId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 20:31:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"posts\": [\n        {\n            \"date\": \"07-12-2024\",\n            \"category\": 22,\n            \"price\": 499.99,\n            \"product\": {\n                \"type\": \"Electronics\",\n                \"brand\": \"Microsoft\",\n                \"color\": \"Black\",\n                \"notes\": \"Like new, comes with two controllers\",\n                \"product_id\": null,\n                \"product_name\": \"Gaming Console\"\n            },\n            \"post_id\": 7,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"07-12-2024\",\n            \"category\": 22,\n            \"price\": 499.99,\n            \"product\": {\n                \"type\": \"Electronics\",\n                \"brand\": \"Microsoft\",\n                \"color\": \"Black\",\n                \"notes\": \"Like new, comes with two controllers\",\n                \"product_id\": null,\n                \"product_name\": \"Gaming Console\"\n            },\n            \"post_id\": 19,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"13-12-2024\",\n            \"category\": 1,\n            \"price\": 199.99,\n            \"product\": {\n                \"type\": \"Electronics1\",\n                \"brand\": \"Sony\",\n                \"color\": \"Black\",\n                \"notes\": \"Good condition, lightly used\",\n                \"product_id\": null,\n                \"product_name\": \"Wireless Headphones\"\n            },\n            \"post_id\": 1,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"13-12-2024\",\n            \"category\": 1,\n            \"price\": 199.99,\n            \"product\": {\n                \"type\": \"Electronics1\",\n                \"brand\": \"Sony\",\n                \"color\": \"Black\",\n                \"notes\": \"Good condition, lightly used\",\n                \"product_id\": null,\n                \"product_name\": \"Wireless Headphones\"\n            },\n            \"post_id\": 13,\n            \"user_id\": 1\n        }\n    ],\n    \"user_id\": 2\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"{{userId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 20:31:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 20 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/0/list?order=date_asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"0",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:16:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Followed Posts Order (desc)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"{{userId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 20:32:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"posts\": [\n        {\n            \"date\": \"13-12-2024\",\n            \"category\": 1,\n            \"price\": 199.99,\n            \"product\": {\n                \"type\": \"Electronics1\",\n                \"brand\": \"Sony\",\n                \"color\": \"Black\",\n                \"notes\": \"Good condition, lightly used\",\n                \"product_id\": null,\n                \"product_name\": \"Wireless Headphones\"\n            },\n            \"post_id\": 1,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"13-12-2024\",\n            \"category\": 1,\n            \"price\": 199.99,\n            \"product\": {\n                \"type\": \"Electronics1\",\n                \"brand\": \"Sony\",\n                \"color\": \"Black\",\n                \"notes\": \"Good condition, lightly used\",\n                \"product_id\": null,\n                \"product_name\": \"Wireless Headphones\"\n            },\n            \"post_id\": 13,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"07-12-2024\",\n            \"category\": 22,\n            \"price\": 499.99,\n            \"product\": {\n                \"type\": \"Electronics\",\n                \"brand\": \"Microsoft\",\n                \"color\": \"Black\",\n                \"notes\": \"Like new, comes with two controllers\",\n                \"product_id\": null,\n                \"product_name\": \"Gaming Console\"\n            },\n            \"post_id\": 7,\n            \"user_id\": 1\n        },\n        {\n            \"date\": \"07-12-2024\",\n            \"category\": 22,\n            \"price\": 499.99,\n            \"product\": {\n                \"type\": \"Electronics\",\n                \"brand\": \"Microsoft\",\n                \"color\": \"Black\",\n                \"notes\": \"Like new, comes with two controllers\",\n                \"product_id\": null,\n                \"product_name\": \"Gaming Console\"\n            },\n            \"post_id\": 19,\n            \"user_id\": 1\n        }\n    ],\n    \"user_id\": 2\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"{{userId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_desc"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 20:33:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 20 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/0/list?order=date_desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"0",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_desc"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:17:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Followed Posts Order (invalid order)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 400\", function () {",
+									"  pm.response.to.have.status(400);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_ilegal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_ilegal"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 invalid query param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/followed/{{userId}}/list?order=date_ilegal",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"followed",
+										"{{userId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_ilegal"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:17:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Invalid Sort order\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0010",
+			"item": [
+				{
+					"name": "CREATE Post Promo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"date\");",
+									"    pm.expect(pm.response.text()).to.include(\"category\");",
+									"    pm.expect(pm.response.text()).to.include(\"product\");",
+									"    pm.expect(pm.response.text()).to.include(\"price\");",
+									"    pm.expect(pm.response.text()).to.include(\"discount\");",
+									"    pm.expect(pm.response.text()).to.include(\"post_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"has_promo\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 87,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"has_promo\": true, \n    \"discount\": 0.5\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products/promo-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 9,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"has_promo\": true, \n    \"discount\": 0.5\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:34:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"date\": \"12-12-2024\",\n    \"category\": 2,\n    \"price\": 190,\n    \"product\": {\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\",\n        \"product_id\": 9,\n        \"product_name\": \"Articulo 6 NUEVO\"\n    },\n    \"discount\": 0.5,\n    \"post_id\": 13,\n    \"has_promo\": true\n}"
+						},
+						{
+							"name": "400 Bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 9,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"has_promo\": true, \n    \"discount\": 0.5\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:50:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: Inconsistent data on existing new product.\"\n}"
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 9,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 76,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition, lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"has_promo\": true, \n    \"discount\": 0.5\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:50:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 9 not found\"\n}"
+						},
+						{
+							"name": "400 invalid body (missing discount)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 87,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"has_promo\": true\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 03:12:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El campo discount no puede estar vacío\"\n}"
+						},
+						{
+							"name": "400 invalid body (discount)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2,\n    \"date\": \"12-12-2024\",\n    \"product\": {\n        \"product_id\": 87,\n        \"product_name\": \"Articulo 6 NUEVO\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"color\": \"Green\",\n        \"notes\": \"Good condition lightly used\"\n    },\n    \"category\": 2,\n    \"price\": 190,\n    \"discount\": 1.2,\n    \"has_promo\": false\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:19:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El descuento no puede ser mayor que 1\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0011",
+			"item": [
+				{
+					"name": "GET Promo Product Count by User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"promo_products_count\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/promo-post/count?user_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/products/promo-post/count?user_id=2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:34:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Zully Martinez\",\n    \"promo_products_count\": 1\n}"
+						},
+						{
+							"name": "404 not found userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/products/promo-post/count?user_id=6",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:34:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 6 not found\"\n}"
+						},
+						{
+							"name": "400 invalid query param",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/products/promo-post/count?user_id=-10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "-10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:21:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0012 BONUS",
+			"item": [
+				{
+					"name": "GET Max Followers User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+									"    pm.expect(pm.response.text()).to.include(\"followers_count\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/followers/max",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"followers",
+								"max"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/followers/max",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"followers",
+										"max"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:52:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: No users have followers.\"\n}"
+						},
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/followers/max",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"followers",
+										"max"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:53:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user_id\": 5,\n    \"user_name\": \"Juan Vecchio\",\n    \"followers_count\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0013 BONUS",
+			"item": [
+				{
+					"name": "GET Posts List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Verify response body\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"date\");",
+									"    pm.expect(pm.response.text()).to.include(\"category\");",
+									"    pm.expect(pm.response.text()).to.include(\"price\");",
+									"    pm.expect(pm.response.text()).to.include(\"product\");",
+									"    pm.expect(pm.response.text()).to.include(\"discount\");",
+									"    pm.expect(pm.response.text()).to.include(\"post_id\");",
+									"    pm.expect(pm.response.text()).to.include(\"has_promo\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/posts?category=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/posts?category=9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"posts"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:54:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"date\": \"05-12-2024\",\n        \"category\": 9,\n        \"price\": 79.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"JBL\",\n            \"color\": \"Blue\",\n            \"notes\": \"Good condition, minor scratches\",\n            \"product_id\": 9,\n            \"product_name\": \"Bluetooth Speaker\"\n        },\n        \"discount\": null,\n        \"post_id\": 9,\n        \"has_promo\": false\n    }\n]"
+						},
+						{
+							"name": "200 no category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/posts?category=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"posts"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:55:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"date\": \"13-12-2024\",\n        \"category\": 1,\n        \"price\": 199.99,\n        \"product\": {\n            \"type\": \"Electronics1\",\n            \"brand\": \"Sony\",\n            \"color\": \"Black\",\n            \"notes\": \"Good condition, lightly used\",\n            \"product_id\": 1,\n            \"product_name\": \"Wireless Headphones\"\n        },\n        \"discount\": null,\n        \"post_id\": 1,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"12-12-2024\",\n        \"category\": 6,\n        \"price\": 799.99,\n        \"product\": {\n            \"type\": \"Apparel\",\n            \"brand\": \"Gucci\",\n            \"color\": \"Brown\",\n            \"notes\": \"Brand new with tags\",\n            \"product_id\": 2,\n            \"product_name\": \"Leather Jacket\"\n        },\n        \"discount\": null,\n        \"post_id\": 2,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"11-12-2024\",\n        \"category\": 51,\n        \"price\": 1499.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Apple\",\n            \"color\": \"Space Gray\",\n            \"notes\": \"Almost new, comes with accessories\",\n            \"product_id\": 3,\n            \"product_name\": \"Laptop\"\n        },\n        \"discount\": null,\n        \"post_id\": 3,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"10-12-2024\",\n        \"category\": 96,\n        \"price\": 899.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Samsung\",\n            \"color\": \"White\",\n            \"notes\": \"Used, minor scratches\",\n            \"product_id\": 4,\n            \"product_name\": \"Smartphone\"\n        },\n        \"discount\": null,\n        \"post_id\": 4,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"09-12-2024\",\n        \"category\": 51,\n        \"price\": 120,\n        \"product\": {\n            \"type\": \"Footwear\",\n            \"brand\": \"Nike\",\n            \"color\": \"Red/White\",\n            \"notes\": \"Brand new, never worn\",\n            \"product_id\": 5,\n            \"product_name\": \"Tennis Shoes\"\n        },\n        \"discount\": null,\n        \"post_id\": 5,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"08-12-2024\",\n        \"category\": 82,\n        \"price\": 999.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"LG\",\n            \"color\": \"Black\",\n            \"notes\": \"Used, excellent condition\",\n            \"product_id\": 6,\n            \"product_name\": \"4K TV\"\n        },\n        \"discount\": null,\n        \"post_id\": 6,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"07-12-2024\",\n        \"category\": 22,\n        \"price\": 499.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Microsoft\",\n            \"color\": \"Black\",\n            \"notes\": \"Like new, comes with two controllers\",\n            \"product_id\": 7,\n            \"product_name\": \"Gaming Console\"\n        },\n        \"discount\": null,\n        \"post_id\": 7,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"06-12-2024\",\n        \"category\": 85,\n        \"price\": 1200,\n        \"product\": {\n            \"type\": \"Fashion\",\n            \"brand\": \"Louis Vuitton\",\n            \"color\": \"Monogram Brown\",\n            \"notes\": \"Used but in excellent condition\",\n            \"product_id\": 8,\n            \"product_name\": \"Designer Handbag\"\n        },\n        \"discount\": null,\n        \"post_id\": 8,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"05-12-2024\",\n        \"category\": 9,\n        \"price\": 79.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"JBL\",\n            \"color\": \"Blue\",\n            \"notes\": \"Good condition, minor scratches\",\n            \"product_id\": 9,\n            \"product_name\": \"Bluetooth Speaker\"\n        },\n        \"discount\": null,\n        \"post_id\": 9,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"04-12-2024\",\n        \"category\": 15,\n        \"price\": 199.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Fitbit\",\n            \"color\": \"Black\",\n            \"notes\": \"Brand new, never used\",\n            \"product_id\": 10,\n            \"product_name\": \"Smartwatch\"\n        },\n        \"discount\": null,\n        \"post_id\": 10,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"03-12-2024\",\n        \"category\": 44,\n        \"price\": 160,\n        \"product\": {\n            \"type\": \"Apparel\",\n            \"brand\": \"Columbia\",\n            \"color\": \"Navy Blue\",\n            \"notes\": \"Gently used, no visible damage\",\n            \"product_id\": 11,\n            \"product_name\": \"Winter Coat\"\n        },\n        \"discount\": null,\n        \"post_id\": 11,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"02-12-2024\",\n        \"category\": 12,\n        \"price\": 649.99,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Canon\",\n            \"color\": \"Black\",\n            \"notes\": \"Almost new, comes with lens and case\",\n            \"product_id\": 12,\n            \"product_name\": \"Digital Camera\"\n        },\n        \"discount\": null,\n        \"post_id\": 12,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"29-04-2021\",\n        \"category\": 100,\n        \"price\": 1500.5,\n        \"product\": {\n            \"type\": \"Gamer\",\n            \"brand\": \"Racer\",\n            \"color\": \"Red & Black\",\n            \"notes\": \"Special Edition\",\n            \"product_id\": 25,\n            \"product_name\": \"Silla Gamer\"\n        },\n        \"discount\": null,\n        \"post_id\": 13,\n        \"has_promo\": false\n    },\n    {\n        \"date\": \"12-12-2024\",\n        \"category\": 2,\n        \"price\": 190,\n        \"product\": {\n            \"type\": \"Electronics\",\n            \"brand\": \"Sony\",\n            \"color\": \"Green\",\n            \"notes\": \"Good condition, lightly used\",\n            \"product_id\": 76,\n            \"product_name\": \"Articulo 6 NUEVO\"\n        },\n        \"discount\": 0.5,\n        \"post_id\": 14,\n        \"has_promo\": true\n    }\n]"
+						},
+						{
+							"name": "400 category negative",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/posts?category=-5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"posts"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "-5"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 19:57:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Bad request: Category must be greater than 0\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0014 BONUS",
+			"item": [
+				{
+					"name": "DELETE posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 204\", function () {",
+									"  pm.response.to.have.status(204);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/{{userId}}/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"{{userId}}",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"posts"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 15:01:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "404 user not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/{{userId}}/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"{{userId}}",
+										"posts"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Dec 2024 15:03:29 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"User with id: 100 not found\"\n}"
+						},
+						{
+							"name": "400 invalid id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/0/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"0",
+										"posts"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jan 2025 13:24:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"El id debe ser mayor a cero\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "userIdToFollow",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "userIdToUnfollow",
+			"value": "1",
+			"type": "default"
+		}
+	]
+}
