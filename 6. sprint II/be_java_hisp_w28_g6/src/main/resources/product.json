@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta",
+    "type": "Ropa",
+    "brand": "Nike",
+    "color": "Rojo",
+    "notes": "Camiseta de entrenamiento de alta calidad."
+  },
+  {
+    "id": 2,
+    "name": "Zapatillas",
+    "type": "Calzado",
+    "brand": "Adidas",
+    "color": "Negro",
+    "notes": "Zapatillas cómodas para uso diario."
+  },
+  {
+    "id": 3,
+    "name": "Remera",
+    "type": "Ropa",
+    "brand": "Lacoste",
+    "color": "Negro",
+    "notes": "Remera negra ideal para fiestas"
+  },
+  {
+    "id": 4,
+    "name": "Gorro",
+    "type": "Ropa",
+    "brand": "DC",
+    "color": "Negro",
+    "notes": "Gorro negro skater"
+  },
+  {
+    "id": 5,
+    "name": "Sudadera",
+    "type": "Ropa",
+    "brand": "Puma",
+    "color": "Gris",
+    "notes": "Sudadera con capucha y bolsillo frontal."
+  },
+  {
+    "id": 6,
+    "name": "Botella",
+    "type": "Accesorios",
+    "brand": "Hydro Flask",
+    "color": "Azul",
+    "notes": "Botella térmica de acero inoxidable."
+  },
+  {
+    "id": 7,
+    "name": "Gorra",
+    "type": "Accesorios",
+    "brand": "New Era",
+    "color": "Negro",
+    "notes": "Gorra clásica con diseño ajustable."
+  },
+  {
+    "id": 8,
+    "name": "Guantes",
+    "type": "Accesorios",
+    "brand": "Columbia",
+    "color": "Gris",
+    "notes": "Guantes térmicos ideales para invierno."
+  },
+  {
+    "id": 9,
+    "name": "Chaqueta",
+    "type": "Ropa",
+    "brand": "Patagonia",
+    "color": "Verde",
+    "notes": "Chaqueta impermeable y ecológica."
+  },
+  {
+    "id": 10,
+    "name": "Pantalones cortos",
+    "type": "Ropa",
+    "brand": "Under Armour",
+    "color": "Negro",
+    "notes": "Shorts ligeros para entrenamiento."
+  },
+  {
+    "id": 11,
+    "name": "Auriculares",
+    "type": "Electrónica",
+    "brand": "Sony",
+    "color": "Negro",
+    "notes": "Auriculares inalámbricos con cancelación de ruido."
+  },
+  {
+    "id": 12,
+    "name": "Reloj deportivo",
+    "type": "Electrónica",
+    "brand": "Garmin",
+    "color": "Negro",
+    "notes": "Reloj GPS con múltiples funciones deportivas."
+  },
+  {
+    "id": 13,
+    "name": "Zapatillas",
+    "type": "Calzado",
+    "brand": "Adidas",
+    "color": "Negro",
+    "notes": "Zapatillas cómodas para uso diario."
+  },
+  {
+    "id": 14,
+    "name": "Zapatillas",
+    "type": "Calzado",
+    "brand": "Adidas",
+    "color": "Negro",
+    "notes": "Zapatillas cómodas para uso diario."
+  },
+  {
+    "id": 15,
+    "name": "Mouse",
+    "type": "Tecnología",
+    "brand": "Logitech",
+    "color": "Negro",
+    "notes": "Mouse hergonómico altamente recomendado!."
+  },
+  {
+    "id": 16,
+    "name": "Gorro",
+    "type": "Ropa",
+    "brand": "DC",
+    "color": "Negro",
+    "notes": "Gorro negro skater"
+  }
+]
