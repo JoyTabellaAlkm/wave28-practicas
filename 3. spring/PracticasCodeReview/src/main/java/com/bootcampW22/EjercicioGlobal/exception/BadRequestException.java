@@ -1,7 +1,7 @@
 package com.bootcampW22.EjercicioGlobal.exception;
 
-public class BadRequest extends RuntimeException {
-    public BadRequest(String message) {
+public class BadRequestException extends RuntimeException {
+    public BadRequestException(String message) {
         super(message);
     }
 }

@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ResponseDTO {
-    private Double averageSpeed;
+public class ExceptionDto {
+    private String message;
 }

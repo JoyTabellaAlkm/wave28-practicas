@@ -13,4 +13,6 @@ public interface IVehicleRepository {
     VehicleDto getById(Long id);
 
     List<VehicleDto> getByColorAndYear(String color, Integer year);
+
+    boolean updateVehicle(Vehicle vehicleToUpdate);
 }

@@ -52,6 +52,21 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
                 .toList();
     }
 
+    @Override
+    public boolean updateVehicle(Vehicle vehicleToUpdate) {
+        Vehicle vehicleToReplace = listOfVehicles.stream()
+                .filter(vehicle -> vehicle.getId().equals(vehicleToUpdate.getId()))
+                .findAny()
+                .orElse(null);
+
+        if (vehicleToReplace == null) return false;
+
+        int index = listOfVehicles.indexOf(vehicleToReplace);
+
+        listOfVehicles.set(index, vehicleToUpdate);
+        return true;
+    }
+
     private void loadDataBase() throws IOException {
         File file;
         ObjectMapper objectMapper = new ObjectMapper();
