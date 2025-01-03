@@ -1,0 +1,791 @@
+{
+	"info": {
+		"_postman_id": "63863d2e-4075-4890-80d5-2556b76e461e",
+		"name": "SocialMeli - Equipo 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "970878",
+		"_collection_link": "https://socialmeli.postman.co/workspace/SocialMeli-Workspace~bb12ff62-71d1-4a2e-8458-f45f66d238f5/collection/970878-63863d2e-4075-4890-80d5-2556b76e461e?action=share&source=collection_link&creator=970878"
+	},
+	"item": [
+		{
+			"name": "US 0001: [OK] Poder realizar la acción de “Follow” (seguir) a un determinado vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/3/follow/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"3",
+						"follow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001-[BAD REQUEST]: Poder realizar la acción de “Follow” (seguir) a un determinado vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/3/follow/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"3",
+						"follow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001- [NOT FOUND]: Poder realizar la acción de “Follow” (seguir) a un determinado vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/follow/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"follow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002: [OK] Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/1/followers/count",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"followers",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002: [NOT FOUND] Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/followers/count",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"followers",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0003: [OK] Obtener un listado de todos los usuarios que siguen a un determinado vendedor (¿Quién me sigue?)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/1/followers/list?order=name_asc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0003 [NOT FOUND] Obtener un listado de todos los usuarios que siguen a un determinado vendedor (¿Quién me sigue?)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/followers/list?order=name_asc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0004 [OK] Obtener  un listado de todos los vendedores a los cuales sigue un determinado usuario (¿A quién sigo?)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/1/followed/list",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"followed",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0004 [NOT FOUND] Obtener  un listado de todos los vendedores a los cuales sigue un determinado usuario (¿A quién sigo?) Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/followed/list",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"followed",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005: [OK] Dar de alta una nueva publicación",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2,\n    \"date\": \"{{date}}\",\n    \"product\": {\n        \"product_id\": 9,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 1,\n    \"price\": 1500.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/post",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005: [BAD REQUEST] Dar de alta una nueva publicación",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2,\n    \"date\": \"{{date}}\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/post",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0006: Obtener un listado de las publicaciones realizadas por los vendedores que un usuario sigue en las últimas dos semanas (para esto tener en cuenta ordenamiento por fecha, publicaciones más recientes primero).",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/followed/1/list",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"followed",
+						"1",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007: [OK] Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/3/unfollow/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"3",
+						"unfollow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007:[BAD REQUEST] Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/3/unfollow/9",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"3",
+						"unfollow",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007  [NOT FOUND] Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/unfollow/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"unfollow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008: Ordenamiento alfabético ascendente y descendente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/1/followers/list",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_asc",
+							"description": "name_asc - name_desc - name_asc - name_desc",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "name_desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0009: Ordenamiento por fecha ascendente y descendente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/followed/1/list?order=date_asc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"followed",
+						"1",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_asc",
+							"description": "date_asc - date_desc"
+						},
+						{
+							"key": "order",
+							"value": "date_desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010: @Valid[BAD REQUEST] Llevar a cabo la publicación de un nuevo producto en promoción Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"date\": \"{{date}}\",\n    \"product\": {\n        \"product_id\": -1,\n        \"product_name\": \"Silla Gamer &\",\n        \"type\": \"Gamerrrrrrrrrrrrrrrrrrrrrrrrrrrrr\",\n        \"brand\": \"Racer$\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": -1,\n    \"price\": 100000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/promo-post",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010: [OK] Llevar a cabo la publicación de un nuevo producto en promoción",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2,\n    \"date\": \"{{date}}\",\n    \"product\": {\n        \"product_id\": 15,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 1,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/products/promo-post",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0011: Obtener la cantidad de productos en promoción de un determinado vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products/promo-post/count?user_id=2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products",
+						"promo-post",
+						"count"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012: [OK] Crear Goal para vendedor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 13,\n    \"goal_name\": \"Reach 3 Followers\",\n    \"target_followers\": 3,\n    \"deadline\": \"{{date}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/1/goal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"goal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012: [BAD REQUEST] Crear Goal para vendedor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 13,\n    \"goal_name\": \"Reach 3 Followers\",\n    \"target_followers\": 3,\n    \"deadline\": \"{{date}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/1/goal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"goal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012-[NOT FOUND]: Crear Goal para vendedor",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();",
+							"currentDate.setMonth(currentDate.getMonth() + 1);",
+							"if (currentDate.getDate() !== new Date().getDate()) {",
+							"    currentDate.setDate(0);",
+							"}",
+							"const day = String(currentDate.getDate()).padStart(2, '0');",
+							"const month = String(currentDate.getMonth() + 1).padStart(2, '0');",
+							"const year = currentDate.getFullYear();",
+							"",
+							"const formattedDate = `${day}-${month}-${year}`;",
+							"pm.environment.set('date', formattedDate);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 29,\n    \"goal_name\": \"Reach 3 Followers\",\n    \"target_followers\": 3,\n    \"deadline\": \"{{date}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/users/30/goal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"goal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0013: [OK] Obtener el Goal por vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/1/goal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"1",
+						"goal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0013: [NOT FOUND] Obtener el Goal por vendedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users/30/goal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users",
+						"30",
+						"goal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "userId",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}

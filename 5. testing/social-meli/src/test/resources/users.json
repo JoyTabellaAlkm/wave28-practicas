@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "following": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "followers": [
+      6
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "following": [
+      6
+    ],
+    "followers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "following": [],
+    "followers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Diana",
+    "following": [
+      5
+    ],
+    "followers": [
+      1
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Eve",
+    "following": [],
+    "followers": [
+      1,
+      4
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Frank",
+    "following": [
+      1
+    ],
+    "followers": [],
+    "goal": {
+      "id": 1,
+      "name": "Grow to 15 Followers",
+      "target_followers": 15,
+      "deadline": "2025-06-20"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Grace",
+    "following": [
+      2
+    ],
+    "followers": []
+  },
+  {
+    "id": 8,
+    "name": "Hank",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 9,
+    "name": "Ivy",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 10,
+    "name": "Jack",
+    "following": [],
+    "followers": []
+  },
+  {
+    "id": 11,
+    "name": "Jack",
+    "following": [],
+    "followers": [],
+    "goal": {
+        "id": 1,
+        "name": "Grow to 15 Followers",
+        "target_followers": 15,
+        "deadline": "2025-06-20"
+      }
+  }
+]
