@@ -11,11 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
 class StudentDAOTest {
 
-    @Autowired
-    private IStudentDAO studentDao;
+    private final IStudentDAO studentDao = new StudentDAO();
     private StudentDTO studentDto;
 
     @BeforeEach
@@ -29,6 +27,7 @@ class StudentDAOTest {
     }
 
     @Test
+    @DisplayName("Save a new student")
     void save() {
         //Act
         studentDao.save(studentDto);

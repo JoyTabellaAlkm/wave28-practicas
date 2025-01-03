@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop Dell XPS 13",
+    "type": "Electronics",
+    "brand": "Dell",
+    "color": "Silver",
+    "notes": "High performance, ultra-portable laptop."
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S21",
+    "type": "Phone",
+    "brand": "Samsung",
+    "color": "Phantom Black",
+    "notes": "Latest model with top-tier camera."
+  },
+  {
+    "id": 3,
+    "name": "Sony WH-1000XM4",
+    "type": "Headphones",
+    "brand": "Sony",
+    "color": "Black",
+    "notes": "Noise-canceling, premium sound."
+  },
+  {
+    "id": 4,
+    "name": "Nintendo Switch",
+    "type": "Console",
+    "brand": "Nintendo",
+    "color": "Neon",
+    "notes": "Portable gaming console."
+  },
+  {
+    "id": 5,
+    "name": "Apple MacBook Pro 16",
+    "type": "Laptop",
+    "brand": "Apple",
+    "color": "Space Gray",
+    "notes": "Top-of-the-line Apple laptop."
+  },
+  {
+    "id": 6,
+    "name": "Bose QuietComfort 35 II",
+    "type": "Headphones",
+    "brand": "Bose",
+    "color": "Silver",
+    "notes": "Premium noise-canceling headphones."
+  },
+  {
+    "id": 7,
+    "name": "Fitbit Charge 5",
+    "type": "Smartwatch",
+    "brand": "Fitbit",
+    "color": "Black",
+    "notes": "Fitness tracker with health monitoring."
+  },
+  {
+    "id": 8,
+    "name": "Google Pixel 6",
+    "type": "Phone",
+    "brand": "Google",
+    "color": "Stormy Black",
+    "notes": "Flagship phone with excellent AI features."
+  },
+  {
+    "id": 9,
+    "name": "Samsung QLED TV 55",
+    "type": "Television",
+    "brand": "Samsung",
+    "color": "Black",
+    "notes": "Stunning picture quality, smart TV features."
+  },
+  {
+    "id": 10,
+    "name": "Kindle Paperwhite",
+    "type": "E-reader",
+    "brand": "Amazon",
+    "color": "Black",
+    "notes": "E-reader with adjustable light."
+  }
+]

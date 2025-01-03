@@ -2,40 +2,36 @@
   {
     "id": 1,
     "studentName": "Juan",
-    "message": null,
-    "averageScore": null,
     "subjects": [
       {
         "name": "Matemática",
-        "score": 9.0
+        "score": 9
       },
       {
         "name": "Física",
-        "score": 7.0
+        "score": 7
       },
       {
         "name": "Química",
-        "score": 6.0
+        "score": 6
       }
     ]
   },
   {
     "id": 2,
     "studentName": "Pedro",
-    "message": null,
-    "averageScore": null,
     "subjects": [
       {
         "name": "Matemática",
-        "score": 10.0
+        "score": 10
       },
       {
         "name": "Física",
-        "score": 8.0
+        "score": 8
       },
       {
         "name": "Química",
-        "score": 4.0
+        "score": 4
       }
     ]
   }
