@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Darth Vader",
+    "hair_color": "none",
+    "skin_color": "white",
+    "eye_color": "yellow",
+    "birth_year": "41.9BBY",
+    "gender": "male",
+    "homeworld": "Tatooine",
+    "species": "Human",
+    "height": 202,
+    "mass": 136
+  },
+  {
+    "name": "Darth Maul",
+    "hair_color": "none",
+    "skin_color": "red",
+    "eye_color": "yellow",
+    "birth_year": "54BBY",
+    "gender": "male",
+    "homeworld": "Dathomir",
+    "species": "Zabrak",
+    "height": 175,
+    "mass": 80
+  },
+  {
+    "name": "Chewbacca",
+    "hair_color": "brown",
+    "skin_color": "NA",
+    "eye_color": "blue",
+    "birth_year": "200BBY",
+    "gender": "male",
+    "homeworld": "Kashyyyk",
+    "species": "Wookiee",
+    "height": 228,
+    "mass": 112
+  }
+]
