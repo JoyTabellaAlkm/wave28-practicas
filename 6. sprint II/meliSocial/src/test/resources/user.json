@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "userName": "Agustina Lopez",
+    "seller": true,
+    "followers": [2,3,5,6],
+    "followed": [],
+    "products": [1,2]
+  },
+  {
+    "id": 2,
+    "userName": "Bautista Gomez",
+    "seller": false,
+    "followers": [],
+    "followed": [1],
+    "products": [],
+    "favouritesPosts": [1]
+  },
+  {
+    "id": 3,
+    "userName": "Carlos Perez",
+    "seller": false,
+    "followers": [],
+    "followed": [1],
+    "products": [],
+    "favouritesPosts": [1,2]
+  },
+  {
+    "id": 4,
+    "userName": "Diana Carla",
+    "seller": false,
+    "followers": [],
+    "followed": [],
+    "products": []
+  },
+  {
+    "id": 5,
+    "userName": "Esteban Marquez",
+    "seller": false,
+    "followers": [],
+    "followed": [1, 6],
+    "products": []
+  },
+  {
+    "id": 6,
+    "userName": "Fausto Smith",
+    "seller": true,
+    "followers": [5],
+    "followed": [1],
+    "products": [3]
+  },
+  {
+    "id": 7,
+    "userName": "Jose Pepe",
+    "seller": false,
+    "followers": [],
+    "followed": [],
+    "products": []
+  },
+  {
+    "id": 8,
+    "userName": "Juan Roman",
+    "seller": true,
+    "followers": [9],
+    "followed": [],
+    "products": [16,15]
+  },
+  {
+    "id": 9,
+    "userName": "Lucia Quezada",
+    "seller": false,
+    "followers": [],
+    "followed": [8],
+    "products": []
+  }
+]

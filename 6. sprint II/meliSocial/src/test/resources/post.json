@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 1,
+      "name": "Camiseta",
+      "type": "Ropa",
+      "brand": "Nike",
+      "color": "Rojo",
+      "notes": "Camiseta de entrenamiento de alta calidad."
+    },
+    "category": 1,
+    "price": 25.99,
+    "hasPromo": true,
+    "discount": 0.15
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 2,
+      "name": "Zapatillas",
+      "type": "Calzado",
+      "brand": "Adidas",
+      "color": "Blanco",
+      "notes": "Zapatillas deportivas con excelente soporte."
+    },
+    "category": 2,
+    "price": 49.99,
+    "hasPromo": true,
+    "discount": 0.20
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 3,
+      "name": "Mochila",
+      "type": "Accesorios",
+      "brand": "The North Face",
+      "color": "Negro",
+      "notes": "Mochila espaciosa y resistente al agua."
+    },
+    "category": 3,
+    "price": 59.99,
+    "hasPromo": true,
+    "discount": 0.10
+  },
+  {
+    "id": 4,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 4,
+      "name": "Pantalón",
+      "type": "Ropa",
+      "brand": "Levi's",
+      "color": "Azul",
+      "notes": "Jeans clásicos con un ajuste cómodo."
+    },
+    "category": 1,
+    "price": 39.99,
+    "hasPromo": true,
+    "discount": 0.25
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 5,
+      "name": "Sudadera",
+      "type": "Ropa",
+      "brand": "Puma",
+      "color": "Gris",
+      "notes": "Sudadera con capucha y bolsillo frontal."
+    },
+    "category": 1,
+    "price": 35.99,
+    "hasPromo": true,
+    "discount": 0.05
+  },
+  {
+    "id": 6,
+    "userId": 6,
+    "date": "17-12-2024",
+    "product": {
+      "id": 6,
+      "name": "Botella",
+      "type": "Accesorios",
+      "brand": "Hydro Flask",
+      "color": "Azul",
+      "notes": "Botella térmica de acero inoxidable."
+    },
+    "category": 3,
+    "price": 25.49,
+    "hasPromo": false,
+    "discount": 0.30
+  },
+  {
+    "id": 7,
+    "userId": 6,
+    "date": "17-12-2024",
+    "product": {
+      "id": 7,
+      "name": "Gorra",
+      "type": "Accesorios",
+      "brand": "New Era",
+      "color": "Negro",
+      "notes": "Gorra clásica con diseño ajustable."
+    },
+    "category": 3,
+    "price": 19.99,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 8,
+      "name": "Guantes",
+      "type": "Accesorios",
+      "brand": "Columbia",
+      "color": "Gris",
+      "notes": "Guantes térmicos ideales para invierno."
+    },
+    "category": 2,
+    "price": 15.99,
+    "hasPromo": true,
+    "discount": 0.18
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 9,
+      "name": "Chaqueta",
+      "type": "Ropa",
+      "brand": "Patagonia",
+      "color": "Verde",
+      "notes": "Chaqueta impermeable y ecológica."
+    },
+    "category": 1,
+    "price": 89.99,
+    "hasPromo": true,
+    "discount": 0.12
+  },
+  {
+    "id": 10,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 10,
+      "name": "Pantalones cortos",
+      "type": "Ropa",
+      "brand": "Under Armour",
+      "color": "Negro",
+      "notes": "Shorts ligeros para entrenamiento."
+    },
+    "category": 1,
+    "price": 19.99,
+    "hasPromo": true,
+    "discount": 0.08
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 11,
+      "name": "Auriculares",
+      "type": "Electrónica",
+      "brand": "Sony",
+      "color": "Negro",
+      "notes": "Auriculares inalámbricos con cancelación de ruido."
+    },
+    "category": 4,
+    "price": 129.99,
+    "hasPromo": true,
+    "discount": 0.22
+  },
+  {
+    "id": 12,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 12,
+      "name": "Reloj deportivo",
+      "type": "Electrónica",
+      "brand": "Garmin",
+      "color": "Negro",
+      "notes": "Reloj GPS con múltiples funciones deportivas."
+    },
+    "category": 4,
+    "price": 199.99,
+    "hasPromo": true,
+    "discount": 0.15
+  },
+  {
+    "id": 13,
+    "userId": 6,
+    "date": "17-12-2024",
+    "product": {
+      "id": 13,
+      "name": "Zapatillas",
+      "type": "Calzado",
+      "brand": "Adidas",
+      "color": "Negro",
+      "notes": "Zapatillas cómodas para uso diario."
+    },
+    "category": 2,
+    "price": 49.99,
+    "hasPromo": false,
+    "discount": 0.0
+  },
+  {
+    "id": 14,
+    "userId": 6,
+    "date": "15-12-2024",
+    "product": {
+      "id": 14,
+      "name": "Zapatillas",
+      "type": "Calzado",
+      "brand": "Adidas",
+      "color": "Negro",
+      "notes": "Zapatillas cómodas para uso diario."
+    },
+    "category": 2,
+    "price": 109.87,
+    "hasPromo": false,
+    "discount": 0.0
+  },
+  {
+    "id": 15,
+    "userId": 6,
+    "date": "13-12-2024",
+    "product": {
+      "id": 15,
+      "name": "Mouse",
+      "type": "Tecnología",
+      "brand": "Logitech",
+      "color": "Negro",
+      "notes": "Mouse hergonómico altamente recomendado!."
+    },
+    "category": 55,
+    "price": 15.99,
+    "hasPromo": false,
+    "discount": 0.5
+  },
+  {
+    "id": 16,
+    "userId": 1,
+    "date": "17-12-2024",
+    "product": {
+      "id": 16,
+      "name": "Gorro",
+      "type": "Ropa",
+      "brand": "DC",
+      "color": "Negro",
+      "notes": "Gorro negro skater"
+    },
+    "category": 2,
+    "price": 20.99,
+    "hasPromo": true,
+    "discount": 0.3
+  },
+  {
+    "id": 17,
+    "userId": 8,
+    "date": "01-01-2025",
+    "product": {
+      "id": 16,
+      "name": "Gorro",
+      "type": "Ropa",
+      "brand": "DC",
+      "color": "Negro",
+      "notes": "Gorro negro skater"
+    },
+    "category": 2,
+    "price": 20.99,
+    "hasPromo": true,
+    "discount": 0.3
+  },
+  {
+    "id": 18,
+    "userId": 8,
+    "date": "02-01-2025",
+    "product": {
+      "id": 15,
+      "name": "Mouse",
+      "type": "Tecnología",
+      "brand": "Logitech",
+      "color": "Negro",
+      "notes": "Mouse hergonómico altamente recomendado!."
+    },
+    "category": 55,
+    "price": 15.99,
+    "hasPromo": true,
+    "discount": 0.5
+  }
+]
