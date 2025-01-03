@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "seller": true
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "seller": false
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "seller": true
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "seller": false
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "seller": true
+  },
+  {
+    "id": 6,
+    "name": "Diana Evans",
+    "seller": false
+  },
+  {
+    "id": 7,
+    "name": "Frank Wilson",
+    "seller": true
+  },
+  {
+    "id": 8,
+    "name": "Grace Hall",
+    "seller": false
+  },
+  {
+    "id": 9,
+    "name": "Henry Martinez",
+    "seller": true
+  },
+  {
+    "id": 10,
+    "name": "Ivy Clark",
+    "seller": false
+  }
+]
