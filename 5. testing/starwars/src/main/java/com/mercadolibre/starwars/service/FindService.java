@@ -9,11 +9,9 @@ import java.util.List;
 
 @Service
 public class FindService {
-  private final CharacterRepository characterRepository;
 
-  public FindService(CharacterRepository characterRepository) {
-    this.characterRepository = characterRepository;
-  }
+  @Autowired
+  CharacterRepository characterRepository;
 
   public List<CharacterDTO> find(String query) {
     return characterRepository.findAllByNameContains(query);

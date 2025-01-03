@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
 public class RepositoryTest {
 
     @Mock

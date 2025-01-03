@@ -1,5 +1,14 @@
 package com.mercadolibre.calculadorametroscuadrados.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Data
+@AllArgsConstructor
 public class RoomDTO {
   private String name;
   private Integer width;
@@ -8,31 +17,7 @@ public class RoomDTO {
   public RoomDTO() {
   }
 
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Integer getWidth() {
-    return width;
-  }
-
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public Integer getLength() {
-    return length;
-  }
-
-  public void setLength(Integer length) {
-    this.length = length;
-  }
-
-  public Integer getSquareFeet() {
+    public Integer getSquareFeet() {
     Integer result = 0;
     if(this.width != null && this.length != null)
       result = this.width * this.length;
