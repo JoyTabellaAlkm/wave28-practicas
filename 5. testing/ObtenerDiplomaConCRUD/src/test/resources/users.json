@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "studentName": "Juan",
+    "message": "El alumno Juan ha obtenido un promedio de 9,00. Felicitaciones!",
+    "averageScore": 9.0,
+    "subjects": [
+      {
+        "name": "Matematica",
+        "score": 10.0
+      },
+      {
+        "name": "Fisica",
+        "score": 9.0
+      },
+      {
+        "name": "Quimica",
+        "score": 8.0
+      }
+    ]
+  }
+]
