@@ -1,0 +1,26 @@
+ [
+    {
+      "id": 1,
+      "name": "Juan Pérez"
+    },
+    {
+      "id": 2,
+      "name": "María López"
+    },
+    {
+      "id": 3,
+      "name": "Carlos Martínez"
+    },
+    {
+      "id": 4,
+      "name": "Ana García"
+    },
+    {
+      "id": 5,
+      "name": "Pedro Ruiz"
+    },
+   {
+     "id": 6,
+     "name": "Dario Dominguez"
+   }
+ ]

@@ -1,0 +1,71 @@
+[
+  {
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    },
+    "date": "2023-10-01",
+    "product": {
+      "id": 0,
+      "name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 150.50
+  },
+  {
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    },
+    "date": "2024-12-30",
+    "product": {
+      "id": 0,
+      "name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 150.50
+  },
+  {
+    "seller": {
+      "id": 1,
+      "name": "Juan Pérez"
+    },
+    "date": "2024-12-31",
+    "product": {
+      "id": 0,
+      "name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 150.50
+  },
+
+  {
+    "seller": {
+      "id": 2,
+      "name": "María López"
+    },
+    "date": "2023-10-02",
+    "product": {
+      "id": 1,
+      "name": "Galaxy Buds FE Black",
+      "type": "Audio",
+      "brand": "Samsung",
+      "color": "Black",
+      "notes": "Long duration"
+    },
+    "category": 2,
+    "price": 80.00
+  }
+]
