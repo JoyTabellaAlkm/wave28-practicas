@@ -1,0 +1,162 @@
+[
+  {
+    "id": 0,
+    "name": "Silla Gamer",
+    "type": "Gamer",
+    "brand": "Racer",
+    "color": "Red & Black",
+    "notes": "Special Edition"
+  },
+  {
+    "id": 1,
+    "name": "Galaxy Buds FE Black",
+    "type": "Audio",
+    "brand": "Samsung",
+    "color": "Black",
+    "notes": "Long duration"
+  },
+  {
+    "id": 2,
+    "name": "Nintendo Switch",
+    "type": "Gamer",
+    "brand": "Nintendo",
+    "color": "White",
+    "notes": "Includes 2 games"
+  },
+  {
+    "id": 3,
+    "name": "Headset RGB Inalambrico",
+    "type": "Gamer",
+    "brand": "Razer",
+    "color": "Green with RGB",
+    "notes": "Sin Batería"
+  },
+  {
+    "id": 4,
+    "name": "Bicicleta Deportiva",
+    "type": "Sport",
+    "brand": "Oxford",
+    "color": "Pink",
+    "notes": "Size M"
+  },
+  {
+    "id": 5,
+    "name": "Slime Kit",
+    "type": "Toys",
+    "brand": "Abracadabra",
+    "color": "Multicolor",
+    "notes": "+7 years"
+  },
+  {
+    "id": 6,
+    "name": "AirPods 4",
+    "type": "Audio",
+    "brand": "Apple",
+    "color": "White",
+    "notes": "Noise cancelling"
+  },
+  {
+    "id": 7,
+    "name": "Long Cat Plush",
+    "type": "Plush",
+    "brand": "Abracadabra",
+    "color": "Gray",
+    "notes": "Named hotmail"
+  },
+  {
+    "id": 8,
+    "name": "Crystal Science KidzLabs",
+    "type": "Toys",
+    "brand": "Abracadabra",
+    "color": "Multicolor",
+    "notes": "+10 years"
+  },
+  {
+    "id": 9,
+    "name": "Licanray Tent",
+    "type": "Camping",
+    "brand": "Doite",
+    "color": "Blue",
+    "notes": "Capacity for 4"
+  },
+  {
+    "id": 10,
+    "name": "Tablet PAD",
+    "type": "Tech",
+    "brand": "Samsung",
+    "color": "Gray",
+    "notes": "OS Android"
+  },
+  {
+    "id": 11,
+    "name": "Pou Plush",
+    "type": "Plush",
+    "brand": "Abracadabra",
+    "color": "Brown",
+    "notes": "Small size"
+  },
+  {
+    "id": 12,
+    "name": "Twister",
+    "type": "Toys",
+    "brand": "Hasbro",
+    "color": "N/A",
+    "notes": "Classic edition"
+  },
+  {
+    "id": 13,
+    "name": "IPhone 16",
+    "type": "Tech",
+    "brand": "Apple",
+    "color": "Blue",
+    "notes": "128GB"
+  },
+  {
+    "id": 14,
+    "name": "Screaming Goat",
+    "type": "Toys",
+    "brand": "Abracadabra",
+    "color": "White",
+    "notes": "Makes noise when pressed"
+  },
+  {
+    "id": 15,
+    "name": "Galaxy Watch FE",
+    "type": "Tech",
+    "brand": "Samsung",
+    "color": "Black",
+    "notes": "9 months warranty"
+  },
+  {
+    "id": 16,
+    "name": "Mario Kart 8 DELUXE",
+    "type": "Gamer",
+    "brand": "Nintendo",
+    "color": "N/A",
+    "notes": "For Nintendo Switch"
+  },
+  {
+    "id": 17,
+    "name": "Monopoly",
+    "type": "Toys",
+    "brand": "Hasbro",
+    "color": "N/A",
+    "notes": "New edition: Super Mario"
+  },
+  {
+    "id": 18,
+    "name": "Guantes Dedo Corto",
+    "type": "Sport",
+    "brand": "Oxford",
+    "color": "Black",
+    "notes": "Microfiber"
+  },
+  {
+    "id": 19,
+    "name": "Parlante Bluetooth",
+    "type": "Audio",
+    "brand": "Samsung",
+    "color": "Gray",
+    "notes": "High volume"
+  }
+]
