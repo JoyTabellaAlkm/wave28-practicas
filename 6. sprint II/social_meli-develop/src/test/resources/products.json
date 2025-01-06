@@ -1,0 +1,85 @@
+[ {
+  "type" : "Gamer",
+  "brand" : "Racer",
+  "color" : "Red & Black",
+  "notes" : "Special Edition",
+  "product_id" : 1,
+  "product_name" : "Silla Gamer"
+}, {
+  "type" : "Gamer",
+  "brand" : "HyperX",
+  "color" : "Black",
+  "notes" : "RGB Backlight",
+  "product_id" : 2,
+  "product_name" : "Teclado Mecánico"
+}, {
+  "type" : "Audio",
+  "brand" : "Logitech",
+  "color" : "White",
+  "notes" : "Con Micrófono",
+  "product_id" : 3,
+  "product_name" : "Auriculares Inalámbricos"
+}, {
+  "type" : "Pantallas",
+  "brand" : "Samsung",
+  "color" : "Black",
+  "notes" : "32 pulgadas",
+  "product_id" : 4,
+  "product_name" : "Monitor CURVO"
+}, {
+  "type" : "Gamer",
+  "brand" : "Razer",
+  "color" : "Green",
+  "notes" : "Programable",
+  "product_id" : 5,
+  "product_name" : "Mouse Gamer"
+}, {
+  "type" : "Computadoras",
+  "brand" : "ASUS",
+  "color" : "Black",
+  "notes" : "RTX 3060",
+  "product_id" : 6,
+  "product_name" : "Laptop Gaming"
+}, {
+  "type" : "Accesorios",
+  "brand" : "Cooler Master",
+  "color" : "Transparent",
+  "notes" : "ARGB",
+  "product_id" : 7,
+  "product_name" : "Mica para PC"
+}, {
+  "type" : "Periféricos",
+  "brand" : "Logitech",
+  "color" : "Black",
+  "notes" : "1080p",
+  "product_id" : 8,
+  "product_name" : "Cámara Web"
+}, {
+  "type" : "Accesorios",
+  "brand" : "Thermaltake",
+  "color" : "Black",
+  "notes" : "Dual Fan",
+  "product_id" : 9,
+  "product_name" : "Base de Refrigeración"
+}, {
+  "type" : "Oficina",
+  "brand" : "Herman Miller",
+  "color" : "Grey",
+  "notes" : "Ergonómica",
+  "product_id" : 10,
+  "product_name" : "Silla de Oficina"
+}, {
+  "type" : "Gamer",
+  "brand" : "Racer",
+  "color" : "Green & White",
+  "notes" : "Special Edition",
+  "product_id" : 12,
+  "product_name" : "Silla Gamer"
+}, {
+  "type" : "Gamer",
+  "brand" : "Racer",
+  "color" : "Orange & Blue",
+  "notes" : "Special Edition",
+  "product_id" : 11,
+  "product_name" : "Silla Gamer"
+} ]
