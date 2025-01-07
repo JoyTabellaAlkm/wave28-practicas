@@ -32,13 +32,13 @@ CREATE TABLE IF NOT EXISTS Cliente (
 
 -- Insertar los registros en la tabla Cliente
 INSERT INTO Cliente (DNI, Nombre, Apellido, Fecha_Nacimiento, Provincia, Ciudad, ID_Plan) VALUES 
-('12345678A', 'Juan', 'Pérez', '1990-01-01', 'Buenos Aires', 'Buenos Aires', 1),
-('23456789B', 'María', 'Gómez', '1985-02-02', 'Córdoba', 'Córdoba', 1),
-('34567890C', 'Luis', 'Fernández', '1992-03-03', 'Santa Fe', 'Santa Fe', 2),
-('45678901D', 'Ana', 'López', '1994-04-04', 'Mendoza', 'Mendoza', 2),
-('56789012E', 'Carlos', 'Martínez', '1988-05-05', 'Tucumán', 'San Miguel de Tucumán', 3),
-('67890123F', 'Laura', 'Díaz', '1991-06-06', 'Salta', 'Salta', 3),
-('78901234G', 'Javier', 'Ramírez', '1993-07-07', 'Neuquén', 'Neuquén', 4),
-('89012345H', 'Sofía', 'Torres', '1995-08-08', 'Rio Negro', 'Viedma', 4),
-('90123456I', 'Diego', 'Romero', '1987-09-09', 'La Pampa', 'Santa Rosa', 5),
-('01234567J', 'Valentina', 'Jiménez', '1989-10-10', 'Chaco', 'Resistencia', 5);
+('12345678', 'Juan', 'Pérez', '1990-01-01', 'Buenos Aires', 'Buenos Aires', 1),
+('23456789', 'María', 'Gómez', '1985-02-02', 'Córdoba', 'Córdoba', 1),
+('34567890', 'Luis', 'Fernández', '1992-03-03', 'Santa Fe', 'Santa Fe', 2),
+('45678901', 'Ana', 'López', '1994-04-04', 'Mendoza', 'Mendoza', 2),
+('56789012', 'Carlos', 'Martínez', '1988-05-05', 'Tucumán', 'San Miguel de Tucumán', 3),
+('67890123', 'Laura', 'Díaz', '1991-06-06', 'Salta', 'Salta', 3),
+('78901234', 'Javier', 'Ramírez', '1993-07-07', 'Neuquén', 'Neuquén', 4),
+('89012345', 'Sofía', 'Torres', '1995-08-08', 'Rio Negro', 'Viedma', 4),
+('90123456', 'Diego', 'Romero', '1987-09-09', 'La Pampa', 'Santa Rosa', 5),
+('01234567', 'Valentina', 'Jiménez', '1989-10-10', 'Chaco', 'Resistencia', 5);
