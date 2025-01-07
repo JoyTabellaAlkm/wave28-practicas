@@ -1,0 +1,10 @@
+-- select count(*) as cantidad_clientes from cliente
+-- select nombre, apellido,ciudad from cliente where ciudad = 'caba'
+-- select nombre, apellido from cliente where YEAR(fechanacimiento) > 1990
+-- select nombre, apellido from cliente where id_plan = 1
+-- select megas,precio from plan where precio > 50
+-- select megas,precio from plan where megas > 200
+-- select nombre, apellido, provincia from cliente where provincia != 'buenos aires';
+-- select megas as velocidad from plan
+-- select megas,precio from plan order by precio desc
+-- select nombre, apellido from cliente order by fechanacimiento desc;
