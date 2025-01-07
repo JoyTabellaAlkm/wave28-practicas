@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "2d360ef2-c646-4614-84e7-db2a0091d3e8",
+		"name": "Social Meli",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39887858"
+	},
+	"item": [
+		{
+			"name": "Followers",
+			"item": [
+				{
+					"name": "US 0001 - Follow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/follow/{{userIdToFollow}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"follow",
+								"{{userIdToFollow}}"
+							]
+						},
+						"description": "#### **Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n- **userIdToFollow** (int): Número que identifica al usuario a seguir\n    \n\n#### **Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **message** (string): Mensaje para el usuario.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0002 - Followers count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followers/count",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"count"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followers_count** (int): cantidad de seguidores del usuario.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0003 - Followers list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followers/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n- **userIdToFollow** (int): Número que identifica al usuario a seguir\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followers** (array): listado de usuarios. Por cada objeto tendra las keys\n    - **user_id** (int): ID del usuario.\n    - **user_name** (string)**:** username del usuario.\n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0004 - Followed list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followed/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followed",
+								"list"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n- **userIdToFollow** (int): Número que identifica al usuario a seguir\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followed** (array): listado de usuarios. Por cada objeto tendra las keys\n    \n    - **user_id** (int): ID del usuario.\n    - **user_name** (string)**:** username del usuario.\n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0007 - Unfollow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/unfollow/{{userIdToUnfollow}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"unfollow",
+								"{{userIdToUnfollow}}"
+							]
+						},
+						"description": "#### **Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n- **userIdToUnfollow** (int): Número que identifica al usuario a seguir\n    \n\n#### **Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **message** (string): Mensaje para el usuario.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0008 - Followed list (with order)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followers/list?order=name_asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc",
+									"description": "name_asc or name_desc"
+								}
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n- **userIdToFollow** (int): Número que identifica al usuario a seguir\n    \n\n**Query params**\n\n- **order** (string): Con el valor name_asc ordena los elementos de la response alfabeticamente de forma ascendente. Con el valor name_desc ordena los elementos de la response alfabeticamente de forma descendente.\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followed** (array): listado de usuarios. Por cada objeto tendra las keys\n    - **user_id** (int): ID del usuario.\n    - **user_name** (string)**:** username del usuario.\n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0008 - Followers list (with order)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followers/list?order=name_asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc",
+									"description": "name_asc or name_desc"
+								}
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n- **userIdToFollow** (int): Número que identifica al usuario a seguir\n    \n\n**Query params**\n\n- **order** (string): Con el valor name_asc ordena los elementos de la response alfabeticamente de forma ascendente. Con el valor name_desc ordena los elementos de la response alfabeticamente de forma descendente.\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followers** (array): listado de usuarios. Por cada objeto tendra las keys\n    - **user_id** (int): ID del usuario.\n    - **user_name** (string)**:** username del usuario.\n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "US 0005 - Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 104,\n        \"product_name\": \"Monitor Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"AOC\",\n        \"color\": \"Black\",\n        \"notes\": \"Curved\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/post",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n**Request Body**\n\n- **user_id** (Int): Número que identifica al usuario actual\n- **date** (LocalDate): Fecha de alta de la publicacion en formato \"DD-MM-YYYY\".\n- **product** (object):\n    - **product_id** (int): ID del producto de la publicacion.\n    - **product_name** (string): Nombre del producto.\n    - **type** (string): Tipo del producto\n    - **brand** (string): Marca del producto.\n    - **color** (string): Color del producto.\n    - **notes** (string): Notas del producto.\n- **category** (int): Numero de categoria de la publicacion.\n- **price** (double): Precio de la publicacion.\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **message** (string): Mensaje de exito para el usuario.\n    \n- **user_id** (Int): Número que identifica al usuario actual\n    \n- **date** (LocalDate): Fecha de alta de la publicacion en formato \"DD-MM-YYYY\".\n    \n- **product** (object):\n    \n    - **product_id** (int): ID del producto de la publicacion.\n        \n    - **product_name** (string): Nombre del producto.\n        \n    - **type** (string): Tipo del producto\n        \n    - **brand** (string): Marca del producto.\n        \n    - **color** (string): Color del producto.\n        \n    - **notes** (string): Notas del producto.\n        \n- **category** (int): Numero de categoria de la publicacion.\n    \n- **price** (double): Precio de la publicacion.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0006 - Posts by Followed Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/followed/{{userId}}/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (Int): Número que identifica al usuario actual\n- **posts** (array): Un listado de posteos de los usuarios segudos por el usuario actual. Cada objeto tendra las keys:\n    \n    - **user_id** (Int): Número que identifica al usuario que creo el post.\n        \n    - **post_id** (int): Identificador del post.\n        \n    - **product** (object):\n        \n        - **product_id** (int): ID del producto de la publicacion.\n        - **product_name** (string): Nombre del producto.\n        - **type** (string): Tipo del producto\n        - **brand** (string): Marca del producto.\n        - **color** (string): Color del producto.\n        - **notes** (string): Notas del producto.\n    - **category** (int): Numero de categoria de la publicacion.\n    - **price** (double): Precio de la publicacion.\n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0009 - Posts by Followed Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/followed/{{userId}}/list?order=date_asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"{{userId}}",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc",
+									"description": "date_asc or date_desc"
+								}
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n\n**Query params**\n\n- **order** (string): Si tiene el valor date_asc ordena los posteos de forma descendente segun la fecha de creacion. Si tiene el valor date_desc ordena los posteos de forma descendente segun la fecha de creacion.\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (Int): Número que identifica al usuario actual\n- **posts** (array): Un listado de posteos de los usuarios segudos por el usuario actual. Cada objeto tendra las keys:\n    - **user_id** (Int): Número que identifica al usuario que creo el post.\n    - **post_id** (int): Identificador del post.\n    - **product** (object):\n        - **product_id** (int): ID del producto de la publicacion.\n        - **product_name** (string): Nombre del producto.\n        - **type** (string): Tipo del producto\n        - **brand** (string): Marca del producto.\n        - **color** (string): Color del producto.\n        - **notes** (string): Notas del producto.\n    - **category** (int): Numero de categoria de la publicacion.\n    - **price** (double): Precio de la publicacion.\n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0010 - Create Post Promo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 101,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/promo-post",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n**Request Body**\n\n- **user_id** (Int): Número que identifica al usuario actual\n- **date** (LocalDate): Fecha de alta de la publicacion en formato \"DD-MM-YYYY\".\n- **product** (object):\n    - **product_id** (int): ID del producto de la publicacion.\n    - **product_name** (string): Nombre del producto.\n    - **type** (string): Tipo del producto\n    - **brand** (string): Marca del producto.\n    - **color** (string): Color del producto.\n    - **notes** (string): Notas del producto.\n- **category** (int): Numero de categoria de la publicacion.\n- **has_promo** (boolean): Booleano que indica si el producto tiene promocion.\n- **discount** (double): Monto del descuento\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **message** (string): Mensaje de exito para el usuario.\n- **user_id** (Int): Número que identifica al usuario actual\n- **date** (LocalDate): Fecha de alta de la publicacion en formato \"DD-MM-YYYY\".\n- **product** (object):\n    - **product_id** (int): ID del producto de la publicacion.\n    - **product_name** (string): Nombre del producto.\n    - **type** (string): Tipo del producto\n    - **brand** (string): Marca del producto.\n    - **color** (string): Color del producto.\n    - **notes** (string): Notas del producto.\n- **category** (int): Numero de categoria de la publicacion.\n- **price** (double): Precio de la publicacion.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro alguno de los productos."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0011 - Posts with promo by user count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/promo-post/count?user_id={{userId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "**Query params:**\n\n- **user_id** (Int): Número que identifica al usuario actual\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (Int): Número que identifica al usuario actual\n    \n- user_name (string): Nombre del usuario.\n    \n- **promo_products_count** (int): Contador de la cantidad de publicaciones que tienen descuento.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "US 0012 - Posts with promo by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/promo-post/list?user_id={{userId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"list"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "**Query Params:**\n\n- **user_id** (Int): Número que identifica al usuario actual\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (Int): Número que identifica al usuario actual\n- **posts** (array): Un listado de posteos de los usuarios segudos por el usuario actual. Cada objeto tendra las keys:\n    - **user_id** (Int): Número que identifica al usuario que creo el post.\n    - **post_id** (int): Identificador del post.\n    - **product** (object):\n        - **product_id** (int): ID del producto de la publicacion.\n        - **product_name** (string): Nombre del producto.\n        - **type** (string): Tipo del producto\n        - **brand** (string): Marca del producto.\n        - **color** (string): Color del producto.\n        - **notes** (string): Notas del producto.\n    - **category** (int): Numero de categoria de la publicacion.\n    - **price** (double): Precio de la publicacion.\n    - **has_promo** (boolean): Booleano que indica si el producto tiene promocion.\n    - **discount** (double): Monto de descuento que tiene la publicacion.\n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bonus",
+			"item": [
+				{
+					"name": "US 0013 - Make Post a Promo Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/post/{{postId}}?discount=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"post",
+								"{{postId}}"
+							],
+							"query": [
+								{
+									"key": "discount",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US 0014 - Filter product by Keyword",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/search?keyword=silla",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "silla"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US 0015 - Filter products by Price Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/filter?minPrice=20&maxPrice=500",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "20"
+								},
+								{
+									"key": "maxPrice",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US 0016 - Post by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/post/category/{{category}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"post",
+								"category",
+								"{{category}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US 0017 - Post by Product Attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/posts/by-product-attributes/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"posts",
+								"by-product-attributes",
+								""
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Razer",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "Gamer",
+									"disabled": true
+								},
+								{
+									"key": "product_name",
+									"value": "Mouse Gamer",
+									"disabled": true
+								},
+								{
+									"key": "color",
+									"value": "Green",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US 0018 - Followers by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{userId}}/followers/count",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}",
+								"followers",
+								"count"
+							]
+						},
+						"description": "**Filtros/Parámetros:**\n\n- **userId** (Int): Número que identifica al usuario actual\n    \n\n**Responses**\n\n**Status Code 200** (todo OK) - bodyless or dto\n\n- **user_id** (int): ID del usuario obtenido.\n- **user_name** (string): username del usuario obtenido.\n- **followers_count** (int): cantidad de seguidores del usuario.\n    \n\n**Status Code 400** (Bad Request) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. Parametros invalidos.\n    \n\n**Status Code 404** (Not found) - bodyless or dto\n\n- **error** (string): Mensaje de error para el usuario. No se encontro el usuario."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "userIdToFollow",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "userIdToUnfollow",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "postId",
+			"value": "205",
+			"type": "string"
+		},
+		{
+			"key": "category",
+			"value": "100",
+			"type": "string"
+		}
+	]
+}
