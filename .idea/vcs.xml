@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/Ejercicio1/parte2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/Ejercicio2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/6. sprint II/be_java_hisp_w28_g01" vcs="Git" />
   </component>
 </project>
