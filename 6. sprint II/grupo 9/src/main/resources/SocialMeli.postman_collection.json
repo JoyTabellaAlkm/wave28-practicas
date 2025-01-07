@@ -1,0 +1,422 @@
+{
+  "info": {
+    "_postman_id": "0ac806cd-7979-4587-b5f2-51b820369b3a",
+    "name": "SocialMeli",
+    "description": "Hola",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "23260231"
+  },
+  "item": [
+    {
+      "name": "US-01",
+      "item": [
+        {
+          "name": "01. Poder realizar la acción de “Follow”",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "localhost:8080/users/1/follow/10"
+          },
+          "response": []
+        },
+        {
+          "name": "01. Poder realizar la acción de “Follow” Exception",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "localhost:8080/users/1/follow/d"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-02",
+      "item": [
+        {
+          "name": "02. Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "localhost:8080/users/1/followers/count"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-03",
+      "item": [
+        {
+          "name": "03. Obtener un listado de todos los usuarios que siguen a un determinado vendedor (¿Quién me sigue?)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "localhost:8080/users/1/followers/list"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-04",
+      "item": [
+        {
+          "name": "04.Obtener un listado de todos los vendedores a los cuales sigue un determinado usuario (¿A quién sigo?)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "localhost:8080/users/1/followed/list"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-05",
+      "item": [
+        {
+          "name": "05. Dar de alta una nueva publicación",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2025\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Laptop Dell XPS 13\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Dell\",\n        \"color\": \"Silver\",\n        \"notes\": \"High performance, ultra-portable laptop.\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost:8080/products/post"
+          },
+          "response": []
+        },
+        {
+          "name": "05. Dar de alta una nueva publicación con fallos en los campos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": \"\",\n    \"date\": \"\",\n    \"product\": {\n        \"product_id\": 0,\n        \"type\": \"\",\n        \"brand\": \"\",\n        \"color\": \"\",\n        \"notes\": \"\"\n    },\n    \"category\": \"\",\n    \"price\": 100000000.50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost:8080/products/post"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-06",
+      "item": [
+        {
+          "name": "06. Obtener un listado de las publicaciones realizadas por los vendedores que un usuario sigue en las últimas dos semanas (para esto tener en cuenta ordenamiento por fecha, publicaciones más recientes primero).",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "localhost:8080/products/followed/1/list"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-07",
+      "item": [
+        {
+          "name": "07. Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor.",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "localhost:8080/users/1/unfollow/4"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-08",
+      "item": [
+        {
+          "name": "08.1.  name_asc followers Ordenamiento alfabético ascendente y descendente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/followers/list?order=name_asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "1",
+                "followers",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08.2. name_desc followers Ordenamiento alfabético ascendente y descendente Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/followers/list?order=name_desc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "1",
+                "followers",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08.3. name_asc followed Ordenamiento alfabético ascendente y descendente Copy 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/followed/list?order=name_asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "1",
+                "followed",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08.4. name_desc followed Ordenamiento alfabético ascendente y descendente Copy 3",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/followed/list?order=name_desc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "1",
+                "followed",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-09",
+      "item": [
+        {
+          "name": "09.1. date_asc Ordenamiento por fecha ascendente y descendente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/followed/1/list?order=date_asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "products",
+                "followed",
+                "1",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "date_asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.2. date_desc Ordenamiento por fecha ascendente y descendente Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/followed/1/list?order=date_desc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "products",
+                "followed",
+                "1",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "date_desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-10",
+      "item": [
+        {
+          "name": "10. Llevar a cabo la publicación de un nuevo producto en promoción",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Laptop Dell XPS 13\",\n        \"type\": \"Electronics\",\n        \"brand\": \"Dell\",\n        \"color\": \"Silver\",\n        \"notes\": \"High performance, ultra-portable laptop.\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost:8080/products/promo-post"
+          },
+          "response": []
+        },
+        {
+          "name": "10. Llevar a cabo la publicación de un nuevo producto en promoción con fallos en los campos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": \"\",\n    \"date\": \"\",\n    \"product\": {\n        \"product_id\": \"\",\n\n        \"type\": \"Electronics\",\n        \"brand\": \"Dell\",\n        \"color\": \"Silver\",\n        \"notes\": \"High performance, ultra-portable laptop.\"\n    },\n    \"category\": \"\",\n    \"price\": 100000000.50,\n    \"has_promo\": true,\n    \"discount\": 2.25\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost:8080/products/promo-post"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-11",
+      "item": [
+        {
+          "name": "11. Obtener la cantidad de productos en promoción de un determinado vendedor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/promo-post/count?user_id=1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "products",
+                "promo-post",
+                "count"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "US-12 BONUS",
+      "item": [
+        {
+          "name": "12. Search (BONUS)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products?search=laptop&range_price=1000-2500",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "laptop"
+                },
+                {
+                  "key": "range_price",
+                  "value": "1000-2500"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
