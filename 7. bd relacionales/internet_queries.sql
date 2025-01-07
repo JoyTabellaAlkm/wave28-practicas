@@ -5,9 +5,9 @@ SELECT * FROM Cliente;
 SELECT * FROM Plan WHERE Velocidad > 20;
 
 -- 3. Contar el número de clientes por provincia (sin GROUP BY - requiere una subconsulta).
-SELECT Provincia, (SELECT COUNT(*) FROM Cliente AS C WHERE C.Provincia = Cliente.Provincia) AS Numero_Clientes
-FROM Cliente
-LIMIT 1;  -- Limitar a un resultado para que no arroje duplicados 
+SELECT DISTINCT Provincia, 
+(SELECT COUNT(*) FROM Cliente AS C WHERE C.Provincia = Cliente.Provincia) AS Numero_Clientes
+FROM Cliente;  -- Limitar a un resultado para que no arroje duplicados 
 
 -- 4. Obtener el plan más caro.
 SELECT ID_Plan FROM Plan ORDER BY Precio DESC LIMIT 1;
