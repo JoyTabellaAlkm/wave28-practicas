@@ -1,0 +1,82 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "Smartphone Galaxy S21",
+    "type": "Electronics",
+    "brand": "Samsung",
+    "color": "Phantom Gray",
+    "notes": "Latest model, 128GB storage"
+  },
+  {
+    "product_id": 2,
+    "product_name": "Laptop MacBook Pro",
+    "type": "Electronics",
+    "brand": "Apple",
+    "color": "Space Gray",
+    "notes": "13-inch, M1 chip, 256GB SSD"
+  },
+  {
+    "product_id": 3,
+    "product_name": "Wireless Headphones",
+    "type": "Accessories",
+    "brand": "Sony",
+    "color": "Black",
+    "notes": "Noise cancellation, 30-hour battery"
+  },
+  {
+    "product_id": 4,
+    "product_name": "Smartwatch Series 7",
+    "type": "Electronics",
+    "brand": "Apple",
+    "color": "Silver",
+    "notes": "42mm, GPS model"
+  },
+  {
+    "product_id": 5,
+    "product_name": "4K Ultra HD TV",
+    "type": "Electronics",
+    "brand": "LG",
+    "color": "Black",
+    "notes": "55-inch, OLED, Dolby Vision"
+  },
+  {
+    "product_id": 6,
+    "product_name": "Bluetooth Speaker",
+    "type": "Accessories",
+    "brand": "JBL",
+    "color": "Blue",
+    "notes": "IPX7 waterproof, 12-hour battery"
+  },
+  {
+    "product_id": 7,
+    "product_name": "Gaming Mouse",
+    "type": "Accessories",
+    "brand": "Razer",
+    "color": "Black",
+    "notes": "RGB lighting, 16,000 DPI sensor"
+  },
+  {
+    "product_id": 8,
+    "product_name": "Electric Toothbrush",
+    "type": "Personal Care",
+    "brand": "Oral-B",
+    "color": "White",
+    "notes": "Rechargeable, 3 brushing modes"
+  },
+  {
+    "product_id": 9,
+    "product_name": "Instant Pot",
+    "type": "Home Appliances",
+    "brand": "Instant Pot",
+    "color": "Stainless Steel",
+    "notes": "6-quart, 7-in-1 multifunctional cooker"
+  },
+  {
+    "product_id": 10,
+    "product_name": "Vacuum Cleaner",
+    "type": "Home Appliances",
+    "brand": "Dyson",
+    "color": "Purple",
+    "notes": "Cordless, 60 minutes of runtime"
+  }
+]

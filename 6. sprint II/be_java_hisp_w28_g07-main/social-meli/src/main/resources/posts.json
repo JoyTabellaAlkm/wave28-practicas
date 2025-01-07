@@ -1,0 +1,117 @@
+[
+  {
+    "post_id": 1,
+    "seller": {
+      "user_id": 2,
+      "user_name": "Carlos Gómez",
+      "followed": [],
+      "followers": [1, 6],
+      "posts": [1]
+    },
+    "date": "15-12-2024",
+    "product": {
+      "product_id": 1,
+      "product_name": "Smartphone Galaxy S21",
+      "type": "Electronics",
+      "brand": "Samsung",
+      "color": "Phantom Gray",
+      "notes": "Latest model, 128GB storage"
+    },
+    "category": 1,
+    "price": 799.99,
+    "has_promo": true,
+    "discount": 10.0
+  },
+  {
+    "post_id": 2,
+    "seller": {
+      "user_id": 3,
+      "user_name": "María López",
+      "followed": [],
+      "followers": [1, 6],
+      "posts": [4, 5]
+    },
+    "date": "13-12-2024",
+    "product": {
+      "product_id": 3,
+      "product_name": "Wireless Headphones",
+      "type": "Accessories",
+      "brand": "Sony",
+      "color": "Black",
+      "notes": "Noise cancellation, 30-hour battery"
+    },
+    "category": 3,
+    "price": 199.99,
+    "has_promo": true,
+    "discount": 15.0
+  },
+  {
+    "post_id": 3,
+    "seller": {
+      "user_id": 5,
+      "user_name": "Lucía Fernández",
+      "followed": [],
+      "followers": [1],
+      "posts": [2]
+    },
+    "date": "11-12-2024",
+    "product": {
+      "product_id": 5,
+      "product_name": "4K Ultra HD TV",
+      "type": "Electronics",
+      "brand": "LG",
+      "color": "Black",
+      "notes": "55-inch, OLED, Dolby Vision"
+    },
+    "category": 1,
+    "price": 1499.99,
+    "has_promo": true,
+    "discount": 20.0
+  },
+  {
+    "post_id": 4,
+    "seller": {
+      "user_id": 3,
+      "user_name": "María López",
+      "followed": [],
+      "followers": [1, 6],
+      "posts": [4, 5]
+    },
+    "date": "17-12-2024",
+    "product": {
+      "product_id": 6,
+      "product_name": "Laptop HP Envy",
+      "type": "Electronics",
+      "brand": "HP",
+      "color": "Silver",
+      "notes": "Intel Core i7, 16GB RAM, 512GB SSD"
+    },
+    "category": 1,
+    "price": 1199.99,
+    "has_promo": true,
+    "discount": 12.0
+  },
+  {
+    "post_id": 5,
+    "seller": {
+      "user_id": 3,
+      "user_name": "María López",
+      "followed": [],
+      "followers": [1, 6],
+      "posts": [4, 5]
+    },
+    "date": "01-12-2024",
+    "product": {
+      "product_id": 7,
+      "product_name": "Bluetooth Speaker JBL",
+      "type": "Accessories",
+      "brand": "JBL",
+      "color": "Red",
+      "notes": "Portable, Waterproof, 12-hour battery"
+    },
+    "category": 3,
+    "price": 89.99,
+    "has_promo": false,
+    "discount": 10.0
+  }
+]
