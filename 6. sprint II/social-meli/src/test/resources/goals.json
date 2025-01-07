@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Reach 10 Followers",
+    "target_followers": 10,
+    "deadline": "2025-07-15"
+  },
+  {
+    "id": 2,
+    "name": "Grow to 15 Followers",
+    "target_followers": 15,
+    "deadline": "2025-06-20"
+  },
+  {
+    "id": 3,
+    "name": "Gain 200 Followers",
+    "target_followers": 200,
+    "deadline": "2024-05-01"
+  },
+  {
+    "id": 4,
+    "name": "Double Current Followers",
+    "target_followers": 12,
+    "deadline": "2024-10-01"
+  },
+  {
+    "id": 5,
+    "name": "Achieve 1500 Followers",
+    "target_followers": 1500,
+    "deadline": "2024-06-30"
+  },
+  {
+    "id": 6,
+    "name": "Small Goal: 50 Followers",
+    "target_followers": 50,
+    "deadline": "2024-04-01"
+  },
+  {
+    "id": 7,
+    "name": "5000 Followers Milestone",
+    "target_followers": 5000,
+    "deadline": "2025-01-01"
+  },
+  {
+    "id": 8,
+    "name": "Social Media Growth Challenge",
+    "target_followers": 10000,
+    "deadline": "2025-06-01"
+  },
+  {
+    "id": 9,
+    "name": "Reach 2000 Followers",
+    "target_followers": 2000,
+    "deadline": "2024-08-01"
+  },
+  {
+    "id": 10,
+    "name": "Ultimate Growth: 10000 Followers",
+    "target_followers": 10000,
+    "deadline": "2024-12-01"
+  }
+]
