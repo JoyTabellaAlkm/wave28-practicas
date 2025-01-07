@@ -26,3 +26,5 @@ Realizar un diagrama de entidad - relación para el sistema de una concesionaria
 - Para el módulo del sistema, se necesita almacenar información de los clientes, los coches que estos poseen y los service/revisiones de cada uno de estos.
 - Utilizar el formato adecuado para representar las Primary y Foreign Key en el diagrama, además de los tipos de datos de cada atributo.
 
+![Ej_concesioraria](https://github.com/user-attachments/assets/120acf44-f848-4482-8c7e-3bafae9211fe)
+
