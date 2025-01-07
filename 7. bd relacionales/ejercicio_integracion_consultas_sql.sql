@@ -51,4 +51,4 @@ SELECT title, rating FROM movies ORDER BY rating ASC;
  SELECT title, release_date FROM movies WHERE release_date BETWEEN "2004-01-01" AND "2008-12-31";
  
  -- 13.
-  SELECT title, release_date FROM movies WHERE rating > 7.5 AND awards > 2 AND release_date BETWEEN "1998-01-01" AND "2009-12-31";
+  SELECT title, release_date FROM movies WHERE rating > 3 AND awards > 1 AND release_date BETWEEN "1998-01-01" AND "2009-12-31";
