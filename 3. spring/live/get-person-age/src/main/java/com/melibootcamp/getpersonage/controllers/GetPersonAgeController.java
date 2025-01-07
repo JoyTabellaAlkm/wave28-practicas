@@ -12,14 +12,13 @@ import java.time.LocalDate;
 @RequestMapping("/getPersonAge")
 public class GetPersonAgeController {
 
-    // ToDo: Generate service
+
     private GetPersonAgeService getPersonAgeService;
 
     public GetPersonAgeController(GetPersonAgeService getPersonAgeService){
         this.getPersonAgeService = getPersonAgeService;
     }
 
-    // ToDo: TASK AT HAND: send the age of a person depending of their birth date sent through this controller
     @GetMapping("/doIt/{day}-{month}-{year}")
     public int getPersonAge(@PathVariable int day, @PathVariable int month, @PathVariable int year){
         return getPersonAgeService.calculateAge(getPersonAgeService.formatBirthDate(day, month, year));

@@ -16,7 +16,7 @@ public class RomanNumbersRepository {
         Optional<String> toReturn = Optional.empty();
         String roman = "";
         while(toConvert != 0){
-            for (int i = 0; i<numbersToCompare.length; i++) {
+            for (int i = 0; i < numbersToCompare.length; i++) {
                 int value = numbersToCompare[i];
                 String romanNumber = romanNumbers[i];
                 if (toConvert >= value) {
