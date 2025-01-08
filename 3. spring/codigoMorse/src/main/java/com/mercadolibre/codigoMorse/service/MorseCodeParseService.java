@@ -86,6 +86,8 @@ public class MorseCodeParseService {
             result.append(" ");
         }
 
-        return result.toString().trim();*/
+        return result.toString().trim();
+
+        */
     }
 }
