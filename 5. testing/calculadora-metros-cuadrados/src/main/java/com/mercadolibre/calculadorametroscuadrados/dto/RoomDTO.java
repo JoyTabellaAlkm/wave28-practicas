@@ -8,6 +8,12 @@ public class RoomDTO {
   public RoomDTO() {
   }
 
+  public RoomDTO(String name, Integer width, Integer length){
+      this.name = name;
+      this.width = width;
+      this.length = length;
+  }
+
   public String getName() {
     return name;
   }
