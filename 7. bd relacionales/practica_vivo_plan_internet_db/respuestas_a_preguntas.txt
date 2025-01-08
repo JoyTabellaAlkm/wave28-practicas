@@ -1,0 +1,10 @@
+Ejercicio 2: Respuestas a las preguntas
+a. ¿Cuál es la primary key para la tabla de clientes? Justificar respuesta
+La primary key para la tabla de clientes es el id. Justificación: A pesar de que el DNI es en teoría único, es mejor usar un id autoincremental, que nos aseguramos no puede haber error y repetirse.
+b. ¿Cuál es la primary key para la tabla de planes de internet? Justificar respuesta.
+La primary key para la tabla de planes de internet es id. Justificación: Este campo identifica de forma única cada plan en la tabla y asegura que no haya duplicados.
+c. ¿Cómo serían las relaciones entre tablas? ¿En qué tabla debería haber foreign key? ¿A qué campo de qué tabla hace referencia dicha foreign key? Justificar respuesta.
+La tabla cliente_plan_internet sera la intermedia entre las tablas cliente y la plan_internet. Esta debe contener:
+id del cliente como foreign key que hace referencia al id en la tabla Clientes.
+id_plan como foreign key que hace referencia a id en la tabla Planes de Internet.
+Justificación: como nosotros decidimos que un cliente puede tener muchos planes (en distintas direcciones) y hay muchos clientes que tienen el mismo plan, hicimos una tabla intermedia que relaciona para al cliente y al plan, con la dirección donde esta ese plan y la fecha de alta y baja, en el caso de que el cliente cambie el plan en la dirección.
