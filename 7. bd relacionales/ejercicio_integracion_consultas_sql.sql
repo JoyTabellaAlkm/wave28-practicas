@@ -42,7 +42,7 @@ SELECT title, rating FROM movies ORDER BY rating ASC;
  SELECT first_name, last_name FROM actors LIMIT 10;
  
  -- 10.
- SELECT title, rating FROM movies WHERE title LIKE "Toy Story";
+ SELECT title, rating FROM movies WHERE title LIKE "Toy Story%";
  
  -- 11.
  SELECT first_name, last_name FROM actors WHERE first_name LIKE "Sam%";
