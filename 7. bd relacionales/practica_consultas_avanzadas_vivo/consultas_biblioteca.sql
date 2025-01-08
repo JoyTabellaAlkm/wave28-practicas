@@ -56,9 +56,9 @@ SELECT estudiante.nombre FROM estudiante INNER JOIN prestamo ON estudiante.idLec
 WHERE prestamo.idLibro IN (SELECT idLibro FROM libro WHERE titulo LIKE "%Base de Datos%");
 
 -- 13. 
-SELECT * FROM libro INNER JOIN libroautor ON libro.idLibro = libroautor.idLibro
+SELECT libro.titulo, libro.editorial, libro.area FROM libro INNER JOIN libroautor ON libro.idLibro = libroautor.idLibro
 WHERE libroautor.idAutor IN (SELECT idAutor FROM autor WHERE nombre="J.K. Rowling");
 
 -- 14.
- SELECT * FROM libro INNER JOIN prestamo ON libro.idLibro = prestamo.idLibro
+ SELECT libro.titulo FROM libro INNER JOIN prestamo ON libro.idLibro = prestamo.idLibro
  WHERE prestamo.fechaDevolucion = "2021-07-16";
