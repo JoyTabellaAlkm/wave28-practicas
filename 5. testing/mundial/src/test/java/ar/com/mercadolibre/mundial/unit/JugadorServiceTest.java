@@ -133,4 +133,9 @@ class JugadorServiceTest {
         assertNotNull(jugadores, "verificamos que la lista no sea nula");
         assertFalse(jugadores.isEmpty(), "verificamos que la lista no este vacia");
     }
+
+    @Test
+    @DisplayName("Validar la actualizacion de un jugador existente")
+    void validarActualizarJugador() {
+    }
 }
