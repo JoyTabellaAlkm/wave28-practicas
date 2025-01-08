@@ -43,7 +43,7 @@ CREATE TABLE Prestamo (
     FOREIGN KEY (idlibro) REFERENCES Libro(idlibro)
 );
 
--- Insertar autores
+-- Insertar Datos
 INSERT INTO Autor (nombre, nacionalidad) VALUES
 ('J.K. Rowling', 'Británica'),
 ('Gabriel García Márquez', 'Colombiana'),
@@ -53,7 +53,6 @@ INSERT INTO Autor (nombre, nacionalidad) VALUES
 ('Italo Calvino', 'Italiana'),
 ('Victor Hugo', 'Francesa');
 
--- Insertar libros
 INSERT INTO Libro (titulo, editorial, area) VALUES
 ('Harry Potter y la piedra filosofal', 'Salamandra', 'Ficción'),
 ('Harry Potter y la cámara secreta', 'Salamandra', 'Ficción'),
@@ -65,7 +64,6 @@ INSERT INTO Libro (titulo, editorial, area) VALUES
 ('Orgullo y prejuicio', 'Panamericana', 'Ficción'),
 ('El Universo: Guía de viaje', 'Planeta', 'Ciencia');
 
--- Relacionar libros con autores
 INSERT INTO libroAutor (idautor, idlibro) VALUES
 ((SELECT idautor FROM Autor WHERE nombre = 'J.K. Rowling'), (SELECT idlibro FROM Libro WHERE titulo = 'Harry Potter y la piedra filosofal')),
 ((SELECT idautor FROM Autor WHERE nombre = 'J.K. Rowling'), (SELECT idlibro FROM Libro WHERE titulo = 'Harry Potter y la cámara secreta')),
@@ -76,7 +74,6 @@ INSERT INTO libroAutor (idautor, idlibro) VALUES
 ((SELECT idautor FROM Autor WHERE nombre = 'Jane Austen'), (SELECT idlibro FROM Libro WHERE titulo = 'Orgullo y prejuicio')),
 ((SELECT idautor FROM Autor WHERE nombre = 'Italo Calvino'), (SELECT idlibro FROM Libro WHERE titulo = 'El Universo: Guía de viaje'));
 
--- Insertar estudiantes
 INSERT INTO Estudiante (nombre, apellido, direccion, carrera, edad) VALUES
 ('Filippo', 'Galli', '123 Calle Falsa', 'Informática', 20),
 ('Ana', 'Mendoza', '456 Avenida Siempre Viva', 'Derecho', 22),
@@ -84,7 +81,7 @@ INSERT INTO Estudiante (nombre, apellido, direccion, carrera, edad) VALUES
 ('María', 'González', '321 Calle Esperanza', 'Literatura', 21),
 ('Carlos', 'Sánchez', '654 Bulevar de Los Sueños', 'Ingeniería', 23);
 
--- Insertar préstamos
+
 INSERT INTO Prestamo (idlector, idlibro, fechaPrestamo, fechaDevolucion, devuelto) VALUES
 (1, 1, '2021-07-01', '2021-07-16', TRUE),
 (2, 2, '2021-07-05', '2021-07-19', TRUE),
