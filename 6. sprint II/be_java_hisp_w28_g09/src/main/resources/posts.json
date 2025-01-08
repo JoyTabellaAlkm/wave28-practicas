@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "date": "01-01-2025",
+    "productId": 1,
+    "category": 1,
+    "price": 1200.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "date": "31-12-2024",
+    "productId": 2,
+    "category": 2,
+    "price": 999.99,
+    "hasPromo": true,
+    "discount": 15.00
+  },
+  {
+    "id": 3,
+    "userId": 3,
+    "date": "30-12-2024",
+    "productId": 3,
+    "category": 3,
+    "price": 350.00,
+    "hasPromo": true,
+    "discount": 20.00
+  },
+  {
+    "id": 4,
+    "userId": 4,
+    "date": "29-12-2024",
+    "productId": 4,
+    "category": 4,
+    "price": 299.99,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 5,
+    "userId": 5,
+    "date": "05-11-2024",
+    "productId": 5,
+    "category": 1,
+    "price": 2499.00,
+    "hasPromo": true,
+    "discount": 10.00
+  },
+  {
+    "id": 6,
+    "userId": 6,
+    "date": "06-11-2024",
+    "productId": 6,
+    "category": 3,
+    "price": 350.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 7,
+    "userId": 7,
+    "date": "07-11-2024",
+    "productId": 7,
+    "category": 5,
+    "price": 150.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 8,
+    "userId": 8,
+    "date": "08-11-2024",
+    "productId": 8,
+    "category": 2,
+    "price": 799.99,
+    "hasPromo": true,
+    "discount": 10.00
+  },
+  {
+    "id": 9,
+    "userId": 9,
+    "date": "09-11-2024",
+    "productId": 9,
+    "category": 6,
+    "price": 1399.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 10,
+    "userId": 10,
+    "date": "10-11-2024",
+    "productId": 10,
+    "category": 7,
+    "price": 129.99,
+    "hasPromo": true,
+    "discount": 5.00
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "date": "31-12-2024",
+    "productId": 2,
+    "category": 2,
+    "price": 999.99,
+    "hasPromo": true,
+    "discount": 15.00
+  },
+  {
+    "id": 12,
+    "userId": 2,
+    "date": "05-12-2024",
+    "productId": 1,
+    "category": 1,
+    "price": 1200.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 13,
+    "userId": 3,
+    "date": "06-12-2024",
+    "productId": 5,
+    "category": 1,
+    "price": 2499.00,
+    "hasPromo": true,
+    "discount": 10.00
+  },
+  {
+    "id": 14,
+    "userId": 4,
+    "date": "07-12-2024",
+    "productId": 6,
+    "category": 3,
+    "price": 350.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 15,
+    "userId": 5,
+    "date": "08-12-2024",
+    "productId": 8,
+    "category": 2,
+    "price": 799.99,
+    "hasPromo": true,
+    "discount": 10.00
+  },
+  {
+    "id": 16,
+    "userId": 6,
+    "date": "09-12-2024",
+    "productId": 10,
+    "category": 7,
+    "price": 129.99,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 17,
+    "userId": 7,
+    "date": "10-12-2024",
+    "productId": 9,
+    "category": 6,
+    "price": 1399.00,
+    "hasPromo": true,
+    "discount": 5.00
+  },
+  {
+    "id": 18,
+    "userId": 8,
+    "date": "11-12-2024",
+    "productId": 4,
+    "category": 4,
+    "price": 299.99,
+    "hasPromo": true,
+    "discount": 20.00
+  },
+  {
+    "id": 19,
+    "userId": 9,
+    "date": "13-12-2024",
+    "productId": 7,
+    "category": 5,
+    "price": 150.00,
+    "hasPromo": false,
+    "discount": 0.00
+  },
+  {
+    "id": 20,
+    "userId": 10,
+    "date": "01-12-2024",
+    "productId": 3,
+    "category": 3,
+    "price": 350.00,
+    "hasPromo": true,
+    "discount": 25.00
+  }
+]
