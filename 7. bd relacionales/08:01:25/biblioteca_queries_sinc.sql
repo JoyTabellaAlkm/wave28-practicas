@@ -46,7 +46,7 @@ SELECT e.nombre
 FROM Estudiante e
 JOIN Prestamo p ON e.idlector = p.Idlector
 JOIN Libro l ON p.idlibro = l.idlibro
-WHERE l.titulo LIKE '%Bases de Datos%';
+WHERE l.titulo LIKE '%Base%de Datos%';
 
 -- 13. Listar los libros que pertenecen a la autora J.K. Rowling.
 SELECT l.*

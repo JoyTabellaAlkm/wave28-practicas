@@ -64,6 +64,13 @@ INSERT INTO Libro (titulo, editorial, area) VALUES
 ('Orgullo y prejuicio', 'Panamericana', 'Ficción'),
 ('El Universo: Guía de viaje', 'Planeta', 'Ciencia');
 
+INSERT INTO Estudiante (nombre, apellido, direccion, carrera, edad) VALUES
+('Filippo', 'Galli', '123 Calle Falsa', 'Informática', 20),
+('Ana', 'Mendoza', '456 Avenida Siempre Viva', 'Derecho', 22),
+('Luis', 'Zapata', '789 Plaza de La Libertad', 'Informática', 19),
+('María', 'González', '321 Calle Esperanza', 'Literatura', 21),
+('Carlos', 'Sánchez', '654 Bulevar de Los Sueños', 'Ingeniería', 23);
+
 INSERT INTO libroAutor (idautor, idlibro) VALUES
 ((SELECT idautor FROM Autor WHERE nombre = 'J.K. Rowling'), (SELECT idlibro FROM Libro WHERE titulo = 'Harry Potter y la piedra filosofal')),
 ((SELECT idautor FROM Autor WHERE nombre = 'J.K. Rowling'), (SELECT idlibro FROM Libro WHERE titulo = 'Harry Potter y la cámara secreta')),
@@ -73,14 +80,6 @@ INSERT INTO libroAutor (idautor, idlibro) VALUES
 ((SELECT idautor FROM Autor WHERE nombre = 'George Orwell'), (SELECT idlibro FROM Libro WHERE titulo = '1984')),
 ((SELECT idautor FROM Autor WHERE nombre = 'Jane Austen'), (SELECT idlibro FROM Libro WHERE titulo = 'Orgullo y prejuicio')),
 ((SELECT idautor FROM Autor WHERE nombre = 'Italo Calvino'), (SELECT idlibro FROM Libro WHERE titulo = 'El Universo: Guía de viaje'));
-
-INSERT INTO Estudiante (nombre, apellido, direccion, carrera, edad) VALUES
-('Filippo', 'Galli', '123 Calle Falsa', 'Informática', 20),
-('Ana', 'Mendoza', '456 Avenida Siempre Viva', 'Derecho', 22),
-('Luis', 'Zapata', '789 Plaza de La Libertad', 'Informática', 19),
-('María', 'González', '321 Calle Esperanza', 'Literatura', 21),
-('Carlos', 'Sánchez', '654 Bulevar de Los Sueños', 'Ingeniería', 23);
-
 
 INSERT INTO Prestamo (idlector, idlibro, fechaPrestamo, fechaDevolucion, devuelto) VALUES
 (1, 1, '2021-07-01', '2021-07-16', TRUE),
