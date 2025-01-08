@@ -45,7 +45,7 @@ FROM
     test_3_2_db.departamento AS de ON em.depto_nro = de.depto_nro
 WHERE
     em.puesto = (SELECT 
-            em.salario
+            em.puesto
         FROM
             test_3_2_db.empleado AS em
         WHERE
