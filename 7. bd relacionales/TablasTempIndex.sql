@@ -13,6 +13,7 @@ DROP INDEX season_idx ON seasons;
 explain select * from seasons where number = 9;
 create index season_idx on seasons(number);
 explain select * from seasons where number = 9;
+SHOW INDEX FROM seasons;
 
 -- Analizar por qué crearía un índice en la tabla indicada y con qué criterio se elige/n el/los campos.
 -- como en la consulta anterior filtamos por numero de temp. no seria raro seguir haciendolo y hace mucho mas rapido la busqueda.
