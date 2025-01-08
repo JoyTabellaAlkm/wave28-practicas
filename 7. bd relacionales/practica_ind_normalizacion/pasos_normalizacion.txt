@@ -1,3 +1,4 @@
 1 - Me fijo si puedo aplicar 1FN, no, porque no hay conjuntos dentro de ningún valor de los registros.
 2 - Aplico 2FN, moviendo todos los datos del cliente a otra tabla, ya que no dependen de la tabla factura. Lo mismo con los datos que tienen que ver con artículo, cantidad, etc.
 3 - Conecto las nuevas tablas con factura, también identifico para conectar con la tabla artículos, y especificar la cantidad del artículo, podemos armar una tabla intermedia, de detalle de artículo en la factura.
+4 - Aplico 3FN, La base de datos ya cumple con la 2NF. No hay dependencias transitivas en la tabla Factura, todos los atributos no clave son dependientes directamente de la clave primaria y no de otros atributos no claves. Separo Forma_Pago en una tabla distinta para eliminar cualquier dependencia transitoria que podría surgir si la forma de pago se almacenara como un atributo sencillo en otras tablas.

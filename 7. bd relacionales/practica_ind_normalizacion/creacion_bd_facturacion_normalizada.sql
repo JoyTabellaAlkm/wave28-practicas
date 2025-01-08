@@ -9,15 +9,22 @@ CREATE TABLE Cliente (
     direccion_cliente VARCHAR(40)
 );
 
+-- Tabla Forma_Pago
+CREATE TABLE Forma_Pago (
+    id_forma_pago INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion_forma_pago VARCHAR(40)
+);
+
 -- Tabla Factura
 CREATE TABLE Factura (
     id_factura INT AUTO_INCREMENT PRIMARY KEY,
     fecha_factura DATE,
-    forma_pago DECIMAL(10,0),
-    IVA DECIMAL(10,0),
-    importe DECIMAL(10,0),
+    id_forma_pago INT,
+    IVA DECIMAL(10,2),
+    importe DECIMAL(10,2),
     id_cliente INT,
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_forma_pago) REFERENCES Forma_Pago(id_forma_pago)
 );
 
 -- Tabla Artículo
