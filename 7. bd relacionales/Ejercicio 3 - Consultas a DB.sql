@@ -1,0 +1,11 @@
+Select title, rating, awards, release_date, length from movies;
+Select first_name, last_name, rating from actors;
+Select title as titulos from series;
+Select first_name, last_name from actors where rating > 7.5;
+Select title, rating from movies ORDER BY rating; 
+Select title from movies LIMIT 3;
+select title, rating, awards, release_date, length from movies order by rating desc limit 5;
+select first_name, last_name, rating from actors limit 10;
+select first_name, last_name, rating from actors where first_name = "Sam";
+select title from movies WHERE release_date BETWEEN '2004-01-01' AND '2008-12-31';
+select title from movies WHERE rating > 3 AND awards > 1 AND release_date BETWEEN "1988-01-01" AND "2009-12-31";
