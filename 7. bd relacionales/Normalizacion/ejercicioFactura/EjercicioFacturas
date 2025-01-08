@@ -1,0 +1,23 @@
+Primer forma normal :
+    Eliminar datos duplicados en atributos y crear registros independientes.
+    El esquema ya esta en primera formal normal ya que no hay atributos duplicados
+Segunda forma normal :
+    Tiene que estar en 1FN y se eliminan columnas que no dependen de la clave principal, en este caso de id_factura
+
+    Esquema resultante:
+    Factura = {id_factura, fecha_factura, forma_pago, IVA, cantidad, importe, descripcion_articulo, id_cliente (FK)};
+    Cliente = {id_cliente, nombre_cliente, apellido_cliente, direccion_cliente};
+
+    Con estos cambios el esquema esta en segunda forma normal.
+
+Tercera forma normal:
+    Tiene que estar en segunda forma normal y se eliminan subgrupos de datos en multiples columnas de una tabla.
+
+
+    Esquema resultante:
+    Factura = {id_factura(PK), fecha_factura, forma_pago, IVA, cantidad_Clietotal, importe, id_cliente (FK)};
+    Articulo = {id_articulo(PK), descripcion_articulo};
+    Factura_Articulo = {id_factura(PK), id_articulo(PK), cantidad};
+    Cliente = {id_cliente(PK), nombre_cliente, apellido_cliente, direccion_cliente};
+
+    Con estos cambios el esquema esta en tercer forma normal.
