@@ -4,5 +4,8 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/01-Github/PracticaConflictos" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/1. git/01-Github/github" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3.spring/EjercicioCodePrueba" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3.spring/StarWarse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3.spring/linkTraker" vcs="Git" />
   </component>
 </project>
