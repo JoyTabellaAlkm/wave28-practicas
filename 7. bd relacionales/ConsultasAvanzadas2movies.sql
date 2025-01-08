@@ -48,7 +48,18 @@ CREATE INDEX moviesName ON movies(title);
 
 # Chequee que el índice fue creado correctamente.
 drop index moviesName on movies;
-explain select * from movies where title = 'Toy Story 2'
+explain select * from movies where title = 'Toy Story 2';
 
 # En la base de datos movies ¿Existiría una mejora notable al crear índices? Analizar y justificar la respuesta.
+-- en teoria si hubiese miles de peliculas crear un indice en algun campo que permita filtrar seria mucho mas rapido
+-- se puede ver ya que sin un indice por mas que te devuelva los registros que corresponden recorreria toda la tabla
+-- en cambio con un indice iria directo a los registros que contengan el filtro
+drop index moviesName on movies;
+show index from movies;
+explain select * from movies where title = 'Toy Story 2';
+CREATE INDEX moviesName ON movies(title);
+explain select * from movies where title = 'Toy Story 2';
+
 # ¿En qué otra tabla crearía un índice y por qué? Justificar la respuesta
+-- en la tabla movies se podria hacer uno por release date, en la de seasons podria ser por number de temporada
+-- y otra podria ser episodios por nro de episodio.
