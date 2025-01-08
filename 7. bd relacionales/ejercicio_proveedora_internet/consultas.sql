@@ -1,5 +1,4 @@
 USE empresa_internet;
-
 -- 1. Obtener todos los clientes
 SELECT * FROM cliente;
 -- 2. Obtener todos los planes
