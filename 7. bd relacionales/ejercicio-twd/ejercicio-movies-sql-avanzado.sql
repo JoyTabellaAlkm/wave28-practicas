@@ -53,3 +53,30 @@ WHERE awards < 5;
 DELETE FROM temporary_movies
 WHERE awards < 5;
 
+-- 7.
+SELECT DISTINCT g.name FROM
+genres as g INNER JOIN movies as m
+ON m.genre_id = g.id;
+
+-- 8.
+SELECT a.*
+FROM actors a
+INNER JOIN movies m
+ON a.favorite_movie_id = m.id
+WHERE m.awards > 3;
+
+-- 9.
+CREATE INDEX title_index
+ON movies (title);
+
+-- 10.
+SHOW INDEX FROM movies;
+
+-- 11. Si va haber diferencia en la búsqueda pero teniendo en cuenta la cantidad de registros de la tabla 
+-- quizas la mejora en performance no sea tan perceptible. 
+
+-- 12. Creariamos en la tabla 'series' el indice para la columna title, debido a que mejoraría la performance de búsqueda
+-- en caso de querer buscar series, un caso similar a la tabla 'movies'
+
+
+
