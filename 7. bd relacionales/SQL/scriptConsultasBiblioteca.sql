@@ -76,7 +76,10 @@ INSERT INTO libro (titulo, editorial, area) VALUES
 ('El proceso', 'Losada', 'Ficción'),
 ('El amor en los tiempos del cólera', 'Random House', 'Literatura'),
 ('La invención de Morel', 'Emecé Editores', 'Ciencia ficción'),
-('El Universo: Guía de viaje', 'Planeta', 'Astronomía');
+('El Universo: Guía de viaje', 'Planeta', 'Base de Datos'),
+('El internet de las cosas', 'anonimo', 'Internet'),
+('Bases de datos 1', 'Planeta', 'Base de Datos');
+
 
 -- Insertar datos en la tabla libroautor
 INSERT INTO libroautor (idautor, idlibro) VALUES
@@ -107,10 +110,10 @@ INSERT INTO estudiante (nombre, apellido, direccion, carrera, edad) VALUES
 
 -- Insertar datos en la tabla préstamos
 INSERT INTO prestamo (idlector, idlibro, fechaprestamo, fechadevolucion, devuelto) VALUES
-(1, 1, '2023-06-01', '2023-06-15', TRUE),
+(11, 1, '2023-06-01', '2023-06-15', TRUE),
 (2, 2, '2023-06-05', '2023-06-20', TRUE),
 (3, 3, '2023-06-10', '2023-06-25', TRUE),
-(4, 4, '2023-06-15', NULL, FALSE),
+(4, 4, '2023-06-15', '2021-07-16', FALSE),
 (5, 5, '2023-06-20', NULL, FALSE),
 (6, 6, '2023-07-01', '2023-07-15', TRUE),
 (1, 8, '2023-07-10', '2023-07-20', TRUE),
