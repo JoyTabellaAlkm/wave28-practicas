@@ -1,0 +1,10 @@
+GET clientes-misiones/_search?q="CO"&size=100
+
+POST clientes-misiones/_doc
+{
+  "Nombre": "Andrés",
+  "Apellido": "Baquero",
+  "No": 754,
+  "Localidad": "Bogotá",
+  "Pais": "CO"
+}
