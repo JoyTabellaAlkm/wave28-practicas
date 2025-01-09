@@ -1,0 +1,74 @@
+Creación de BASE DE DATOS :
+PUT /zapatillas_deportivas
+{
+  "mappings": {
+    "properties": {
+      "nombre": {
+        "type": "text"
+      },
+      "marca": {
+        "type": "keyword"
+      },
+      "tamaño": {
+        "type": "integer"
+      },
+      "precio": {
+        "type": "float"
+      },
+      "color": {
+        "type": "keyword"
+      },
+      "fecha_lanzamiento": {
+        "type": "date"
+      },
+      "categoria": {
+        "type": "keyword"
+      },
+      "material": {
+        "type": "keyword"
+      }
+    }
+
+----------------------------------
+INSERCIÓN DE REGISTROS:
+
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 1", "marca" : "Nike", "tamaño" : 42, "precio" : 120.0, "color" : "Negro", "fecha_lanzamiento" : "2022-05-20", "categoria" : "Running", "material" : "Textil" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 2", "marca" : "Adidas", "tamaño" : 41, "precio" : 110.0, "color" : "Blanco", "fecha_lanzamiento" : "2023-03-10", "categoria" : "Fútbol", "material" : "Cuero" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 3", "marca" : "Puma", "tamaño" : 40, "precio" : 115.0, "color" : "Azul", "fecha_lanzamiento" : "2021-08-15", "categoria" : "Basketball", "material" : "Sintético" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 4", "marca" : "Reebok", "tamaño" : 43, "precio" : 105.0, "color" : "Rojo", "fecha_lanzamiento" : "2020-11-05", "categoria" : "Training", "material" : "Malla" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 5", "marca" : "Asics", "tamaño" : 39, "precio" : 130.0, "color" : "Verde", "fecha_lanzamiento" : "2019-09-25", "categoria" : "Correr", "material" : "Gel" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 6", "marca" : "New Balance", "tamaño" : 42, "precio" : 95.0, "color" : "Amarillo", "fecha_lanzamiento" : "2021-07-30", "categoria" : "Casual", "material" : "Gamuza" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 7", "marca" : "Under Armour", "tamaño" : 44, "precio" : 140.0, "color" : "Naranja", "fecha_lanzamiento" : "2022-01-10", "categoria" : "Crossfit", "material" : "Malla" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 8", "marca" : "Mizuno", "tamaño" : 41, "precio" : 125.0, "color" : "Gris", "fecha_lanzamiento" : "2023-02-18", "categoria" : "Running", "material" : "Textil" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 9", "marca" : "Saucony", "tamaño" : 40, "precio" : 110.0, "color" : "Negro", "fecha_lanzamiento" : "2020-06-14", "categoria" : "Trail", "material" : "Sintético" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 10", "marca" : "Brooks", "tamaño" : 42, "precio" : 135.0, "color" : "Blanco", "fecha_lanzamiento" : "2022-12-19", "categoria" : "Maratón", "material" : "Gel" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 11", "marca" : "Salomon", "tamaño" : 43, "precio" : 90.0, "color" : "Azul", "fecha_lanzamiento" : "2021-04-07", "categoria" : "Montaña", "material" : "Cuero" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 12", "marca" : "Hoka One One", "tamaño" : 39, "precio" : 145.0, "color" : "Rojo", "fecha_lanzamiento" : "2023-05-11", "categoria" : "Ultra", "material" : "Malla" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 13", "marca" : "Skechers", "tamaño" : 44, "precio" : 100.0, "color" : "Verde", "fecha_lanzamiento" : "2019-07-13", "categoria" : "Fitness", "material" : "Textil" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 14", "marca" : "Fila", "tamaño" : 41, "precio" : 85.0, "color" : "Amarillo", "fecha_lanzamiento" : "2020-03-28", "categoria" : "Caminar", "material" : "Gamuza" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 15", "marca" : "Converse", "tamaño" : 40, "precio" : 75.0, "color" : "Naranja", "fecha_lanzamiento" : "2021-11-29", "categoria" : "Casual", "material" : "Canvas" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 16", "marca" : "Vans", "tamaño" : 39, "precio" : 80.0, "color" : "Gris", "fecha_lanzamiento" : "2023-04-03", "categoria" : "Skate", "material" : "Cuero" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 17", "marca" : "DC Shoes", "tamaño" : 42, "precio" : 95.0, "color" : "Negro", "fecha_lanzamiento" : "2022-09-09", "categoria" : "Skate", "material" : "Sintético" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 18", "marca" : "Timberland", "tamaño" : 43, "precio" : 150.0, "color" : "Blanco", "fecha_lanzamiento" : "2020-02-01", "categoria" : "Hiking", "material" : "Cuero" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 19", "marca" : "North Face", "tamaño" : 44, "precio" : 160.0, "color" : "Azul", "fecha_lanzamiento" : "2021-01-16", "categoria" : "Outdoor", "material" : "Nailon" }
+{ "index" : { "_index" : "zapatillas_deportivas" } }
+{ "nombre" : "Zapatilla Deportiva 20", "marca" : "Columbia", "tamaño" : 42, "precio" : 130.0, "color" : "Rojo", "fecha_lanzamiento" : "2023-08-21", "categoria" : "Trail", "material" : "Malla" }
