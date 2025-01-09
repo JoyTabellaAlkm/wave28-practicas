@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "24f8bf1e-f1ba-4124-a1a4-f6451f19da22",
+		"name": "Kibana Exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40344134"
+	},
+	"item": [
+		{
+			"name": "Kibana Create Index",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mappings\": {\n    \"properties\": {\n      \"nombre\": {\n        \"type\": \"text\"\n      },\n      \"marca\": {\n        \"type\": \"keyword\"\n      },\n      \"descripcion\": {\n        \"type\": \"text\"\n      },\n      \"precio\": {\n        \"type\": \"float\"\n      },\n      \"tallas\": {\n        \"type\": \"keyword\"\n      },\n      \"imagen\": {\n        \"type\": \"text\"\n      }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kibana Check Indexes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/_cat/indices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_cat",
+						"indices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kibana Insert In Index",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_id\": \"1\" } }\n{ \"nombre\": \"Nike Air Max\", \"marca\": \"Nike\", \"descripcion\": \"Zapatillas deportivas con tecnología de aire.\", \"precio\": 120.00, \"tallas\": [\"40\", \"41\", \"42\"], \"imagen\": \"link_a_imagen_1\" }\n{ \"index\": { \"_id\": \"2\" } }\n{ \"nombre\": \"Adidas Ultraboost\", \"marca\": \"Adidas\", \"descripcion\": \"Comodidad y alta energía en cada paso.\", \"precio\": 180.00, \"tallas\": [\"38\", \"39\", \"40\"], \"imagen\": \"link_a_imagen_2\" }\n{ \"index\": { \"_id\": \"3\" } }\n{ \"nombre\": \"Puma RS-X\", \"marca\": \"Puma\", \"descripcion\": \"Un estilo retro con un toque moderno.\", \"precio\": 110.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_3\" }\n{ \"index\": { \"_id\": \"4\" } }\n{ \"nombre\": \"Reebok Nano X\", \"marca\": \"Reebok\", \"descripcion\": \"Zapatillas ideales para entrenamiento cruzado.\", \"precio\": 140.00, \"tallas\": [\"37\", \"38\", \"39\"], \"imagen\": \"link_a_imagen_4\" }\n{ \"index\": { \"_id\": \"5\" } }\n{ \"nombre\": \"Asics Gel-Kayano\", \"marca\": \"Asics\", \"descripcion\": \"Zapatillas para correr con soporte para el arco.\", \"precio\": 160.00, \"tallas\": [\"40\", \"41\", \"42\"], \"imagen\": \"link_a_imagen_5\" }\n{ \"index\": { \"_id\": \"6\" } }\n{ \"nombre\": \"New Balance 990\", \"marca\": \"New Balance\", \"descripcion\": \"Un clásico en la moda y el confort.\", \"precio\": 175.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_6\" }\n{ \"index\": { \"_id\": \"7\" } }\n{ \"nombre\": \"Under Armour HOVR\", \"marca\": \"Under Armour\", \"descripcion\": \"Zapatillas de running con tecnología HOVR.\", \"precio\": 150.00, \"tallas\": [\"40\", \"41\"], \"imagen\": \"link_a_imagen_7\" }\n{ \"index\": { \"_id\": \"8\" } }\n{ \"nombre\": \"Saucony Triumph\", \"marca\": \"Saucony\", \"descripcion\": \"Diseñadas para corredores que buscan comodidad.\", \"precio\": 130.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_8\" }\n{ \"index\": { \"_id\": \"9\" } }\n{ \"nombre\": \"Hoka One One Bondi\", \"marca\": \"Hoka One One\", \"descripcion\": \"Zapatillas con una máxima amortiguación.\", \"precio\": 160.00, \"tallas\": [\"40\", \"41\", \"42\"], \"imagen\": \"link_a_imagen_9\" }\n{ \"index\": { \"_id\": \"10\" } }\n{ \"nombre\": \"On Cloudstratus\", \"marca\": \"On\", \"descripcion\": \"Tecnología de amortiguación para una carrera suave.\", \"precio\": 170.00, \"tallas\": [\"38\", \"39\", \"40\"], \"imagen\": \"link_a_imagen_10\" }\n{ \"index\": { \"_id\": \"11\" } }\n{ \"nombre\": \"Nike React Infinity\", \"marca\": \"Nike\", \"descripcion\": \"Diseñadas para ofrecer estabilidad y confort.\", \"precio\": 150.00, \"tallas\": [\"40\", \"41\"], \"imagen\": \"link_a_imagen_11\" }\n{ \"index\": { \"_id\": \"12\" } }\n{ \"nombre\": \"Adidas NMD\", \"marca\": \"Adidas\", \"descripcion\": \"Zapatillas urbanas con un diseño moderno.\", \"precio\": 130.00, \"tallas\": [\"38\", \"39\", \"40\"], \"imagen\": \"link_a_imagen_12\" }\n{ \"index\": { \"_id\": \"13\" } }\n{ \"nombre\": \"Mizuno Wave Rider\", \"marca\": \"Mizuno\", \"descripcion\": \"Zapatillas de running con una gran eficiencia.\", \"precio\": 140.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_13\" }\n{ \"index\": { \"_id\": \"14\" } }\n{ \"nombre\": \"Salomon Speedcross\", \"marca\": \"Salomon\", \"descripcion\": \"Ideal para senderismo y caminos difíciles.\", \"precio\": 130.00, \"tallas\": [\"41\", \"42\"], \"imagen\": \"link_a_imagen_14\" }\n{ \"index\": { \"_id\": \"15\" } }\n{ \"nombre\": \"Brooks Ghost\", \"marca\": \"Brooks\", \"descripcion\": \"Zapatillas para correr cómodas y ligeras.\", \"precio\": 140.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_15\" }\n{ \"index\": { \"_id\": \"16\" } }\n{ \"nombre\": \"Fila Disruptor\", \"marca\": \"Fila\", \"descripcion\": \"Zapatillas de estilo retro y muy cómodas.\", \"precio\": 100.00, \"tallas\": [\"40\", \"41\"], \"imagen\": \"link_a_imagen_16\" }\n{ \"index\": { \"_id\": \"17\" } }\n{ \"nombre\": \"Vans Old Skool\", \"marca\": \"Vans\", \"descripcion\": \"Zapatillas clásicas de skate.\", \"precio\": 80.00, \"tallas\": [\"38\", \"39\", \"40\"], \"imagen\": \"link_a_imagen_17\" }\n{ \"index\": { \"_id\": \"18\" } }\n{ \"nombre\": \"Converse Chuck Taylor\", \"marca\": \"Converse\", \"descripcion\": \"Un clásico en el mundo de la moda urbana.\", \"precio\": 75.00, \"tallas\": [\"36\", \"37\", \"38\"], \"imagen\": \"link_a_imagen_18\" }\n{ \"index\": { \"_id\": \"19\" } }\n{ \"nombre\": \"Nike Zoom Fly\", \"marca\": \"Nike\", \"descripcion\": \"Perfectas para competir en carreras.\", \"precio\": 160.00, \"tallas\": [\"39\", \"40\", \"41\"], \"imagen\": \"link_a_imagen_19\" }\n{ \"index\": { \"_id\": \"20\" } }\n{ \"nombre\": \"Adidas Superstar\", \"marca\": \"Adidas\", \"descripcion\": \"Zapatillas clásicas de cuero.\", \"precio\": 100.00, \"tallas\": [\"38\", \"39\", \"40\"], \"imagen\": \"link_a_imagen_20\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_bulk",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kibana Get First 10 Registries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"match_all\": {}\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kibana Get Nike Registries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"term\": {\n      \"marca\": \"Nike\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kibana Get Price < 150 Registries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"query\": {\n    \"range\": {\n      \"precio\": {\n        \"lt\": 150.00\n      }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
