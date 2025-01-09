@@ -72,3 +72,15 @@ INSERCIÓN DE REGISTROS:
 { "nombre" : "Zapatilla Deportiva 19", "marca" : "North Face", "tamaño" : 44, "precio" : 160.0, "color" : "Azul", "fecha_lanzamiento" : "2021-01-16", "categoria" : "Outdoor", "material" : "Nailon" }
 { "index" : { "_index" : "zapatillas_deportivas" } }
 { "nombre" : "Zapatilla Deportiva 20", "marca" : "Columbia", "tamaño" : 42, "precio" : 130.0, "color" : "Rojo", "fecha_lanzamiento" : "2023-08-21", "categoria" : "Trail", "material" : "Malla" }
+
+
+----------------------
+BUSCAR UN REGISTRO POR MARCA
+GET /zapatillas_deportivas/_search
+{
+  "query":{
+    "match": {
+      "marca": "Puma"
+    }
+  }
+}
