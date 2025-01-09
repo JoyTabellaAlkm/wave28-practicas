@@ -69,3 +69,10 @@ GET /zapatillas-deportivas/_search
   },
   "size": 20
 }
+MODIFICAR UN CAMPO DE UN REGISTRO YA EXISTENTE
+POST /zapatillas-deportivas/_update/1
+{
+  "doc": {
+    "talle":40
+  }
+}
