@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "f23b46f1-fb2b-4d0f-bf81-c27d1ec2ffc2",
+		"name": "ElasticSearch_zapatillasDeportivas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40213653"
+	},
+	"item": [
+		{
+			"name": "crear ddbb",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"mappings\": {\n    \"properties\": {\n      \"marca\": {\n        \"type\": \"text\"\n      },\n      \"modelo\": {\n        \"type\": \"text\"\n      },\n      \"talle\": {\n        \"type\": \"integer\"\n      }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9200/zapatillas_deportivas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatillas_deportivas/_doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productos\":\n    [\n              { \"marca\": \"Nike\", \"modelo\": \"Air Max\", \"talle\": 40 },\n  { \"marca\": \"Adidas\", \"modelo\": \"UltraBoost\", \"talle\": 42 },\n  { \"marca\": \"Puma\", \"modelo\": \"Suede Classic\", \"talle\": 41 },\n  { \"marca\": \"Reebok\", \"modelo\": \"Nano X2\", \"talle\": 43 },\n  { \"marca\": \"New Balance\", \"modelo\": \"574\", \"talle\": 40 },\n  { \"marca\": \"Converse\", \"modelo\": \"Chuck Taylor\", \"talle\": 39 },\n  { \"marca\": \"Vans\", \"modelo\": \"Old Skool\", \"talle\": 41 },\n  { \"marca\": \"Fila\", \"modelo\": \"Disruptor\", \"talle\": 38 },\n  { \"marca\": \"Under Armour\", \"modelo\": \"HOVR Phantom\", \"talle\": 42 },\n  { \"marca\": \"Asics\", \"modelo\": \"Gel-Kayano\", \"talle\": 44 },\n  { \"marca\": \"Mizuno\", \"modelo\": \"Wave Rider\", \"talle\": 40 },\n  { \"marca\": \"Jordan\", \"modelo\": \"Air Jordan 1\", \"talle\": 41 },\n  { \"marca\": \"Saucony\", \"modelo\": \"Endorphin Pro\", \"talle\": 43 },\n  { \"marca\": \"Hoka One One\", \"modelo\": \"Clifton\", \"talle\": 42 },\n  { \"marca\": \"Brooks\", \"modelo\": \"Ghost\", \"talle\": 44 },\n  { \"marca\": \"Salomon\", \"modelo\": \"Speedcross\", \"talle\": 39 },\n  { \"marca\": \"Nike\", \"modelo\": \"Zoom Fly\", \"talle\": 40 },\n  { \"marca\": \"Adidas\", \"modelo\": \"NMD R1\", \"talle\": 41 },\n  { \"marca\": \"Puma\", \"modelo\": \"RS-X\", \"talle\": 42 }\n    ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9200/zapatillas_deportivas/_doc"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatillas_deportivas/_search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9200/zapatillas_deportivas/_search/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatillas_deportivas/_search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"query\": {\n    \"bool\": {\n      \"must\": [\n        {\n          \"match\": {\n            \"productos.marca\": \"Nike\"\n          }\n        }\n      ]\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9200/zapatillas_deportivas/_search"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatillas_deportivas/_bulk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_index\": \"zapatillas_deportivas\",\n    \"_id\": \"1\",\n    \"_score\": 1.0,\n    \"_source\": [\n        {\n            \"marca\": \"Nike\",\n            \"modelo\": \"Force\",\n            \"talle\": 22\n        },\n            \n            {\n            \"marca\": \"Nike\",\n            \"modelo\": \"Force\",\n            \"talle\": 23\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9200/zapatillas_deportivas/_bulk"
+			},
+			"response": []
+		}
+	]
+}
