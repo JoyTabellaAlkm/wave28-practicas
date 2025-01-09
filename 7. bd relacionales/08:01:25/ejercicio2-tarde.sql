@@ -31,7 +31,7 @@ SET SQL_SAFE_UPDATES = 0;
 DELETE FROM movies_temp
 WHERE awards < 5;
 SELECT * FROM movies_temp;
-
+SET SQL_SAFE_UPDATES = 1;
 -- 7. Obtener la lista de todos los géneros que tengan al menos una película
 SELECT g.*
 FROM genres g
