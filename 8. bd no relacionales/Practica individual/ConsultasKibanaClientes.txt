@@ -1,0 +1,78 @@
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "Localidad": "Posadas"
+    }
+  }
+}
+
+POST /clientes/_doc
+{
+  "Nombre":"Daniel",
+  "Apellido": "Franco",
+  "Pais":"IT",
+  "Localidad":"Posadas"
+}
+
+POST /clientes/_doc
+{
+  "Nombre":"Daniel",
+  "Apellido": "Franco",
+  "Pais":"Colombia",
+  "Localidad":"Posadas"
+}
+
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "Pais": "IT"
+    }
+  }
+}
+
+Respuesta:
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 2,
+      "relation" : "eq"
+    },
+    "max_score" : 0.6931471,
+    "hits" : [
+      {
+        "_index" : "clientes",
+        "_type" : "_doc",
+        "_id" : "A9mTTJQBOWsi62jyAYIE",
+        "_score" : 0.6931471,
+        "_source" : {
+          "Nombre" : "Daniel",
+          "Apellido" : "Franco",
+          "Pais" : "IT",
+          "Localidad" : "Posadas"
+        }
+      },
+      {
+        "_index" : "clientes",
+        "_type" : "_doc",
+        "_id" : "BNmTTJQBOWsi62jyL4I0",
+        "_score" : 0.6931471,
+        "_source" : {
+          "Nombre" : "Daniel",
+          "Apellido" : "Franco",
+          "Pais" : "IT",
+          "Localidad" : "Posadas"
+        }
+      }
+    ]
+  }
+}
