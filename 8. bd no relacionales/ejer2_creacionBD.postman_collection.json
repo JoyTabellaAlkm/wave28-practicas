@@ -82,6 +82,219 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "delete por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_doc/lASuTJQB4Q8vpKsicLNG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_doc",
+						"lASuTJQB4Q8vpKsicLNG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta con match",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"modelo\": \"nike\"\n        }},\n          \"fields\": [\n                \"modelo\"\n            ],\n        \"_source\": false \n    }\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta filtro doble must",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": [\n                {\n                    \"match\": {\n                        \"modelo\": \"nike\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"talle\": 12\n                    }\n                }\n            ]\n        }\n    },\n    \"fields\": [\n        \"modelo\", \"talle\"\n    ],\n    \"_source\": false \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta filtro doble should",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"should\": [\n                {\n                    \"match\": {\n                        \"modelo\": \"nike\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"talle\": 12\n                    }\n                }\n            ]\n        }\n    },\n    \"fields\": [\n        \"modelo\", \"talle\"\n    ],\n    \"_source\": false \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta filtro doble must_not",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must_not\": [\n                {\n                    \"match\": {\n                        \"modelo\": \"nike\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"talle\": 12\n                    }\n                }\n            ]\n        }\n    },\n    \"fields\": [\n        \"modelo\", \"talle\"\n    ],\n    \"_source\": false \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta term",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"query\" :{\n    \"term\": {\n        \"modelo\": true\n    }\n }  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta multi_match",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"multi_match\": {\n            \"query\": true, \n            \"fields\": [\"modelo\", \"talle\"]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatilla/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatilla",
+						"_search"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
