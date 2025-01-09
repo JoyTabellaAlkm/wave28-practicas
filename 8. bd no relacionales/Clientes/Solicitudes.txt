@@ -1,0 +1,26 @@
+GET _search
+{
+  "query": {
+    "match": {
+      "Pais": "CO"
+    }
+  }
+}
+
+POST /clientes-misiones/_doc
+{
+  "nombre": "Nico",
+  "apellido": "Albarracin",
+  "pais": "CO",
+  "localidad": "Bogotá"
+}
+
+GET _search
+{
+  "query":{
+    "match" : {
+      "nombre": "Nico"
+    }
+  }
+}
+
