@@ -1,0 +1,14 @@
+POST /clientes/_doc
+{
+  "nombre": "nadi",
+  "localidad":"ushuaia"
+}
+
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "localidad": "ushuaia"
+    }
+  }
+}
