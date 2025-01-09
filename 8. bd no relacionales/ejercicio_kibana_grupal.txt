@@ -1,0 +1,283 @@
+Dev tools:
+PUT /shoes
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "marca": {
+        "type": "text"
+      },
+      "modelo": {
+        "type": "text"
+      },
+      "precio": {
+        "type": "float"
+      },
+      "color": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+POST /shoes/_doc
+{ "marca": "Nike", "modelo": "Air Max", "precio": 1230, "color": "Verde" }
+
+POST /shoes/_doc
+{ "marca": "Adidas", "modelo": "Comun", "precio": 100, "color": "Negro" }
+
+
+POST /_bulk
+{ "index": { "_index": "shoes" } }
+{ "marca": "Nike", "modelo": "Air Max", "precio": 120.99, "color": "Rojo" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Adidas", "modelo": "Ultraboost", "precio": 180.00, "color": "Negro" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Puma", "modelo": "RS-X", "precio": 110.00, "color": "Blanco" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Reebok", "modelo": "Classic", "precio": 75.00, "color": "Gris" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "New Balance", "modelo": "574", "precio": 85.00, "color": "Azul" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Asics", "modelo": "Gel-Kayano", "precio": 160.00, "color": "Verde" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Under Armour", "modelo": "HOVR", "precio": 140.00, "color": "Lila" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Vans", "modelo": "Old Skool", "precio": 65.00, "color": "Café" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Converse", "modelo": "Chuck Taylor", "precio": 55.00, "color": "Blanco" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Hoka One One", "modelo": "Clifton", "precio": 140.00, "color": "Negro" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Saucony", "modelo": "Kinvara", "precio": 110.00, "color": "Naranja" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Merrell", "modelo": "Moab", "precio": 95.00, "color": "Marrón" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Salomon", "modelo": "Speedcross", "precio": 130.00, "color": "Azul" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Nike", "modelo": "Air Force 1", "precio": 90.00, "color": "Blanco" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Adidas", "modelo": "NMD", "precio": 130.00, "color": "Gris" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Puma", "modelo": "Clyde", "precio": 80.00, "color": "Rojo" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Skechers", "modelo": "D'Lites", "precio": 70.00, "color": "Rosa" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "On Running", "modelo": "Cloudstratus", "precio": 170.00, "color": "Negro" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Keen", "modelo": "Targhee", "precio": 120.00, "color": "Verde" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Brooks", "modelo": "Ghost", "precio": 140.00, "color": "Azul" }
+{ "index": { "_index": "shoes" } }
+{ "marca": "Columbia", "modelo": "Redmond", "precio": 90.00, "color": "Gris" }
+
+GET shoes/_search
+
+GET shoes/_search
+{
+  "query": {
+    "match": {
+      "color": "rojo"
+    }
+  }
+}
+
+POST /shoes/_delete_by_query
+{
+  "query": {
+    "match": {
+      "color": "rojo"
+    }
+  }
+}
+
+
+
+
+POSTMAN:
+
+{
+	"info": {
+		"_postman_id": "e67411b2-d8c2-4b9f-bf82-7131f28f9c50",
+		"name": "ZapatillasElastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40212015"
+	},
+	"item": [
+		{
+			"name": "Obtener Indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/_cat/indices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_cat",
+						"indices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Indice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"settings\": {\n    \"number_of_shards\": 1,\n    \"number_of_replicas\": 0\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes\n\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes\n\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear o Modificar Indice con Mapping",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"settings\": {\n    \"number_of_shards\": 1,\n    \"number_of_replicas\": 0\n  },\n  \"mappings\": {\n    \"properties\": {\n      \"marca\": {\n        \"type\": \"text\"\n      },\n      \"modelo\": {\n        \"type\": \"text\"\n      },\n      \"precio\": {\n        \"type\": \"float\"\n      }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar un Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"marca\": \"Nike\",\n  \"modelo\": \"Air Max\",\n  \"precio\": 120.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_doc/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_doc",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar registro (Color Rojo)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"color\": \"Rojo\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar registros",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"color\": \"Rojo\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_delete_by_query",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_delete_by_query"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
