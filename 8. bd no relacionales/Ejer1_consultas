@@ -1,0 +1,33 @@
+POST /clientes/_doc
+{
+  "column3" : "carolina",
+  "column2" : "schwab",
+  "column4" : "argentina",
+  "column5" : "la plata"
+}
+
+
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "column5": "la plata"
+    }
+  }
+}
+
+
+
+GET /clientes/_search /*solamente me muestra la columna en fields, gracias a                           que source esta en false.*/
+{
+  "query": {
+    "": { }
+  },
+  "fields": [
+    "column3"
+  ],
+  "_source": false
+}
+
+
+
