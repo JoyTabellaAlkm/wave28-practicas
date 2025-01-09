@@ -1,0 +1,96 @@
+POST /clientes/_doc
+{
+  "nombre":"Melania",
+  "apellido":"Simes",
+  "pais":"AR",
+  "localidad":"Cordoba"
+}
+
+GET /clientes/nombre/_search/
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /clientes/_search
+{
+  "query":{
+    "bool": {
+    "must": [
+      {"match": {
+        "nombre": "Melania"
+        }
+      },
+      {"match": {
+        "localidad": "Cordoba"
+        }
+      }
+    ], 
+    "must_not": [
+      {"match": {
+        "localidad": "Posadas"
+      }}
+    ]
+    }
+  }
+}
+
+GET /clientes/_mapping
+
+DELETE /clientes
+PUT /clientes
+{
+  "mappings" : {
+      "_meta" : {
+        "created_by" : "file-data-visualizer"
+      },
+      "properties" : {
+        "apellido" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "localidad" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "nombre" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "numero" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "pais" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+}
