@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "16c6a4f8-d614-4b2c-bf14-5c3d5789b112",
+		"name": "Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37603630"
+	},
+	"item": [
+		{
+			"name": "Crea el índice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"modelo\": {\n                \"type\": \"text\"\n            },\n            \"talle\": {\n                \"type\": \"integer\"\n            },\n            \"color\": {\n                \"type\": \"text\"\n            },\n            \"precio\": {\n                \"type\": \"float\"\n            },\n            \"fecha_fabricacion\": {\n                \"type\": \"date\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agrega los 20 documentos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-ndjson",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"index\":{}}\n{\"marca\":\"Nike\",\"modelo\":\"Air Max\",\"talle\":42,\"color\":\"blanco\",\"precio\":120.5,\"fecha_fabricacion\":\"2023-11-15\"}\n{\"index\":{}}\n{\"marca\":\"Adidas\",\"modelo\":\"Ultraboost\",\"talle\":40,\"color\":\"negro\",\"precio\":140.0,\"fecha_fabricacion\":\"2023-10-20\"}\n{\"index\":{}}\n{\"marca\":\"Puma\",\"modelo\":\"Future Rider\",\"talle\":39,\"color\":\"rojo\",\"precio\":85.99,\"fecha_fabricacion\":\"2023-09-10\"}\n{\"index\":{}}\n{\"marca\":\"Reebok\",\"modelo\":\"Nano X1\",\"talle\":41,\"color\":\"azul\",\"precio\":110.0,\"fecha_fabricacion\":\"2023-08-05\"}\n{\"index\":{}}\n{\"marca\":\"New Balance\",\"modelo\":\"574\",\"talle\":43,\"color\":\"gris\",\"precio\":99.99,\"fecha_fabricacion\":\"2023-07-18\"}\n{\"index\":{}}\n{\"marca\":\"Asics\",\"modelo\":\"Gel-Kayano\",\"talle\":42,\"color\":\"verde\",\"precio\":150.0,\"fecha_fabricacion\":\"2023-06-22\"}\n{\"index\":{}}\n{\"marca\":\"Nike\",\"modelo\":\"Pegasus\",\"talle\":38,\"color\":\"amarillo\",\"precio\":125.0,\"fecha_fabricacion\":\"2023-05-12\"}\n{\"index\":{}}\n{\"marca\":\"Adidas\",\"modelo\":\"NMD_R1\",\"talle\":41,\"color\":\"blanco\",\"precio\":130.0,\"fecha_fabricacion\":\"2023-04-25\"}\n{\"index\":{}}\n{\"marca\":\"Puma\",\"modelo\":\"RS-X\",\"talle\":39,\"color\":\"negro\",\"precio\":110.5,\"fecha_fabricacion\":\"2023-03-30\"}\n{\"index\":{}}\n{\"marca\":\"Reebok\",\"modelo\":\"Classic Leather\",\"talle\":40,\"color\":\"gris\",\"precio\":80.0,\"fecha_fabricacion\":\"2023-02-18\"}\n{\"index\":{}}\n{\"marca\":\"New Balance\",\"modelo\":\"1080\",\"talle\":42,\"color\":\"azul\",\"precio\":160.0,\"fecha_fabricacion\":\"2023-01-05\"}\n{\"index\":{}}\n{\"marca\":\"Asics\",\"modelo\":\"GT-2000\",\"talle\":41,\"color\":\"rojo\",\"precio\":140.0,\"fecha_fabricacion\":\"2022-12-15\"}\n{\"index\":{}}\n{\"marca\":\"Nike\",\"modelo\":\"Vaporfly\",\"talle\":43,\"color\":\"blanco\",\"precio\":250.0,\"fecha_fabricacion\":\"2022-11-22\"}\n{\"index\":{}}\n{\"marca\":\"Adidas\",\"modelo\":\"Terrex\",\"talle\":40,\"color\":\"negro\",\"precio\":135.0,\"fecha_fabricacion\":\"2022-10-01\"}\n{\"index\":{}}\n{\"marca\":\"Puma\",\"modelo\":\"Basket Classic\",\"talle\":38,\"color\":\"gris\",\"precio\":75.0,\"fecha_fabricacion\":\"2022-09-09\"}\n{\"index\":{}}\n{\"marca\":\"Reebok\",\"modelo\":\"Zig Kinetica\",\"talle\":41,\"color\":\"verde\",\"precio\":125.0,\"fecha_fabricacion\":\"2022-08-12\"}\n{\"index\":{}}\n{\"marca\":\"New Balance\",\"modelo\":\"FuelCell\",\"talle\":42,\"color\":\"amarillo\",\"precio\":140.0,\"fecha_fabricacion\":\"2022-07-25\"}\n{\"index\":{}}\n{\"marca\":\"Asics\",\"modelo\":\"Noosa Tri\",\"talle\":40,\"color\":\"azul\",\"precio\":130.0,\"fecha_fabricacion\":\"2022-06-14\"}\n{\"index\":{}}\n{\"marca\":\"Nike\",\"modelo\":\"Flyknit\",\"talle\":39,\"color\":\"rojo\",\"precio\":120.0,\"fecha_fabricacion\":\"2022-05-01\"}\n{\"index\":{}}\n{\"marca\":\"Adidas\",\"modelo\":\"Supernova\",\"talle\":41,\"color\":\"blanco\",\"precio\":100.0,\"fecha_fabricacion\":\"2022-04-10\"}\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Búsqueda por marca (Nike)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"marca\": \"Nike\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
