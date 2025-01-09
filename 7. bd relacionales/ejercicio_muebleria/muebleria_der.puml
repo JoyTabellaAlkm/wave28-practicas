@@ -1,0 +1,40 @@
+@startchen
+left to right direction
+
+entity Venta {
+    codigo_venta <<key>>
+    fecha
+    total
+}
+entity Producto {
+    producto_id <<key>>
+    nombre
+    descripcion
+    precio
+}
+entity Cliente {
+    cliente_id <<key>>
+    dni
+    nombre
+    apellido
+    direccion
+    fec_nacimiento
+}
+entity Almacen {
+    almacen_id <<key>>
+    cantidad
+}
+relationship Asociada {
+}
+relationship Contiene {
+}
+relationship Guarda {
+}
+Producto -N- Contiene
+Contiene -N- Venta
+Cliente -1- Asociada
+Asociada -N- Venta
+Almacen -N- Guarda
+Guarda -N- Producto
+@endchen
+
