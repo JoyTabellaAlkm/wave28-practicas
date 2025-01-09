@@ -1,0 +1,102 @@
+PUT /zapatillas_deportivas
+{
+  "mappings": {
+    "properties": {
+      "modelo": {
+        "type": "text"
+      },
+      "marca": {
+        "type": "text"
+      },
+      "precio": {
+        "type": "float"
+      },
+      "talla": {
+        "type": "integer"
+      },
+      "color": {
+        "type": "text"
+      },
+      "disponibilidad": {
+        "type": "boolean"
+      }
+    }
+  }
+}
+
+POST /zapatillas_deportivas/_doc/1
+{
+  "modelo": "Risueñas",
+  "marca": "Nike",
+  "precio": 120.5,
+  "talla": 42,
+  "color": "Negro y rojo",
+  "disponibilidad": true
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "size": 200, 
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match_all": {
+      "marca": "Nike"
+    }
+  }
+}
+
+
+POST /zapatillas_deportivas/_bulk
+{ "index": {} }
+{ "modelo": "AirMax", "marca": "Nike", "precio": 120.5, "talla": 42, "color": "Negro y rojo", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "UltraBoost", "marca": "Adidas", "precio": 150.0, "talla": 41, "color": "Blanco", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Gel-Lyte", "marca": "Asics", "precio": 90.0, "talla": 40, "color": "Azul", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "React", "marca": "Nike", "precio": 100.5, "talla": 42, "color": "Gris", "disponibilidad": false }
+{ "index": {} }
+{ "modelo": "Clyde", "marca": "Puma", "precio": 85.0, "talla": 43, "color": "Negro", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Wave Rider", "marca": "Mizuno", "precio": 110.0, "talla": 41, "color": "Rojo", "disponibilidad": false }
+{ "index": {} }
+{ "modelo": "Classic", "marca": "Reebok", "precio": 70.0, "talla": 44, "color": "Blanco y azul", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Speed", "marca": "Under Armour", "precio": 95.0, "talla": 40, "color": "Negro", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "AlphaBounce", "marca": "Adidas", "precio": 110.5, "talla": 42, "color": "Verde", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Fresh Foam", "marca": "New Balance", "precio": 105.0, "talla": 43, "color": "Gris", "disponibilidad": false }
+{ "index": {} }
+{ "modelo": "ZoomX", "marca": "Nike", "precio": 180.0, "talla": 42, "color": "Azul y negro", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Gel-Nimbus", "marca": "Asics", "precio": 140.0, "talla": 44, "color": "Blanco", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Sonic", "marca": "Under Armour", "precio": 120.0, "talla": 41, "color": "Verde y negro", "disponibilidad": false }
+{ "index": {} }
+{ "modelo": "Energy Boost", "marca": "Adidas", "precio": 160.0, "talla": 40, "color": "Rojo", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "LQDCELL", "marca": "Puma", "precio": 145.0, "talla": 43, "color": "Negro y amarillo", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Minimus", "marca": "New Balance", "precio": 95.0, "talla": 41, "color": "Azul y naranja", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Endorphin Pro", "marca": "Saucony", "precio": 210.0, "talla": 42, "color": "Blanco y negro", "disponibilidad": false }
+{ "index": {} }
+{ "modelo": "Metcon", "marca": "Nike", "precio": 130.0, "talla": 44, "color": "Negro", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "Kayano", "marca": "Asics", "precio": 180.0, "talla": 40, "color": "Azul y gris", "disponibilidad": true }
+{ "index": {} }
+{ "modelo": "FuelCell", "marca": "New Balance", "precio": 115.0, "talla": 43, "color": "Rojo y negro", "disponibilidad": true }
+
+POST /zapatillas_deportivas/_delete_by_query
+{
+  "query": {
+    "match_all": {}
+  }
+}
