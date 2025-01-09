@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "6c5cb0e5-1708-451e-b7e7-95b0f838532d",
+		"name": "Ej Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40204315"
+	},
+	"item": [
+		{
+			"name": "Creación índice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mappings\": {\n    \"properties\": {\n      \"marca\": { \"type\": \"text\" },\n      \"modelo\": { \"type\": \"text\" },\n      \"precio\": { \"type\": \"float\" },\n      \"color\": { \"type\": \"text\" },\n      \"talla\": { \"type\": \"integer\" }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación zapatillas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"marca\": \"Nike\",\n    \"modelo\": \"Pegasus\",\n    \"precio\": 150000,\n    \"color\":  \"blanco\",\n    \"talla\": 42\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_doc",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación masiva",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-ndjson",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": {} }\n{ \"marca\": \"Nike\", \"modelo\": \"Air Zoom Pegasus\", \"precio\": 120.50, \"color\": \"Negro\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Adidas\", \"modelo\": \"UltraBoost\", \"precio\": 180.00, \"color\": \"Blanco\", \"talla\": 43 }\n{ \"index\": {} }\n{ \"marca\": \"Puma\", \"modelo\": \"RS-X\", \"precio\": 110.75, \"color\": \"Rojo\", \"talla\": 41 }\n{ \"index\": {} }\n{ \"marca\": \"Reebok\", \"modelo\": \"Classic Leather\", \"precio\": 95.00, \"color\": \"Azul\", \"talla\": 44 }\n{ \"index\": {} }\n{ \"marca\": \"New Balance\", \"modelo\": \"574\", \"precio\": 80.00, \"color\": \"Gris\", \"talla\": 40 }\n{ \"index\": {} }\n{ \"marca\": \"Asics\", \"modelo\": \"Gel-Kayano\", \"precio\": 150.00, \"color\": \"Amarillo\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Converse\", \"modelo\": \"Chuck Taylor\", \"precio\": 60.00, \"color\": \"Negro\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Vans\", \"modelo\": \"Old Skool\", \"precio\": 75.00, \"color\": \"Azul\", \"talla\": 43 }\n{ \"index\": {} }\n{ \"marca\": \"Under Armour\", \"modelo\": \"HOVR Phantom\", \"precio\": 130.00, \"color\": \"Negro\", \"talla\": 44 }\n{ \"index\": {} }\n{ \"marca\": \"Skechers\", \"modelo\": \"Go Run\", \"precio\": 70.00, \"color\": \"Blanco\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Fila\", \"modelo\": \"Disruptor\", \"precio\": 85.00, \"color\": \"Rosa\", \"talla\": 40 }\n{ \"index\": {} }\n{ \"marca\": \"Salomon\", \"modelo\": \"Speedcross\", \"precio\": 145.00, \"color\": \"Verde\", \"talla\": 41 }\n{ \"index\": {} }\n{ \"marca\": \"Saucony\", \"modelo\": \"Guide\", \"precio\": 125.00, \"color\": \"Naranja\", \"talla\": 44 }\n{ \"index\": {} }\n{ \"marca\": \"Hoka One One\", \"modelo\": \"Clifton\", \"precio\": 140.00, \"color\": \"Azul\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Mizuno\", \"modelo\": \"Wave Rider\", \"precio\": 130.00, \"color\": \"Purpura\", \"talla\": 43 }\n{ \"index\": {} }\n{ \"marca\": \"Brooks\", \"modelo\": \"Ghost\", \"precio\": 110.00, \"color\": \"Negro\", \"talla\": 42 }\n{ \"index\": {} }\n{ \"marca\": \"Merrell\", \"modelo\": \"Moab\", \"precio\": 100.00, \"color\": \"Marron\", \"talla\": 44 }\n{ \"index\": {} }\n{ \"marca\": \"Jack Wolfskin\", \"modelo\": \"Force Striker\", \"precio\": 160.00, \"color\": \"Gris\", \"talla\": 41 }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_bulk",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/zapatillas/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find 'Nike'",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"marca\": \"Nike\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
