@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "24c2f310-51a0-40cf-870d-4e10e355730a",
+		"name": "Elasticsearch - Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39986036"
+	},
+	"item": [
+		{
+			"name": "create table",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"nombre\": {\n                \"type\": \"text\"\n            },\n            \"apellido\": {\n                \"type\": \"text\"\n            },\n            \"direccion\": {\n                \"type\": \"text\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/society"
+			},
+			"response": []
+		},
+		{
+			"name": "check created index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/society"
+			},
+			"response": []
+		},
+		{
+			"name": "insert value",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Erik\",\n    \"apellido\": \"Bjerg\",\n    \"direccion\": \"Av. Caseros 20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/society/_doc"
+			},
+			"response": []
+		},
+		{
+			"name": "insert multiple values",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Nike\", \"modelo\": \"Air Max 90\", \"precio\": 150 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Adidas\", \"modelo\": \"Ultra Boost\", \"precio\": 180 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Puma\", \"modelo\": \"RS-X\", \"precio\": 110 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"New Balance\", \"modelo\": \"574 Classic\", \"precio\": 100 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Asics\", \"modelo\": \"Gel-Kayano 27\", \"precio\": 160 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Reebok\", \"modelo\": \"Classic Leather\", \"precio\": 75 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Converse\", \"modelo\": \"Chuck Taylor All Star\", \"precio\": 55 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Vans\", \"modelo\": \"Old Skool\", \"precio\": 65 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Under Armour\", \"modelo\": \"Charged Assert 8\", \"precio\": 70 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Skechers\", \"modelo\": \"Go Walk 5\", \"precio\": 60 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Fila\", \"modelo\": \"Disruptor II\", \"precio\": 90 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Brooks\", \"modelo\": \"Ghost 13\", \"precio\": 130 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Saucony\", \"modelo\": \"Ride 13\", \"precio\": 120 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Hoka One One\", \"modelo\": \"Clifton 7\", \"precio\": 130 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Mizuno\", \"modelo\": \"Wave Rider 24\", \"precio\": 140 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Balenciaga\", \"modelo\": \"Triple S\", \"precio\": 895 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Gucci\", \"modelo\": \"Rhyton\", \"precio\": 870 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Prada\", \"modelo\": \"Cloudbust Thunder\", \"precio\": 895 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Salomon\", \"modelo\": \"Speedcross 5\", \"precio\": 130 }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"marca\": \"Merrell\", \"modelo\": \"Moab 2\", \"precio\": 100 }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/_bulk"
+			},
+			"response": []
+		},
+		{
+			"name": "get all values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/society/_search"
+			},
+			"response": []
+		},
+		{
+			"name": "delete index",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{URL}}/society"
+			},
+			"response": []
+		},
+		{
+			"name": "delete value",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{URL}}/society/_doc/DH4iTJQBlBNVCPgBoik4"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
