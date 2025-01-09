@@ -1,0 +1,195 @@
+PUT /zapatillas
+{
+  "mappings": {
+    "properties": {
+      "marca": {
+        "type": "text"
+      },
+      "precio": {
+        "type": "double"
+      },
+      "color": {
+        "type": "text"
+      },
+      "fecha_lanzamiento": {
+        "type": "date"
+      }
+    }
+  }
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Adidas",
+  "precio": 119.99,
+  "color": "verde",
+  "fecha_lanzamiento": "2022-12-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Puma",
+  "precio": 89.99,
+  "color": "azul",
+  "fecha_lanzamiento": "2023-11-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Nike",
+  "precio": 139.99,
+  "color": "amarillo",
+  "fecha_lanzamiento": "2021-10-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Rebook",
+  "precio": 109.99,
+  "color": "naranja",
+  "fecha_lanzamiento": "2025-01-01"
+}
+
+# -----------------
+
+POST zapatillas/_doc
+{
+  "marca": "New Balance",
+  "precio": 129.99,
+  "color": "rojo",
+  "fecha_lanzamiento": "2023-06-15"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Under Armour",
+  "precio": 99.99,
+  "color": "gris",
+  "fecha_lanzamiento": "2024-03-20"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Converse",
+  "precio": 79.99,
+  "color": "negro",
+  "fecha_lanzamiento": "2023-08-10"
+}
+
+
+POST zapatillas/_doc
+{
+  "marca": "Vans",
+  "precio": 89.99,
+  "color": "blanco",
+  "fecha_lanzamiento": "2022-05-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Asics",
+  "precio": 149.99,
+  "color": "azul marino",
+  "fecha_lanzamiento": "2024-09-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Saucony",
+  "precio": 119.99,
+  "color": "verde oliva",
+  "fecha_lanzamiento": "2023-01-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Mizuno",
+  "precio": 139.99,
+  "color": "azul cielo",
+  "fecha_lanzamiento": "2021-11-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Fila",
+  "precio": 99.99,
+  "color": "rojo vino",
+  "fecha_lanzamiento": "2023-07-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Skechers",
+  "precio": 109.99,
+  "color": "morado",
+  "fecha_lanzamiento": "2024-02-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Adidas",
+  "precio": 129.99,
+  "color": "gris oscuro",
+  "fecha_lanzamiento": "2024-12-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Nike",
+  "precio": 159.99,
+  "color": "dorado",
+  "fecha_lanzamiento": "2023-05-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Puma",
+  "precio": 99.99,
+  "color": "negro y amarillo",
+  "fecha_lanzamiento": "2022-07-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "New Balance",
+  "precio": 109.99,
+  "color": "blanco y gris",
+  "fecha_lanzamiento": "2024-01-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Reebok",
+  "precio": 89.99,
+  "color": "verde fosforescente",
+  "fecha_lanzamiento": "2021-09-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Asics",
+  "precio": 159.99,
+  "color": "rosa",
+  "fecha_lanzamiento": "2023-12-01"
+}
+
+POST zapatillas/_doc
+{
+  "marca": "Under Armour",
+  "precio": 129.99,
+  "color": "café",
+  "fecha_lanzamiento": "2024-04-01"
+}
+
+
+GET zapatillas/_search
+GET zapatillas/_search
+{
+  "query": {
+    "match": {
+      "marca": "Nike"
+    }
+  }
+}
+
+GET _cat/indices
