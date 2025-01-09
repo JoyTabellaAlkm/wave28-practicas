@@ -1,0 +1,103 @@
+
+# Agregar documento a cliente-misiones-index (Index creado al importar cliente-misiones.csv)
+POST /clientes-misiones-index/_doc
+{
+    "nombre": "Pepe",
+    "apellido": "Argento",
+    "pais": "AR",
+    "localidad": "Lanus"
+}
+# Buscar hasta 20 documentos en cliente-misiones-index
+GET /clientes-misiones-index/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "size": 20
+}
+
+# Realizar una busqueda en base a un patron, puntualmente sobre el campo localicad
+GET /clientes-misiones-index/_search
+{
+  "query": {
+    "match": {
+      "localidad": "Lanus"
+    }
+  }
+}
+
+# Ejercicio en vivo - zapatillas deportivas
+# Crear indice
+PUT /zapatillas-deportivas
+{
+  "mappings": {
+    "properties": {
+      "marca":{"type":"text"},
+      "talle":{"type":"double"},
+      "color": {"type": "keyword"},
+      "modelo":{"type": "text"}
+    }
+  }
+}
+# Agregar varios documentos al indice
+POST /zapatillas-deportivas/_bulk
+{ "index": { "_id": 1 } }
+{ "marca": "Nike", "talle": 43, "color": "negro", "modelo": "basketball" }
+{ "index": { "_id": 2 } }
+{ "marca": "Adidas", "talle": 43, "color": "negro", "modelo": "basketball" }
+{ "index": { "_id": 3 } }
+{ "marca": "Nike", "talle": 41, "color": "rojo", "modelo": "running" }
+{ "index": { "_id": 4 } }
+{ "marca": "Reebok", "talle": 40, "color": "azul", "modelo": "training" }
+{ "index": { "_id": 5 } }
+{ "marca": "Puma", "talle": 45, "color": "verde", "modelo": "running" }
+{ "index": { "_id": 6 } }
+{ "marca": "New Balance", "talle": 44, "color": "gris", "modelo": "walking" }
+{ "index": { "_id": 7 } }
+{ "marca": "Asics", "talle": 42, "color": "amarillo", "modelo": "running" }
+{ "index": { "_id": 8 } }
+{ "marca": "Saucony", "talle": 40, "color": "rojo", "modelo": "running" }
+{ "index": { "_id": 9 } }
+{ "marca": "Under Armour", "talle": 46, "color": "negro", "modelo": "basketball" }
+{ "index": { "_id": 10 } }
+{ "marca": "Nike", "talle": 41, "color": "blanco", "modelo": "training" }
+{ "index": { "_id": 11 } }
+{ "marca": "Adidas", "talle": 43, "color": "azul", "modelo": "soccer" }
+{ "index": { "_id": 12 } }
+{ "marca": "Reebok", "talle": 42, "color": "negro", "modelo": "running" }
+{ "index": { "_id": 13 } }
+{ "marca": "Puma", "talle": 44, "color": "rojo", "modelo": "running" }
+{ "index": { "_id": 14 } }
+{ "marca": "New Balance", "talle": 45, "color": "morado", "modelo": "training" }
+{ "index": { "_id": 15 } }
+{ "marca": "Asics", "talle": 42, "color": "blanco", "modelo": "training" }
+{ "index": { "_id": 16 } }
+{ "marca": "Saucony", "talle": 40, "color": "verde", "modelo": "running" }
+{ "index": { "_id": 17 } }
+{ "marca": "Under Armour", "talle": 43, "color": "gris", "modelo": "soccer" }
+{ "index": { "_id": 18 } }
+{ "marca": "Nike", "talle": 41, "color": "amarillo", "modelo": "basketball" }
+{ "index": { "_id": 19 } }
+{ "marca": "Adidas", "talle": 42, "color": "blanco", "modelo": "soccer" }
+{ "index": { "_id": 20 } }
+# Buscar hasta 20 documentos en el indice
+GET /zapatillas-deportivas/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "size": 20
+}
+# Buscar documentos que matcheen con el patron de color negro
+GET /zapatillas-deportivas/_search
+{
+  "query": {
+    "match": {
+      "color": "negro"
+    }
+  },
+  "size": 20
+}
+
+
+
