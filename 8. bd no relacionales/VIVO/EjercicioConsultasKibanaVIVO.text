@@ -1,0 +1,71 @@
+PUT /zapatillas
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "Marca": { "type": "text" },
+      "Modelo": { "type": "text" },
+      "Color": { "type": "text" }
+    }
+  }
+}
+
+POST zapatillas/_bulk
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Nike", "Modelo": "Jordan", "Color": "Rojas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Adidas", "Modelo": "Ultraboost", "Color": "Negras" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Puma", "Modelo": "RS-X", "Color": "Blancas y Negras" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Reebok", "Modelo": "Classic", "Color": "Blancas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "New Balance", "Modelo": "574", "Color": "Grises" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Asics", "Modelo": "Gel-Kayano", "Color": "Azules" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Saucony", "Modelo": "Jazz", "Color": "Verdes" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Converse", "Modelo": "All Star", "Color": "Rojas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Vans", "Modelo": "Old Skool", "Color": "Blancas y Negras" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Under Armour", "Modelo": "Hovr", "Color": "Grises" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Fila", "Modelo": "Disruptor", "Color": "Blancas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Nike", "Modelo": "Air Max", "Color": "Negras" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Adidas", "Modelo": "Superstar", "Color": "Blancas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Puma", "Modelo": "Cali", "Color": "Rosadas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Reebok", "Modelo": "Zig", "Color": "Amarillas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "New Balance", "Modelo": "327", "Color": "Azules" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Asics", "Modelo": "Gel-Nimbus", "Color": "Blancas y Verdes" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Saucony", "Modelo": "Shadow", "Color": "Grises y Rosadas" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Converse", "Modelo": "Chuck 70", "Color": "Negras" }
+{ "index": { "_index": "zapatillas" } }
+{ "Marca": "Vans", "Modelo": "Era", "Color": "Azules y Rojas" }
+
+
+
+
+GET /zapatillas/_search
+{
+    "query": {
+        "match": {
+          "Marca": "Asics"
+        }
+    }
+}
+
+
+
