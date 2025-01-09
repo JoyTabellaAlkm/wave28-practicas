@@ -6,7 +6,7 @@ POST /clientes/_doc
   "localidad":"Cordoba"
 }
 
-GET /clientes/nombre/_search/
+GET /clientes/_search/
 {
   "query": {
     "match_all": {}
