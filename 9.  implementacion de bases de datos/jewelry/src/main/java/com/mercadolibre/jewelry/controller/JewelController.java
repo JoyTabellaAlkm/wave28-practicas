@@ -43,5 +43,5 @@ public class JewelController {
     public ResponseEntity<JewelResponseDto> delete(@PathVariable Long id) {
         return new ResponseEntity<>(jewelService.delete(id), HttpStatus.OK);
     }
-    
+
 }
