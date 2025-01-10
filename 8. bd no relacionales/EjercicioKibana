@@ -31,7 +31,7 @@ PUT /zapatillas_deportivas
 
 ----------------------------------
 INSERCIÓN DE REGISTROS:
-
+POST /zapatillas_deportivas/_bulk
 { "index" : { "_index" : "zapatillas_deportivas" } }
 { "nombre" : "Zapatilla Deportiva 1", "marca" : "Nike", "tamaño" : 42, "precio" : 120.0, "color" : "Negro", "fecha_lanzamiento" : "2022-05-20", "categoria" : "Running", "material" : "Textil" }
 { "index" : { "_index" : "zapatillas_deportivas" } }
