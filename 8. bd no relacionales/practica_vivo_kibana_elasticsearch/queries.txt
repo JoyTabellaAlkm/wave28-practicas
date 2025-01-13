@@ -1,0 +1,68 @@
+PUT /zapatillas_deportivas
+{
+    "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 2
+  },
+  "mappings": {
+    "properties": {
+      "marca": { "type": "text" },
+      "talle": { "type": "double" },
+      "modelo": { "type": "text" }
+    }
+  }
+}
+
+GET _cat/indices
+
+POST /zapatillas_deportivas/_bulk
+  { "index": { "_index": "zapatillas_deportivas" } }
+  { "marca": "Nike", "talle": 42.0, "modelo": "Air Max" }
+  { "index": { "_index": "zapatillas_deportivas" } }
+  { "marca": "Adidas", "talle": 40.0, "modelo": "Ultra Boost" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Puma", "talle": 41.0, "modelo": "Suede Classic" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Reebok", "talle": 43.0, "modelo": "Classic Leather" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "New Balance", "talle": 42.5, "modelo": "574" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Asics", "talle": 44.0, "modelo": "Gel-Kayano" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Under Armour", "talle": 39.0, "modelo": "HOVR Phantom" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Converse", "talle": 41.5, "modelo": "Chuck Taylor All Star" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Vans", "talle": 40.5, "modelo": "Old Skool" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Saucony", "talle": 42.0, "modelo": "Jazz Original" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Fila", "talle": 43.0, "modelo": "Disruptor II" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Mizuno", "talle": 44.5, "modelo": "Wave Rider" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Brooks", "talle": 45.0, "modelo": "Ghost" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Hoka One One", "talle": 41.0, "modelo": "Clifton" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Salomon", "talle": 42.0, "modelo": "Speedcross" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "K-Swiss", "talle": 43.0, "modelo": "Classic VN" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Timberland", "talle": 40.0, "modelo": "Euro Hiker" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Lotto", "talle": 41.5, "modelo": "Space" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Diadora", "talle": 42.0, "modelo": "Titan II" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Champion", "talle": 44.0, "modelo": "Zone Mid" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Merrell", "talle": 39.5, "modelo": "Trail Glove" }
+  { "index": { "_index" : "zapatillas_deportivas" } }
+  { "marca": "Skechers", "talle": 42.0, "modelo": "Go Walk" }
+
+DELETE /zapatillas_deportivas/_doc/2aGyTJQBnYMnZX9FbzgD
+
+GET /zapatillas_deportivas/_search
+{
+}
