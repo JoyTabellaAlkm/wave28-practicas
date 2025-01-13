@@ -3,6 +3,7 @@ package com.demo.QATesters.controller;
 import com.demo.QATesters.dto.MessageDto;
 import com.demo.QATesters.dto.TestCaseDto;
 import com.demo.QATesters.service.ITestCaseService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class TestCasesController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<MessageDto> post(@RequestBody TestCaseDto testCaseDto) {
+    public ResponseEntity<MessageDto> post(@Valid @RequestBody TestCaseDto testCaseDto) {
         testCaseService.post(testCaseDto);
         return new ResponseEntity<>(new MessageDto("Caso de prueba creado exitosamente."),
                 HttpStatus.CREATED);
@@ -39,7 +40,7 @@ public class TestCasesController {
 
     @PutMapping("/{id}")
     public ResponseEntity<MessageDto> put(@PathVariable("id") Long id,
-                                           @RequestBody TestCaseDto testCaseDto) {
+                                          @Valid @RequestBody TestCaseDto testCaseDto) {
         testCaseService.put(id, testCaseDto);
         return new ResponseEntity<>(new MessageDto("Caso de prueba modificado exitosamente."),
                 HttpStatus.OK);

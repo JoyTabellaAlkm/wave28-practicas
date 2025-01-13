@@ -1,6 +1,7 @@
 package com.demo.QATesters.service.impl;
 
 import com.demo.QATesters.dto.TestCaseDto;
+import com.demo.QATesters.exception.NotFoundException;
 import com.demo.QATesters.model.TestCase;
 import com.demo.QATesters.repository.ITestCaseRepository;
 import com.demo.QATesters.service.ITestCaseService;
@@ -14,7 +15,7 @@ import java.util.List;
 public class TestCaseService implements ITestCaseService {
 
     private final ITestCaseRepository testCaseRepository;
-    private ModelMapper modelMapper = new ModelMapper();
+    private final ModelMapper modelMapper = new ModelMapper();
 
     public TestCaseService(ITestCaseRepository testCaseRepository){
         this.testCaseRepository = testCaseRepository;
@@ -44,7 +45,7 @@ public class TestCaseService implements ITestCaseService {
     @Override
     public void put(Long id, TestCaseDto testCaseDto) {
         TestCase testCase = testCaseRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No se encuentra el test con ese id."));
+                .orElseThrow(() -> new NotFoundException("No se encontró test con ese id."));
 
         modelMapper.map(testCaseDto, testCase);
         testCaseRepository.save(testCase);

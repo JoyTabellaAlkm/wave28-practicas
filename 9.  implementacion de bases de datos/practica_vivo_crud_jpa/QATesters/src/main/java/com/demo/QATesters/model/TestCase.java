@@ -18,8 +18,8 @@ public class TestCase {
     String description;
     Boolean tested;
     Boolean passed;
-    @Column(name="number_of_tries")
+    @Column(name = "number_of_tries")
     int numberOfTries;
-    @Column(name="last_update")
+    @Column(name = "last_update")
     LocalDate lastUpdate;
 }
