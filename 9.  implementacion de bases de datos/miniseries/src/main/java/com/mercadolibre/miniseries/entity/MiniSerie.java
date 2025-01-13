@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class MiniSeries {
+public class MiniSerie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
