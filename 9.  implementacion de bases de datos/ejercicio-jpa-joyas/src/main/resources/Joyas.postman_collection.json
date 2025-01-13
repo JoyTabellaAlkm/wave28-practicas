@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "d02694da-fd06-4db3-b1ec-930e662722da",
+		"name": "Joyas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40526407"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Collar\",\n    \"material\":\"Oro\",\n    \"weight\":50.0,\n    \"description\":\"Collar dorado.\",\n    \"has_stone\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jewelry/new",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewelry",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/jewelry",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewelry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/jewelry/delete/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewelry",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Collar\",\n    \"material\":\"Plata\",\n    \"weight\":50.0,\n    \"description\":\"Collar de Plata.\",\n    \"has_stone\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/jewelry/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewelry",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
