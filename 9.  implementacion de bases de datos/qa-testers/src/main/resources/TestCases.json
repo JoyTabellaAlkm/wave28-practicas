@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "9ea870d0-ca2f-4f79-9ef4-6a8587894a2a",
+		"name": "JPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40344134"
+	},
+	"item": [
+		{
+			"name": "QA-Testers",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Se probo\",\n    \"tested\": true,\n    \"passed\": true,\n    \"number_of_tries\": 3,\n    \"last_update\": \"11-11-2023\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/testcases/new"
+					},
+					"response": []
+				},
+				{
+					"name": "Read (All)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/testcases/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Read (By Id)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/testcases/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Read (FIltered by LastUpdate)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/testcases?last_update=01-01-1991",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"testcases"
+							],
+							"query": [
+								{
+									"key": "last_update",
+									"value": "01-01-1991"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"description\": \"Probando\",\n        \"tested\": true,\n        \"passed\": true,\n        \"number_of_tries\": 22,\n        \"last_update\": \"13-01-2023\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/testcases/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/testcases/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
