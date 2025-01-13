@@ -23,6 +23,6 @@ public class MiniSerie {
     @ManyToMany(mappedBy = "miniSeries")
     private Set<Actor> actors;
 
-    @OneToMany(mappedBy = "miniSerie", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "miniSerie", cascade = CascadeType.ALL)
     private Set<Award> awards;
 }
