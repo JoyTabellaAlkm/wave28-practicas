@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface IJoyaRepository extends JpaRepository <Joya, Long> {
     public List<Joya> findAllByVentaONoIsTrue ();
+    public List<Joya> findAllByMaterialAndVentaONoIsTrue(String material);
 }

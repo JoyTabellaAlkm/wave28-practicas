@@ -3,6 +3,8 @@ package com.bootcamp.LasPerlas.controller;
 import com.bootcamp.LasPerlas.model.Joya;
 import com.bootcamp.LasPerlas.service.IJoyaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,8 +26,6 @@ public class JoyaController {
         return joyaServ.getJoyas();
     }
 
-    //como es un borrado lógico, se trata más bien de un update y no de un delete
-    //por eso usamos put
     @PutMapping ("/jewerly/delete/{id}")
     public String deleteJoya (@PathVariable Long id) {
 
@@ -39,5 +39,9 @@ public class JoyaController {
         return joyaServ.editJoya(id_modificar, joya);
     }
 
+    @GetMapping("/jewerly/findMaterial")
+    public ResponseEntity<List<Joya>> get(@RequestParam String material) {
+        return new ResponseEntity<>(joyaServ.findAllByMaterial(material), HttpStatus.OK);
+    }
 
 }

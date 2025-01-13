@@ -11,5 +11,5 @@ public interface IJoyaService {
     public Joya findJoya(Long id);
     public String deleteJoya(Long id);
     public String editJoya(Long id_modificar, Joya joya_modif);
-
+    public List<Joya> findAllByMaterial(String material);
 }

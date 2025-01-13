@@ -29,17 +29,16 @@ public class JoyaService implements IJoyaService{
 
     @Override
     public Joya findJoya(Long id) {
-        //el orElse nos permite devolver null en caso que no encuentre
         return joyaRepo.findById(id).orElse(null);
     }
 
     @Override
     public String deleteJoya(Long id) {
 
-        //haremos borrado lógico, por lo cual no eliminamos el registro de la bd
-        //sino que solo cambiamos su estado de verdadero (a la venta) a falso (no a la venta)
-
         Joya joyaOriginal = this.findJoya(id);
+        if(!joyaOriginal.isVentaONo()){
+            return "Esa joya ya esta dada de baja para la venta";
+        }
         joyaOriginal.setVentaONo(false);
         this.saveJoya(joyaOriginal);
 
@@ -62,4 +61,11 @@ public class JoyaService implements IJoyaService{
         return "Modificaciones guardadas correctamente";
 
     }
+
+    @Override
+    public List<Joya> findAllByMaterial(String material) {
+        return joyaRepo.findAllByMaterialAndVentaONoIsTrue(material);
+    }
+
+
 }
