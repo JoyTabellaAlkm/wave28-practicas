@@ -51,18 +51,14 @@ public class TestCaseServiceImpl implements ITestCaseService {
 
     @Override
     public boolean updateTestCase(long id, TestCase testcase) {
-        TestCase toModify = testCaseRepository.findById(id).orElse(null);
-        if(toModify == null){
+
+        if (!testCaseRepository.existsById(id)){
             return false;
         }
+        
+        testcase.setId_case(id);
 
-        toModify.setDescription(testcase.getDescription());
-        toModify.setTested(testcase.getTested());
-        toModify.setPassed(testcase.getPassed());
-        toModify.setNumber_of_tries(testcase.getNumber_of_tries());
-        toModify.setLast_update(testcase.getLast_update());
-
-        testCaseRepository.save(toModify);
+        testCaseRepository.save(testcase);
         return true;
     }
 
