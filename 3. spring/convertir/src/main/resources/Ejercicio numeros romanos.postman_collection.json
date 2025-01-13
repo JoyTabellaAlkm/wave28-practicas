@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "ecf969fd-b83f-4cf5-a3d2-0dc46c0ee5c5",
+		"name": "Ejercicio numeros romanos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "convertir numero a numeros romanos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert?number=13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
