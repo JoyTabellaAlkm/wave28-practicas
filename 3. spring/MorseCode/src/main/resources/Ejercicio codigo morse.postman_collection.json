@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "fb7df52f-8e5a-4bac-b7b8-03ff33bdb12c",
+		"name": "Ejercicio codigo morse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "Codigo morse",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/morsecode/.... --- .-.. .-"
+			},
+			"response": []
+		},
+		{
+			"name": "Mercado libre",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/morsecode/-- . .-. -.-. .- -.. --- .-.. .. -... .-. ."
+			},
+			"response": []
+		},
+		{
+			"name": "spring",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/morsecode/... .--. .-. .. -. --. "
+			},
+			"response": []
+		}
+	]
+}
