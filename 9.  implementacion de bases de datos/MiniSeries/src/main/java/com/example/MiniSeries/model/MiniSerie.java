@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter @Setter
 @Entity
 @Table(name = "serie")
@@ -18,4 +20,9 @@ public class MiniSerie {
     @Column
     private int amount_of_awards;
 
+    @ManyToMany(mappedBy = "miniSeries")
+    private Set<Actor> actors;
+
+    @OneToMany(mappedBy = "miniSerie", cascade = CascadeType.PERSIST)
+    private Set<Award> awards;
 }
