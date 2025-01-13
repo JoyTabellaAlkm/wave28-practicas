@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "450d7e6b-f877-4081-846b-a8f68e3b16e8",
+		"name": "Ejercicio Para Calcular La Edad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "Calcular edad",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/age/19/03/1999"
+			},
+			"response": []
+		}
+	]
+}
