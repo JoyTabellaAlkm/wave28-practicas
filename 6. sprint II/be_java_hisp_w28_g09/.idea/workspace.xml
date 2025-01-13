@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21d4ac30-dea8-4514-8954-796deefeb0b4" name="Changes" comment="" />
+    <list default="true" id="21d4ac30-dea8-4514-8954-796deefeb0b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../7. bd relacionales/link_der/src/main/java/diagrama_entidad_relacion" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -20,9 +25,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2q7slaUOM0SMFgYgG8Tx0lvPkKP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,9 +41,11 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sierra__karina",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ksierrav/Documents/be_java_hisp_w28_g09",
+    "last_opened_file_path": "/Users/ksierrav/Documents/wave28-practicas/6. sprint II/be_java_hisp_w28_g09",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +88,7 @@
       <workItem from="1734703035055" duration="301000" />
       <workItem from="1734703352237" duration="525000" />
       <workItem from="1735569209716" duration="1873000" />
+      <workItem from="1736342822669" duration="1179000" />
     </task>
     <servers />
   </component>
