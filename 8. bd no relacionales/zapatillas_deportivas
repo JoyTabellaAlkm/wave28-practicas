@@ -1,0 +1,105 @@
+PUT /zapatillas_deportivas
+{
+  "mappings": {
+    "properties": {
+      "nombre": {
+        "type": "text"
+      },
+      "marca": {
+        "type": "keyword"
+      },
+      "modelo": {
+        "type": "text"
+      },
+      "precio": {
+        "type": "float"
+      },
+      "tallas_disponibles": {
+        "type": "integer"
+      },
+      "colores": {
+        "type": "keyword"
+      },
+      "descripcion": {
+        "type": "text"
+      },
+      "en_stock": {
+        "type": "boolean"
+      }
+    }
+  }
+}
+
+POST /zapatillas_deportivas/_bulk
+{"index": {}}
+{"nombre": "Air Max 90", "marca": "Nike", "modelo": "Classic", "precio": 129.99, "tallas_disponibles": [38, 39, 40, 41, 42], "colores": ["Negro", "Blanco", "Rojo"], "material": "Cuero y textil", "descripcion": "Zapatillas deportivas icónicas con amortiguación Air Max.", "fecha_lanzamiento": "2023-08-15", "en_stock": true}
+{"index": {}}
+{"nombre": "Ultraboost 22", "marca": "Adidas", "modelo": "Performance", "precio": 180.00, "tallas_disponibles": [40, 41, 42, 43, 44], "colores": ["Blanco", "Azul"], "material": "Textil reciclado", "descripcion": "Amortiguación avanzada para largas distancias.", "fecha_lanzamiento": "2023-05-10", "en_stock": true}
+{"index": {}}
+{"nombre": "Gel-Kayano 28", "marca": "Asics", "modelo": "Stability", "precio": 159.99, "tallas_disponibles": [39, 40, 41, 42, 43], "colores": ["Gris", "Amarillo"], "material": "Malla transpirable", "descripcion": "Estabilidad y soporte para corredores.", "fecha_lanzamiento": "2022-11-20", "en_stock": true}
+{"index": {}}
+{"nombre": "Pegasus 39", "marca": "Nike", "modelo": "Running", "precio": 119.99, "tallas_disponibles": [38, 39, 40, 41], "colores": ["Negro", "Verde"], "material": "Malla ligera", "descripcion": "Zapatillas ligeras ideales para entrenamientos diarios.", "fecha_lanzamiento": "2023-02-15", "en_stock": true}
+{"index": {}}
+{"nombre": "Speedcross 5", "marca": "Salomon", "modelo": "Trail", "precio": 130.00, "tallas_disponibles": [40, 41, 42, 43], "colores": ["Negro", "Naranja"], "material": "Sintético resistente", "descripcion": "Zapatillas de trail running con excelente tracción.", "fecha_lanzamiento": "2021-09-10", "en_stock": true}
+{"index": {}}
+{"nombre": "Nano X2", "marca": "Reebok", "modelo": "CrossFit", "precio": 140.00, "tallas_disponibles": [38, 39, 40, 41], "colores": ["Blanco", "Gris"], "material": "Textil reforzado", "descripcion": "Versatilidad para entrenamientos intensos.", "fecha_lanzamiento": "2022-03-20", "en_stock": false}
+{"index": {}}
+{"nombre": "Hoka Clifton 9", "marca": "Hoka One One", "modelo": "Neutral", "precio": 150.00, "tallas_disponibles": [39, 40, 41, 42], "colores": ["Azul", "Amarillo"], "material": "Espuma EVA", "descripcion": "Comodidad y amortiguación para largas distancias.", "fecha_lanzamiento": "2023-01-30", "en_stock": true}
+{"index": {}}
+{"nombre": "ZoomX Vaporfly Next%", "marca": "Nike", "modelo": "Race", "precio": 250.00, "tallas_disponibles": [40, 41, 42, 43], "colores": ["Rosa", "Blanco"], "material": "Fibra de carbono", "descripcion": "Zapatillas diseñadas para carreras de alta velocidad.", "fecha_lanzamiento": "2023-07-01", "en_stock": true}
+{"index": {}}
+{"nombre": "Wave Rider 26", "marca": "Mizuno", "modelo": "Running", "precio": 135.00, "tallas_disponibles": [38, 39, 40, 41], "colores": ["Gris", "Rojo"], "material": "Malla transpirable", "descripcion": "Equilibrio entre comodidad y soporte.", "fecha_lanzamiento": "2022-09-25", "en_stock": false}
+{"index": {}}
+{"nombre": "Fresh Foam 1080v12", "marca": "New Balance", "modelo": "Neutral", "precio": 160.00, "tallas_disponibles": [39, 40, 41, 42], "colores": ["Azul", "Negro"], "material": "Espuma Fresh Foam", "descripcion": "Comodidad y rendimiento para cualquier distancia.", "fecha_lanzamiento": "2023-06-15", "en_stock": true}
+{"index": {}}
+{"nombre": "Cloud X 3", "marca": "On Running", "modelo": "Performance", "precio": 140.00, "tallas_disponibles": [38, 39, 40, 41], "colores": ["Blanco", "Gris"], "material": "Textil reciclado", "descripcion": "Ligereza y velocidad para entrenamientos diarios.", "fecha_lanzamiento": "2023-03-05", "en_stock": true}
+{"index": {}}
+{"nombre": "Endorphin Speed 3", "marca": "Saucony", "modelo": "Speed", "precio": 170.00, "tallas_disponibles": [40, 41, 42, 43], "colores": ["Verde", "Blanco"], "material": "Espuma PWRRUN", "descripcion": "Amortiguación y respuesta para corredores rápidos.", "fecha_lanzamiento": "2022-07-10", "en_stock": true}
+{"index": {}}
+{"nombre": "Metcon 8", "marca": "Nike", "modelo": "CrossFit", "precio": 130.00, "tallas_disponibles": [39, 40, 41, 42], "colores": ["Negro", "Dorado"], "material": "Textil resistente", "descripcion": "Estabilidad y durabilidad para entrenamiento de fuerza.", "fecha_lanzamiento": "2023-05-20", "en_stock": true}
+{"index": {}}
+{"nombre": "Adizero Adios Pro 3", "marca": "Adidas", "modelo": "Race", "precio": 220.00, "tallas_disponibles": [40, 41, 42, 43], "colores": ["Rosa", "Negro"], "material": "Fibra de carbono", "descripcion": "Zapatillas ultraligeras para carreras competitivas.", "fecha_lanzamiento": "2023-08-01", "en_stock": true}
+{"index": {}}
+{"nombre": "Trailfly Ultra G 300", "marca": "Inov-8", "modelo": "Trail", "precio": 190.00, "tallas_disponibles": [39, 40, 41, 42], "colores": ["Gris", "Azul"], "material": "Grafeno y malla", "descripcion": "Durabilidad y tracción para senderos técnicos.", "fecha_lanzamiento": "2022-10-15", "en_stock": false}
+{"index": {}}
+{"nombre": "FuelCell Rebel v3", "marca": "New Balance", "modelo": "Neutral", "precio": 150.00, "tallas_disponibles": [38, 39, 40, 41], "colores": ["Amarillo", "Negro"], "material": "Espuma FuelCell", "descripcion": "Ligereza y respuesta para entrenamientos rápidos.", "fecha_lanzamiento": "2023-03-25", "en_stock": true}
+{"index": {}}
+{"nombre": "Gel-Nimbus 25", "marca": "Asics", "modelo": "Comfort", "precio": 180.00, "tallas_disponibles": [40, 41, 42, 43], "colores": ["Blanco", "Gris"], "material": "Espuma FlyteFoam", "descripcion": "Comodidad excepcional para largas distancias.", "fecha_lanzamiento": "2023-01-20", "en_stock": true}
+
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "marca": "Nike" } },
+        { "term": { "en_stock": true } }
+      ]
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "marca": "Nike"
+          }
+        },
+        {
+          "match": {
+            "modelo": "Running"
+          }
+        }
+      ]
+    }
+  }
+}
+
+DELETE /zapatillas_deportivas
+
+
+
