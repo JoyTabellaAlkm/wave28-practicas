@@ -1,14 +1,10 @@
-package com.dario.dominguez.practicaconcesionaria.entity;
+package com.dario.dominguez.practicaconcesionaria.dto;
 
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
-public class Service {
-
+public class ServiceDto {
     private String date;
     private String kilometers;
     private String descriptions;
-
 }

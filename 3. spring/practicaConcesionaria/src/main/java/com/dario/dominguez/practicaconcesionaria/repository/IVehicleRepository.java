@@ -1,11 +1,11 @@
 package com.dario.dominguez.practicaconcesionaria.repository;
 
 import com.dario.dominguez.practicaconcesionaria.entity.Vehicle;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
-public interface IVehicleRepository {
-    public Vehicle addVehicle (Vehicle vehicle);
-    public List<Vehicle> getAllVehicles();
+@Repository
+public interface IVehicleRepository extends JpaRepository<Vehicle, Long> {
 }

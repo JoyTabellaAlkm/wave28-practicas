@@ -1,6 +1,5 @@
 package com.dario.dominguez.practicaconcesionaria.dto;
 
-import com.dario.dominguez.practicaconcesionaria.entity.Service;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -17,6 +16,6 @@ public class VehicleDto {
     private String doors;
     private String price;
     private String currency;
-    private List<Service> services;
+    private List<ServiceDto> services;
     private String countOfOwners;
 }
