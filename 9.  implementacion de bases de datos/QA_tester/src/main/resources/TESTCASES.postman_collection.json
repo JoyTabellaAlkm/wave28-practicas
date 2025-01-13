@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "bf358008-68f3-4ded-94ae-04c5c6765306",
+		"name": "TESTCASES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39991860"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"Test de Prueba\",\n    \"tested\": true,\n    \"passed\": true,\n    \"numberOfTries\": 1,\n    \"lastUpdate\": \"2025-01-10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/testcases/new"
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/testcases"
+			},
+			"response": []
+		},
+		{
+			"name": "getByLaastUpdate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/testcases/filter?date=2025-01-11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-01-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/testcases/1"
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/testcases/1"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "localhost:8080/api/testcases/2"
+			},
+			"response": []
+		}
+	]
+}
