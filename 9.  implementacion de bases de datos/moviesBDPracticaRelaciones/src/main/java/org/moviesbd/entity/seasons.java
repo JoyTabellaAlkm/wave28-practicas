@@ -36,10 +36,10 @@ public class seasons {
     @Column(name = "end_date")
     private LocalDate endDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "serie_id")
     private series series;
 
-    @OneToMany(mappedBy = "seasons")
+    @OneToMany(mappedBy = "seasons", fetch = FetchType.LAZY)
     private Set<episodes> episodes;
 }

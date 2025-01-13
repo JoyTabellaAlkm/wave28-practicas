@@ -33,9 +33,9 @@ public class genres {
     @Column(length = 1)
     private int active;
 
-    @OneToMany(mappedBy = "genres")
+    @OneToMany(mappedBy = "genres", fetch = FetchType.LAZY)
     private Set<movies> movies;
 
-    @OneToMany(mappedBy = "genres")
+    @OneToMany(mappedBy = "genres", fetch = FetchType.LAZY)
     private Set<series> series;
 }

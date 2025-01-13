@@ -32,13 +32,13 @@ public class actors {
 
     private float rating;
 
-    @OneToMany(mappedBy = "actor")
+    @OneToMany(mappedBy = "actor", fetch = FetchType.LAZY)
     private Set<actorMovie> actorMovies;
 
-    @OneToMany(mappedBy = "actor")
+    @OneToMany(mappedBy = "actor", fetch = FetchType.LAZY)
     private Set<actorEpisode> actorEpisodes;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "favorite_movie_id")
     private movies movie;
 }

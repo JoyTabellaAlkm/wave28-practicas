@@ -39,13 +39,13 @@ public class movies {
 
     private int length;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="genre_id", nullable = false)
     private genres genres;
 
-    @OneToMany(mappedBy = "movie")
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private Set<actorMovie> actorMovies;
 
-    @OneToMany(mappedBy = "movie")
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private Set<actors> actors;
 }
