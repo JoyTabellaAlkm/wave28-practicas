@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class MiniSerie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     Double rating;
