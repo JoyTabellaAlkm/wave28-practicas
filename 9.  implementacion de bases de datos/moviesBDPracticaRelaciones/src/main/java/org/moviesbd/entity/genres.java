@@ -40,5 +40,6 @@ public class genres {
     private Set<movies> movies;
 
     @OneToMany(mappedBy = "genres", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<series> series;
 }

@@ -1,5 +1,6 @@
 package org.moviesbd.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,12 +34,15 @@ public class actors {
     private float rating;
 
     @OneToMany(mappedBy = "actor", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<actorMovie> actorMovies;
 
     @OneToMany(mappedBy = "actor", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<actorEpisode> actorEpisodes;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "favorite_movie_id")
+    @JsonIgnore
     private movies movie;
 }

@@ -1,5 +1,6 @@
 package org.moviesbd.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,8 +39,10 @@ public class episodes {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "season_id")
+    @JsonIgnore
     private seasons seasons;
 
     @OneToMany(mappedBy = "episode", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<actorEpisode> actorEpisodes;
 }
