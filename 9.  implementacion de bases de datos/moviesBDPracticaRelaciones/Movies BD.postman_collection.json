@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "ea27d366-9aae-4a1f-9360-241fc0c107eb",
+		"name": "Movies BD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31638325"
+	},
+	"item": [
+		{
+			"name": "find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actorsFavoriteMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actorsFavoriteMovies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actorsFavoriteMovies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actorsRaitingGrater",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/raitingGrater?nro=1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"raitingGrater"
+					],
+					"query": [
+						{
+							"key": "nro",
+							"value": "1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actorsWorkIng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actorsWorkIn?name=algo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actorsWorkIn"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "algo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moviesActorRaiting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/moviesActorRaiting?valor=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"moviesActorRaiting"
+					],
+					"query": [
+						{
+							"key": "valor",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moviesGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/moviesGenre?titulo=drama",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"moviesGenre"
+					],
+					"query": [
+						{
+							"key": "titulo",
+							"value": "drama"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serieSeasons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/serieSeasons?seasons=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"serieSeasons"
+					],
+					"query": [
+						{
+							"key": "seasons",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "episodesActor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/episodesActor?actor=selena",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"episodesActor"
+					],
+					"query": [
+						{
+							"key": "actor",
+							"value": "selena"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
