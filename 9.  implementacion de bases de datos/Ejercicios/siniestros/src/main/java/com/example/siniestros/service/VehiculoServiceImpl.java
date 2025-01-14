@@ -1,6 +1,7 @@
 package com.example.siniestros.service;
 
 import com.example.siniestros.dto.PatenteMarcaDto;
+import com.example.siniestros.dto.PatenteMarcaModeloDto;
 import com.example.siniestros.repository.VehiculoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,13 @@ public class VehiculoServiceImpl implements IVehiculoService{
     @Override
     public List<String> getPatenteByCantRuedasAndAñoFabricacion() {
         return vehiculoRepository.findPatenteByCantRuedasAndAñoFabricacion();
+    }
+
+    @Override
+    public List<PatenteMarcaModeloDto> findByPerdidaValorGreaterThan10000() {
+        return vehiculoRepository.findByPerdidaValorGreaterThan10000().stream()
+                .map(v-> new PatenteMarcaModeloDto(v))
+                .toList();
     }
 
 

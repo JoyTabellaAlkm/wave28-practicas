@@ -19,4 +19,7 @@ public interface VehiculoRepository extends JpaRepository<Vehiculo,Integer> {
 
     @Query("SELECT v.patente FROM Vehiculo v WHERE v.cantRuedas > 4 AND v.añoFabricacion = year(current_date())")
     List<String> findPatenteByCantRuedasAndAñoFabricacion();
+
+    @Query("SELECT v.patente, v.marca, v.modelo FROM Vehiculo v WHERE v.id IN (SELECT s.vehiculo.id FROM Siniestro s WHERE s.perdidaValor > 10000)")
+    List<Object[]> findByPerdidaValorGreaterThan10000();
 }

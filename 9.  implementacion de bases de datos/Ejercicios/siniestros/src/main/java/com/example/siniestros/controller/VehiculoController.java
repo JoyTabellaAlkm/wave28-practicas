@@ -30,4 +30,9 @@ public class VehiculoController {
     public ResponseEntity<?> getPatenteByCantRuedasAñoFabricacion(){
         return new ResponseEntity<>(vehiculoService.getPatenteByCantRuedasAndAñoFabricacion(),HttpStatus.OK);
     }
+
+    @GetMapping("/patenteMarcaModeloByValorPerdidaGreaterThan10000")
+    public ResponseEntity<?> getByPerdidaValorGreaterThan10000() {
+        return new ResponseEntity<>(vehiculoService.findByPerdidaValorGreaterThan10000(),HttpStatus.OK);
+    }
 }
