@@ -1,0 +1,52 @@
+curl --location 'http://localhost:8080/races' \
+--header 'Content-Type: application/json' \
+--data '{
+  "nombre": "Gran Premio de Mónaco",
+  "fecha": "2023-11-15",
+  "pais": {
+    "codigo": "MCO",
+    "nombre": "Mónaco"
+  },
+  "pilotos": [
+    {
+      "nombre": "Piloto 1",
+      "edad": 30,
+      "kart": {
+        "modelo": "Kart 1",
+        "velocidadMaxima": 200
+      }
+    },
+    {
+      "nombre": "Piloto 2",
+      "edad": 28,
+      "kart": {
+        "modelo": "Kart 2",
+        "velocidadMaxima": 210
+      }
+    },
+    {
+      "nombre": "Piloto 3",
+      "edad": 25,
+      "kart": {
+        "modelo": "Kart 3",
+        "velocidadMaxima": 220
+      }
+    },
+    {
+      "nombre": "Piloto 4",
+      "edad": 27,
+      "kart": {
+        "modelo": "Kart 4",
+        "velocidadMaxima": 215
+      }
+    },
+    {
+      "nombre": "Piloto 5",
+      "edad": 29,
+      "kart": {
+        "modelo": "Kart 5",
+        "velocidadMaxima": 205
+      }
+    }
+  ]
+}'
