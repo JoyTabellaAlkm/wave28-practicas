@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "9a0a2abf-e5e4-4bfb-aed9-7964d7d50e74",
+		"name": "TestCases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40213289"
+	},
+	"item": [
+		{
+			"name": "CREATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\" : \"Un testcase\",\n    \"tested\" : false,\n    \"passed\" : true,\n    \"number_of_tries\" : 3,\n    \"last_update\" : \"2025-01-14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ (ALL)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ (BY ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\" : \"Un testcase\",\n    \"tested\" : false,\n    \"passed\" : true,\n    \"number_of_tries\" : 5,\n    \"last_update\" : \"2025-01-14\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "FILTER (BY DATE)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/filter?last_update=2025-01-13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "last_update",
+							"value": "2025-01-13"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
