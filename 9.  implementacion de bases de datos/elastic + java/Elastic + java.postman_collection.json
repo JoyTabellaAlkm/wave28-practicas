@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "c92fd8a4-aa76-45d9-a312-d1c0df0b1654",
+		"name": "Elastic + java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31638325"
+	},
+	"item": [
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"1\",\n  \"titulo\": \"segunda entrada del blog\",\n  \"autores\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/blog/_doc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"blog",
+								"_doc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/blog/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"blog",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "empleados",
+			"item": [
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"carolina\",\n    \"apellido\" : \"schwab\",\n    \"edad\" : \"27\",\n    \"ciudad\": \"Ciudad Autonoma\",\n    \"provincia\": \"Buenos Aires\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/empleados/_doc/jL0aZpQBgg3mvlGq-g1N",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"empleados",
+								"_doc",
+								"jL0aZpQBgg3mvlGq-g1N"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"1\",\n    \"nombre\": \"carolina\",\n    \"apellido\" : \"schwab\",\n    \"edad\" : \"27\",\n    \"ciudad\": \"La Plata\",\n    \"provincia\": \"Buenos Aires\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/empleados/_doc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"empleados",
+								"_doc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
