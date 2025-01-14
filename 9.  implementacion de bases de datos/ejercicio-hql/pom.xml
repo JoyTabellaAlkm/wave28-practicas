@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>concesionaria</artifactId>
+    <groupId>com.mercadolibre</groupId>
+    <artifactId>ejercicio-hql</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>concesionaria</name>
-    <description>concesionaria</description>
+    <name>ejercicio-hql</name>
+    <description>ejercicio-hql</description>
     <url/>
     <licenses>
         <license/>
@@ -30,10 +30,6 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
