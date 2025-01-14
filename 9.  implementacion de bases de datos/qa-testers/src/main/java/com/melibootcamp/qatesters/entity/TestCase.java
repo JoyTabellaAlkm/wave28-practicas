@@ -21,4 +21,10 @@ public class TestCase {
     @Column(columnDefinition = "DATETIME")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate last_update;
+
+    //Relaciones con otras entidades
+    @ManyToOne
+    @JoinColumn(name ="user_id")
+    private User assignedUser;
+
 }
