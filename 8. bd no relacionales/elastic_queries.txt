@@ -1,0 +1,102 @@
+PUT /zapatillas_deportivas
+{
+  "mappings": {
+    "properties": {
+      "marca": { "type": "keyword" },
+      "modelo": { "type": "text" },
+      "color": { "type": "keyword" }
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "size": 25,
+  "query": {
+    "match_all": {
+    }
+  }
+}
+
+POST _bulk
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Nike", "modelo": "Air Max", "color": "Red" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Adidas", "modelo": "UltraBoost", "color": "Blue" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Puma", "modelo": "Suede Classic", "color": "Black" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Reebok", "modelo": "Club C 85", "color": "White" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Asics", "modelo": "Gel Lyte", "color": "Silver" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "New Balance", "modelo": "574", "color": "Green" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Under Armour", "modelo": "Curry 7", "color": "Grey" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Saucony", "modelo": "Jazz Original", "color": "Blue" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Fila", "modelo": "Disruptor II", "color": "White" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Converse", "modelo": "Chuck Taylor All Star", "color": "Black" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Vans", "modelo": "Old Skool", "color": "Red" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Brooks", "modelo": "Ghost 13", "color": "Blue" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Hoka One One", "modelo": "Clifton 7", "color": "Orange" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Mizuno", "modelo": "Wave Rider", "color": "Purple" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "On", "modelo": "Cloud", "color": "Black" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Merrell", "modelo": "Moab 2", "color": "Olive" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Salomon", "modelo": "Speedcross 5", "color": "Yellow" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Timberland", "modelo": "Pro Euro Hiker", "color": "Brown" }
+{ "index": { "_index": "zapatillas_deportivas" } }
+{ "marca": "Skechers", "modelo": "D'Lites", "color": "Pink" }
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match": {
+      "marca": "Nike"
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match_all": {}
+}
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match_phrase": {
+      "modelo": "AIR"
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match_phrase_prefix": {
+      "modelo": "Adi"
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "wildcard": {
+      "modelo": "Air*"
+    }
+  }
+}
