@@ -1,5 +1,7 @@
 package org.moviesbd.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +43,7 @@ public class movies {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="genre_id", nullable = false)
+    @JsonIgnore
     private genres genres;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
