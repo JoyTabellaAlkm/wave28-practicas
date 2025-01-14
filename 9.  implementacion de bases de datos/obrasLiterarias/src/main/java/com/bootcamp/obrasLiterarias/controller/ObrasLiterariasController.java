@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/obra")
+@RequestMapping("/obraliteraria")
 public class ObrasLiterariasController {
     @Autowired
     private IObraLiterariaService obraLiterariaService;
