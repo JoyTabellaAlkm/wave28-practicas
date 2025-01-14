@@ -30,7 +30,6 @@ public class SiniestroServiceImpl implements ISiniestroService {
     @Override
     public boolean saveSiniestro(Siniestro siniestro) {
           Vehiculo test = vehiculoRepository.findById(siniestro.getVehiculoAsignado().getId()).orElse(null);
-            System.out.println("NOMBRE TEST VEHICLE: " + test.getMarca() + test.getModelo());
             if (test != null) {
                 siniestro.setVehiculoAsignado(test);
                 siniestroRepository.save(siniestro);

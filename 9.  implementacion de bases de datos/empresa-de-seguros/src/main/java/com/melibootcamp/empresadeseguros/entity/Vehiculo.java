@@ -1,6 +1,7 @@
 package com.melibootcamp.empresadeseguros.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
@@ -39,5 +40,6 @@ public class Vehiculo {
 
     @OneToMany(mappedBy = "vehiculoAsignado", cascade = CascadeType.ALL)
     @JsonProperty("siniestros")
+    @JsonManagedReference
     private List<Siniestro> siniestros;
 }

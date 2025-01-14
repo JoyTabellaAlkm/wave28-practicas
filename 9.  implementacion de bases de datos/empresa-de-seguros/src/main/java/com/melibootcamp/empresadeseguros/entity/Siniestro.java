@@ -1,5 +1,6 @@
 package com.melibootcamp.empresadeseguros.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -28,5 +29,7 @@ public class Siniestro {
 
     @ManyToOne()
     @JoinColumn(name = "vehiculo_id")
+    @JsonProperty("vehiculo_id")
+    @JsonBackReference
     private Vehiculo vehiculoAsignado;
 }
