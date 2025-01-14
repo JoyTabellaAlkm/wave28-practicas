@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "2a9c2882-a99a-4498-99b1-19678d4efd43",
+		"name": "Vehiculo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31638325"
+	},
+	"item": [
+		{
+			"name": "perdidaTotal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perdidaTotal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perdidaTotal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SiniestrosMayor10000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SiniestrosMayor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SiniestrosMayor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mas cuatro ruedas ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/masCuatro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"masCuatro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findMarcaPatente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findMarcaPatente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findMarcaPatente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
