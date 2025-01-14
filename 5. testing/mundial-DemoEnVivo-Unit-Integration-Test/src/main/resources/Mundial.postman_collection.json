@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "8674ac74-e85b-4c0c-9966-20a3cf0c5bf0",
+		"name": "Mundial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15862773"
+	},
+	"item": [
+		{
+			"name": "Mundial registrar Jugador (OK)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 21,\r\n    \"nombre\": \"Joy Tabella\",\r\n    \"pais\": \"Argentina\",\r\n    \"goles\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jugador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jugador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mundial registrar Jugador (EXCEPTION)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Lionel Messi\",\r\n    \"pais\": \"Argentina\",\r\n    \"goles\": 91\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jugador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jugador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mundial  jugador x nombre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentName\": \"Johanna\",\r\n    \"message\": \"Mensajito\",\r\n    \"averageScore\": 10.0,\r\n    \"subjects\": [\r\n        {\r\n        \"name\": \"matematica\",\r\n        \"score\": 10.0\r\n        },\r\n        {\r\n        \"name\": \"historia\",\r\n        \"score\": 10.0\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jugador?nombre=Lionel Messi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jugador"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Lionel Messi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mundial  jugadores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/jugadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jugadores"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Joy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mundial jugador x id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/jugadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jugadores"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Joy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

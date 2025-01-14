@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lionel Messi",
+    "pais": "Argentina",
+    "goles": 91
+  },
+  {
+    "id": 2,
+    "nombre": "Cristiano Ronaldo",
+    "pais": "Portugal",
+    "goles": 85
+  },
+  {
+    "id": 3,
+    "nombre": "Neymar Jr",
+    "pais": "Brasil",
+    "goles": 77
+  },
+  {
+    "id": 4,
+    "nombre": "Kylian Mbappé",
+    "pais": "Francia",
+    "goles": 52
+  },
+  {
+    "id": 5,
+    "nombre": "Luis Suárez",
+    "pais": "Uruguay",
+    "goles": 68
+  },
+  {
+    "id": 6,
+    "nombre": "Robert Lewandowski",
+    "pais": "Polonia",
+    "goles": 72
+  },
+  {
+    "id": 7,
+    "nombre": "Karim Benzema",
+    "pais": "Francia",
+    "goles": 59
+  },
+  {
+    "id": 8,
+    "nombre": "Mohamed Salah",
+    "pais": "Egipto",
+    "goles": 51
+  },
+  {
+    "id": 9,
+    "nombre": "Harry Kane",
+    "pais": "Inglaterra",
+    "goles": 68
+  },
+  {
+    "id": 10,
+    "nombre": "Sergio Agüero",
+    "pais": "Argentina",
+    "goles": 41
+  },
+  {
+    "id": 11,
+    "nombre": "Eden Hazard",
+    "pais": "Bélgica",
+    "goles": 33
+  },
+  {
+    "id": 12,
+    "nombre": "Gareth Bale",
+    "pais": "Gales",
+    "goles": 38
+  },
+  {
+    "id": 13,
+    "nombre": "Antoine Griezmann",
+    "pais": "Francia",
+    "goles": 47
+  },
+  {
+    "id": 14,
+    "nombre": "Paul Pogba",
+    "pais": "Francia",
+    "goles": 20
+  },
+  {
+    "id": 15,
+    "nombre": "Dusan Tadic",
+    "pais": "Serbia",
+    "goles": 25
+  },
+  {
+    "id": 16,
+    "nombre": "Luka Modric",
+    "pais": "Croacia",
+    "goles": 17
+  },
+  {
+    "id": 17,
+    "nombre": "Sadio Mané",
+    "pais": "Senegal",
+    "goles": 44
+  },
+  {
+    "id": 18,
+    "nombre": "Romelu Lukaku",
+    "pais": "Bélgica",
+    "goles": 68
+  },
+  {
+    "id": 19,
+    "nombre": "Zlatan Ibrahimović",
+    "pais": "Suecia",
+    "goles": 62
+  },
+  {
+    "id": 20,
+    "nombre": "Edinson Cavani",
+    "pais": "Uruguay",
+    "goles": 56
+  }
+]

@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "2cacce00-1fb1-48e2-ae56-e69cca5306ba",
+		"name": "ObtenerDiploma VALIDACIONES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15862773"
+	},
+	"item": [
+		{
+			"name": "Validacion MethodArgumentNotValid DTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentName\": \"Johanna\",\r\n    \"subjects\": [\r\n        {\r\n        \"name\": \"Matematica\",\r\n        \"score\": 10.0\r\n        },\r\n        {\r\n        \"name\": \"Historia\",\r\n        \"score\": 10.0\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Joy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validacion  ConstraintViolation por RQParams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/studentsPorRQParams?studentName=joy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentsPorRQParams"
+					],
+					"query": [
+						{
+							"key": "studentName",
+							"value": "joy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validacion HttpMessageNotReadableException RequestBody",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentName\": \"Johanna\",\r\n    \"subjects\": [\r\n        {\r\n        \"name\": \"Matematica\",\r\n        \"score\": \"Diez\"\r\n        },\r\n        {\r\n        \"name\": \"Historia\",\r\n        \"score\": 10.0\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validacion  ConstraintViolation PathVariable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/asda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"asda"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Joy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
