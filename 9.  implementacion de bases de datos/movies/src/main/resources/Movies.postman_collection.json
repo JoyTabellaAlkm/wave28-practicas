@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "526c5f33-ea5f-437b-b8db-788ab31a3ed1",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40204315"
+	},
+	"item": [
+		{
+			"name": "Get actors with favorite movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actors/withFavoriteMovie",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actors",
+						"withFavoriteMovie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get actors with rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actors/withRating?rating=9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actors",
+						"withRating"
+					],
+					"query": [
+						{
+							"key": "rating",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get actors from movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actors/fromMovie?movie=Harry Pott",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actors",
+						"fromMovie"
+					],
+					"query": [
+						{
+							"key": "movie",
+							"value": "Harry Pott"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by actor rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movies/byActorRating?rating=9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"byActorRating"
+					],
+					"query": [
+						{
+							"key": "rating",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by genre name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movies/byGenre?genre=Comedia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"byGenre"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Comedia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get series by season amount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/series/bySeasonAmount?amount=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series",
+						"bySeasonAmount"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get series by season amount Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/series/episodesByActor?actorName=emilia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series",
+						"episodesByActor"
+					],
+					"query": [
+						{
+							"key": "actorName",
+							"value": "emilia"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
