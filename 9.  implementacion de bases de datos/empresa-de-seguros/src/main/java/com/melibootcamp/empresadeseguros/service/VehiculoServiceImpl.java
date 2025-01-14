@@ -1,12 +1,15 @@
 package com.melibootcamp.empresadeseguros.service;
 
 
+import com.melibootcamp.empresadeseguros.dto.MarcaPatenteDTO;
+import com.melibootcamp.empresadeseguros.dto.PatenteDTO;
 import com.melibootcamp.empresadeseguros.entity.Vehiculo;
 import com.melibootcamp.empresadeseguros.repository.VehiculoRepository;
 import com.melibootcamp.empresadeseguros.service.interfaces.IVehiculoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VehiculoServiceImpl implements IVehiculoService {
@@ -39,6 +42,28 @@ public class VehiculoServiceImpl implements IVehiculoService {
         Vehiculo toReturn = vehiculoRepository.findById(id).orElse(null);
         return toReturn;
     }
+
+    @Override
+    public List<PatenteDTO> getPatentesRegistradas() {
+        List<PatenteDTO> patentes = vehiculoRepository.getGovernmentPlateFromRegisteredVehicle()
+                .stream()
+                .map(PatenteDTO::new)
+                .collect(Collectors.toList());
+        return patentes;
+    }
+
+    @Override
+    public List<MarcaPatenteDTO> getMarcaYPatentesEnOrden() {
+        List<MarcaPatenteDTO> marcasYPatentes = vehiculoRepository.getGovernmentPlateAndBrandFromRegisteredVehicleInOrder()
+                .stream()
+                .map(v -> new MarcaPatenteDTO(v.getPatente(),v.getMarca()))
+                .toList();
+        return marcasYPatentes;
+    }
+
+    //---
+
+
 
     /*
     @Override

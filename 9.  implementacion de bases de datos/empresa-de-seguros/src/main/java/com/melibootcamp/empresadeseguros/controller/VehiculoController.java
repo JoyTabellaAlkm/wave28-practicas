@@ -39,5 +39,17 @@ public class VehiculoController {
         return new ResponseEntity<>(vehiculoService.getVehiculoById(id), HttpStatus.OK);
     }
 
+    //---
+
+    @GetMapping("/hql-1")
+    public ResponseEntity<?> getPatentesRegistradas(){
+        return new ResponseEntity<>(vehiculoService.getPatentesRegistradas(), HttpStatus.OK);
+    }
+
+    @GetMapping("/hql-2")
+    public ResponseEntity<?> getPatentesYMarcasEnOrden(){
+        return new ResponseEntity<>(vehiculoService.getMarcaYPatentesEnOrden(), HttpStatus.OK);
+    }
+
 
 }
