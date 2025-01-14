@@ -23,4 +23,9 @@ public class MovieController {
         return new ResponseEntity<>(movieService.findMoviesWhereActorRatingHigherThanParam(rating), HttpStatus.OK);
     }
 
+    @GetMapping("/genre/{name}")
+    public ResponseEntity<?> getMovieWithActorsRatingHigherThanParam(@PathVariable String name) {
+        return new ResponseEntity<>(movieService.findMovieByGenre(name), HttpStatus.OK);
+    }
+
 }

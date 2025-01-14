@@ -8,4 +8,6 @@ public interface IMovieService {
 
     List<MovieDTO> findMoviesWhereActorRatingHigherThanParam(Double rating);
 
+    List<MovieDTO> findMovieByGenre(String genreName);
+
 }
