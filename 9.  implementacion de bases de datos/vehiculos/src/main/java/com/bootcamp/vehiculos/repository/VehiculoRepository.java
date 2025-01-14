@@ -16,8 +16,8 @@ public interface VehiculoRepository extends JpaRepository<Vehiculo, Long> {
     @Query("select v.patente, v.marca from Vehiculo v order by v.anioFabricacion")
     List<List<String>> findPatenteYMarcaOrderedByAnioFabricacion();
 
-    //@Query("select v.patente from Vehiculo v where v.cantidadRuedas > 4 and year(v.anioFabricacion) = year(current_date)")
-    //List<String> findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear();
+    @Query("select v.patente from Vehiculo v where v.cantidadRuedas > 4 and v.anioFabricacion = year(current_date)")
+    List<String> findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear();
 
     @Query("select v.patente, v.marca, v.modelo " +
             "from Vehiculo v " +

@@ -1,5 +1,6 @@
 package com.bootcamp.vehiculos.service;
 
+import com.bootcamp.vehiculos.dto.PatenteMarcaDto;
 import com.bootcamp.vehiculos.dto.PatenteMarcaModeloDto;
 import com.bootcamp.vehiculos.dto.PerdidaVehiculoDto;
 import com.bootcamp.vehiculos.entity.Vehiculo;
@@ -12,4 +13,7 @@ public interface VehiculoService {
     Vehiculo getById(Long id);
     List<PerdidaVehiculoDto> sumarPerdidas();
     List<PatenteMarcaModeloDto> findMatriculaYMarcaYModeloBySiniestroWithPerdidaGreaterThan10000();
+    List<PatenteMarcaDto> findPatenteYMarcaOrderedByAnioFabricacion();
+    List<String> findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear();
+    List<String> findAllPatentes();
 }

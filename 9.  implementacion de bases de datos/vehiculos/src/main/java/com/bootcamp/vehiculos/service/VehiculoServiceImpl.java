@@ -1,5 +1,6 @@
 package com.bootcamp.vehiculos.service;
 
+import com.bootcamp.vehiculos.dto.PatenteMarcaDto;
 import com.bootcamp.vehiculos.dto.PatenteMarcaModeloDto;
 import com.bootcamp.vehiculos.dto.PerdidaVehiculoDto;
 import com.bootcamp.vehiculos.entity.Vehiculo;
@@ -48,5 +49,22 @@ public class VehiculoServiceImpl implements VehiculoService {
         return res.stream()
                 .map(fila -> new PatenteMarcaModeloDto(fila.get(0), fila.get(1), fila.get(2)))
                 .toList();
+    }
+
+    @Override
+    public List<PatenteMarcaDto> findPatenteYMarcaOrderedByAnioFabricacion() {
+        return vehiculoRepository.findPatenteYMarcaOrderedByAnioFabricacion().stream()
+                .map(fila -> new PatenteMarcaDto(fila.get(0), fila.get(1)))
+                .toList();
+    }
+
+    @Override
+    public List<String> findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear() {
+        return vehiculoRepository.findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear();
+    }
+
+    @Override
+    public List<String> findAllPatentes() {
+        return vehiculoRepository.findAllPatentes();
     }
 }

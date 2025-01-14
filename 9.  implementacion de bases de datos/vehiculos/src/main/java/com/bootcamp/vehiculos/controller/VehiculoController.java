@@ -1,5 +1,6 @@
 package com.bootcamp.vehiculos.controller;
 
+import com.bootcamp.vehiculos.dto.PatenteMarcaDto;
 import com.bootcamp.vehiculos.dto.PatenteMarcaModeloDto;
 import com.bootcamp.vehiculos.dto.PerdidaVehiculoDto;
 import com.bootcamp.vehiculos.entity.Vehiculo;
@@ -42,5 +43,20 @@ public class VehiculoController {
     @GetMapping("/getPatentePerdida")
     ResponseEntity<List<PatenteMarcaModeloDto>> getPerdidas10000() {
         return ResponseEntity.ok(vehiculoService.findMatriculaYMarcaYModeloBySiniestroWithPerdidaGreaterThan10000());
+    }
+
+    @GetMapping("/getPatentes")
+    ResponseEntity<List<String>> getPatentes() {
+        return ResponseEntity.ok(vehiculoService.findAllPatentes());
+    }
+
+    @GetMapping("/getPatentesOrdered")
+    ResponseEntity<List<PatenteMarcaDto>> getPatentesOrdered() {
+        return ResponseEntity.ok(vehiculoService.findPatenteYMarcaOrderedByAnioFabricacion());
+    }
+
+    @GetMapping("/getPatentesThisYear")
+    ResponseEntity<List<String>> getPatentesThisYear() {
+        return ResponseEntity.ok(vehiculoService.findAllPatentesWithMoreThan4RuedasAndFabricadosThisYear());
     }
 }
