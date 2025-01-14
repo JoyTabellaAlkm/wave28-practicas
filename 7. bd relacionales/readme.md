@@ -276,4 +276,3 @@ FROM LIBRO l
 INNER JOIN PRESTAMO p ON p.idLibro = l.idLibro
 WHERE p.fechaDevolucion = '2021-07-16';
 ```
-```
