@@ -8,11 +8,11 @@
         <version>3.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.bootcamp</groupId>
-    <artifactId>vehiculos</artifactId>
+    <groupId>com.ar.mercadolibre</groupId>
+    <artifactId>JoyeriaLasPerlas</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>vehiculos</name>
-    <description>Demo project for Spring Boot</description>
+    <name>JoyeriaLasPerlas</name>
+    <description>JoyeriaLasPerlas</description>
     <url/>
     <licenses>
         <license/>
@@ -38,7 +38,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.2.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -46,8 +50,8 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
