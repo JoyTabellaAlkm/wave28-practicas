@@ -1,4 +1,4 @@
-package com.mercadolibre.showroom.dto;
+package com.mercadolibre.showroom.dto.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaleDTO {
+public class SaleRequestDTO {
     BigDecimal total;
     private String paymentMethod;
     private Map<Long, Integer> clothingQuantities;

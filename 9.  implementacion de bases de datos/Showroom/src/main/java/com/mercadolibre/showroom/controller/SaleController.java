@@ -1,11 +1,13 @@
 package com.mercadolibre.showroom.controller;
 
-import com.mercadolibre.showroom.dto.SaleDTO;
+import com.mercadolibre.showroom.dto.requests.SaleRequestDTO;
 import com.mercadolibre.showroom.dto.responses.MessageDTO;
+import com.mercadolibre.showroom.dto.responses.SaleResponseDTO;
 import com.mercadolibre.showroom.service.ISaleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -20,13 +22,13 @@ public class SaleController {
 
     // Obtener todas las ventas
     @GetMapping("")
-    public ResponseEntity<List<SaleDTO>> getSales() {
+    public ResponseEntity<List<SaleResponseDTO>> getSales() {
         return ResponseEntity.ok(saleService.getSales());
     }
 
     // Crear una nueva venta
     @PostMapping("")
-    public ResponseEntity<MessageDTO> saveSales(@RequestBody SaleDTO saleRequestDTO) {
+    public ResponseEntity<MessageDTO> saveSales(@RequestBody SaleRequestDTO saleRequestDTO) {
         return ResponseEntity.ok(saleService.createSale(
                 saleRequestDTO.getTotal(),
                 saleRequestDTO.getPaymentMethod(),
@@ -36,13 +38,13 @@ public class SaleController {
 
     // Buscar una venta por su número
     @GetMapping("/{number}")
-    public ResponseEntity<SaleDTO> findSaleByNumber(@PathVariable Long number) {
+    public ResponseEntity<SaleResponseDTO> findSaleByNumber(@PathVariable Long number) {
         return ResponseEntity.ok(saleService.findSaleByNumber(number));
     }
 
     // Actualizar una venta
     @PutMapping("/{number}")
-    public ResponseEntity<MessageDTO> updateSale(@PathVariable Long number, @RequestBody SaleDTO saleRequestDTO) {
+    public ResponseEntity<MessageDTO> updateSale(@PathVariable Long number, @RequestBody SaleRequestDTO saleRequestDTO) {
         return ResponseEntity.ok(saleService.updateSale(
                 number,
                 saleRequestDTO.getTotal(),
@@ -57,6 +59,14 @@ public class SaleController {
         return ResponseEntity.ok(saleService.deleteSale(number));
     }
 
+    // Buscar venta por fecha con ?date=2020-01-01
+    @GetMapping("/date")
+    public ResponseEntity<List<SaleRequestDTO>> findSaleByDate(@RequestParam(name = "date") LocalDate date) {
+        return ResponseEntity.ok(saleService.findSaleByDate(date));
+    }
 
-
+    @GetMapping("/api/sale/clothes/{number}")
+    public ResponseEntity<SaleResponseDTO> findSaleByNumber2(@PathVariable Long number) {
+        return ResponseEntity.ok(saleService.findSaleByNumber(number));
+    }
 }

@@ -1,7 +1,10 @@
 package com.mercadolibre.showroom.service;
 
-import com.mercadolibre.showroom.dto.SaleDTO;
+import com.mercadolibre.showroom.dto.ClothingDTO;
+import com.mercadolibre.showroom.dto.requests.SaleRequestDTO;
 import com.mercadolibre.showroom.dto.responses.MessageDTO;
+import com.mercadolibre.showroom.dto.responses.SaleClothingDTO;
+import com.mercadolibre.showroom.dto.responses.SaleResponseDTO;
 import com.mercadolibre.showroom.exception.BadRequestException;
 import com.mercadolibre.showroom.exception.NotFoundException;
 import com.mercadolibre.showroom.model.Clothing;
@@ -11,6 +14,7 @@ import com.mercadolibre.showroom.repository.IClothingRepository;
 import com.mercadolibre.showroom.repository.ISaleClothingRepository;
 import com.mercadolibre.showroom.repository.ISaleRepository;
 import jakarta.transaction.Transactional;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -27,6 +31,7 @@ public class SaleServiceImpl implements ISaleService {
     private final ISaleRepository saleRepository;
     private final IClothingRepository clothingRepository;
     private final ISaleClothingRepository saleClothingRepository;
+    private final ModelMapper modelMapper = new ModelMapper();
 
     public SaleServiceImpl(ISaleRepository saleRepository, IClothingRepository clothingRepository, ISaleClothingRepository saleClothingRepository) {
         this.clothingRepository = clothingRepository;
@@ -35,15 +40,12 @@ public class SaleServiceImpl implements ISaleService {
     }
 
     @Override
-    public List<SaleDTO> getSales() {
-        return saleRepository.findAll().stream()
-                .map(sale -> new SaleDTO(
-                        sale.getTotal(),
-                        sale.getPaymentMethod(),
-                        sale.getSaleClothings().stream()
-                                .collect(Collectors.toMap(saleClothing -> saleClothing.getClothing().getCode(), saleClothing -> saleClothing.getQuantity()))
-                ))
-                .toList();
+    public List<SaleResponseDTO> getSales() {
+        List<Sale> sales = saleRepository.findAllWithClothings();
+
+        return sales.stream()
+                .map(this::mapToSaleResponseDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -98,16 +100,11 @@ public class SaleServiceImpl implements ISaleService {
     }
 
     @Override
-    public SaleDTO findSaleByNumber(Long number) {
-        return saleRepository.findById(number).stream()
-                .map(sale -> new SaleDTO(
-                        sale.getTotal(),
-                        sale.getPaymentMethod(),
-                        sale.getSaleClothings().stream()
-                                .collect(Collectors.toMap(saleClothing -> saleClothing.getClothing().getCode(), saleClothing -> saleClothing.getQuantity()))
-                ))
-                .findFirst()
-                .orElseThrow(() -> new NotFoundException("Sale with number " + number + " not found."));
+    public SaleResponseDTO findSaleByNumber(Long number) {
+        Sale sale = saleRepository.findByNumberWithClothings(number)
+                .orElseThrow(() -> new NotFoundException("Venta con número " + number + " no encontrada"));
+
+        return mapToSaleResponseDTO(sale);
     }
 
     @Override
@@ -181,15 +178,48 @@ public class SaleServiceImpl implements ISaleService {
     }
 
     @Override
-    public SaleDTO findSaleByDate(LocalDate date) {
+    public List<SaleRequestDTO> findSaleByDate(LocalDate date) {
+        System.out.println(date);
         return saleRepository.findByDate(date).stream()
-                .map(sale -> new SaleDTO(
+                .map(sale -> new SaleRequestDTO(
                         sale.getTotal(),
                         sale.getPaymentMethod(),
                         sale.getSaleClothings().stream()
                                 .collect(Collectors.toMap(saleClothing -> saleClothing.getClothing().getCode(), saleClothing -> saleClothing.getQuantity()))
                 ))
-                .findFirst()
-                .orElseThrow(() -> new NotFoundException("Sale with date " + date + " not found."));
+                .toList();
+    }
+
+    private SaleResponseDTO mapToSaleResponseDTO(Sale sale) {
+        List<SaleClothingDTO> clothingDTOs = sale.getSaleClothings().stream()
+                .map(this::mapToSaleClothingDTO)
+                .collect(Collectors.toList());
+
+        return new SaleResponseDTO(
+                sale.getTotal(),
+                sale.getPaymentMethod(),
+                clothingDTOs
+        );
+    }
+
+    private SaleClothingDTO mapToSaleClothingDTO(SaleClothing saleClothing) {
+        ClothingDTO clothingDTO = mapToClothingDTO(saleClothing.getClothing());
+
+        return new SaleClothingDTO(
+                saleClothing.getQuantity(),
+                clothingDTO
+        );
+    }
+
+    private ClothingDTO mapToClothingDTO(Clothing clothing) {
+        return new ClothingDTO(
+                clothing.getName(),
+                clothing.getType(),
+                clothing.getBrand(),
+                clothing.getSize(),
+                clothing.getColor(),
+                clothing.getStock(),
+                clothing.getPrice()
+        );
     }
 }
