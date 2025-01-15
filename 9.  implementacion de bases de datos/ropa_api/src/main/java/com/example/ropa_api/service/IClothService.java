@@ -9,7 +9,7 @@ import java.util.List;
 public interface IClothService {
     Cloth create(RequestClothDto requestTestCaseDto);
 
-    List<Cloth> getAll();
+    List<Cloth> getAll(String name, Long number);
 
     Cloth show(Long id);
 
@@ -18,6 +18,4 @@ public interface IClothService {
     ResponseDto delete(Long id);
 
     List<Cloth> getAllBySize(String size);
-
-    List<Cloth> getAllByName(String name);
 }

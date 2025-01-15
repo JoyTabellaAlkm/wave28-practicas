@@ -1,8 +1,11 @@
 package com.example.ropa_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -47,4 +50,8 @@ public class Cloth {
     @Column
     @JsonProperty("price")
     private Double price;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "clothes", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private List<Sale> sales;
 }
