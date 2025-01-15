@@ -174,7 +174,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\":\"1\",\n    \"nombre\": \"Harry Potter 2\",\n    \"autor\" : \"alguien mas\",\n    \"editorial\": \"ni idea\",\n    \"paginas\": \"200\",\n    \"anio\": \"1997\"\n}",
+							"raw": "{\n    \"id\":\"1\",\n    \"nombre\": \"Harry Potter 2\",\n    \"autor\" : \"alguien mas\",\n    \"editorial\": \"ni idea\",\n    \"paginas\": \"11000\",\n    \"anio\": \"1997\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,6 +216,197 @@
 									"key": "anio",
 									"value": "1997"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/findAutor?autor=alguien mas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAutor?autor=alguien mas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAutor"
+							],
+							"query": [
+								{
+									"key": "autor",
+									"value": "alguien mas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/top",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/top",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"top"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "showroom",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 2,\n    \"nombre\": \"Remera formal\",\n    \"tipo\": \"Remera\",\n    \"marca\": \"MarcaY\",\n    \"color\": \"violeta\",\n    \"talle\": \"S\",\n    \"cantidad\": 1,\n    \"precio\": 1000.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/postClothes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"postClothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getClothes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getClothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clothe/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothe",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put by codigo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 2,\n    \"nombre\": \"Remera formal\",\n    \"tipo\": \"Remera\",\n    \"marca\": \"MarcaP\",\n    \"color\": \"azul\",\n    \"talle\": \"S\",\n    \"cantidad\": 1,\n    \"precio\": 1000.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/putClothes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"putClothes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by codigo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deleteClothes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteClothes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clothesSize/m",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothesSize",
+								"m"
 							]
 						}
 					},
