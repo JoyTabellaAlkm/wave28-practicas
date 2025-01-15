@@ -26,11 +26,11 @@ public class Genre {
     private LocalDate updatedAt;
     @Column(nullable = false)
     @JsonProperty("name")
-    String name;
+    private String name;
     @Column(nullable = false)
     @JsonProperty("ranking")
-    Integer ranking;
+    private Integer ranking;
     @Column(nullable = false)
     @JsonProperty("active")
-    Boolean active;
+    private Boolean active;
 }

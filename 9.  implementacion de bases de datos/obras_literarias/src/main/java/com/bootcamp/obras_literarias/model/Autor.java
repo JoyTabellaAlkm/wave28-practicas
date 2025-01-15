@@ -1,19 +1,22 @@
 package com.bootcamp.obras_literarias.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.io.Serializable;
 import java.util.Objects;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Autor implements Serializable {
-    @Field(name = "first_name")
+public class Autor {
+    @Field(type = FieldType.Text, name = "first_name")
     private String firstName;
-    @Field(name = "last_name")
+    @Field(type = FieldType.Text, name = "last_name")
     private String lastName;
+    @Field(type = FieldType.Integer, name = "age")
     private Integer age;
 
     public Integer getAge() {

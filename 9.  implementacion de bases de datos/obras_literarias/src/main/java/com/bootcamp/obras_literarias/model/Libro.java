@@ -1,28 +1,31 @@
 package com.bootcamp.obras_literarias.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.io.Serializable;
 import java.util.Objects;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(indexName = "libreria")
-public class Libro implements Serializable {
+public class Libro {
     @Id
     private Integer id;
+    @Field(type = FieldType.Text, name = "title")
     private String title;
-    @Field(type = FieldType.Nested, includeInParent = true)
+    @Field(type = FieldType.Object, includeInParent = true)
     private Autor autor;
-    @Field(name = "amount_pages")
+    @Field(type = FieldType.Integer, name = "amount_pages")
     private Integer amountPages;
+    @Field(type = FieldType.Text, name = "editorial")
     private String editorial;
-    @Field(name = "release_year")
+    @Field(type = FieldType.Integer, name = "release_year")
     private Integer releaseYear;
 
     public Integer getAmountPages() {

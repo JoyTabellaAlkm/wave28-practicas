@@ -1,34 +1,34 @@
 package com.bootcamp.movies_api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
-@Table(name = "series")
+@Table(name = "seasons")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Serie {
+public class Season {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
     @Column(name = "created_at")
     private LocalDate createdAt;
     @Column(name = "updated_at")
     private LocalDate updatedAt;
     private String title;
+    private Integer number;
     @Column(name = "release_date")
     private LocalDate releaseDate;
     @Column(name = "end_date")
     private LocalDate endDate;
     @ManyToOne
-    @JoinColumn(name = "genre_id")
-    private Genre genre;
-    @OneToMany(mappedBy = "serie")
-    List<Season> seasons;
+    @JoinColumn(name = "serie_id")
+    @JsonBackReference
+    Serie serie;
 }

@@ -1,5 +1,6 @@
 package com.bootcamp.movies_api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -16,31 +18,30 @@ import java.time.LocalDate;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("movie_id")
     private Long id;
     @Column(name = "created_at")
-    @JsonProperty("created_at")
     private LocalDate createdAt;
     @Column(name = "updated_at")
-    @JsonProperty("updated_at")
     private LocalDate updatedAt;
     @Column(nullable = false)
-    @JsonProperty("title")
-    String title;
+    private String title;
     @Column(nullable = false)
-    @JsonProperty("rating")
-    Double rating;
+    private Double rating;
     @Column(name = "awards", nullable = false)
-    @JsonProperty("amount_of_awards")
-    Integer amountOfAwards;
+    private Integer amountOfAwards;
     @JsonProperty("release_date")
-    @Column(name = "release_date", nullable = false)
-    LocalDate releaseDate;
+    private LocalDate releaseDate;
     @Column
-    @JsonProperty("length")
-    Integer length;
+    private Integer length;
     @ManyToOne
     @JoinColumn(name = "genre_id")
-    @JsonProperty("genre")
-    Genre genre;
+    private Genre genre;
+    @ManyToMany
+    @JoinTable(
+        name = "actor_movie",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id")
+    )
+    @JsonBackReference
+    private List<Actor> actors;
 }
