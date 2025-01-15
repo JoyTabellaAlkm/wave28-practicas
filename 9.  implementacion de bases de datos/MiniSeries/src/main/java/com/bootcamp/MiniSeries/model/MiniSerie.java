@@ -3,10 +3,7 @@ package com.bootcamp.MiniSeries.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter @Setter
@@ -17,7 +14,8 @@ public class MiniSerie {
     private Long id;
     private String name;
     private Double rating;
-    private int amount_of_awards;
+    @Column (name = "amount_of_awards")
+    private int amountOfAwards;
 
     public MiniSerie() {
     }
@@ -26,7 +24,7 @@ public class MiniSerie {
         this.id = id;
         this.name = name;
         this.rating = rating;
-        this.amount_of_awards = amount_of_awards;
+        this.amountOfAwards = amount_of_awards;
     }
 
 
