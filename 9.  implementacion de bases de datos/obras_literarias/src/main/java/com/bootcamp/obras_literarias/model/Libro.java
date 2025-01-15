@@ -22,7 +22,8 @@ public class Libro implements Serializable {
     @Field(name = "amount_pages")
     private Integer amountPages;
     private String editorial;
-    private Integer release_year;
+    @Field(name = "release_year")
+    private Integer releaseYear;
 
     public Integer getAmountPages() {
         return amountPages;
@@ -56,12 +57,12 @@ public class Libro implements Serializable {
         this.id = id;
     }
 
-    public Integer getRelease_year() {
-        return release_year;
+    public Integer getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setRelease_year(Integer release_year) {
-        this.release_year = release_year;
+    public void setReleaseYear(Integer releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getTitle() {
@@ -76,11 +77,11 @@ public class Libro implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Libro libro = (Libro) o;
-        return Objects.equals(id, libro.id) && Objects.equals(title, libro.title) && Objects.equals(autor, libro.autor) && Objects.equals(amountPages, libro.amountPages) && Objects.equals(editorial, libro.editorial) && Objects.equals(release_year, libro.release_year);
+        return Objects.equals(id, libro.id) && Objects.equals(title, libro.title) && Objects.equals(autor, libro.autor) && Objects.equals(amountPages, libro.amountPages) && Objects.equals(editorial, libro.editorial) && Objects.equals(releaseYear, libro.releaseYear);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, autor, amountPages, editorial, release_year);
+        return Objects.hash(id, title, autor, amountPages, editorial, releaseYear);
     }
 }

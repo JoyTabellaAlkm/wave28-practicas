@@ -4,10 +4,7 @@ import com.bootcamp.obras_literarias.model.Libro;
 import com.bootcamp.obras_literarias.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,5 +37,15 @@ public class LibroRestController {
     @GetMapping("/most_pages")
     ResponseEntity<List<Libro>> findFiveWithMostPagesOrderedDesc() {
         return ResponseEntity.ok(libroService.findFiveWithMostPagesOrderedDesc());
+    }
+
+    @GetMapping("/search/release_year_before")
+    ResponseEntity<List<Libro>> findByReleaseDateBefore(@RequestParam Integer year) {
+        return ResponseEntity.ok(libroService.findByYearBefore(year));
+    }
+
+    @GetMapping("/editorial/{name}")
+    ResponseEntity<List<Libro>> findByEditorial(@PathVariable String name){
+        return ResponseEntity.ok(libroService.findByEditorialIgnoreCase(name));
     }
 }

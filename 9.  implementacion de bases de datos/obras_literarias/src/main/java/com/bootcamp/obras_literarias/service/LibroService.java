@@ -36,4 +36,12 @@ public class LibroService {
     public List<Libro> findFiveWithMostPagesOrderedDesc() {
         return libroRepository.findTop5ByOrderByAmountPagesDesc();
     }
+
+    public List<Libro> findByYearBefore(Integer year) {
+        return libroRepository.findByReleaseYearBefore(year);
+    }
+
+    public List<Libro> findByEditorialIgnoreCase(String editorial) {
+        return libroRepository.findByEditorialIgnoreCase(editorial);
+    }
 }

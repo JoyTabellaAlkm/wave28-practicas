@@ -10,4 +10,6 @@ public interface LibroRepository extends ElasticsearchRepository<Libro, Integer>
     List<Libro> findByAutorLastName(String lastName);
     List<Libro> findByTitleContaining(String word);
     List<Libro> findTop5ByOrderByAmountPagesDesc();
+    List<Libro> findByReleaseYearBefore(Integer year);
+    List<Libro> findByEditorialIgnoreCase(String editorial);
 }
