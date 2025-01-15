@@ -121,6 +121,105 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/empleados/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"empleados",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "obras",
+			"item": [
+				{
+					"name": "http://localhost:9200/obras/_search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9200/obras/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"obras",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9200/obras/_doc",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"1\",\n    \"nombre\": \"Harry Potter 2\",\n    \"autor\" : \"alguien mas\",\n    \"editorial\": \"ni idea\",\n    \"paginas\": \"200\",\n    \"anio\": \"1997\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/obras/_doc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"obras",
+								"_doc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/findAnio?anio=1997",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/findAnio?anio=1997",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"findAnio"
+							],
+							"query": [
+								{
+									"key": "anio",
+									"value": "1997"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
