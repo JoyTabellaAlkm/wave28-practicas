@@ -1,5 +1,6 @@
 package com.bootcamp.LasPerlas.controller;
 
+import com.bootcamp.LasPerlas.dto.JoyaDto;
 import com.bootcamp.LasPerlas.dto.MensajeDto;
 import com.bootcamp.LasPerlas.model.Joya;
 import com.bootcamp.LasPerlas.service.IJoyaService;
@@ -18,14 +19,14 @@ public class JoyaController {
     IJoyaService joyaServ;
 
     @PostMapping ("/jewerly/new")
-    public ResponseEntity<MensajeDto> saveJoya (@RequestBody Joya joya) {
-        return new ResponseEntity(joyaServ.saveJoya(joya), HttpStatus.OK);
+    public ResponseEntity<MensajeDto> saveJoya (@RequestBody JoyaDto joya) {
+        return new ResponseEntity(joyaServ.saveJoya(joya), HttpStatus.CREATED);
     }
 
     @GetMapping ("/jewerly")
-    public List<Joya> getJoyas () {
+    public ResponseEntity<List<JoyaDto> >getJoyas () {
 
-        return joyaServ.getJoyas();
+        return new ResponseEntity<>(joyaServ.getJoyas(), HttpStatus.OK);
     }
 
     //como es un borrado lógico, se trata más bien de un update y no de un delete
@@ -37,7 +38,7 @@ public class JoyaController {
 
     @PutMapping ("/jewerly/update/{id_modificar}")
     public ResponseEntity<MensajeDto> editJoya (@PathVariable Long id_modificar,
-                            @RequestBody Joya joya) {
+                            @RequestBody JoyaDto joya) {
 
         return  new ResponseEntity(joyaServ.editJoya(id_modificar, joya),HttpStatus.OK);
     }

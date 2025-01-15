@@ -1,11 +1,14 @@
 package com.bootcamp.LasPerlas.service;
 
+import com.bootcamp.LasPerlas.dto.JoyaDto;
 import com.bootcamp.LasPerlas.dto.MensajeDto;
 import com.bootcamp.LasPerlas.model.Joya;
 import com.bootcamp.LasPerlas.repository.IJoyaRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,53 +16,51 @@ public class JoyaService implements IJoyaService{
 
     @Autowired
     IJoyaRepository joyaRepo;
+    ModelMapper mapper= new ModelMapper();
 
     @Override
-    public MensajeDto saveJoya(Joya joya) {
+    public MensajeDto saveJoya(JoyaDto joyaDto) {
+
+        Joya joya = new Joya();
+        joya= mapper.map(joyaDto, Joya.class);
        joyaRepo.save(joya);
 
-       return new MensajeDto("La joya se creo correctamente : # " + joya.getNro_id());
+       return new MensajeDto("La joya se creo correctamente : # " + joya.getId());
     }
 
     @Override
-    public List<Joya> getJoyas() {
+    public List<JoyaDto> getJoyas() {
 
-        return joyaRepo.findAll();
+        List<JoyaDto> listJoyaDto = new ArrayList<>();
+        for (Joya joya : joyaRepo.findAll()) {
+            listJoyaDto.add(mapper.map(joya, JoyaDto.class));
+        }
+        return listJoyaDto;
 
     }
 
     @Override
-    public Joya findJoya(Long id) {
-        //el orElse nos permite devolver null en caso que no encuentre
-        return joyaRepo.findById(id).orElse(null);
+    public JoyaDto findJoya(Long id) {
+        return mapper.map(joyaRepo.findById(id).orElse(null), JoyaDto.class);
     }
 
     @Override
     public MensajeDto deleteJoya(Long id) {
-
-        //haremos borrado lógico, por lo cual no eliminamos el registro de la bd
-        //sino que solo cambiamos su estado de verdadero (a la venta) a falso (no a la venta)
-
-        Joya joyaOriginal = this.findJoya(id);
+        Joya joyaOriginal = joyaRepo.findById(id).orElse(null);
         joyaOriginal.setVentaONo(false);
-        this.saveJoya(joyaOriginal);
+        joyaRepo.delete(joyaOriginal);
 
         return new MensajeDto("Joya dada de baja para la venta correctamente");
     }
 
     @Override
-    public MensajeDto editJoya(Long id_modificar, Joya joya_modif) {
+    public MensajeDto editJoya(Long id_modificar, JoyaDto joya_modif) {
+        this.findJoya(id_modificar);
+        Joya joya = new Joya();
+        joya= mapper.map(joya_modif, Joya.class);
+        joya.setId(id_modificar);
+        joyaRepo.save(joya);
 
-        Joya joyaOriginal = this.findJoya(id_modificar);
-
-        joyaOriginal.setNombre(joya_modif.getNombre());
-        joyaOriginal.setMaterial(joya_modif.getMaterial());
-        joyaOriginal.setPeso(joya_modif.getPeso());
-        joyaOriginal.setParticularidad(joya_modif.getParticularidad());
-        joyaOriginal.setPosee_piedra(joya_modif.isPosee_piedra());
-        joyaOriginal.setVentaONo(joya_modif.isVentaONo());
-
-        this.saveJoya(joyaOriginal);
         return new MensajeDto("Modificaciones guardadas correctamente");
 
     }
