@@ -1,6 +1,7 @@
 package com.melibootcamp.showroom.controller;
 
 
+import com.melibootcamp.showroom.dto.PrendaDto;
 import com.melibootcamp.showroom.entity.Prenda;
 import com.melibootcamp.showroom.service.PrendaService;
 import com.melibootcamp.showroom.service.PrendaServiceImpl;
@@ -51,7 +52,7 @@ public class PrendaController {
 
     @PostMapping
     public ResponseEntity<?> savePrenda(
-            @RequestBody Prenda prenda)
+            @RequestBody PrendaDto prenda)
     {
         return new ResponseEntity<>(prendaService.savePrenda(prenda), HttpStatus.CREATED);
     }
@@ -66,7 +67,7 @@ public class PrendaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updatePrenda(
-            @RequestBody Prenda prenda, @PathVariable long id)
+            @RequestBody PrendaDto prenda, @PathVariable long id)
     {
         return new ResponseEntity<>(prendaService.updatePrenda(id, prenda), HttpStatus.OK);
     }

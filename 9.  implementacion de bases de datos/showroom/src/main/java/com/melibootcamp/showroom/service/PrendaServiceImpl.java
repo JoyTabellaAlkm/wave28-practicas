@@ -2,8 +2,10 @@ package com.melibootcamp.showroom.service;
 
 
 
+import com.melibootcamp.showroom.dto.PrendaDto;
 import com.melibootcamp.showroom.entity.Prenda;
 import com.melibootcamp.showroom.repository.PrendaRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,40 +14,49 @@ import java.util.List;
 public class PrendaServiceImpl implements PrendaService {
 
     private final PrendaRepository prendaRepository;
+    private final ModelMapper modelMapper;
 
     public PrendaServiceImpl(PrendaRepository prendaRepository){
+        this.modelMapper = new ModelMapper();
         this.prendaRepository = prendaRepository;
     }
 
     @Override
-    public List<Prenda> getPrendas() {
-        List<Prenda> toReturn = prendaRepository.findAll();
+    public List<PrendaDto> getPrendas() {
+        List<PrendaDto> toReturn = prendaRepository.findAll().stream()
+                .map(x -> modelMapper.map(x, PrendaDto.class))
+                .toList();
         return toReturn;
     }
 
     @Override
-    public Prenda getPrendaById(long id) {
-        Prenda toReturn = prendaRepository.findById(id).orElse(null);
+    public PrendaDto getPrendaById(long id) {
+        PrendaDto toReturn = modelMapper.map(prendaRepository.findById(id).orElse(null),PrendaDto.class);
         return toReturn;
     }
 
     @Override
-    public List<Prenda> getPrendaBySize(String talle) {
-        List<Prenda> toReturn = prendaRepository.findByTalle(talle);
+    public List<PrendaDto> getPrendaBySize(String talle) {
+        List<PrendaDto> toReturn = prendaRepository.findByTalle(talle).stream()
+                .map(x -> modelMapper.map(x, PrendaDto.class))
+                .toList();
         return toReturn;
     }
 
     @Override
-    public List<Prenda> getPrendaByPatternOnTitle(String pattern) {
-        List<Prenda> toReturn = prendaRepository.findByPatternOnTitle(pattern);
+    public List<PrendaDto> getPrendaByPatternOnTitle(String pattern) {
+        List<PrendaDto> toReturn = prendaRepository.findByPatternOnTitle(pattern).stream()
+                .map(x -> modelMapper.map(x, PrendaDto.class))
+                .toList();
         return toReturn;
     }
 
 
     @Override
-    public boolean savePrenda(Prenda Prenda) {
+    public boolean savePrenda(PrendaDto prenda) {
         try{
-            prendaRepository.save(Prenda);
+            Prenda toSave = modelMapper.map(prenda, Prenda.class);
+            prendaRepository.save(toSave);
             return true;
         } catch (Exception e){
             return false;
@@ -64,15 +75,15 @@ public class PrendaServiceImpl implements PrendaService {
 
 
     @Override
-    public boolean updatePrenda(long id, Prenda prenda) {
+    public boolean updatePrenda(long id, PrendaDto prenda) {
 
         if (!prendaRepository.existsById(id)){
             return false;
         }
 
         prenda.setId(id);
-
-        prendaRepository.save(prenda);
+        Prenda toUpdate = modelMapper.map(prenda, Prenda.class);
+        prendaRepository.save(toUpdate);
         return true;
     }
 

@@ -1,8 +1,8 @@
-package com.melibootcamp.showroom.entity;
+package com.melibootcamp.showroom.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.melibootcamp.showroom.entity.Venta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,15 +10,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+
 @Getter
 @Setter
-@AllArgsConstructor @NoArgsConstructor
-@Entity
-@Table(name = "prenda")
-public class Prenda {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@AllArgsConstructor
+@NoArgsConstructor
+public class PrendaDto {
     private Long id;
 
     private String codigo;
@@ -28,13 +25,6 @@ public class Prenda {
     private String color;
     private String talle;
     private int cantidad;
-
-    @Column(name = "precio_venta")
     @JsonProperty("precio_venta")
     private double precioVenta;
-
-    @ManyToMany(mappedBy = "listaDePrendas")
-    @JsonIgnore
-    private List<Venta> ventas;
-
 }
