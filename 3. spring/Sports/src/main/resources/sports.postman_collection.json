@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "fe03923f-adaa-4b69-bdd9-76615cc1a2b7",
+		"name": "sports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "listar deportes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/findSports"
+			},
+			"response": []
+		},
+		{
+			"name": "ver nivel de un deporte especifico",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/findSport/futbol"
+			},
+			"response": []
+		}
+	]
+}
