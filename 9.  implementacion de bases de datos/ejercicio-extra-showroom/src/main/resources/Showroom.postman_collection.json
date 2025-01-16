@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "5451c44c-0d04-4930-ba61-6afe15ce8822",
+		"name": "Showroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40526407"
+	},
+	"item": [
+		{
+			"name": "Clothes",
+			"item": [
+				{
+					"name": "crear prenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Remera basic\",\n    \"type\": \"Remera\",\n    \"brand\": \"Adidas\",\n    \"color\": \"Negro\",\n    \"size\": \"L\",\n    \"price\": 15.00,\n    \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clothes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all clothes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clothes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get clothes by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clothes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update clothes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"color\": \"Rojo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/clothes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete clothes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clothes/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get clothes by size",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clothes/size/L",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"size",
+								"L"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search clothes by name like remera",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/clothes/search?query=remera",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "remera"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "create sale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"Efectivo\",\n    \"items\": [\n        {\n            \"name\":\"Remera basic\",\n            \"type\": \"Remera\",\n            \"brand\": \"Adidas\",\n            \"color\": \"Negro\",\n            \"size\": \"L\",\n            \"price\": 15.00,\n            \"quantity\": 1\n        },\n        {\n            \"name\":\"Short Boca\",\n            \"type\": \"Pantalon\",\n            \"brand\": \"Adidas\",\n            \"color\": \"Azul\",\n            \"size\": \"M\",\n            \"price\": 25.00,\n            \"quantity\": 1\n        },\n          {\n            \"name\":\"Medias de Fútbol\",\n            \"type\": \"Medias\",\n            \"brand\": \"Nike\",\n            \"color\": \"Blanco\",\n            \"size\": \"M\",\n            \"price\": 5.00,\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/sale",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sales",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/sale",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sale by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/sale/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete sale",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/sale/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sale by date",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/sale/date/2025-01-16",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"date",
+								"2025-01-16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get clothes by sale",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/sale/clothes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
