@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "5286de17-e1e6-4a70-82fc-fca256a47ee9",
+		"name": "starwars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "luke",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/personaje/Luke"
+			},
+			"response": []
+		},
+		{
+			"name": "Darth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/personaje/Darth"
+			},
+			"response": []
+		}
+	]
+}
