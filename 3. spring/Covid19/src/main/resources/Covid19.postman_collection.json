@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "d5ea7d55-6237-4684-b098-109498b99994",
+		"name": "Covid19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40366550"
+	},
+	"item": [
+		{
+			"name": "obtener sintoma especifico",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/health/findSymptom/Headache"
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de sintomas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/health/findSymptom"
+			},
+			"response": []
+		}
+	]
+}
