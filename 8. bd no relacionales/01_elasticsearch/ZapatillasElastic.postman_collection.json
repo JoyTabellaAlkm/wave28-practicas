@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "e67411b2-d8c2-4b9f-bf82-7131f28f9c50",
+		"name": "ZapatillasElastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40212015"
+	},
+	"item": [
+		{
+			"name": "Obtener Indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/_cat/indices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_cat",
+						"indices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Indice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"settings\": {\n    \"number_of_shards\": 1,\n    \"number_of_replicas\": 0\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes\n\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes\n\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear o Modificar Indice con Mapping",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"settings\": {\n    \"number_of_shards\": 1,\n    \"number_of_replicas\": 0\n  },\n  \"mappings\": {\n    \"properties\": {\n      \"marca\": {\n        \"type\": \"text\"\n      },\n      \"modelo\": {\n        \"type\": \"text\"\n      },\n      \"precio\": {\n        \"type\": \"float\"\n      }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar un Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"marca\": \"Nike\",\n  \"modelo\": \"Air Max\",\n  \"precio\": 120.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_doc/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_doc",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar registro (Color Rojo)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"color\": \"Rojo\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar registros",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"color\": \"Rojo\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/shoes/_delete_by_query",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"shoes",
+						"_delete_by_query"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
