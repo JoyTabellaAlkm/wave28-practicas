@@ -31,7 +31,7 @@ public class VehicleRepositoryTest {
     }
 
     @Test
-    @DisplayName("Cuando se llama findVehiclesByYearAndColor debe retornar los vehículos correspondientes")
+    @DisplayName("1. Buscar vehiculos por color y año")
     void whenFindVehiclesByYearAndColorShouldReturnVehicles() throws IOException {
         // arrange
         IVehicleRepository vehicleRepository = new VehicleRepositoryImpl();
@@ -49,7 +49,7 @@ public class VehicleRepositoryTest {
     }
 
     @Test
-    @DisplayName("Cuando se llama findVehiclesByBrandAndRangeOfYear debe retornar vehículos en ese rango de años")
+    @DisplayName("2. Buscar vehículos por marca y rango de años")
     void whenFindVehiclesByBrandAndRangeOfYearShouldReturnVehicles()  throws IOException {
         // arrange
         IVehicleRepository vehicleRepository = new VehicleRepositoryImpl();
@@ -67,7 +67,7 @@ public class VehicleRepositoryTest {
     }
 
     @Test
-    @DisplayName("Cuando se llama findVehiclesByBrand debe retornar vehículos de esa marca")
+    @DisplayName("3. Consultar velocidad promedio por marca")
     void whenFindVehiclesByBrandShouldReturnVehicles()  throws IOException {
         // arrange
         IVehicleRepository vehicleRepository = new VehicleRepositoryImpl();
@@ -84,7 +84,7 @@ public class VehicleRepositoryTest {
     }
 
     @Test
-    @DisplayName("Cuando se llama findVehiclesByRangeOfWeight debe retornar vehículos dentro del rango de peso")
+    @DisplayName("5. Listar vehículos por rango de peso")
     void whenFindVehiclesByRangeOfWeightShouldReturnVehicles() throws IOException {
         // arrange
         IVehicleRepository vehicleRepository = new VehicleRepositoryImpl();

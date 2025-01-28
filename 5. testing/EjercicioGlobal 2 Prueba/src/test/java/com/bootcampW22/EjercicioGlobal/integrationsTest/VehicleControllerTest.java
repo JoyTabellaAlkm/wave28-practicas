@@ -62,7 +62,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    @DisplayName("Should return vehicles by color and year when found")
+    @DisplayName("1. Buscar vehiculos por color y año")
     public void shouldReturnVehiclesByColorAndYearWhenFound() throws Exception {
         // arrange
         String color = "Mauv";
@@ -83,7 +83,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    @DisplayName("Should return vehicles by brand and year range when found")
+    @DisplayName("2. Buscar vehículos por marca y rango de años")
     public void shouldReturnVehiclesByBrandAndYearRangeWhenFound() throws Exception {
         // arrange
         String brand = "Mitsubishi";
@@ -105,7 +105,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    @DisplayName("Should return average speed by brand when vehicles are found")
+    @DisplayName("3. Consultar velocidad promedio por marca")
     public void shouldReturnAverageSpeedByBrandWhenVehiclesAreFound() throws Exception {
         // arrange
         String brand = "Mitsubishi";
@@ -124,7 +124,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    @DisplayName("Should return average capacity by brand when vehicles are found")
+    @DisplayName("4. Obtener la capacidad promedio de personas por marca")
     public void shouldReturnAverageCapacityByBrandWhenVehiclesAreFound() throws Exception {
         // arrange
         String brand = "Mitsubishi";
@@ -142,7 +142,7 @@ public class VehicleControllerTest {
     }
 
     @Test
-    @DisplayName("Should return vehicles by range of weight when found")
+    @DisplayName("5. Listar vehículos por rango de peso")
     public void shouldReturnVehiclesByRangeOfWeightWhenFound() throws Exception {
         // arrange
         double minWeight = 100.0;
